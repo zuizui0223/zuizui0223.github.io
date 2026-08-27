@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="zuizui0223 の研究リポジトリを、世界線・8軸・出版ルートとして辿るインタラクティブ地図。"
+    />
+    <meta name="theme-color" content="#10151f" />
+    <meta property="og:title" content="研究世界線地図 | Research Worldlines" />
+    <meta
+      property="og:description"
+      content="時間、空間、観測、現実、パターン、メカニズム、方法、理論を横断する研究ポートフォリオ地図。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zuizui0223.github.io/" />
+    <meta property="og:image" content="https://zuizui0223.github.io/og.png" />
+    <meta property="og:image:alt" content="RESEARCH WORLDLINES — 時間・空間・観測・理論を横断する研究地図" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="研究世界線地図 | Research Worldlines" />
+    <meta
+      name="twitter:description"
+      content="時間、空間、観測、現実、パターン、メカニズム、方法、理論を横断する研究ポートフォリオ地図。"
+    />
+    <meta name="twitter:image" content="https://zuizui0223.github.io/og.png" />
+    <title>研究世界線地図 | Research Worldlines</title>
+    <link rel="icon" type="image/png" href="og.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">地図へ移動</a>
+    <header class="site-header">
+      <a class="brand" href="#" aria-label="研究世界線地図 ホーム">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>
+          <strong>RESEARCH WORLDLINES</strong>
+          <small>zuizui0223 research universe</small>
+        </span>
+      </a>
+      <div class="snapshot"><span></span> Navigation snapshot · 2026.08.27</div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="eyebrow">A PROVENANCE-PRESERVING ATLAS</p>
+        <h1 id="hero-title">研究は、一本の道ではなく<br /><em>分岐する世界線</em>である。</h1>
+        <p class="hero-copy">
+          24の研究リポジトリを、5つの系列と8つの視点で横断する。線は証明ではなく接続、ノードは結論ではなく入口。
+          すべての主張は、所有元の一次資料へ戻る。
+        </p>
+        <div class="hero-stats" aria-label="地図の概要">
+          <div><strong>24</strong><span>repositories</span></div>
+          <div><strong>5</strong><span>worldlines</span></div>
+          <div><strong>8</strong><span>analytic axes</span></div>
+          <div><strong>2</strong><span>book routes</span></div>
+        </div>
+      </section>
+
+      <section class="atlas" aria-label="研究世界線アトラス">
+        <div class="atlas-toolbar">
+          <div class="view-tabs" role="tablist" aria-label="地図の表示方法">
+            <button class="view-tab is-active" type="button" role="tab" aria-selected="true" data-view="world">
+              世界線
+            </button>
+            <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="axes">
+              8軸
+            </button>
+            <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="books">
+              本のルート
+            </button>
+          </div>
+          <label class="search-field">
+            <span class="sr-only">リポジトリを検索</span>
+            <input id="searchInput" type="search" placeholder="repo・概念・結論を検索" autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+        </div>
+
+        <div id="worldView" class="view-panel is-active" role="tabpanel">
+          <div class="series-filter" id="seriesFilter" aria-label="系列フィルター"></div>
+
+          <div class="story-strip" aria-label="代表的な世界線">
+            <span>TRACE A WORLDLINE</span>
+            <button type="button" data-story="flower">花色の時空間</button>
+            <button type="button" data-story="island">島の分岐</button>
+            <button type="button" data-story="evidence">観測から機構へ</button>
+            <button type="button" data-story="state">世界から状態へ</button>
+            <button type="button" data-story="all">すべて表示</button>
+          </div>
+
+          <div class="map-layout">
+            <div class="map-column">
+              <div class="map-scroll" id="mapScroll">
+                <canvas id="worldCanvas" width="1320" height="690" aria-label="研究リポジトリ間の世界線地図"></canvas>
+              </div>
+              <div class="map-legend" aria-label="線と状態の凡例">
+                <span><i class="line-solid"></i>所有された接続</span>
+                <span><i class="line-dash"></i>限定された橋・比較</span>
+                <span><i class="dot-result"></i>結論核</span>
+                <span><i class="dot-open"></i>進行中</span>
+                <span><i class="dot-stop"></i>STOP・反証</span>
+              </div>
+              <div id="nodeList" class="node-list" aria-label="リポジトリ一覧"></div>
+            </div>
+
+            <aside id="detailPanel" class="detail-panel" aria-live="polite">
+              <div class="detail-empty">
+                <span class="detail-orbit" aria-hidden="true"></span>
+                <p>ノードを選ぶと、役割・現在の結論・claim ceiling・次の接続を表示します。</p>
+              </div>
+            </aside>
+          </div>
+        </div>
+
+        <div id="axesView" class="view-panel" role="tabpanel" hidden>
+          <div class="section-intro">
+            <p class="eyebrow">FOUR PAIRED LENSES</p>
+            <h2>8語は、4つの緊張関係として読む。</h2>
+            <p>分類箱ではなく、同じ研究を別方向から照らすレンズ。各カードから関連リポジトリを世界線上で呼び出せる。</p>
+          </div>
+          <div id="axisGrid" class="axis-grid"></div>
+        </div>
+
+        <div id="booksView" class="view-panel" role="tabpanel" hidden>
+          <div class="section-intro books-heading">
+            <div>
+              <p class="eyebrow">TWO READING FUTURES</p>
+              <h2>同じ研究宇宙から、二つの出版ルート。</h2>
+              <p>証拠ゲートを優先する7巻案と、主題を細かく分ける8冊案。どちらも一次結果の所有元を移さない。</p>
+            </div>
+            <div class="route-switch" role="group" aria-label="出版ルート">
+              <button type="button" class="is-active" data-book-route="seven">7巻・54章</button>
+              <button type="button" data-book-route="eight">8冊・68章</button>
+            </div>
+          </div>
+          <div id="bookGrid" class="book-grid"></div>
+        </div>
+      </section>
+
+      <section class="manifesto" aria-labelledby="manifesto-title">
+        <p class="eyebrow">HOW TO READ THIS MAP</p>
+        <h2 id="manifesto-title">中心にあることは、正しいことを意味しない。</h2>
+        <div class="manifesto-grid">
+          <p><strong>01</strong> Graphify は経路を示す。科学的証拠は、各リポジトリの凍結結果と一次文書にある。</p>
+          <p><strong>02</strong> 破線は、未完了・条件付き・類推だけの橋。実線より弱いのではなく、義務が違う。</p>
+          <p><strong>03</strong> STOP、反証、未識別は欠落ではない。次の世界線が越えてはいけない境界である。</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>RESEARCH WORLDLINES</span>
+      <span>Source ownership remains distributed.</span>
+      <a href="https://github.com/zuizui0223" target="_blank" rel="noreferrer">github.com/zuizui0223 ↗</a>
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
