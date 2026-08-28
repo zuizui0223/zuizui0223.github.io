@@ -9,6 +9,14 @@
     <path d="M30 34C22 41 16 47 9 54" stroke="#a48af4" stroke-width="1.4"/>
     <path d="M32 21C42 21 48 26 49 33C50 42 41 47 32 46C23 46 15 41 16 33C17 25 23 22 32 21Z" stroke="#d9d0aa" stroke-opacity=".25"/>
   </g>
-  <path d="M32 25C39 25 43 28 44 33C44 39 39 42 32 42C25 42 20 39 20 33C21 28 25 25 32 25Z" fill="#010203" stroke="#d9d0aa" stroke-opacity=".45"/>
-  <circle cx="32" cy="34" r="2" fill="#d9d0aa"/>
+  <path d="M32 25C39 25 43 28 44 33C44 39 39 42 32 42C25 42 20 39 20 33C21 28 25 25 32 25Z" fill="#010203" stroke="#d9d0aa" stroke-opacity=".38"/>
+  <g fill="none" stroke="#e6b85c" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M37 25C36 28 34 30 32 31" stroke-width=".9" opacity=".68"/>
+    <path d="M32 30C27 30 25 34 26 39C26.5 42 24 44 22 46C25 45 27 46 29 48C31 46 33 46 35 48C37 46 39 46 42 47C40 44 38 42 39 39C40 34 37 31 32 30Z" stroke-width="1"/>
+  </g>
+  <g fill="#e6b85c" opacity=".62">
+    <circle cx="30" cy="39" r=".55"/>
+    <circle cx="34" cy="41" r=".48"/>
+    <circle cx="37" cy="38" r=".4"/>
+  </g>
 </svg>
