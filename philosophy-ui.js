@@ -108,8 +108,11 @@
   enhanceDetail();
   enhanceNodeList();
 
-  const tracker = document.createElement("script");
-  tracker.src = "repo-tracker.js";
-  tracker.defer = true;
-  document.body.appendChild(tracker);
+  ["repo-tracker.js", "perspective.js"].forEach((src) => {
+    if (document.querySelector(`script[src="${src}"]`)) return;
+    const addon = document.createElement("script");
+    addon.src = src;
+    addon.async = false;
+    document.body.appendChild(addon);
+  });
 })();
