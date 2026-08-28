@@ -193,16 +193,16 @@
     detailPanel.style.setProperty("--series-color", meta.color);
     detailPanel.innerHTML = `
       <div class="detail-content">
-        <div class="detail-kicker">${meta.label.toUpperCase()} WORLDLINE</div>
+        <div class="detail-kicker">${meta.label.toUpperCase()} SERIES</div>
         <h3>${nodeLabel(node)}</h3>
         <span class="detail-status">${statusLabels[node.status]}</span>
-        <h4>LAYER</h4>
+        <h4>CHAPTER / LAYER</h4>
         <div class="detail-layers">${node.layers.map((layer) => `<span>${layer}</span>`).join("")}</div>
         <h4>CURRENT RESULT / ROLE</h4>
         <p>${node.summary}</p>
         <h4>CLAIM CEILING</h4>
         <p>${node.ceiling}</p>
-        <h4>NEXT BRIDGE</h4>
+        <h4>NEXT CHAPTER QUESTION</h4>
         <p>${node.next}</p>
         <a class="detail-link" href="https://github.com/zuizui0223/${node.id}" target="_blank" rel="noreferrer">所有元リポジトリを開く ↗</a>
       </div>`;
@@ -214,7 +214,7 @@
     if (id === "all") {
       state.story = null;
       state.selected = null;
-      detailPanel.innerHTML = `<div class="detail-empty"><span class="detail-orbit" aria-hidden="true"></span><p>ノードを選ぶと、役割・現在の結論・claim ceiling・次の接続を表示します。</p></div>`;
+      detailPanel.innerHTML = `<div class="detail-empty"><span class="detail-orbit" aria-hidden="true"></span><p>ノードを選ぶと、その chapter の役割・現在の結論・claim ceiling・次章への問いを表示します。</p></div>`;
     } else {
       state.story = id;
       document.querySelector(`[data-story="${id}"]`).classList.add("is-active");
@@ -223,12 +223,12 @@
       detailPanel.style.setProperty("--series-color", color);
       detailPanel.innerHTML = `
         <div class="detail-content">
-          <div class="detail-kicker">SELECTED WORLDLINE</div>
+          <div class="detail-kicker">SELECTED SERIES</div>
           <h3>${story.label}</h3>
           <div class="detail-layers">${story.nodes.map((node) => `<span>${nodeLabel(byId.get(node))}</span>`).join("")}</div>
           <h4>HOW TO READ</h4>
           <p>${story.text}</p>
-          <h4>ORDER</h4>
+          <h4>CHAPTER ORDER</h4>
           <p>${story.nodes.map((node) => nodeLabel(byId.get(node))).join(" → ")}</p>
         </div>`;
     }
@@ -263,7 +263,7 @@
     host.innerHTML = data.books[state.bookRoute].map((book) => {
       const meta = data.series[book.series];
       return `<article class="book-card" style="--book-color:${meta.color}">
-        <span class="book-number">BOOK ${book.n} · ${book.chapters} CHAPTERS</span>
+        <span class="book-number">CHAPTER ${book.n} · 1 REPOSITORY</span>
         <h3>${book.title}</h3>
         <p>${book.note}</p>
         <div class="book-meta">${book.repos.map((repo) => `<span>${repo}</span>`).join("")}</div>
