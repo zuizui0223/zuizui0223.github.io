@@ -1,256 +1,109 @@
 <!doctype html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="zuizui0223 の研究リポジトリを、研究者育成ゲームとして辿るインタラクティブ研究宇宙。1 repository = 1 chapter、series = skill tree。"
-    />
-    <meta name="theme-color" content="#10151f" />
-    <meta property="og:title" content="Researcher Development Game | PhD in zuizui" />
-    <meta
-      property="og:description"
-      content="雑魚院卒から始まり、博士、助教、准教授、教授、名誉教授、神を通過しても、真のエンディングは PhD in zuizui。"
-    />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://zuizui0223.github.io/" />
-    <meta property="og:image" content="https://zuizui0223.github.io/og.png" />
-    <meta property="og:image:alt" content="RESEARCH WORLDLINES — researcher development game" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Researcher Development Game | PhD in zuizui" />
-    <meta
-      name="twitter:description"
-      content="Repositories are chapters, research series are skill trees, and the true ending is becoming yourself."
-    />
-    <meta name="twitter:image" content="https://zuizui0223.github.io/og.png" />
-    <title>Researcher Development Game | PhD in zuizui</title>
-    <link rel="icon" type="image/png" href="og.png" />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <a class="skip-link" href="#main">地図へ移動</a>
-    <header class="site-header">
-      <a class="brand" href="#" aria-label="研究者育成ゲーム ホーム">
-        <span class="brand-mark" aria-hidden="true"></span>
-        <span>
-          <strong>RESEARCHER DEVELOPMENT GAME</strong>
-          <small>zuizui0223 research universe</small>
-        </span>
-      </a>
-      <div class="snapshot"><span></span> Save data · 2026.08.28</div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="zuizui の脳洞。研究リポジトリを手掛かりに歩く、研究者育成型の謎解き研究宇宙。" />
+  <meta name="theme-color" content="#07090d" />
+  <meta property="og:title" content="脳洞 | zuizui" />
+  <meta property="og:description" content="ENTER THE ZUIZUI BRAIN CAVE." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://zuizui0223.github.io/" />
+  <meta property="og:image" content="https://zuizui0223.github.io/og.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <title>脳洞 | zuizui</title>
+  <link rel="icon" type="image/png" href="og.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#atlas">ENTER</a>
 
-    <main id="main">
-      <section class="hero" aria-labelledby="hero-title">
-        <p class="eyebrow">NEW GAME · RESEARCHER MODE</p>
-        <h1 id="hero-title">肩書きを集めるゲームではない。<br /><em>自分になるゲーム</em>である。</h1>
-        <p class="hero-copy">
-          初期職は <b>雑魚院卒</b>。博士、助教、准教授、教授、名誉教授、そして神まで、研究者らしい称号はいくらでも続く。
-          でもそれらはレベル表示にすぎない。repository を一つずつ閉じ、失敗も反証も経験値に変え、問い・観測・方法・理論・実証を自分の言葉で接続した先にある真エンドは、<b>PhD in zuizui</b>。
-        </p>
-        <div class="hero-stats" aria-label="ゲームの概要">
-          <div><strong>24</strong><span>quest repositories</span></div>
-          <div><strong>6</strong><span>skill trees</span></div>
-          <div><strong>7</strong><span>vanity ranks</span></div>
-          <div><strong>1</strong><span>true ending</span></div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="脳洞 ホーム">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span><strong>脳洞</strong><small>ZUIZUI / NOUDO</small></span>
+    </a>
+    <div class="snapshot"><span></span> SAVE 2026.08.28</div>
+  </header>
+
+  <main id="top">
+    <section class="hero cave-entrance" aria-labelledby="hero-title">
+      <div class="hole" aria-hidden="true"><i></i><i></i><i></i></div>
+      <p class="eyebrow">ENTER THE BRAIN CAVE</p>
+      <h1 id="hero-title">脳洞</h1>
+      <p class="hero-copy">問いは枝分かれする。<br />答えは、ときどき消える。</p>
+      <a class="enter-link" href="#atlas">ENTER ↓</a>
+      <div class="rank-code" aria-label="研究者ランク">
+        雑魚院卒 <b>→</b> 博士 <b>→</b> 助教 <b>→</b> 准教授 <b>→</b> 教授 <b>→</b> 名誉教授 <b>→</b> 神 <b>≠</b> <em>PhD in zuizui</em>
+      </div>
+    </section>
+
+    <section id="atlas" class="atlas" aria-label="脳洞マップ">
+      <div class="atlas-toolbar">
+        <div class="view-tabs" role="tablist" aria-label="表示">
+          <button class="view-tab is-active" type="button" role="tab" aria-selected="true" data-view="world">洞窟</button>
+          <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="axes">座標</button>
+          <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="books">断片</button>
         </div>
-      </section>
+        <label class="search-field">
+          <span class="sr-only">探索</span>
+          <input id="searchInput" type="search" placeholder="手掛かりを探す" autocomplete="off" />
+          <kbd>/</kbd>
+        </label>
+      </div>
 
-      <section class="manifesto" aria-labelledby="rank-title">
-        <p class="eyebrow">PLAYER PROGRESSION</p>
-        <h2 id="rank-title">雑魚院卒 → 博士 → 助教 → 准教授 → 教授 → 名誉教授 → 神 → <em>PhD in zuizui</em></h2>
-        <div class="manifesto-grid">
-          <p><strong>LV.0 · 雑魚院卒</strong><br />目の前の現象を面白がる。でも問い、証拠、方法、claim の境界がまだごちゃごちゃ。最初の repository を作って世界を分け始める。</p>
-          <p><strong>LV.1 · 博士</strong><br />一つの問いを自力で閉じられる。結果が欲しい答えでなくても、STOP や反証を成果として保存できる。</p>
-          <p><strong>LV.2 · 助教</strong><br />一つの研究だけでなく、次に何を測るべきかを設計できる。観測・解析・field work を別レイヤーとして扱える。</p>
-          <p><strong>LV.3 · 准教授</strong><br />複数 repository が series になる。個別研究を足し算するのでなく、前の問いが次の問いを必然的に生む。</p>
-          <p><strong>LV.4 · 教授</strong><br />異なる series の間に bridge を架ける。実証、方法論、理論を混同せず、それでも一つの research universe として読める。</p>
-          <p><strong>LV.5 · 名誉教授</strong><br />何を発見したかだけでなく、何を言ってはいけないか、何を後世に残すべきかまで設計できる。失敗系も provenance として残る。</p>
-          <p><strong>LV.6 · 神</strong><br />だいたい何でも説明できそうな顔ができる。危険。ここで万能理論を名乗ったらゲームオーバー。自分の理論が壊れる条件を自分で作れるかが最終試験。</p>
-          <p><strong>TRUE END · PhD in zuizui</strong><br />肩書きの上位互換ではない。アザミ、花色多型、島、観測、方法論、理論が「自分は何を世界の state として見たいのか」という一つの癖として接続される。最終的に取得したい学位は、自分自身。</p>
-        </div>
-      </section>
-
-      <section class="manifesto" aria-labelledby="game-rule-title">
-        <p class="eyebrow">GAME RULES</p>
-        <h2 id="game-rule-title">論文数ではなく、研究者としてできることが unlock される。</h2>
-        <div class="manifesto-grid">
-          <p><strong>XP</strong> repository を作る、問いを閉じる、再現可能にする、反証を保存する、claim ceiling を守る。成功だけでなく、きれいな STOP も経験値。</p>
-          <p><strong>SKILL TREE</strong> series は専門分野ではなく能力の系統。アザミ／花色多型／島は empirical worlds、観測／方法論／理論はそれらを扱うために獲得した技。</p>
-          <p><strong>QUEST</strong> 1 repository = 1 chapter = 1 quest。巨大な夢を一章にせず、独立した問い・証拠・境界を持った時点で一つの quest になる。</p>
-          <p><strong>BOSS</strong> reviewer ではない。confounding、non-identifiability、selection bias、failed generalization、観測不能性、自分の思い込み。</p>
-          <p><strong>DEBUFF</strong> 「結果が出たから機構が分かった」「精度が高いから現実が測れた」「中心にある repo が一番偉い」。このゲームでは全部 status ailment。</p>
-          <p><strong>NEW GAME+</strong> NEXT CHAPTER / repo TBD。将来課題は未達成 quest として見せる。repository と検証契約を持った瞬間に正式 chapter へ昇格する。</p>
-        </div>
-      </section>
-
-      <section class="manifesto" aria-labelledby="series-title">
-        <p class="eyebrow">SIX SKILL TREES</p>
-        <h2 id="series-title">研究テーマではなく、「何ができる研究者になったか」で読む。</h2>
-        <div class="manifesto-grid">
-          <p>
-            <strong>01 · アザミ</strong> — <b>phenotype → history</b><br />
-            <b>Ch.1 azami</b> — 現在の phenotype space を測る。<br />
-            <b>Ch.2 EAzami</b> — evolutionary history と競合モデルを判別する。<br />
-            <em>NEXT QUEST / repo TBD</em> — 空間と進化史を一つの閉じた比較設計へ統合する。
-          </p>
-          <p>
-            <strong>02 · 花色多型</strong> — <b>space → time → multiscale state</b><br />
-            <b>Ch.1 fcp</b> — Where are the states now?<br />
-            <b>Ch.2 chun</b> — Where have the states existed through evolutionary time, and what constitutes the same state?<br />
-            <b>Ch.3 hotarubukuro</b> — one polymorphic state system を phenotype × scale × ecology で解像する。<br />
-            <em>NEXT QUEST / repo TBD</em> — 三座標から得た予測を独立 field data で試す。
-          </p>
-          <p>
-            <strong>03 · 島</strong> — <b>global comparison → Izu → empirical anchor</b><br />
-            <b>Ch.1 island</b> — 世界の島で response states の多様性を探索する。<br />
-            <b>Ch.2 izu-core</b> — simulation と伊豆 secondary analysis で response geometry を分解する。<br />
-            <b>Ch.3 shimahotarubukuro</b> — 伊豆へ固定した後の deep empirical anchor。<br />
-            <em>NEXT QUEST / repo TBD</em> — 訪花・繁殖・機能形質・historical phenotype を統合した伊豆 field experiment。
-          </p>
-          <p>
-            <strong>04 · 観測</strong> — <b>device → observability → decision</b><br />
-            <b>Ch.1 pollipi</b> — field device が何を記録できるか。<br />
-            <b>Ch.2 insepi</b> — disagreement と failure architecture。<br />
-            <b>Ch.3 tnoa</b> — 観測から何を判断してよいかという contract。<br />
-            <em>NEXT QUEST / repo TBD</em> — 独立現場校正で observation contract の field transfer を検証する。
-          </p>
-          <p>
-            <strong>05 · 方法論</strong> — <b>identification → next observation → external test</b><br />
-            <b>Ch.1 bita</b> — partial identification。<br />
-            <b>Ch.2 microdonta</b> — next observation。<br />
-            <b>Ch.3 eog</b> — exact world set と forecast summary。<br />
-            <b>Ch.4 acsp</b> — failed generalization を結果として保存。<br />
-            <b>Ch.5 sdmr</b> — candidate universe と information barrier。<br />
-            <em>NEXT QUEST / repo TBD</em> — sealed endpoint の結果から外部一般化か STOP を所有する次世代へ。
-          </p>
-          <p>
-            <strong>06 · 理論</strong> — <b>world → state → reportability</b><br />
-            <b>Ch.1 crest</b> — adequate state。<br />
-            <b>Ch.2 ccoc</b> — future obligation。<br />
-            <b>Ch.3 mltr</b> — history repair。<br />
-            <b>Ch.4 mrm</b> — mechanism robustness。<br />
-            <b>Ch.5 ced</b> — evidence licensing。<br />
-            <b>Ch.6 eco-genetic</b> — complete-state dynamics。<br />
-            <b>Ch.7 warning-ext</b> — failed early warning。<br />
-            <b>Ch.8 theouni</b> — provenance-preserving synthesis。<br />
-            <em>NEXT QUEST / repo TBD</em> — 明示的 observation map を持つ自然系で有限理論の bridge を外部検証する。
-          </p>
-        </div>
-      </section>
-
-      <section class="manifesto" aria-labelledby="chapter-rule-title">
-        <p class="eyebrow">QUEST OWNERSHIP RULE</p>
-        <h2 id="chapter-rule-title">新しい章が増えるのは、説明が増えたときではなく、新しい問いを所有できたとき。</h2>
-        <div class="manifesto-grid">
-          <p><strong>01</strong> 一つの repository が一つの問い・結果・claim ceiling・next question を所有する。したがって一つの chapter / quest に対応する。</p>
-          <p><strong>02</strong> island の「世界探索 → simulation → 伊豆収束 → secondary analysis → 実証」は5つの説明段階だが、所有 repository は3つなので3 quest。概念段階をそのままレベル数にしない。</p>
-          <p><strong>03</strong> 将来課題は <b>NEXT QUEST / repo TBD</b>。実装・証拠・claim ceiling を持つ repository が生まれた時点で初めて正式 quest に昇格する。</p>
-        </div>
-      </section>
-
-      <section class="atlas" aria-label="研究世界線アトラス">
-        <div class="atlas-toolbar">
-          <div class="view-tabs" role="tablist" aria-label="地図の表示方法">
-            <button class="view-tab is-active" type="button" role="tab" aria-selected="true" data-view="world">
-              Skill tree
-            </button>
-            <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="axes">
-              8 stats
-            </button>
-            <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="books">
-              Quest log
-            </button>
-          </div>
-          <label class="search-field">
-            <span class="sr-only">リポジトリを検索</span>
-            <input id="searchInput" type="search" placeholder="repo・概念・結論を検索" autocomplete="off" />
-            <kbd>/</kbd>
-          </label>
+      <div id="worldView" class="view-panel is-active" role="tabpanel">
+        <div class="series-filter" id="seriesFilter" aria-label="系統"></div>
+        <div class="story-strip" aria-label="経路">
+          <span>PATH</span>
+          <button type="button" data-story="azami">アザミ</button>
+          <button type="button" data-story="flower">花色</button>
+          <button type="button" data-story="island">島</button>
+          <button type="button" data-story="observation">観測</button>
+          <button type="button" data-story="method">方法</button>
+          <button type="button" data-story="theory">理論</button>
+          <button type="button" data-story="all">∞</button>
         </div>
 
-        <div id="worldView" class="view-panel is-active" role="tabpanel">
-          <div class="series-filter" id="seriesFilter" aria-label="系列フィルター"></div>
-
-          <div class="story-strip" aria-label="代表的な世界線">
-            <span>CHOOSE A SKILL TREE</span>
-            <button type="button" data-story="azami">アザミ</button>
-            <button type="button" data-story="flower">花色多型</button>
-            <button type="button" data-story="island">島</button>
-            <button type="button" data-story="observation">観測</button>
-            <button type="button" data-story="method">方法論</button>
-            <button type="button" data-story="theory">理論</button>
-            <button type="button" data-story="all">すべて表示</button>
-          </div>
-
-          <div class="map-layout">
-            <div class="map-column">
-              <div class="map-scroll" id="mapScroll">
-                <canvas id="worldCanvas" width="1320" height="690" aria-label="研究リポジトリ間のスキルツリー"></canvas>
-              </div>
-              <div class="map-legend" aria-label="線と状態の凡例">
-                <span><i class="line-solid"></i>skill tree 内の quest 接続</span>
-                <span><i class="line-dash"></i>skill tree 間の限定bridge</span>
-                <span><i class="dot-result"></i>cleared</span>
-                <span><i class="dot-open"></i>active quest</span>
-                <span><i class="dot-stop"></i>STOP・反証</span>
-              </div>
-              <div id="nodeList" class="node-list" aria-label="リポジトリ一覧"></div>
+        <div class="map-layout">
+          <div class="map-column">
+            <div class="map-scroll" id="mapScroll">
+              <canvas id="worldCanvas" width="1320" height="690" aria-label="zuizui の脳洞"></canvas>
             </div>
+            <div id="nodeList" class="node-list" aria-label="断片一覧"></div>
+          </div>
+          <aside id="detailPanel" class="detail-panel" aria-live="polite">
+            <div class="detail-empty"><span class="detail-orbit" aria-hidden="true"></span><p>触れて。</p></div>
+          </aside>
+        </div>
+      </div>
 
-            <aside id="detailPanel" class="detail-panel" aria-live="polite">
-              <div class="detail-empty">
-                <span class="detail-orbit" aria-hidden="true"></span>
-                <p>ノードを選ぶと、その quest の役割・現在の結論・claim ceiling・次に unlock する問いを表示します。</p>
-              </div>
-            </aside>
+      <div id="axesView" class="view-panel" role="tabpanel" hidden>
+        <div class="section-intro"><p class="eyebrow">COORDINATES</p><h2>8つの見方。</h2></div>
+        <div id="axisGrid" class="axis-grid"></div>
+      </div>
+
+      <div id="booksView" class="view-panel" role="tabpanel" hidden>
+        <div class="section-intro books-heading">
+          <div><p class="eyebrow">FRAGMENTS</p><h2>1 repo = 1 fragment.</h2></div>
+          <div class="route-switch" role="group" aria-label="断片の並び">
+            <button type="button" class="is-active" data-book-route="seven">系統</button>
+            <button type="button" data-book-route="eight">問い</button>
           </div>
         </div>
+        <div id="bookGrid" class="book-grid"></div>
+      </div>
+    </section>
 
-        <div id="axesView" class="view-panel" role="tabpanel" hidden>
-          <div class="section-intro">
-            <p class="eyebrow">PLAYER STATS · FOUR PAIRED LENSES</p>
-            <h2>8軸は研究分野ではなく、研究者として鍛えている stats。</h2>
-            <p>空間／時間、観測／現実、パターン／メカニズム、方法／理論。同じ quest を別方向から照らす能力値として読む。</p>
-          </div>
-          <div id="axisGrid" class="axis-grid"></div>
-        </div>
+    <section class="ending" aria-labelledby="ending-title">
+      <p class="eyebrow">TRUE END?</p>
+      <h2 id="ending-title">PhD in zuizui</h2>
+      <p>全部わかることではない。<br />何をわからないまま残すかまで、自分で決められること。</p>
+    </section>
+  </main>
 
-        <div id="booksView" class="view-panel" role="tabpanel" hidden>
-          <div class="section-intro books-heading">
-            <div>
-              <p class="eyebrow">QUEST LOG · ONE REPOSITORY, ONE CHAPTER</p>
-              <h2>24 repositories を24 quests として読む。</h2>
-              <p>系列順なら skill tree の内部成長が見え、問い順なら別系統で獲得した能力が同じ state 問題へどう合流するかが見える。</p>
-            </div>
-            <div class="route-switch" role="group" aria-label="quest route">
-              <button type="button" class="is-active" data-book-route="seven">skill tree 順</button>
-              <button type="button" data-book-route="eight">問い順</button>
-            </div>
-          </div>
-          <div id="bookGrid" class="book-grid"></div>
-        </div>
-      </section>
-
-      <section class="manifesto" aria-labelledby="manifesto-title">
-        <p class="eyebrow">TRUE ENDING CONDITION</p>
-        <h2 id="manifesto-title">中心にあることも、偉い肩書きも、ゲームクリアを意味しない。</h2>
-        <div class="manifesto-grid">
-          <p><strong>01</strong> Graphify は skill tree を示す。科学的証拠は、各 repository の凍結結果と一次文書にある。</p>
-          <p><strong>02</strong> STOP、反証、未識別も clear condition の一つ。無理に勝利演出へ書き換えない。</p>
-          <p><strong>03</strong> 最後に残る問いは「教授になれたか」ではなく、<b>この研究宇宙を見たとき、これは誰の世界観か。</b> 答えが zuizui なら true ending。</p>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <span>RESEARCHER DEVELOPMENT GAME</span>
-      <span>Vanity rank is temporary. PhD in zuizui is the true ending.</span>
-      <a href="https://github.com/zuizui0223" target="_blank" rel="noreferrer">github.com/zuizui0223 ↗</a>
-    </footer>
-
-    <script src="data.js"></script>
-    <script src="app.js"></script>
-  </body>
+  <footer><span>脳洞 / ZUIZUI</span><a href="https://github.com/zuizui0223" target="_blank" rel="noreferrer">SOURCE ↗</a></footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>
