@@ -1,0 +1,183 @@
+:root { --perspective-color: #d9d0aa; }
+
+.perspective-equation {
+  display: inline-flex;
+  align-items: center;
+  gap: .42rem;
+  margin: .72rem 0 0;
+  padding: .32rem .45rem;
+  border: 1px solid color-mix(in srgb, var(--perspective-color) 16%, transparent);
+  border-radius: 999px;
+  color: #777c85;
+  background: rgba(8,9,12,.18);
+  font: .5rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .055em;
+  cursor: pointer;
+  transition: color .25s ease, border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
+
+.perspective-equation i {
+  color: var(--perspective-color);
+  font-style: normal;
+  opacity: .5;
+}
+
+.perspective-equation:hover,
+.perspective-equation:focus-visible {
+  color: #b9b6ae;
+  border-color: color-mix(in srgb, var(--perspective-color) 42%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--perspective-color) 10%, transparent);
+  transform: translateX(2px);
+}
+
+.perspective-whisper {
+  display: block;
+  min-height: 1em;
+  margin-top: .38rem;
+  color: #555b65;
+  font: .55rem/1.6 "Yu Mincho", "Hiragino Mincho ProN", serif;
+  letter-spacing: .07em;
+  transition: color .25s ease;
+}
+
+.perspective-formula {
+  display: block;
+  margin-top: .48rem;
+  color: var(--perspective-color);
+  font: .48rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .06em;
+  opacity: .64;
+}
+
+.perspective-switch {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 6;
+  display: flex;
+  gap: .34rem;
+  transform: translate(-50%, 104px);
+}
+
+.perspective-switch button {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(233,230,221,.07);
+  border-radius: 50%;
+  color: #5d626c;
+  background: rgba(6,7,10,.72);
+  font: .62rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.perspective-switch button:hover,
+.perspective-switch button:focus-visible {
+  color: var(--perspective-color);
+  border-color: color-mix(in srgb, var(--perspective-color) 38%, transparent);
+  transform: rotate(-8deg);
+}
+
+.perspective-switch button.is-active {
+  color: #08090c;
+  border-color: var(--perspective-color);
+  background: var(--perspective-color);
+  box-shadow: 0 0 15px color-mix(in srgb, var(--perspective-color) 20%, transparent);
+}
+
+.perspective-audit {
+  position: absolute;
+  bottom: 1rem;
+  left: 1.1rem;
+  color: #373c44;
+  font: .43rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+
+.perspective-audit:hover,
+.perspective-audit:focus-visible { color: var(--perspective-color); }
+
+.portal,
+.axiom-ring button,
+.contours,
+.void {
+  transition: opacity .35s ease, filter .35s ease, transform .35s ease;
+}
+
+body:not([data-perspective="all"]) .portal.is-perspective-dim {
+  opacity: .12;
+  filter: none;
+}
+
+body:not([data-perspective="all"]) .portal.is-perspective-related {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+body:not([data-perspective="all"]) .axiom-ring button.is-perspective-dim {
+  opacity: .18;
+  filter: grayscale(.85);
+}
+
+body:not([data-perspective="all"]) .axiom-ring button.is-perspective-related {
+  color: #c9c5bc;
+  border-color: color-mix(in srgb, var(--axiom-color) 40%, transparent);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--axiom-color) 9%, transparent);
+}
+
+body[data-perspective="coordinate"] .contours {
+  opacity: .9;
+  transform: rotate(-1.2deg) scale(1.012);
+  transform-origin: center;
+}
+
+body[data-perspective="coordinate"] .portal-line {
+  stroke-dasharray: 1 8;
+}
+
+body[data-perspective="boundary"] .contours { opacity: .22; }
+
+body[data-perspective="boundary"] .portal-line {
+  stroke-dasharray: 1 12;
+  stroke-width: 1.4;
+}
+
+body[data-perspective="boundary"] .void { opacity: .56; }
+
+body[data-perspective="forgetting"] .contours { opacity: .12; }
+
+body[data-perspective="forgetting"] .void {
+  opacity: 1;
+  filter: drop-shadow(0 0 20px color-mix(in srgb, var(--perspective-color) 15%, transparent));
+  transform: scale(1.035);
+}
+
+body[data-perspective="forgetting"] .rank-true {
+  fill: var(--perspective-color);
+}
+
+@media (max-width: 720px) {
+  .perspective-equation { margin-top: .55rem; font-size: .46rem; }
+  .perspective-whisper { font-size: .5rem; }
+  .perspective-switch {
+    position: relative;
+    top: auto;
+    left: auto;
+    justify-content: center;
+    margin: 1rem auto 0;
+    transform: none;
+  }
+  .perspective-audit { bottom: .7rem; left: .85rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .perspective-equation,
+  .portal,
+  .axiom-ring button,
+  .contours,
+  .void { transition: none; }
+}
