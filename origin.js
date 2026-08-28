@@ -5,6 +5,7 @@
   if (!data) return;
 
   const ORIGIN_ID = "hotarubukuro";
+  const MOTIF = "hotarubukuro-motif.svg";
   const originNode = data.nodes.find((node) => node.id === ORIGIN_ID);
   if (!originNode) return;
 
@@ -81,9 +82,7 @@
 
     voidGroup.insertAdjacentHTML("beforeend", `
       <g class="origin-seed" aria-hidden="true">
-        <path class="origin-petal" d="M482 366C487 356 494 357 502 364C510 357 517 356 522 366C519 380 512 388 502 389C492 388 485 380 482 366Z" />
-        <path class="origin-fold" d="M490 368C495 372 499 374 502 364C505 374 509 372 514 368" />
-        <path class="origin-stem" d="M502 389C501 396 499 401 496 405" />
+        <image class="origin-bell" href="${MOTIF}" x="476" y="337" width="52" height="68" preserveAspectRatio="xMidYMid meet" />
       </g>`);
 
     document.querySelector(".portal-flower")?.classList.add("has-origin");
@@ -116,7 +115,7 @@
         const mark = document.createElement("a");
         mark.className = "detail-origin";
         mark.href = "origin-audit.json";
-        mark.textContent = "↺";
+        mark.innerHTML = `<img src="${MOTIF}" alt="" />`;
         mark.title = "origin != chapter order";
         mark.setAttribute("aria-label", "hotarubukuro is the portfolio origin and return point");
         const status = detail.querySelector(".detail-status");
@@ -154,6 +153,55 @@
     return Array.from(nodeList.querySelectorAll("button")).some((button) => firstText(button) === ORIGIN_ID);
   }
 
+  function drawBellMotif(context, x, y, scale) {
+    context.save();
+    context.translate(x, y);
+    context.rotate(-0.08);
+    context.scale(scale, scale);
+    context.fillStyle = "#e6b85c";
+    context.strokeStyle = "#e6b85c";
+    context.lineCap = "round";
+    context.lineJoin = "round";
+
+    context.globalAlpha = .72;
+    context.lineWidth = 1.35;
+    context.beginPath();
+    context.moveTo(6, -14);
+    context.bezierCurveTo(5, -9, 2, -4, 0, 0);
+    context.stroke();
+
+    context.globalAlpha = .48;
+    context.lineWidth = .9;
+    context.beginPath();
+    context.moveTo(0, -1);
+    context.bezierCurveTo(-3, -3, -5, -2, -7, 0);
+    context.moveTo(0, -1);
+    context.bezierCurveTo(3, -2, 5, 0, 6, 2);
+    context.stroke();
+
+    context.globalAlpha = .9;
+    context.lineWidth = 1.5;
+    context.beginPath();
+    context.moveTo(0, -1);
+    context.bezierCurveTo(-7, -1, -10, 5, -9, 12);
+    context.bezierCurveTo(-8, 18, -11, 21, -14, 24);
+    context.bezierCurveTo(-9, 22, -5, 23, -2, 27);
+    context.bezierCurveTo(0, 23, 3, 23, 6, 27);
+    context.bezierCurveTo(9, 23, 13, 23, 17, 25);
+    context.bezierCurveTo(13, 21, 11, 17, 12, 12);
+    context.bezierCurveTo(13, 5, 8, 0, 0, -1);
+    context.closePath();
+    context.stroke();
+
+    context.globalAlpha = .52;
+    [[-4, 13, 1.1], [2, 17, 1], [7, 12, .8]].forEach(([cx, cy, radius]) => {
+      context.beginPath();
+      context.arc(cx, cy, radius, 0, Math.PI * 2);
+      context.fill();
+    });
+    context.restore();
+  }
+
   function drawOriginHalo() {
     drawQueued = false;
     if (!canvas) return;
@@ -177,14 +225,13 @@
     ctx.beginPath();
     ctx.ellipse(originPoint.x, originPoint.y, 72, 28, .05, 0, Math.PI * 2);
     ctx.stroke();
+    ctx.restore();
 
-    ctx.setLineDash([]);
-    ctx.globalAlpha = visible ? .66 : .07;
-    ctx.fillStyle = "#e6b85c";
-    ctx.font = "9px ui-monospace, SFMono-Regular, Consolas, monospace";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText("↺", originPoint.x + 63, originPoint.y - 15);
+    ctx.save();
+    ctx.globalAlpha = visible ? .9 : .08;
+    ctx.shadowColor = "#e6b85c";
+    ctx.shadowBlur = visible ? 5 : 0;
+    drawBellMotif(ctx, originPoint.x + 61, originPoint.y - 26, .55);
     ctx.restore();
   }
 
