@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-08-28",
+  "scope": "default-branch README ownership, claim ceiling, next question and repository status",
+  "display_rule": "one active repository = one visible fragment",
+  "status_semantics": {
+    "result": "the current scientific core is closed; negative and conditional results count",
+    "bounded": "a repository-owned result exists with explicit external, empirical or transfer limits",
+    "open": "a prospectively frozen terminal gate remains unopened",
+    "stop": "retired or superseded; not an active fragment"
+  },
+  "active": [
+    {"repo":"azami","readme_blob":"d88b5bbc8edd219ae9974a8df0649b23ea9dc3e3","display_status":"bounded"},
+    {"repo":"EAzami","readme_blob":"b99ea33d277d431e324ebb3989fc4206a80eeae1","display_status":"result"},
+    {"repo":"fcp","readme_blob":"bcb0e54c9d2d2ccb38345f070673bf5c2cc87569","display_status":"bounded"},
+    {"repo":"chun","readme_blob":"23f9ba3579ac8c29f02e9739d2b80ba773fb4d02","display_status":"result"},
+    {"repo":"hotarubukuro","readme_blob":"d83c13bb7cd48883671434f25d7f9dfc72395a15","display_status":"result"},
+    {"repo":"island","readme_blob":"3b4979dab40da0522593623450a6121114711fbf","display_status":"result"},
+    {"repo":"izu-core","readme_blob":"6d7f242ce54759bf0c7387328095ab4b7483c860","display_status":"result"},
+    {"repo":"shimahotarubukuro","readme_blob":"c2a2f8d55df75b729ecdcf262da8ca3e8591a474","display_status":"result"},
+    {"repo":"pollipi","readme_blob":"7375a7850ad0c48d1a56bb962a3130cd01e0d50e","display_status":"bounded"},
+    {"repo":"insepi","readme_blob":"c13902bad0456fad81381d4a936fde706d4f47c2","display_status":"bounded"},
+    {"repo":"tnoa","readme_blob":"f2e8433a0711c41944dcd22a01123fb51d5ccff9","display_status":"result"},
+    {"repo":"bita","readme_blob":"2891f96d5b0294eb02731ae615b0a2f4bda4bb2a","display_status":"result"},
+    {"repo":"microdonta","readme_blob":"14cbb9bc2980056508487770d9941d23623eeece","display_status":"result"},
+    {"repo":"eog","readme_blob":"b2b2d2813f3e49a3bccc8a8a92abd8ef6c77f289","display_status":"bounded"},
+    {"repo":"acsp","readme_blob":"6dc6d9bd7561ad9fd33f9a25aa1edf73c5bdb0b9","display_status":"bounded"},
+    {"repo":"sdmr","readme_blob":"e16f5a46be8143d1ed7184f0c117a0f444905140","display_status":"open"},
+    {"repo":"crest","readme_blob":"67e7869ea0cd68b06a466a06ecb1002ce836a378","display_status":"result"},
+    {"repo":"ccoc","readme_blob":"6b5fb4ef4bcb0e7308e1290296be0f443d95ed57","display_status":"result"},
+    {"repo":"mltr","readme_blob":"fef70b35969ca3ce21c8fd1fe508aab4a0e2d880","display_status":"result"},
+    {"repo":"mrm","readme_blob":"16d1e6fc57f36a0bf826f827739b6e12c79d101e","display_status":"result"},
+    {"repo":"ced","readme_blob":"896afc7e561f26e704515c0ff348074ff4588c3d","display_status":"result"},
+    {"repo":"eco-genetic-criticality","readme_blob":"73526dc75c5e37c00199341a9d957b0c065b5418","display_status":"result"},
+    {"repo":"eco-genetic-warning-extensions","readme_blob":"8c8726186f0572ea2ed601c6782238cd6f8b629f","display_status":"result"},
+    {"repo":"theouni","readme_blob":"9f094d02d78f14524da6e9aba785b46470e2f175","display_status":"bounded"}
+  ],
+  "superseded": [
+    {
+      "repo": "odsp",
+      "readme_blob": "66bf6fbf8578002b03b1a4ab094b7bde4ec965b3",
+      "successor": "eog",
+      "visible": false,
+      "reason": "tombstone; active support-topology ownership moved to EOG"
+    }
+  ],
+  "philosophy": {
+    "title": "PhD in zuizui",
+    "sentence": "Not ownership of answers, but responsibility for what is retained, safely forgotten, and left revisable.",
+    "axioms": [
+      "difference is not a mean",
+      "same colour is not the same state",
+      "an island is not one response",
+      "nondetection is not absence",
+      "precision is not identification",
+      "state is licensed forgetting"
+    ]
+  }
+}
