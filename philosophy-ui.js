@@ -108,7 +108,7 @@
   enhanceDetail();
   enhanceNodeList();
 
-  ["repo-tracker.js", "perspective.js"].forEach((src) => {
+  ["repo-tracker.js", "perspective.js", "origin.js"].forEach((src) => {
     if (document.querySelector(`script[src="${src}"]`)) return;
     const addon = document.createElement("script");
     addon.src = src;
