@@ -14,15 +14,12 @@
   <title>脳洞 | zuizui</title>
   <link rel="icon" type="image/png" href="og.png" />
   <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="cave.css" />
 </head>
 <body>
   <a class="skip-link" href="#atlas">ENTER</a>
-
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="脳洞 ホーム">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span><strong>脳洞</strong><small>ZUIZUI / NOUDO</small></span>
-    </a>
+    <a class="brand" href="#top" aria-label="脳洞 ホーム"><span class="brand-mark" aria-hidden="true"></span><span><strong>脳洞</strong><small>ZUIZUI / NOUDO</small></span></a>
     <div class="snapshot"><span></span> SAVE 2026.08.28</div>
   </header>
 
@@ -33,9 +30,7 @@
       <h1 id="hero-title">脳洞</h1>
       <p class="hero-copy">問いは枝分かれする。<br />答えは、ときどき消える。</p>
       <a class="enter-link" href="#atlas">ENTER ↓</a>
-      <div class="rank-code" aria-label="研究者ランク">
-        雑魚院卒 <b>→</b> 博士 <b>→</b> 助教 <b>→</b> 准教授 <b>→</b> 教授 <b>→</b> 名誉教授 <b>→</b> 神 <b>≠</b> <em>PhD in zuizui</em>
-      </div>
+      <div class="rank-code" aria-label="研究者ランク">雑魚院卒 <b>→</b> 博士 <b>→</b> 助教 <b>→</b> 准教授 <b>→</b> 教授 <b>→</b> 名誉教授 <b>→</b> 神 <b>≠</b> <em>PhD in zuizui</em></div>
     </section>
 
     <section id="atlas" class="atlas" aria-label="脳洞マップ">
@@ -45,65 +40,26 @@
           <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="axes">座標</button>
           <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="books">断片</button>
         </div>
-        <label class="search-field">
-          <span class="sr-only">探索</span>
-          <input id="searchInput" type="search" placeholder="手掛かりを探す" autocomplete="off" />
-          <kbd>/</kbd>
-        </label>
+        <label class="search-field"><span class="sr-only">探索</span><input id="searchInput" type="search" placeholder="手掛かりを探す" autocomplete="off" /><kbd>/</kbd></label>
       </div>
 
       <div id="worldView" class="view-panel is-active" role="tabpanel">
         <div class="series-filter" id="seriesFilter" aria-label="系統"></div>
-        <div class="story-strip" aria-label="経路">
-          <span>PATH</span>
-          <button type="button" data-story="azami">アザミ</button>
-          <button type="button" data-story="flower">花色</button>
-          <button type="button" data-story="island">島</button>
-          <button type="button" data-story="observation">観測</button>
-          <button type="button" data-story="method">方法</button>
-          <button type="button" data-story="theory">理論</button>
-          <button type="button" data-story="all">∞</button>
-        </div>
-
+        <div class="story-strip" aria-label="経路"><span>PATH</span><button type="button" data-story="azami">アザミ</button><button type="button" data-story="flower">花色</button><button type="button" data-story="island">島</button><button type="button" data-story="observation">観測</button><button type="button" data-story="method">方法</button><button type="button" data-story="theory">理論</button><button type="button" data-story="all">∞</button></div>
         <div class="map-layout">
-          <div class="map-column">
-            <div class="map-scroll" id="mapScroll">
-              <canvas id="worldCanvas" width="1320" height="690" aria-label="zuizui の脳洞"></canvas>
-            </div>
-            <div id="nodeList" class="node-list" aria-label="断片一覧"></div>
-          </div>
-          <aside id="detailPanel" class="detail-panel" aria-live="polite">
-            <div class="detail-empty"><span class="detail-orbit" aria-hidden="true"></span><p>触れて。</p></div>
-          </aside>
+          <div class="map-column"><div class="map-scroll" id="mapScroll"><canvas id="worldCanvas" width="1320" height="690" aria-label="zuizui の脳洞"></canvas></div><div id="nodeList" class="node-list" aria-label="断片一覧"></div></div>
+          <aside id="detailPanel" class="detail-panel" aria-live="polite"><div class="detail-empty"><span class="detail-orbit" aria-hidden="true"></span><p>触れて。</p></div></aside>
         </div>
       </div>
 
-      <div id="axesView" class="view-panel" role="tabpanel" hidden>
-        <div class="section-intro"><p class="eyebrow">COORDINATES</p><h2>8つの見方。</h2></div>
-        <div id="axisGrid" class="axis-grid"></div>
-      </div>
-
-      <div id="booksView" class="view-panel" role="tabpanel" hidden>
-        <div class="section-intro books-heading">
-          <div><p class="eyebrow">FRAGMENTS</p><h2>1 repo = 1 fragment.</h2></div>
-          <div class="route-switch" role="group" aria-label="断片の並び">
-            <button type="button" class="is-active" data-book-route="seven">系統</button>
-            <button type="button" data-book-route="eight">問い</button>
-          </div>
-        </div>
-        <div id="bookGrid" class="book-grid"></div>
-      </div>
+      <div id="axesView" class="view-panel" role="tabpanel" hidden><div class="section-intro"><p class="eyebrow">COORDINATES</p><h2>8つの見方。</h2></div><div id="axisGrid" class="axis-grid"></div></div>
+      <div id="booksView" class="view-panel" role="tabpanel" hidden><div class="section-intro books-heading"><div><p class="eyebrow">FRAGMENTS</p><h2>1 repo = 1 fragment.</h2></div><div class="route-switch" role="group" aria-label="断片の並び"><button type="button" class="is-active" data-book-route="seven">系統</button><button type="button" data-book-route="eight">問い</button></div></div><div id="bookGrid" class="book-grid"></div></div>
     </section>
 
-    <section class="ending" aria-labelledby="ending-title">
-      <p class="eyebrow">TRUE END?</p>
-      <h2 id="ending-title">PhD in zuizui</h2>
-      <p>全部わかることではない。<br />何をわからないまま残すかまで、自分で決められること。</p>
-    </section>
+    <section class="ending" aria-labelledby="ending-title"><p class="eyebrow">TRUE END?</p><h2 id="ending-title">PhD in zuizui</h2><p>全部わかることではない。<br />何をわからないまま残すかまで、自分で決められること。</p></section>
   </main>
 
   <footer><span>脳洞 / ZUIZUI</span><a href="https://github.com/zuizui0223" target="_blank" rel="noreferrer">SOURCE ↗</a></footer>
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js"></script><script src="app.js"></script>
 </body>
 </html>
