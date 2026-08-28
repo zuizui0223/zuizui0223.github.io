@@ -1,0 +1,275 @@
+/* Philosophical layer: concealed until the central void is opened. */
+
+.philosophy-name {
+  display: block;
+  margin: .25rem 0 0;
+  padding: 0;
+  border: 0;
+  color: #555b65;
+  background: transparent;
+  font: .55rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+  cursor: pointer;
+  transition: color .2s ease;
+}
+
+.philosophy-name:hover,
+.philosophy-name:focus-visible { color: var(--accent); }
+
+.detail-pulse {
+  max-width: 16rem;
+  margin: .05rem 0 0;
+  color: #b7b3a6;
+  font: .68rem/1.75 "Yu Mincho", "Hiragino Mincho ProN", serif;
+  letter-spacing: .025em;
+}
+
+.path-axiom {
+  margin: 0 0 1rem;
+  color: #c6c0aa;
+  font: .75rem/1.6 "Yu Mincho", "Hiragino Mincho ProN", serif;
+  letter-spacing: .06em;
+}
+
+.ending {
+  width: 100%;
+  padding: 0;
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.ending small {
+  color: #4f545d;
+  font: .5rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+}
+
+.ending:hover strong,
+.ending:focus-visible strong { color: var(--accent); }
+
+.philosophy-dialog {
+  width: min(92vw, 760px);
+  max-width: none;
+  padding: 0;
+  overflow: visible;
+  border: 1px solid rgba(233,230,221,.08);
+  border-radius: 30px;
+  color: var(--ink);
+  background: rgba(6,7,10,.94);
+  box-shadow: 0 40px 160px rgba(0,0,0,.8), inset 0 0 90px rgba(217,208,170,.025);
+  backdrop-filter: blur(22px);
+}
+
+.philosophy-dialog::backdrop {
+  background: rgba(2,3,5,.78);
+  backdrop-filter: blur(7px);
+}
+
+.philosophy-shell {
+  position: relative;
+  min-height: min(72vh, 560px);
+  overflow: hidden;
+  border-radius: inherit;
+  isolation: isolate;
+}
+
+.philosophy-shell::before {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  z-index: -3;
+  opacity: .55;
+  background:
+    radial-gradient(circle at 50% 50%, transparent 0 11%, rgba(217,208,170,.045) 11.2% 11.5%, transparent 11.8% 22%, rgba(217,208,170,.03) 22.2% 22.5%, transparent 22.8% 37%, rgba(164,138,244,.025) 37.2% 37.5%, transparent 37.8%),
+    conic-gradient(from 17deg, rgba(233,129,145,.03), transparent 12%, rgba(230,184,92,.025) 22%, transparent 34%, rgba(85,196,174,.03) 46%, transparent 58%, rgba(99,191,224,.025) 70%, transparent 82%, rgba(164,138,244,.03));
+  animation: philosophyDrift 36s linear infinite;
+}
+
+.philosophy-rings {
+  position: absolute;
+  inset: 12%;
+  z-index: -1;
+  border: 1px solid rgba(217,208,170,.055);
+  border-radius: 48% 52% 55% 45% / 43% 54% 46% 57%;
+  transform: rotate(-6deg);
+}
+
+.philosophy-rings::before,
+.philosophy-rings::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(217,208,170,.04);
+  border-radius: 50%;
+}
+
+.philosophy-rings::before { inset: 12%; transform: rotate(19deg); }
+.philosophy-rings::after { inset: 26%; transform: rotate(-31deg); }
+
+.philosophy-close {
+  position: absolute;
+  top: .8rem;
+  right: .8rem;
+  z-index: 8;
+  display: grid;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(233,230,221,.08);
+  border-radius: 50%;
+  color: #686d76;
+  background: rgba(8,9,12,.45);
+  font: .65rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  cursor: pointer;
+}
+
+.philosophy-close:hover { color: var(--accent); }
+
+.philosophy-core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  display: grid;
+  width: 190px;
+  justify-items: center;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.philosophy-hole {
+  display: block;
+  width: 92px;
+  height: 72px;
+  margin-bottom: 1.2rem;
+  border: 1px solid rgba(217,208,170,.08);
+  border-radius: 47% 53% 62% 38% / 57% 42% 58% 43%;
+  background: radial-gradient(ellipse at 50% 48%, #000 0 42%, #020305 44% 62%, rgba(217,208,170,.035) 64% 65%, transparent 68%);
+  box-shadow: inset 0 0 30px #000, 0 0 45px rgba(0,0,0,.72);
+  animation: philosophyBreathe 9s ease-in-out infinite;
+}
+
+.philosophy-core strong {
+  color: #b6b1a2;
+  font: 500 .76rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+}
+
+.philosophy-core p {
+  margin: .8rem 0 0;
+  color: #666b74;
+  font: .62rem/1.9 "Yu Mincho", "Hiragino Mincho ProN", serif;
+  letter-spacing: .06em;
+}
+
+.axiom-ring button {
+  position: absolute;
+  z-index: 4;
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .45rem .6rem;
+  border: 1px solid color-mix(in srgb, var(--axiom-color) 18%, transparent);
+  border-radius: 999px;
+  color: #747983;
+  background: rgba(6,7,10,.72);
+  font: .57rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color .2s ease, border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.axiom-ring button i {
+  color: var(--axiom-color);
+  font-style: normal;
+  font-size: .82rem;
+}
+
+.axiom-ring button:hover,
+.axiom-ring button:focus-visible {
+  color: #c9c5bc;
+  border-color: color-mix(in srgb, var(--axiom-color) 45%, transparent);
+  box-shadow: 0 0 22px color-mix(in srgb, var(--axiom-color) 12%, transparent);
+  transform: translateY(-2px);
+}
+
+.axiom-ring button:nth-child(1) { top: 18%; left: 8%; }
+.axiom-ring button:nth-child(2) { top: 7%; left: 50%; transform: translateX(-50%); }
+.axiom-ring button:nth-child(2):hover,
+.axiom-ring button:nth-child(2):focus-visible { transform: translateX(-50%) translateY(-2px); }
+.axiom-ring button:nth-child(3) { top: 18%; right: 8%; }
+.axiom-ring button:nth-child(4) { bottom: 18%; right: 8%; }
+.axiom-ring button:nth-child(5) { bottom: 7%; left: 50%; transform: translateX(-50%); }
+.axiom-ring button:nth-child(5):hover,
+.axiom-ring button:nth-child(5):focus-visible { transform: translateX(-50%) translateY(-2px); }
+.axiom-ring button:nth-child(6) { bottom: 18%; left: 8%; }
+
+.philosophy-tail {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  color: #3f444c;
+  font: .47rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .16em;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+body.philosophy-open { overflow: hidden; }
+
+footer { grid-template-columns: 1fr auto auto auto; }
+
+@keyframes philosophyDrift { to { transform: rotate(360deg); } }
+@keyframes philosophyBreathe {
+  0%,100% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.045) rotate(2deg); }
+}
+
+@media (max-width: 720px) {
+  .philosophy-dialog { width: calc(100vw - 1rem); border-radius: 22px; }
+  .philosophy-shell { min-height: 76svh; padding: 4rem 1rem 2rem; }
+  .philosophy-rings { inset: 18% 8%; }
+  .philosophy-core { position: relative; top: auto; left: auto; width: auto; transform: none; }
+  .philosophy-hole { width: 72px; height: 56px; margin-bottom: .8rem; }
+  .axiom-ring {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .5rem;
+    margin-top: 2.2rem;
+  }
+  .axiom-ring button,
+  .axiom-ring button:nth-child(n) {
+    position: static;
+    justify-content: flex-start;
+    width: 100%;
+    min-width: 0;
+    transform: none;
+    white-space: normal;
+  }
+  .axiom-ring button:nth-child(n):hover,
+  .axiom-ring button:nth-child(n):focus-visible { transform: translateY(-1px); }
+  .philosophy-tail { bottom: .7rem; }
+  .ending { gap: .45rem; }
+  .ending small { display: none; }
+  footer { grid-template-columns: 1fr auto auto; }
+  footer span:nth-child(2) { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .philosophy-shell::before,
+  .philosophy-hole { animation: none; }
+}
+
+.philosophy-audit {
+  position: absolute;
+  right: 1.1rem;
+  bottom: 1rem;
+  color: #373c44;
+  font: .43rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+  text-decoration: none;
+}
+
+.philosophy-audit:hover { color: #767b84; }
