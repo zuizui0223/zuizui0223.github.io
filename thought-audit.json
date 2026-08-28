@@ -1,0 +1,192 @@
+{
+  "version": "2026-08-28.v2",
+  "source_snapshot": "repo-audit.json",
+  "purpose": "Derive one public line for each repository from the epistemic operation it owns, not from a promotional summary of its result.",
+  "definition": "A repository thought is the shortest sentence that states which distinction the repository makes scientifically consequential, which collapse it refuses, and what responsibility it passes forward.",
+  "construction_rules": [
+    "The line must remain true when the preferred hypothesis fails.",
+    "The line must describe an epistemic operation, not merely a topic, taxon, method or result.",
+    "Sibling repositories must not receive interchangeable lines.",
+    "The line must respect the repository claim ceiling and must not borrow a stronger claim from the next repository.",
+    "Negative, bounded, unavailable and set-valued outcomes must be expressible without apology or rescue language.",
+    "The public line stays short; its preserved distinction and refused collapse remain auditable here."
+  ],
+  "series_logic": {
+    "azami": "recover variation before averaging, then separate recurrence from historical localization",
+    "flower": "place variation in space, separate visible and molecular identity through time, then resolve one polymorphic system across scales",
+    "island": "unpack the island label into context, conditional response and trait-specific divergence",
+    "observation": "preserve a revisitable record, preserve unresolved evidence, then define what judgment the record licenses",
+    "method": "bound mechanism allocation, choose observations that split worlds, separate update from prediction, enforce external gates, and seal the answer check",
+    "theory": "define safe forgetting, expose future/history/mechanism obligations, license reports from evidence, test dynamic sufficiency and warning, then connect without centralizing ownership"
+  },
+  "thoughts": [
+    {
+      "repo": "azami",
+      "line": "平均は、種を代表するほど、種の内側を消す。",
+      "epistemic_move": "recover within-taxon continuous variation before taxon-level compression",
+      "preserves": "individual/observation-level phenotype structure and trait-specific spatial geography",
+      "refuses": "taxon mean as the phenotype itself"
+    },
+    {
+      "repo": "EAzami",
+      "line": "反復は数えられても、起点は一つに定まらない。",
+      "epistemic_move": "separate robust recurrence bounds from transition localization",
+      "preserves": "minimum recurrence and topology-sensitive historical uncertainty",
+      "refuses": "minimum change counts as independent origin, convergence or adaptation"
+    },
+    {
+      "repo": "fcp",
+      "line": "同じ変異が、ある場所では共存し、別の場所では地図になる。",
+      "epistemic_move": "treat local coexistence and geographic differentiation as distinct spatial organizations of variation",
+      "preserves": "where variation is organized, not only whether it exists",
+      "refuses": "present spatial organization as one maintenance mechanism or evolutionary history"
+    },
+    {
+      "repo": "chun",
+      "line": "同じ色は、同じ分子の道を丸ごと必要としない。",
+      "epistemic_move": "separate visible state, molecular implementation and historical event identity",
+      "preserves": "transition-class-dependent modular recurrence and event uncertainty",
+      "refuses": "visible similarity as complete molecular or evolutionary identity"
+    },
+    {
+      "repo": "hotarubukuro",
+      "line": "一つの多型は、解像するほど一つではなくなる。",
+      "epistemic_move": "resolve one polymorphic system across phenotype, spatial scale and ecological context",
+      "preserves": "multiple non-equivalent layers of the same named polymorphism",
+      "refuses": "one causal or analytical reduction across all layers"
+    },
+    {
+      "repo": "island",
+      "line": "島という一語が、異なる過程を一つの症候群に畳む。",
+      "epistemic_move": "separate observation process and ask when/where multivariate responses differ",
+      "preserves": "context-specific response vectors and unresolved regional testability",
+      "refuses": "distance as pure isolation treatment and no record as trait zero"
+    },
+    {
+      "repo": "izu-core",
+      "line": "同じ攪乱でも、出発点と出会いが未来の枝を選ぶ。",
+      "epistemic_move": "condition one perturbation on starting state and realized community",
+      "preserves": "mean response geometry and community-conditioned individual branching",
+      "refuses": "one universal monotonic post-perturbation response"
+    },
+    {
+      "repo": "shimahotarubukuro",
+      "line": "花は島で一方向に変わらず、形質ごとにほどける。",
+      "epistemic_move": "decompose one flower into phenotype axes with separate island structure",
+      "preserves": "trait-specific divergence in dimensions, entrance form, reproductive organs and guide coverage",
+      "refuses": "one island-syndrome score or Pst as selection evidence"
+    },
+    {
+      "repo": "pollipi",
+      "line": "観測は、判断より先に、戻れる記録でなければならない。",
+      "epistemic_move": "physically separate the primary scientific record from machine candidate decisions",
+      "preserves": "fixed-effort image sequences, shadow provenance and later reinspection",
+      "refuses": "candidate decisions or adaptive image counts as visit truth"
+    },
+    {
+      "repo": "insepi",
+      "line": "未決定は、答えの欠如ではなく、証拠の保存である。",
+      "epistemic_move": "retain target, nuisance, observability and absence evidence as non-complementary dimensions",
+      "preserves": "distinct reasons for unresolved evidence",
+      "refuses": "low target support as certified absence or nuisance truth"
+    },
+    {
+      "repo": "tnoa",
+      "line": "観測が与えるのは答えではなく、答えてよい範囲である。",
+      "epistemic_move": "convert observation records into explicit downstream judgment entitlement",
+      "preserves": "B/T/N/U and reason-preserving abstention",
+      "refuses": "raw thresholds and binary coarsening as transferable ecological decisions"
+    },
+    {
+      "repo": "bita",
+      "line": "総効果は、原因を束ねるが、原因を割り当てない。",
+      "epistemic_move": "read interaction effects as identified sets rather than unique allocations",
+      "preserves": "compatible channel allocations and the interventions required to shrink them",
+      "refuses": "mechanism naming by subtraction from a precise total effect"
+    },
+    {
+      "repo": "microdonta",
+      "line": "よい観測は、答えを増やすのではなく、残る世界を減らす。",
+      "epistemic_move": "choose the next observation by how it separates surviving causal worlds",
+      "preserves": "admissible causal sets, calibration conditions and observation order",
+      "refuses": "rich simulation or accurate proxy as mechanism identification"
+    },
+    {
+      "repo": "eog",
+      "line": "更新のために覚え、予測のために忘れる。",
+      "epistemic_move": "separate exact update/falsification identity from label-invariant predictive representation",
+      "preserves": "auditable world histories and predictive summaries that do not depend on world names",
+      "refuses": "discarding identity or treating identity itself as predictive value"
+    },
+    {
+      "repo": "acsp",
+      "line": "正の結果でも、決めた門を通らなければ一般化ではない。",
+      "epistemic_move": "give preregistered full-gate logic priority over favorable average outcomes",
+      "preserves": "validated Japanese candidate patches and failed external promotion",
+      "refuses": "positive lift or six passed gates as success when the seventh gate fails"
+    },
+    {
+      "repo": "sdmr",
+      "line": "答えを見る前に、何を答えと呼ぶかを凍らせる。",
+      "epistemic_move": "freeze candidate universe, method and full denominator outside the sealed answer check",
+      "preserves": "supported, unavailable, non-estimable and STOP as legitimate terminal states",
+      "refuses": "post-opening repair of predictors, denominator or success conditions"
+    },
+    {
+      "repo": "crest",
+      "line": "状態とは、世界そのものではなく、責任をもって忘れた世界である。",
+      "epistemic_move": "construct state as the coarsest contract-adequate quotient of temporally extended worlds",
+      "preserves": "differences required by future, history, mechanism, evidence and report responsibility",
+      "refuses": "snapshot or intrinsic natural classification as unconditional state"
+    },
+    {
+      "repo": "ccoc",
+      "line": "未来にできることが増えると、現在に残すべき差も増える。",
+      "epistemic_move": "let an enlarged future grammar refine present representational obligation",
+      "preserves": "counterfactual response distinctions made relevant by newly legal futures",
+      "refuses": "same present description as sufficient under every future grammar"
+    },
+    {
+      "repo": "mltr",
+      "line": "同じ現在でも、どこから来たかが意味を変える。",
+      "epistemic_move": "restore the minimum source/history context needed after replacement",
+      "preserves": "transportable laws, failed merges, least repair and necessary history modes",
+      "refuses": "same present form as same inherited operational meaning"
+    },
+    {
+      "repo": "mrm",
+      "line": "姿が同じでも、未来への応答が違えば、同じ状態ではない。",
+      "epistemic_move": "retain only mechanism distinctions that can change contract-relevant future response",
+      "preserves": "deterministic common laws, typed laws and set-valued reports",
+      "refuses": "preserving every mechanism difference or forgetting them all"
+    },
+    {
+      "repo": "ced",
+      "line": "必要な差、見えた差、言ってよい差は一致しない。",
+      "epistemic_move": "separate required state, identified state and reportable target",
+      "preserves": "evidence-compatible ambiguity, target-safe refinement and false-resolution risk",
+      "refuses": "theoretically required distinctions as already observed or reportable"
+    },
+    {
+      "repo": "eco-genetic-criticality",
+      "line": "同じ周辺量でも、重なり方が次の遷移を変える。",
+      "epistemic_move": "separate equality of marginals from equality of cross-layer alignment",
+      "preserves": "configuration information in the explicit state that changes the next transition",
+      "refuses": "same census/interaction/allele marginals as the same dynamic state"
+    },
+    {
+      "repo": "eco-genetic-warning-extensions",
+      "line": "先に起きることは、先を当てられることではない。",
+      "epistemic_move": "separate within-event temporal ordering from full-denominator predictive discrimination",
+      "preserves": "replicated ordering, zero specificity and state-conditional portability",
+      "refuses": "a pre-loss change as warning validity by itself"
+    },
+    {
+      "repo": "theouni",
+      "line": "接続しても、証拠の住所は移さない。",
+      "epistemic_move": "connect typed research objects while leaving primary ownership and provenance distributed",
+      "preserves": "non-identity among Reality, ModelWorld, State, Evidence and Report plus source ownership",
+      "refuses": "registry, synthesis or centrality as ownership of source evidence or theorems"
+    }
+  ]
+}
