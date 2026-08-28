@@ -1,27 +1,20 @@
 .origin-seed {
-  opacity: .2;
+  opacity: .25;
   pointer-events: none;
   transform-box: fill-box;
   transform-origin: center;
   transition: opacity .3s ease, transform .3s ease, filter .3s ease;
 }
 
-.origin-seed path {
-  fill: none;
-  stroke: var(--flower);
-  stroke-linecap: round;
-  stroke-linejoin: round;
+.origin-seed .origin-bell {
+  opacity: .92;
 }
-
-.origin-seed .origin-petal { stroke-width: .9; }
-.origin-seed .origin-fold { stroke-width: .55; opacity: .72; }
-.origin-seed .origin-stem { stroke-width: .65; opacity: .58; }
 
 .void:hover .origin-seed,
 .void:focus-visible .origin-seed {
-  opacity: .58;
-  filter: drop-shadow(0 0 7px rgba(230,184,92,.38));
-  transform: scale(1.07) rotate(-2deg);
+  opacity: .68;
+  filter: drop-shadow(0 0 8px rgba(230,184,92,.4));
+  transform: scale(1.06) rotate(-2deg);
 }
 
 .portal-flower.has-origin .portal-node {
@@ -30,41 +23,51 @@
 }
 
 .node-list button.is-origin {
-  padding-right: 1.35rem;
+  padding-right: 1.55rem;
   border-color: color-mix(in srgb, var(--flower) 24%, transparent);
   box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--flower) 5%, transparent);
 }
 
 .node-list button.is-origin::after {
-  content: "↺";
+  content: "";
   position: absolute;
-  right: .42rem;
+  right: .36rem;
   top: 50%;
-  color: var(--flower);
-  font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace;
-  opacity: .66;
-  transform: translateY(-50%);
+  width: 13px;
+  height: 17px;
+  background: url("hotarubukuro-motif.svg") center / contain no-repeat;
+  opacity: .7;
+  transform: translateY(-50%) rotate(-3deg);
 }
 
 .detail-origin {
   display: inline-grid;
-  width: 18px;
-  height: 18px;
-  margin: 0 0 .75rem .48rem;
+  width: 22px;
+  height: 22px;
+  margin: 0 0 .7rem .48rem;
   place-items: center;
-  border: 1px dashed color-mix(in srgb, var(--flower) 42%, transparent);
-  border-radius: 50%;
+  border: 1px solid color-mix(in srgb, var(--flower) 26%, transparent);
+  border-radius: 45% 55% 58% 42% / 50% 45% 55% 50%;
   color: var(--flower);
-  font: .52rem ui-monospace, SFMono-Regular, Consolas, monospace;
   text-decoration: none;
   vertical-align: middle;
-  opacity: .72;
+  opacity: .74;
+  transition: opacity .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.detail-origin img {
+  display: block;
+  width: 14px;
+  height: 17px;
+  object-fit: contain;
 }
 
 .detail-origin:hover,
 .detail-origin:focus-visible {
   opacity: 1;
-  box-shadow: 0 0 12px rgba(230,184,92,.16);
+  border-color: color-mix(in srgb, var(--flower) 52%, transparent);
+  box-shadow: 0 0 13px rgba(230,184,92,.18);
+  transform: rotate(-4deg);
 }
 
 .origin-path-note {
@@ -87,20 +90,49 @@
 }
 
 .book-card.is-origin-fragment::after {
-  content: "↺";
+  content: "";
   position: absolute;
-  top: .65rem;
-  right: .7rem;
-  color: var(--flower);
-  font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace;
-  opacity: .58;
+  top: .55rem;
+  right: .62rem;
+  width: 15px;
+  height: 19px;
+  background: url("hotarubukuro-motif.svg") center / contain no-repeat;
+  opacity: .62;
+  transform: rotate(-3deg);
+}
+
+.philosophy-hole::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 28px;
+  height: 37px;
+  background: url("hotarubukuro-motif.svg") center / contain no-repeat;
+  opacity: .18;
+  transform: translate(-50%, -48%) rotate(-3deg);
+  transition: opacity .3s ease, filter .3s ease, transform .3s ease;
+}
+
+.philosophy-hole {
+  position: relative;
+}
+
+.philosophy-hole:hover::after,
+.philosophy-core:hover .philosophy-hole::after {
+  opacity: .46;
+  filter: drop-shadow(0 0 7px rgba(230,184,92,.26));
+  transform: translate(-50%, -48%) rotate(-5deg) scale(1.04);
 }
 
 @media (max-width: 720px) {
   .origin-path-note { font-size: .45rem; }
   .path-code.origin-loop { font-size: .64rem; }
+  .philosophy-hole::after { width: 23px; height: 31px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .origin-seed { transition: none; }
+  .origin-seed,
+  .detail-origin,
+  .philosophy-hole::after { transition: none; }
 }
