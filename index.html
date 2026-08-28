@@ -6,7 +6,7 @@
   <meta name="description" content="zuizui / 張瑞琪。生態学・観測・方法・理論が交差する脳洞。" />
   <meta name="theme-color" content="#08090c" />
   <meta property="og:title" content="zuizui" />
-  <meta property="og:description" content="脳洞" />
+  <meta property="og:description" content="脳洞 — PhD in zuizui" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zuizui0223.github.io/" />
   <meta property="og:image" content="https://zuizui0223.github.io/og.png" />
@@ -16,6 +16,7 @@
   <link rel="alternate icon" type="image/png" href="og.png" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="cave.css" />
+  <link rel="stylesheet" href="philosophy.css" />
 </head>
 <body>
   <a class="skip-link" href="#atlas">map</a>
@@ -38,7 +39,7 @@
         <span class="identity-seal">脳洞</span>
         <h1 id="identity-name">zuizui</h1>
         <p>ZHANG Ruiqi</p>
-        <small>PhD in zuizui</small>
+        <button class="philosophy-name" type="button" data-philosophy>PhD in zuizui</button>
       </div>
 
       <div class="art-stage">
@@ -80,40 +81,22 @@
 
           <g class="portals">
             <g class="portal portal-azami" data-portal="azami" tabindex="0" role="button" aria-label="アザミ">
-              <title>アザミ</title>
-              <path id="portal-azami" class="portal-line" d="M458 340C361 285 286 205 179 126" />
-              <path class="portal-hit" d="M458 340C361 285 286 205 179 126" />
-              <circle class="portal-node" cx="179" cy="126" r="18" /><text x="179" y="131">✣</text>
+              <title>アザミ</title><path id="portal-azami" class="portal-line" d="M458 340C361 285 286 205 179 126" /><path class="portal-hit" d="M458 340C361 285 286 205 179 126" /><circle class="portal-node" cx="179" cy="126" r="18" /><text x="179" y="131">✣</text>
             </g>
-            <g class="portal portal-flower" data-portal="flower" tabindex="0" role="button" aria-label="花色多型">
-              <title>花色多型</title>
-              <path id="portal-flower" class="portal-line" d="M503 309C493 235 500 167 520 76" />
-              <path class="portal-hit" d="M503 309C493 235 500 167 520 76" />
-              <circle class="portal-node" cx="520" cy="76" r="18" /><text x="520" y="81">◐</text>
+            <g class="portal portal-flower" data-portal="flower" tabindex="0" role="button" aria-label="花色">
+              <title>花色</title><path id="portal-flower" class="portal-line" d="M503 309C493 235 500 167 520 76" /><path class="portal-hit" d="M503 309C493 235 500 167 520 76" /><circle class="portal-node" cx="520" cy="76" r="18" /><text x="520" y="81">◐</text>
             </g>
             <g class="portal portal-island" data-portal="island" tabindex="0" role="button" aria-label="島">
-              <title>島</title>
-              <path id="portal-island" class="portal-line" d="M548 334C657 278 741 207 844 126" />
-              <path class="portal-hit" d="M548 334C657 278 741 207 844 126" />
-              <circle class="portal-node" cx="844" cy="126" r="18" /><text x="844" y="131">⌁</text>
+              <title>島</title><path id="portal-island" class="portal-line" d="M548 334C657 278 741 207 844 126" /><path class="portal-hit" d="M548 334C657 278 741 207 844 126" /><circle class="portal-node" cx="844" cy="126" r="18" /><text x="844" y="131">⌁</text>
             </g>
             <g class="portal portal-observation" data-portal="observation" tabindex="0" role="button" aria-label="観測">
-              <title>観測</title>
-              <path id="portal-observation" class="portal-line" d="M551 391C665 437 753 512 855 596" />
-              <path class="portal-hit" d="M551 391C665 437 753 512 855 596" />
-              <circle class="portal-node" cx="855" cy="596" r="18" /><text x="855" y="601">◎</text>
+              <title>観測</title><path id="portal-observation" class="portal-line" d="M551 391C665 437 753 512 855 596" /><path class="portal-hit" d="M551 391C665 437 753 512 855 596" /><circle class="portal-node" cx="855" cy="596" r="18" /><text x="855" y="601">◎</text>
             </g>
-            <g class="portal portal-method" data-portal="method" tabindex="0" role="button" aria-label="方法論">
-              <title>方法論</title>
-              <path id="portal-method" class="portal-line" d="M507 420C516 494 514 568 500 657" />
-              <path class="portal-hit" d="M507 420C516 494 514 568 500 657" />
-              <circle class="portal-node" cx="500" cy="657" r="18" /><text x="500" y="662">∴</text>
+            <g class="portal portal-method" data-portal="method" tabindex="0" role="button" aria-label="方法">
+              <title>方法</title><path id="portal-method" class="portal-line" d="M507 420C516 494 514 568 500 657" /><path class="portal-hit" d="M507 420C516 494 514 568 500 657" /><circle class="portal-node" cx="500" cy="657" r="18" /><text x="500" y="662">∴</text>
             </g>
             <g class="portal portal-theory" data-portal="theory" tabindex="0" role="button" aria-label="理論">
-              <title>理論</title>
-              <path id="portal-theory" class="portal-line" d="M458 390C354 444 277 518 165 594" />
-              <path class="portal-hit" d="M458 390C354 444 277 518 165 594" />
-              <circle class="portal-node" cx="165" cy="594" r="18" /><text x="165" y="599">∞</text>
+              <title>理論</title><path id="portal-theory" class="portal-line" d="M458 390C354 444 277 518 165 594" /><path class="portal-hit" d="M458 390C354 444 277 518 165 594" /><circle class="portal-node" cx="165" cy="594" r="18" /><text x="165" y="599">∞</text>
             </g>
           </g>
 
@@ -123,22 +106,15 @@
             <circle r="2.4"><animateMotion dur="9s" begin="-2s" repeatCount="indefinite"><mpath href="#portal-method" /></animateMotion></circle>
           </g>
 
-          <g class="void" data-portal="all" tabindex="0" role="button" aria-label="すべて">
-            <title>すべて</title>
+          <g class="void" data-philosophy tabindex="0" role="button" aria-label="PhD in zuizui">
+            <title>PhD in zuizui</title>
             <path class="void-aura" d="M492 276C580 270 637 311 643 371C650 438 581 475 500 470C420 466 357 430 365 366C372 307 416 280 492 276Z" />
             <path class="void-shell" filter="url(#organic)" d="M495 296C568 292 616 323 620 372C625 424 568 452 501 449C434 446 382 418 388 368C394 321 431 299 495 296Z" />
             <ellipse class="void-core" cx="502" cy="372" rx="74" ry="57" fill="url(#voidFill)" filter="url(#softGlow)" />
           </g>
 
           <g class="rank-points" aria-label="研究者ランク">
-            <circle cx="431" cy="318" r="3"><title>雑魚院卒</title></circle>
-            <circle cx="454" cy="294" r="3"><title>博士</title></circle>
-            <circle cx="486" cy="284" r="3"><title>助教</title></circle>
-            <circle cx="521" cy="286" r="3"><title>准教授</title></circle>
-            <circle cx="550" cy="301" r="3"><title>教授</title></circle>
-            <circle cx="574" cy="326" r="3"><title>名誉教授</title></circle>
-            <circle cx="587" cy="356" r="3"><title>神</title></circle>
-            <circle class="rank-true" cx="589" cy="390" r="4"><title>PhD in zuizui</title></circle>
+            <circle cx="431" cy="318" r="3"><title>雑魚院卒</title></circle><circle cx="454" cy="294" r="3"><title>博士</title></circle><circle cx="486" cy="284" r="3"><title>助教</title></circle><circle cx="521" cy="286" r="3"><title>准教授</title></circle><circle cx="550" cy="301" r="3"><title>教授</title></circle><circle cx="574" cy="326" r="3"><title>名誉教授</title></circle><circle cx="587" cy="356" r="3"><title>神</title></circle><circle class="rank-true" cx="589" cy="390" r="4"><title>PhD in zuizui</title></circle>
           </g>
         </svg>
       </div>
@@ -154,54 +130,51 @@
           <button class="view-tab" type="button" role="tab" aria-selected="false" data-view="books" aria-label="fragments" title="fragments">⋮</button>
         </div>
         <div class="series-filter" id="seriesFilter" aria-label="paths"></div>
-        <label class="search-field">
-          <span class="sr-only">search</span>
-          <input id="searchInput" type="search" placeholder="⌕" autocomplete="off" aria-label="search" />
-        </label>
+        <label class="search-field"><span class="sr-only">search</span><input id="searchInput" type="search" placeholder="⌕" autocomplete="off" aria-label="search" /></label>
       </div>
 
       <div id="worldView" class="view-panel is-active" role="tabpanel">
         <div class="map-layout">
-          <div class="map-column">
-            <div class="map-scroll" id="mapScroll">
-              <canvas id="worldCanvas" width="1320" height="690" aria-label="zuizui map"></canvas>
-            </div>
-            <div id="nodeList" class="node-list" aria-label="repositories"></div>
-          </div>
-          <aside id="detailPanel" class="detail-panel" aria-live="polite">
-            <div class="detail-empty"><span class="detail-orbit" aria-hidden="true"></span></div>
-          </aside>
+          <div class="map-column"><div class="map-scroll" id="mapScroll"><canvas id="worldCanvas" width="1320" height="690" aria-label="zuizui map"></canvas></div><div id="nodeList" class="node-list" aria-label="repositories"></div></div>
+          <aside id="detailPanel" class="detail-panel" aria-live="polite"><div class="detail-empty"><span class="detail-orbit" aria-hidden="true"></span></div></aside>
         </div>
       </div>
 
-      <div id="axesView" class="view-panel" role="tabpanel" hidden>
-        <div id="axisGrid" class="axis-grid"></div>
-      </div>
-
-      <div id="booksView" class="view-panel" role="tabpanel" hidden>
-        <div class="fragment-toolbar">
-          <div class="route-switch" role="group" aria-label="order">
-            <button type="button" class="is-active" data-book-route="seven" aria-label="series order" title="series">Ⅰ</button>
-            <button type="button" data-book-route="eight" aria-label="question order" title="question">Ⅱ</button>
-          </div>
-        </div>
-        <div id="bookGrid" class="book-grid"></div>
-      </div>
+      <div id="axesView" class="view-panel" role="tabpanel" hidden><div id="axisGrid" class="axis-grid"></div></div>
+      <div id="booksView" class="view-panel" role="tabpanel" hidden><div class="fragment-toolbar"><div class="route-switch" role="group" aria-label="order"><button type="button" class="is-active" data-book-route="seven" aria-label="series order" title="series">Ⅰ</button><button type="button" data-book-route="eight" aria-label="question order" title="question">Ⅱ</button></div></div><div id="bookGrid" class="book-grid"></div></div>
     </section>
 
-    <section class="ending" aria-label="true ending">
-      <span>?</span>
-      <strong>PhD in zuizui</strong>
-    </section>
+    <button class="ending" type="button" data-philosophy aria-label="PhD in zuizui"><span>?</span><strong>PhD in zuizui</strong><small>忘却の責任</small></button>
   </main>
 
+  <dialog id="philosophyDialog" class="philosophy-dialog" aria-labelledby="philosophyTitle">
+    <div class="philosophy-shell">
+      <form method="dialog"><button class="philosophy-close" aria-label="close">×</button></form>
+      <div class="philosophy-rings" aria-hidden="true"></div>
+      <div class="philosophy-core">
+        <span class="philosophy-hole" aria-hidden="true"></span>
+        <strong id="philosophyTitle">PhD in zuizui</strong>
+        <p>答えの所有ではなく、<br />忘却の責任。</p>
+      </div>
+      <div class="axiom-ring">
+        <button type="button" data-axiom-series="azami" style="--axiom-color:#e98191"><i>✣</i><span>差 ≠ 平均</span></button>
+        <button type="button" data-axiom-series="flower" style="--axiom-color:#e6b85c"><i>◐</i><span>同色 ≠ 同状態</span></button>
+        <button type="button" data-axiom-series="island" style="--axiom-color:#55c4ae"><i>⌁</i><span>島 ≠ 一つの応答</span></button>
+        <button type="button" data-axiom-series="observation" style="--axiom-color:#63bfe0"><i>◎</i><span>未検出 ≠ 不在</span></button>
+        <button type="button" data-axiom-series="method" style="--axiom-color:#7cb7d6"><i>∴</i><span>精密 ≠ 同定</span></button>
+        <button type="button" data-axiom-series="theory" style="--axiom-color:#a48af4"><i>∞</i><span>状態 = 安全な忘却</span></button>
+      </div>
+      <a class="philosophy-audit" href="repo-audit.json" aria-label="repository audit" title="24 active · odsp → eog">24 · 1→EOG</a>
+      <div class="philosophy-tail">残す　／　忘れる　／　渡す</div>
+    </div>
+  </dialog>
+
   <footer>
-    <span>ZHANG Ruiqi</span>
-    <span>zuizui0223</span>
+    <span>ZHANG Ruiqi</span><span>zuizui0223</span>
+    <a href="repo-audit.json" aria-label="repository provenance" title="provenance">◌</a>
     <a href="https://github.com/zuizui0223" target="_blank" rel="noreferrer" aria-label="GitHub">↗</a>
   </footer>
 
-  <script src="data.js"></script>
-  <script src="app.js"></script>
+  <script src="data.js"></script><script src="philosophy-data.js"></script><script src="app.js"></script><script src="philosophy-ui.js"></script>
 </body>
 </html>
