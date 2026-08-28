@@ -107,4 +107,9 @@
   new MutationObserver(enhanceNodeList).observe(nodeList, { childList: true, subtree: true });
   enhanceDetail();
   enhanceNodeList();
+
+  const tracker = document.createElement("script");
+  tracker.src = "repo-tracker.js";
+  tracker.defer = true;
+  document.body.appendChild(tracker);
 })();
