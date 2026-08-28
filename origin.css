@@ -1,0 +1,106 @@
+.origin-seed {
+  opacity: .2;
+  pointer-events: none;
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity .3s ease, transform .3s ease, filter .3s ease;
+}
+
+.origin-seed path {
+  fill: none;
+  stroke: var(--flower);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.origin-seed .origin-petal { stroke-width: .9; }
+.origin-seed .origin-fold { stroke-width: .55; opacity: .72; }
+.origin-seed .origin-stem { stroke-width: .65; opacity: .58; }
+
+.void:hover .origin-seed,
+.void:focus-visible .origin-seed {
+  opacity: .58;
+  filter: drop-shadow(0 0 7px rgba(230,184,92,.38));
+  transform: scale(1.07) rotate(-2deg);
+}
+
+.portal-flower.has-origin .portal-node {
+  stroke-width: 1.35;
+  stroke-dasharray: 1.5 2.5;
+}
+
+.node-list button.is-origin {
+  padding-right: 1.35rem;
+  border-color: color-mix(in srgb, var(--flower) 24%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--flower) 5%, transparent);
+}
+
+.node-list button.is-origin::after {
+  content: "↺";
+  position: absolute;
+  right: .42rem;
+  top: 50%;
+  color: var(--flower);
+  font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  opacity: .66;
+  transform: translateY(-50%);
+}
+
+.detail-origin {
+  display: inline-grid;
+  width: 18px;
+  height: 18px;
+  margin: 0 0 .75rem .48rem;
+  place-items: center;
+  border: 1px dashed color-mix(in srgb, var(--flower) 42%, transparent);
+  border-radius: 50%;
+  color: var(--flower);
+  font: .52rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-decoration: none;
+  vertical-align: middle;
+  opacity: .72;
+}
+
+.detail-origin:hover,
+.detail-origin:focus-visible {
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(230,184,92,.16);
+}
+
+.origin-path-note {
+  display: block;
+  margin: 0 0 .45rem;
+  color: color-mix(in srgb, var(--flower) 74%, #777c85);
+  font: .48rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .09em;
+}
+
+.path-code.origin-loop {
+  color: #bdb69d;
+  line-height: 2.15;
+}
+
+.book-card.is-origin-fragment {
+  position: relative;
+  border-color: color-mix(in srgb, var(--flower) 24%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--flower) 5%, transparent);
+}
+
+.book-card.is-origin-fragment::after {
+  content: "↺";
+  position: absolute;
+  top: .65rem;
+  right: .7rem;
+  color: var(--flower);
+  font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  opacity: .58;
+}
+
+@media (max-width: 720px) {
+  .origin-path-note { font-size: .45rem; }
+  .path-code.origin-loop { font-size: .64rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .origin-seed { transition: none; }
+}
