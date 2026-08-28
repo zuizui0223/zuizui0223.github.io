@@ -1,3 +1,23 @@
+.brand-mark {
+  width: 18px;
+  height: 18px;
+  border: 0;
+  border-radius: 0;
+  background: url("hotarubukuro-motif.svg") center / contain no-repeat;
+  box-shadow: none;
+  opacity: .72;
+  animation: markDrift 11s ease-in-out infinite;
+  transition: opacity .25s ease, filter .25s ease;
+}
+
+.brand-mark::after { display: none; }
+
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark {
+  opacity: 1;
+  filter: drop-shadow(0 0 6px rgba(230,184,92,.3));
+}
+
 .origin-seed {
   opacity: .25;
   pointer-events: none;
@@ -132,6 +152,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .brand-mark,
   .origin-seed,
   .detail-origin,
   .philosophy-hole::after { transition: none; }
