@@ -1,0 +1,30 @@
+{
+  "version": "2026-08-28.origin-v1",
+  "repo": "hotarubukuro",
+  "relation_type": "portfolio provenance",
+  "statement": "hotarubukuro is the biographical and epistemic origin of the zuizui research universe while remaining Chapter 3 in the reconstructed flower-colour series.",
+  "distinction": "origin order != analytical chapter order",
+  "public_line": "一つの花色多型を畳めなかったことが、すべての座標を開いた。",
+  "epistemic_move": "Keep the original polymorphic system open instead of closing it under one cause; branch the question into space, evolutionary time, phenotype resolution, ecological context, observation and identification, then return those coordinates to the same system.",
+  "preserves": "The unresolved empirical origin and the loop by which questions derived from it later re-resolve the origin.",
+  "refuses": "Treating hotarubukuro only as a later empirical example or only as the third chapter of the flower-colour series.",
+  "loop": {
+    "origin": "hotarubukuro",
+    "expansion": [
+      "fcp",
+      "chun"
+    ],
+    "return": "hotarubukuro",
+    "display": "hotarubukuro ↻ fcp → chun → hotarubukuro"
+  },
+  "semantics": {
+    "origin_edge": "biographical and epistemic provenance, not scientific dependence or transfer of claim ownership",
+    "chapter_path": "analytical reconstruction of questions, not research chronology",
+    "return": "the later analytical coordinates are brought back to the original focal polymorphic system"
+  },
+  "claim_firewall": [
+    "The origin relation does not make hotarubukuro the scientific owner of results, data or theorems produced by other repositories.",
+    "The flower-colour chapter order remains fcp, chun, hotarubukuro when read as an analytical sequence.",
+    "Portfolio provenance is distinct from citation, causal dependence, code dependence and theorem dependence."
+  ]
+}
