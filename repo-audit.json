@@ -2,6 +2,22 @@
   "checked_at": "2026-08-28",
   "scope": "default-branch README ownership, claim ceiling, next question and repository status",
   "display_rule": "one active repository = one visible fragment",
+  "tracking": {
+    "movement": "Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
+    "default_branch_detail": "The latest default-branch commit is requested only when a fragment is opened.",
+    "claim_drift": "The current default-branch README blob is compared with the audited readme_blob when the philosophy layer is opened or a fragment is inspected.",
+    "cache_minutes": {
+      "repository_list": 15,
+      "repository_detail": 15,
+      "readme_audit": 360
+    },
+    "symbols": {
+      "pulse": "recent repository movement",
+      "diamond": "README differs from the audited public claim surface",
+      "dotted": "live verification unavailable"
+    },
+    "rule": "repository movement != scientific claim revision"
+  },
   "status_semantics": {
     "result": "the current scientific core is closed; negative and conditional results count",
     "bounded": "a repository-owned result exists with explicit external, empirical or transfer limits",
