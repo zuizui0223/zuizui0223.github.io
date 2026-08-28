@@ -57,6 +57,7 @@
         animation: repoPulse 3.2s ease-in-out infinite;
       }
       .repo-motion.is-hot { animation-duration: 1.9s; }
+      .repo-motion.is-unavailable { border-style: dotted; opacity: .38; }
       .repo-motion.has-drift {
         width: 6px;
         height: 6px;
@@ -84,6 +85,7 @@
         box-shadow: 0 0 10px color-mix(in srgb, var(--series-color) 42%, transparent);
         animation: repoPulse 3.2s ease-in-out infinite;
       }
+      .repo-sync-indicator.is-unavailable { border-style: dotted; opacity: .32; }
       .repo-sync-indicator.has-drift {
         border-color: #ef798a;
         border-radius: 0;
@@ -153,8 +155,8 @@
   function ageClass(dateValue) {
     if (!dateValue) return "quiet";
     const age = Math.max(0, (Date.now() - new Date(dateValue).getTime()) / 86400000);
-    if (age <= 3) return "hot";
-    if (age <= 14) return "recent";
+    if (age <= 1) return "hot";
+    if (age <= 7) return "recent";
     return "quiet";
   }
 
@@ -339,6 +341,7 @@
     const readme = readmeResult.status === "fulfilled" ? readmeResult.value : null;
     const audit = auditEntry(repo);
     const readmeSha = readme?.sha || readmeKnown?.readmeSha || null;
+    const readmeUnavailable = Boolean(readmeKnown?.unavailable || readmeResult.status !== "fulfilled");
     const drift = Boolean(readmeSha && audit?.readme_blob && readmeSha !== audit.readme_blob);
 
     const result = {
@@ -349,6 +352,7 @@
       headMessage: normalizedMessage(commit?.commit?.message),
       commitUrl: commit?.html_url || motion?.url || `https://github.com/${OWNER}/${repo}`,
       readmeSha,
+      readmeUnavailable,
       drift,
       activity: ageClass(commit?.commit?.committer?.date || commit?.commit?.author?.date || motion?.pushedAt),
       checkedAt: new Date().toISOString()
@@ -360,6 +364,7 @@
       readmeSha,
       auditedReadmeSha: audit?.readme_blob || null,
       drift,
+      unavailable: readmeUnavailable,
       checkedAt: result.checkedAt
     });
     cacheWrite(`${DETAIL_CACHE_PREFIX}${repo}`, result);
@@ -386,6 +391,7 @@
     const readme = readmeChecks.get(node.id);
     const activity = full?.activity || motion?.activity || "quiet";
     const drift = Boolean(readme?.drift || full?.drift);
+    const unavailable = Boolean(readme?.unavailable || full?.readmeUnavailable);
 
     let marker = button.querySelector(".repo-motion");
     if (!marker) {
@@ -398,6 +404,7 @@
     marker.classList.toggle("is-recent", activity === "recent" || activity === "hot");
     marker.classList.toggle("is-hot", activity === "hot");
     marker.classList.toggle("has-drift", drift);
+    marker.classList.toggle("is-unavailable", unavailable);
 
     const title = trackingTitle(node);
     button.title = title;
@@ -425,6 +432,7 @@
     const readme = readmeChecks.get(node.id);
     const activity = full?.activity || motion?.activity || "quiet";
     const drift = Boolean(full?.drift || readme?.drift);
+    const unavailable = Boolean(full?.readmeUnavailable || readme?.unavailable);
     let indicator = detail.querySelector(".repo-sync-indicator");
 
     if (!indicator) {
@@ -439,6 +447,7 @@
 
     indicator.classList.toggle("is-recent", activity === "recent" || activity === "hot");
     indicator.classList.toggle("has-drift", drift);
+    indicator.classList.toggle("is-unavailable", unavailable);
     indicator.href = full?.commitUrl || motion?.url || `https://github.com/${OWNER}/${node.id}`;
     indicator.title = trackingTitle(node);
     indicator.setAttribute("aria-label", indicator.title);
@@ -483,15 +492,16 @@
       return activity === "hot" || activity === "recent";
     }).length;
     const driftCount = data.nodes.filter((node) => repoDetails.get(node.id)?.drift || readmeChecks.get(node.id)?.drift).length;
+    const unavailableCount = data.nodes.filter((node) => repoDetails.get(node.id)?.readmeUnavailable || readmeChecks.get(node.id)?.unavailable).length;
 
     element.classList.toggle("is-live", motionLoaded);
     element.classList.toggle("has-drift", driftCount > 0);
     element.textContent = readmeAuditLoaded
-      ? `${activeCount} · ↻${recentCount} · Δ${driftCount}`
+      ? `${activeCount} · ↻${recentCount} · Δ${driftCount}${unavailableCount ? ` · ?${unavailableCount}` : ""}`
       : `${activeCount} · ↻${recentCount}`;
     element.href = "repo-audit.json";
     element.title = readmeAuditLoaded
-      ? `${activeCount} tracked · ${recentCount} recent · ${driftCount} README drift`
+      ? `${activeCount} tracked · ${recentCount} recent · ${driftCount} README drift · ${unavailableCount} unavailable`
       : `${activeCount} tracked · ${recentCount} recent · README audit opens with philosophy`;
     element.setAttribute("aria-label", element.title);
   }
