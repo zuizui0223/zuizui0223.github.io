@@ -5,45 +5,55 @@
   if (!data) return;
 
   const ID = "microdonta";
+  const MOTIF = "microdonta-constraint.svg";
   const node = data.nodes.find((item) => item.id === ID);
   if (!node) return;
 
   const role = {
-    primary: "method",
-    secondary: "theorem-backed",
+    navigation: "method",
+    character: "theory-method hinge",
+    paperA: "channel-identifiability boundary theory",
+    paperB: "RACH observation-selection methodology",
     mark: "⊢",
-    line: "原因を選べないとき、次の観測を選ぶ。",
-    move: "N1–N4で observation class の structural non-identifiability を切り出し、RACHで compatible mechanisms を集合として保ち、validated NOV / RACH-SEQで次の観測順序を選ぶ。",
-    keeps: "admissible causal set、mechanism-equivalence structure、not-estimable outcome、calibration condition、停止規則、観測順序。",
-    refuses: "best-model rankingを原因同定とみなすこと、hidden truthを候補順位へ混ぜること、未校正proxyをchannel measurementへ昇格すること。"
+    formula: "Ω → G(Ω) → Aε → Q*",
+    line: "測れない原因は、当てずに、制約で囲う。",
+    move: "自然史・物理・生態知を、結果を見てからの説明ではなく pre-data constraint grammar G(θ) に翻訳する。シミュレーションは latent truth を生成せず、観測と両立する admissible set Aε を囲う。",
+    keeps: "制約の provenance、inadmissible / incompatible / admissible / not-estimable の区別、bounded identified interval、残存因果集合、次観測の順序。",
+    refuses: "生態学的もっともらしさを causal proof にすること、simulation fit を truth にすること、post-data constraint や未校正 proxy で測定不能を埋めること。"
   };
 
   Object.assign(node, {
     series: "method",
     status: "result",
-    rolePrimary: role.primary,
-    roleSecondary: role.secondary,
+    rolePrimary: role.character,
+    roleNavigation: role.navigation,
+    rolePaperA: role.paperA,
+    rolePaperB: role.paperB,
+    constraintTrace: role.formula,
     pulse: role.line,
     thoughtMove: role.move,
     thoughtKeeps: role.keeps,
     thoughtRefuses: role.refuses,
-    summary: "N1–N4は観測クラスの同定境界を保証する。その境界で一つの原因を選ばず、RACHは残る因果プログラム、縮約不能な同値構造、validated NOVとRACH-SEQによる次観測を返す。定理は主役を方法へ変える保証層。",
-    ceiling: "admissible mechanismをtrue mechanismと呼ばず、synthetic selection benchmarkをfield causal validationへ移送しない。candidate outcome mapやproxy calibrationが不十分ならNOVはnot estimableのまま残す。",
-    next: "凍結したMEE coreを保ち、独立系のevidence-aware bundleで観測契約とcalibration gateを満たしたときだけempirical bridgeを開く。",
-    layers: ["method primary", "theorem spine", "admissible set", "next observation"]
+    summary: "Paper A は W=F×E と proxy calibration の下で、point / partial / non-identification の境界、identified interval、breakdown point を返す。Paper B は同じ思想を RACHへ運び、制約と観測に適合する因果世界を集合として残し、validated NOV / RACH-SEQ で次に測るものを選ぶ。",
+    ceiling: "自然史・物理制約は pre-data かつ監査可能でなければならない。admissible mechanism は true mechanism ではなく、simulation fit は field causal validation ではない。proxy drift や predictive outcome map が未同定なら point estimate や NOV を製造しない。",
+    next: "Paper A の bounded-drift boundary と Paper B の RACH method を別の主貢献として保ち、実データでは direct channel・安定校正 proxy・failure-aware observation bundle のいずれかを満たしたときだけ因果集合を縮める。",
+    layers: ["theory-method hinge", "constraint grammar", "possible worlds", "identified interval", "next observation"]
   });
 
   data.microdontaRole = role;
 
   if (data.series.method) {
-    data.series.method.lane = "ADMISSIBLE SET → NEXT OBSERVATION → WORLD SET → EXTERNAL GATE";
+    data.series.method.lane = "CONSTRAINT → ADMISSIBLE SET → NEXT OBSERVATION → WORLD SET → GATE";
   }
 
   if (data.stories.method) {
     const existing = data.stories.method.nodes.filter((id) => id !== ID);
     data.stories.method.nodes = [ID, ...existing.filter((id) => ["eog", "acsp", "sdmr"].includes(id))];
-    data.stories.method.text = "非同定を終点にせず、残存因果集合から次観測を選び、compatible worlds・外部gate・sealed endpointへ運ぶ。";
+    data.stories.method.text = "自然史と物理を答えではなく制約へ変え、残る世界を囲い、それらを最も分ける観測へ進む。";
   }
+
+  const bitaEdge = data.edges.find((edge) => edge.from === "bita" && edge.to === ID);
+  if (bitaEdge) bitaEdge.label = "identified set → constrained worlds";
 
   data.edges = data.edges.filter((edge) => !(edge.from === ID && edge.to === "ced"));
   data.edges.push({
@@ -54,8 +64,7 @@
   });
 
   data.axes.forEach((axis) => {
-    if (axis.name === "方法" && !axis.repos.includes(ID)) axis.repos.push(ID);
-    if (axis.name === "理論") axis.repos = axis.repos.filter((repo) => repo !== ID);
+    if ((axis.name === "方法" || axis.name === "理論") && !axis.repos.includes(ID)) axis.repos.push(ID);
   });
 
   if (data.books?.seven) {
@@ -65,7 +74,7 @@
         n: "M1",
         series: "method",
         title: `${ID} — ${role.line}`,
-        note: "theorem-backed method: admissible set → next observation。",
+        note: "one repository, two governed papers: boundary theory ↔ observation-selection method。",
         status: "1 repo = 1 chapter"
       });
     }
@@ -79,8 +88,8 @@
     const book = data.books.eight.find((item) => item.repos?.[0] === ID);
     if (book) {
       book.series = "method";
-      book.title = "When causes remain admissible, what should be observed next? — microdonta";
-      book.note = "theorem boundary → operational observation choice。";
+      book.title = "How can unmeasured causes be bounded without being invented? — microdonta";
+      book.note = "constraint grammar → admissible set → next observation。";
     }
   }
 
@@ -102,6 +111,7 @@
   const detail = document.getElementById("detailPanel");
   const nodeList = document.getElementById("nodeList");
   const bookGrid = document.getElementById("bookGrid");
+  const axisGrid = document.getElementById("axisGrid");
   const searchInput = document.getElementById("searchInput");
 
   function firstText(button) {
@@ -112,7 +122,7 @@
     nodeList?.querySelectorAll("button").forEach((button) => {
       if (firstText(button) !== ID) return;
       button.classList.add("is-method-theorem");
-      button.title = `${ID} · method / theorem spine · ${role.line}`;
+      button.title = `${ID} · theory / method hinge · ${role.line}`;
       button.setAttribute("aria-label", button.title);
     });
   }
@@ -121,6 +131,8 @@
     if (!detail) return;
     const heading = detail.querySelector("h3");
     if (heading?.textContent.trim() !== ID) return;
+
+    detail.querySelector(".detail-content")?.classList.add("is-microdonta");
 
     const pulse = detail.querySelector(".detail-pulse");
     if (pulse) {
@@ -134,31 +146,66 @@
       const marker = document.createElement("a");
       marker.className = "detail-method-role";
       marker.href = "microdonta-role-audit.json";
-      marker.textContent = role.mark;
-      marker.title = "methodology primary · theorem-backed";
+      marker.innerHTML = `<img src="${MOTIF}" alt="" />`;
+      marker.title = "Paper A: theory · Paper B: method";
       marker.setAttribute("aria-label", marker.title);
       const status = detail.querySelector(".detail-status");
       if (status) status.after(marker);
       else heading.after(marker);
+    }
+
+    if (!detail.querySelector(".microdonta-trace")) {
+      const trace = document.createElement("span");
+      trace.className = "microdonta-trace";
+      trace.textContent = role.formula;
+      trace.title = "possible worlds → feasible worlds → observation-compatible worlds → next observation";
+      trace.setAttribute("aria-label", trace.title);
+      if (pulse) pulse.after(trace);
+      else heading.after(trace);
     }
   }
 
   function enhanceBooks() {
     bookGrid?.querySelectorAll('[data-book-repo="microdonta"]').forEach((card) => {
       card.classList.add("is-method-theorem");
-      card.title = `${ID} · method / theorem spine · ${role.line}`;
+      card.title = `${ID} · theory / method hinge · ${role.line}`;
     });
+  }
+
+  function ensureTheoryAxisButton() {
+    if (!axisGrid) return;
+    const theoryCard = Array.from(axisGrid.querySelectorAll(".axis-card"))
+      .find((card) => card.title === "理論");
+    const host = theoryCard?.querySelector(".axis-repos");
+    if (!host || host.querySelector('[data-axis-repo="microdonta"]')) return;
+
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.axisRepo = ID;
+    button.textContent = ID;
+    button.setAttribute("aria-label", `${ID} · boundary theory / method hinge`);
+    button.addEventListener("click", () => {
+      document.querySelector('[data-view="world"]')?.click();
+      document.querySelector('[data-series="all"]')?.click();
+      window.requestAnimationFrame(() => {
+        Array.from(nodeList?.querySelectorAll("button") || [])
+          .find((item) => firstText(item) === ID)?.click();
+      });
+    });
+    host.appendChild(button);
   }
 
   function enhanceAll() {
     enhanceNodeList();
     enhanceDetail();
     enhanceBooks();
+    ensureTheoryAxisButton();
   }
 
   if (nodeList) new MutationObserver(enhanceNodeList).observe(nodeList, { childList: true, subtree: true });
   if (detail) new MutationObserver(enhanceDetail).observe(detail, { childList: true, subtree: true });
   if (bookGrid) new MutationObserver(enhanceBooks).observe(bookGrid, { childList: true, subtree: true });
+  if (axisGrid) new MutationObserver(ensureTheoryAxisButton).observe(axisGrid, { childList: true, subtree: true });
 
   enhanceAll();
   window.requestAnimationFrame(() => {
