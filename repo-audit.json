@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-08-28",
-  "scope": "default-branch README ownership, claim ceiling, next question and repository status",
+  "checked_at": "2026-08-30",
+  "scope": "audited scientific-ref README ownership, claim ceiling, next question and repository status",
   "display_rule": "one active repository = one visible fragment",
   "tracking": {
     "movement": "Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
-    "default_branch_detail": "The latest default-branch commit is requested only when a fragment is opened.",
-    "claim_drift": "The current default-branch README blob is compared with the audited readme_blob when the philosophy layer is opened or a fragment is inspected.",
+    "scientific_ref_detail": "Repositories are audited on the default branch unless an explicit scientific_ref is declared. SCH currently uses its active PR head because main is a placeholder.",
+    "claim_drift": "The current README blob on the audited scientific ref is compared with readme_blob when the philosophy layer is opened or a fragment is inspected.",
     "cache_minutes": {
       "repository_list": 15,
       "repository_detail": 15,
@@ -21,7 +21,7 @@
   "status_semantics": {
     "result": "the current scientific core is closed; negative and conditional results count",
     "bounded": "a repository-owned result exists with explicit external, empirical or transfer limits",
-    "open": "a prospectively frozen terminal gate remains unopened",
+    "open": "a prospectively frozen or explicitly staged scientific gate remains unresolved",
     "stop": "retired or superseded; not an active fragment"
   },
   "active": [
@@ -36,6 +36,7 @@
     {"repo":"pollipi","readme_blob":"7375a7850ad0c48d1a56bb962a3130cd01e0d50e","display_status":"bounded"},
     {"repo":"insepi","readme_blob":"c13902bad0456fad81381d4a936fde706d4f47c2","display_status":"bounded"},
     {"repo":"tnoa","readme_blob":"f2e8433a0711c41944dcd22a01123fb51d5ccff9","display_status":"result"},
+    {"repo":"sch","readme_blob":"846930aac6e36ad4b8d5268469d998f665ee81ef","display_status":"open","scientific_ref":"codex/shared-cue-hypothesis-migration","ref_kind":"active_pr_head","pr":1},
     {"repo":"bita","readme_blob":"2891f96d5b0294eb02731ae615b0a2f4bda4bb2a","display_status":"result"},
     {"repo":"microdonta","readme_blob":"14cbb9bc2980056508487770d9941d23623eeece","display_status":"result"},
     {"repo":"eog","readme_blob":"b2b2d2813f3e49a3bccc8a8a92abd8ef6c77f289","display_status":"bounded"},
@@ -67,6 +68,7 @@
       "same colour is not the same state",
       "an island is not one response",
       "nondetection is not absence",
+      "a shared cue is not one-way attraction",
       "precision is not identification",
       "state is licensed forgetting"
     ]
