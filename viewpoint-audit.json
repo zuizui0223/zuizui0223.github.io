@@ -2,11 +2,11 @@
   "checked_at": "2026-08-30",
   "purpose": "State the portfolio-level viewpoint without transferring scientific ownership from source repositories.",
   "repository_identity_source": "repo-audit.json",
-  "central_question": "Which distinctions become visible, necessary, identifiable, reportable, or safely forgettable when the coordinate system, receiver set, observation contract, future responsibility, retained mechanism set, or report target changes?",
+  "central_question": "Which distinctions become visible, necessary, identifiable, reportable, constrainable, or safely forgettable when the coordinate system, receiver set, observation contract, physical/ecological constraint grammar, future responsibility, retained mechanism set, or report target changes?",
   "novelty_claim": {
-    "allowed": "A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, evidence-, and contract-relative state structure, while unresolved, negative, unavailable and conflicting outcomes remain part of the scientific object.",
+    "allowed": "A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, constraint-, evidence-, and contract-relative state structure, while unresolved, negative, unavailable and conflicting outcomes remain part of the scientific object.",
     "forbidden": [
-      "priority for task-relative representation, abstention, partial identification, state abstraction, quotient theory, or shared-cue conflict in general",
+      "priority for task-relative representation, abstention, partial identification, state abstraction, quotient theory, shared-cue conflict, or constrained simulation in general",
       "one universal ecological state definition already validated in nature",
       "one causal mechanism shared by all empirical series",
       "central synthesis ownership of source data, proofs, or primary claims"
@@ -38,7 +38,7 @@
       "glyph": "∅",
       "surface": "答えより、境界。",
       "formula": "U ≠ 0",
-      "meaning": "Undetermined, set-valued, adverse, unavailable, conflicting and failed-generalization outcomes are retained instead of being forced into success, absence or one best explanation.",
+      "meaning": "Undetermined, set-valued, constraint-bounded, adverse, unavailable, conflicting and failed-generalization outcomes are retained instead of being forced into success, absence or one best explanation.",
       "repositories": [
         "pollipi",
         "insepi",
@@ -51,7 +51,7 @@
         "sdmr",
         "eco-genetic-warning-extensions"
       ],
-      "firewall": "A negative, sparse or bounded result is not automatically a biological null, and repository movement is not scientific claim revision."
+      "firewall": "A negative, sparse, plausible or bounded result is not automatically a biological null or causal truth, and repository movement is not scientific claim revision."
     },
     {
       "id": "forgetting",
@@ -74,6 +74,13 @@
       "firewall": "The quotient is contract-relative, not arbitrary, intrinsic, universal, or automatically identified by current evidence."
     }
   ],
+  "constraint_principle": {
+    "owner": "microdonta",
+    "surface": "当てずに、囲う。",
+    "formula": "Ω → G(Ω) → Aε → Q*",
+    "meaning": "Natural-history and physical knowledge are translated into auditable pre-data constraints; simulation propagates consequences and removes impossible worlds; observations remove incompatible worlds; no step manufactures an unmeasured causal truth.",
+    "next_action": "When several worlds remain, choose an estimable observation by how it separates those worlds under the declared objective."
+  },
   "cross_repository_invariants": [
     "difference is not a mean",
     "visible similarity is not state identity",
@@ -81,10 +88,13 @@
     "nondetection is not absence",
     "a shared cue is not one-way attraction",
     "escape sign is not mechanism allocation",
+    "ecological plausibility is not causal identification",
+    "simulation constrains possible worlds; it does not fill latent truth",
+    "constraints must be pre-data, explicit and provenance-preserving",
     "precision is not identification",
     "required state is not identified state and is not reportable target by default",
     "connection is not ownership",
     "revision must preserve provenance"
   ],
-  "phd_in_zuizui": "Not ownership of one final answer, but responsibility for which distinctions are retained, left unresolved, safely forgotten, and passed forward as revisable provenance."
+  "phd_in_zuizui": "Not ownership of one final answer, but responsibility for which distinctions are retained, constrained, left unresolved, safely forgotten, and passed forward as revisable provenance."
 }
