@@ -7,7 +7,7 @@
   const nodeList = document.getElementById("nodeList");
   if (!data) return;
 
-  const statusLabels = { result: "closed", bounded: "bounded", open: "sealed", stop: "retired" };
+  const statusLabels = { result: "closed", bounded: "bounded", open: "open", stop: "retired" };
   const labelOf = (node) => node.label || node.id;
 
   function openDialog() {
