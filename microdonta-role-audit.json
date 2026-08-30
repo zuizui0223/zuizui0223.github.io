@@ -1,0 +1,61 @@
+{
+  "checked_at": "2026-08-30",
+  "repo": "microdonta",
+  "source_snapshot": {
+    "head": "f72da02c072e751e0ff50f9e22df67da5e124821",
+    "readme_blob": "14cbb9bc2980056508487770d9941d23623eeece",
+    "paper_readme_blob": "47b646594e9ecfe7ddd746b0f9a71234a488723e",
+    "mainline_blob": "c74562fe972ee91fdcba59a7a4b5e660e9289cba",
+    "submission_manifest_blob": "3b69c509852af0ee29038ffc0088aff6f8fb66a9"
+  },
+  "decision": {
+    "primary_series": "method",
+    "secondary_character": "theorem-backed",
+    "not_primary_series": "theory",
+    "site_role": "M1 — the method-series hinge between an identified-set problem and sequential observation design"
+  },
+  "public_line": "原因を選べないとき、次の観測を選ぶ。",
+  "reasoning": {
+    "scientific_question": "Given a declared mechanism vocabulary, constraints and observations, which causal explanations remain admissible and which candidate observation should be taken next?",
+    "primary_output": [
+      "restricted admissible causal hypothesis set",
+      "causal degeneracy and resolvability",
+      "mechanism-equivalence structure",
+      "validated next-observation value",
+      "RACH-SEQ observation order and stopping rule",
+      "explicit not-estimable result when a predictive observation map is unavailable"
+    ],
+    "operational_contract": "The repository has declared inputs, executable inference, software/API outputs, synthetic selection benchmarks, empirical-bundle intake and a prospective measurement design.",
+    "theory_role": "N1–N4 and Propositions 1–7 certify structural boundaries and guarantees for the method. They are the method's load-bearing spine, not a separate claim that microdonta owns ecological-state theory.",
+    "validation_role": "The frozen truth-peek-free benchmark evaluates observation-selection behavior and false exclusion. It is algorithm validation, not evidence that one ecological mechanism is true in nature.",
+    "publication_signal": "The canonical product is a Methods in Ecology and Evolution Research Article with theorem, method, validation, projection and prospective-design components."
+  },
+  "contrast": {
+    "with_bita": "BITA derives the identified set and the measurements/interventions required to shrink a specific mechanism allocation. microdonta generalizes the operational step: retain all compatible causal programs and choose an observation sequence.",
+    "with_ced": "CED is theorem-first evidence/reportability theory over declared finite worlds and targets. microdonta is an executable method that approximates a declared admissible mechanism region and selects measurements by mechanism information. Full mechanism information and target-safe reportability are not the same objective.",
+    "with_crest": "CREST defines contract-relative ecological state and safe forgetting. microdonta explicitly does not own ecological-state philosophy; it operates between an observation contract and the next measurement.",
+    "with_eog": "Both are set-preserving methods. microdonta operates on causal-mechanism sets and observation choice; EOG operates on compatible biogeographic worlds, sequential updating and forecast projection."
+  },
+  "classification_test": {
+    "would_remain_method_if_theorems_were_removed": "The framework would lose its strongest guarantees but would still be an inference and observation-design procedure.",
+    "would_remain_theory_if_algorithm_and_outputs_were_removed": "Only a subset of the repository's contribution would remain; the canonical RACH product, benchmark and prospective design would be lost.",
+    "verdict": "methodology primary, theory-bearing rather than theory-primary"
+  },
+  "claim_firewall": [
+    "admissible mechanism is not true mechanism",
+    "synthetic success is not field causal validation",
+    "a rich simulator is not automatically theorem-exact",
+    "a proxy is not a channel measurement without stable or separate calibration",
+    "mechanism-information gain is not automatically target-safe reportability"
+  ],
+  "portfolio_connections": {
+    "incoming": "bita → microdonta: identified set → next-observation procedure",
+    "mainline": "microdonta → eog: causal-set method → compatible-world update/forecast method",
+    "theory_bridge": "microdonta ↔ ced: mechanism-information design ↔ evidence-licensed target report"
+  },
+  "supersedes_for_microdonta": {
+    "file": "thought-audit.json",
+    "old_line": "よい観測は、答えを増やすのではなく、残る世界を減らす。",
+    "reason": "The old line captured information reduction but did not distinguish the repository's method role from neighboring theory and evidence-design repositories."
+  }
+}
