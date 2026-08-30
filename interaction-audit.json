@@ -1,0 +1,48 @@
+{
+  "checked_at": "2026-08-30",
+  "series": "interaction",
+  "glyph": "⋈",
+  "axiom": "合図 ≠ 一方通行",
+  "question": "What happens when one floral cue is read by both mutualists and antagonists, and can a second defence coordinate release that conflict without collapsing outcome and mechanism into one claim?",
+  "chapters": [
+    {
+      "chapter": "B1",
+      "repo": "sch",
+      "scientific_ref": "codex/shared-cue-hypothesis-migration",
+      "pr": 1,
+      "status": "open",
+      "one_line": "共有された合図では、魅力は味方だけに届かない。",
+      "estimand": "M_A, G_A and S_A = M_A - G_A on one predeclared attraction/display coordinate A",
+      "current_boundary": "The active PR has a frozen 868-record systematic-screening universe; screening, geography coding, same-code receiver evidence and historical L4 transition evidence remain incomplete. DIRECT_L4 / private-cue origin is NOT_EVALUABLE rather than absent.",
+      "refuses": "Treating pollinator attraction as pure benefit, sparse evidence as biological absence, or SCH evidence as if it were BITA A×D evidence."
+    },
+    {
+      "chapter": "B2",
+      "repo": "bita",
+      "scientific_ref": "main",
+      "status": "result",
+      "one_line": "逃げ道が開いても、何が開けたかは一つに定まらない。",
+      "estimand": "Delta_AD W and its compatible allocation among antagonist relief, pollinator interference and remaining joint channel",
+      "current_boundary": "A valid total A×D interaction can decide the outcome-level escape sign under the declared common-outcome design, while the same total surface does not point-identify mechanism allocation. Current screened systems do not yet establish robust positive empirical escape or full allocation.",
+      "refuses": "Calling the total sign a full mechanism explanation or naming the residual joint channel by subtraction alone."
+    }
+  ],
+  "sequence": [
+    "one shared cue carries benefit and cost",
+    "evolution may compromise, specialize, maintain polymorphism, differentiate, branch or modularize",
+    "a second antagonist-reducing coordinate may create outcome-level escape",
+    "escape sign and mechanism allocation are separate questions"
+  ],
+  "cross_series_bridge": {
+    "from": "bita",
+    "to": "microdonta",
+    "meaning": "BITA supplies a concrete identified-set problem; microdonta generalizes how surviving causal worlds guide the next observation.",
+    "ownership": "bridge only; neither repository acquires the other's primary scientific claims"
+  },
+  "claim_firewall": [
+    "SCH is not a one-trait subset of the BITA estimand; it owns a distinct one-coordinate conflict question.",
+    "BITA may use SCH as biological motivation for adding D, but SCH evidence does not demonstrate an A×D interaction.",
+    "The series is biological first and identification-aware second; moving BITA out of the generic method series does not remove its partial-identification contribution.",
+    "The active SCH scientific surface is currently on PR #1 rather than the nearly empty default branch."
+  ]
+}
