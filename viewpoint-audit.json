@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-08-28",
+  "checked_at": "2026-08-30",
   "purpose": "State the portfolio-level viewpoint without transferring scientific ownership from source repositories.",
   "repository_identity_source": "repo-audit.json",
-  "central_question": "Which distinctions become visible, necessary, identifiable, reportable, or safely forgettable when the coordinate system, observation contract, future responsibility, retained mechanism set, or report target changes?",
+  "central_question": "Which distinctions become visible, necessary, identifiable, reportable, or safely forgettable when the coordinate system, receiver set, observation contract, future responsibility, retained mechanism set, or report target changes?",
   "novelty_claim": {
-    "allowed": "A portfolio-level viewpoint: ecological variation is treated as coordinate-, evidence-, and contract-relative state structure, while unresolved, negative, and unavailable outcomes remain part of the scientific object.",
+    "allowed": "A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, evidence-, and contract-relative state structure, while unresolved, negative, unavailable and conflicting outcomes remain part of the scientific object.",
     "forbidden": [
-      "priority for task-relative representation, abstention, partial identification, state abstraction, or quotient theory in general",
+      "priority for task-relative representation, abstention, partial identification, state abstraction, quotient theory, or shared-cue conflict in general",
       "one universal ecological state definition already validated in nature",
       "one causal mechanism shared by all empirical series",
       "central synthesis ownership of source data, proofs, or primary claims"
@@ -18,7 +18,7 @@
       "glyph": "⌖",
       "surface": "原因より、座標。",
       "formula": "Ω × V → X_V",
-      "meaning": "The same biological world may reveal different structure under space, evolutionary time, phenotype resolution, ecological context, and assembly level.",
+      "meaning": "The same biological world may reveal different structure under space, evolutionary time, phenotype resolution, ecological context, assembly level, or the number of trait coordinates available to different receivers.",
       "repositories": [
         "azami",
         "EAzami",
@@ -27,20 +27,23 @@
         "hotarubukuro",
         "island",
         "izu-core",
-        "shimahotarubukuro"
+        "shimahotarubukuro",
+        "sch",
+        "bita"
       ],
-      "firewall": "Changing coordinates or resolution does not identify one causal mechanism."
+      "firewall": "Changing coordinates, resolution or receiver framing does not identify one causal mechanism."
     },
     {
       "id": "boundary",
       "glyph": "∅",
       "surface": "答えより、境界。",
       "formula": "U ≠ 0",
-      "meaning": "Undetermined, set-valued, adverse, unavailable, and failed-generalization outcomes are retained instead of being forced into success, absence, or one best explanation.",
+      "meaning": "Undetermined, set-valued, adverse, unavailable, conflicting and failed-generalization outcomes are retained instead of being forced into success, absence or one best explanation.",
       "repositories": [
         "pollipi",
         "insepi",
         "tnoa",
+        "sch",
         "bita",
         "microdonta",
         "eog",
@@ -48,14 +51,14 @@
         "sdmr",
         "eco-genetic-warning-extensions"
       ],
-      "firewall": "A negative or bounded result is not automatically a biological null, and repository movement is not scientific claim revision."
+      "firewall": "A negative, sparse or bounded result is not automatically a biological null, and repository movement is not scientific claim revision."
     },
     {
       "id": "forgetting",
       "glyph": "≈",
       "surface": "分類より、忘却。",
       "formula": "S(C) = Ω / ~C",
-      "meaning": "State identity is defined by which distinctions may be safely forgotten for a declared future, history, mechanism, evidence, and report responsibility.",
+      "meaning": "State identity is defined by which distinctions may be safely forgotten for a declared future, history, mechanism, evidence and report responsibility.",
       "repositories": [
         "crest",
         "ccoc",
@@ -76,6 +79,8 @@
     "visible similarity is not state identity",
     "one perturbation is not one response",
     "nondetection is not absence",
+    "a shared cue is not one-way attraction",
+    "escape sign is not mechanism allocation",
     "precision is not identification",
     "required state is not identified state and is not reportable target by default",
     "connection is not ownership",
