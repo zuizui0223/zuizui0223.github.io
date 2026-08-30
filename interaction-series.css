@@ -1,0 +1,47 @@
+.portal-interaction { color: #d28dac; }
+
+.portal-interaction .portal-line {
+  stroke-dasharray: 2 8;
+  opacity: .72;
+}
+
+.portal-interaction .portal-node {
+  fill: rgba(8,9,12,.9);
+}
+
+.portal-interaction text {
+  font-size: 14px;
+}
+
+.axiom-ring button[data-axiom-series="interaction"] {
+  top: 50%;
+  right: 3.5%;
+  bottom: auto;
+  left: auto;
+  transform: translateY(-50%);
+}
+
+.axiom-ring button[data-axiom-series="interaction"]:hover,
+.axiom-ring button[data-axiom-series="interaction"]:focus-visible {
+  transform: translateY(calc(-50% - 2px));
+}
+
+body[data-perspective="coordinate"] .portal-interaction .portal-line,
+body[data-perspective="boundary"] .portal-interaction .portal-line {
+  stroke-width: 1.5;
+}
+
+body[data-perspective="coordinate"] .portal-interaction,
+body[data-perspective="boundary"] .portal-interaction {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+@media (max-width: 720px) {
+  .axiom-ring button[data-axiom-series="interaction"],
+  .axiom-ring button[data-axiom-series="interaction"]:hover,
+  .axiom-ring button[data-axiom-series="interaction"]:focus-visible {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
+}
