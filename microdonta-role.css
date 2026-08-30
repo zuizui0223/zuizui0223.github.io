@@ -1,0 +1,67 @@
+:root {
+  --microdonta-method: #7cb7d6;
+  --microdonta-theory: #a48af4;
+}
+
+.node-list button.is-method-theorem {
+  padding-right: 1.35rem;
+  border-color: color-mix(in srgb, var(--microdonta-method) 24%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--microdonta-theory) 5%, transparent);
+}
+
+.node-list button.is-method-theorem::after {
+  content: "⊢";
+  position: absolute;
+  right: .42rem;
+  top: 50%;
+  color: var(--microdonta-theory);
+  font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  opacity: .72;
+  transform: translateY(-50%);
+}
+
+.detail-method-role {
+  display: inline-grid;
+  width: 20px;
+  height: 20px;
+  margin: 0 0 .72rem .48rem;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: #d8d5df;
+  background:
+    linear-gradient(#08090c, #08090c) padding-box,
+    conic-gradient(from 210deg, var(--microdonta-method), var(--microdonta-theory), var(--microdonta-method)) border-box;
+  font: .56rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  text-decoration: none;
+  vertical-align: middle;
+  opacity: .72;
+  transition: opacity .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.detail-method-role:hover,
+.detail-method-role:focus-visible {
+  opacity: 1;
+  box-shadow: 0 0 13px color-mix(in srgb, var(--microdonta-theory) 20%, transparent);
+  transform: rotate(-6deg);
+}
+
+.book-card.is-method-theorem {
+  position: relative;
+  border-color: color-mix(in srgb, var(--microdonta-method) 24%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--microdonta-theory) 5%, transparent);
+}
+
+.book-card.is-method-theorem::after {
+  content: "⊢";
+  position: absolute;
+  top: .58rem;
+  right: .66rem;
+  color: var(--microdonta-theory);
+  font: .58rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  opacity: .62;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail-method-role { transition: none; }
+}
