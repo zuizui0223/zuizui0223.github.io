@@ -84,8 +84,6 @@
     text: "何を残す？ → 何が隠れる？ → どこまで届く？ → どこを見る？"
   };
 
-  // The programme is an epistemic chapter sequence, not a software dependency chain.
-  // Keep the quartet out of the generic method-story even if later add-ons try to re-add it.
   const methodStory = data.stories.method;
   if (methodStory) {
     let methodNodes = (methodStory.nodes || []).filter((id) => !CHAPTERS.includes(id));
@@ -100,7 +98,6 @@
     methodStory.text = "測れない原因を制約で囲い、残る因果世界を分ける次観測を選ぶ。";
   }
 
-  // Replace the old method-chain geometry among these repositories with the fixed programme spine.
   data.edges = data.edges.filter((edge) => {
     if (CHAPTERS.includes(edge.from) && CHAPTERS.includes(edge.to)) return false;
     if (edge.from === "microdonta" && edge.to === "eog") return false;
@@ -166,7 +163,7 @@
     };
   });
 
-  if (!document.querySelector('link[href="niche-program.css"]')) {
+  if (!document.querySelector('link[href="niche-program.css"]') && !document.querySelector('link[href^="niche-program.css?"]')) {
     const stylesheet = document.createElement("link");
     stylesheet.rel = "stylesheet";
     stylesheet.href = "niche-program.css";
@@ -199,14 +196,14 @@
   function syncRenderedGlyphs() {
     const button = seriesFilter?.querySelector('[data-series="niche"]');
     if (button) {
-      button.textContent = GLYPH;
+      if (button.textContent !== GLYPH) button.textContent = GLYPH;
       button.title = "ニッチ → 観測";
       button.setAttribute("aria-label", "ニッチから観測へ");
     }
     const active = document.querySelector('[data-series="niche"].is-active');
     if (active) {
       const symbol = detail?.querySelector(".path-symbol");
-      if (symbol) symbol.textContent = GLYPH;
+      if (symbol && symbol.textContent !== GLYPH) symbol.textContent = GLYPH;
     }
   }
 
@@ -216,7 +213,8 @@
     const path = detail.querySelector(".path-code");
     const active = document.querySelector('[data-series="niche"].is-active');
     if (path && active) {
-      path.textContent = "sdmr → odsp → eog → acsp";
+      const desiredPath = "sdmr → odsp → eog → acsp";
+      if (path.textContent !== desiredPath) path.textContent = desiredPath;
       if (!detail.querySelector(".niche-question-spine")) {
         const spine = document.createElement("span");
         spine.className = "niche-question-spine";
@@ -236,7 +234,6 @@
     });
   }
 
-  if (seriesFilter) new MutationObserver(syncRenderedGlyphs).observe(seriesFilter, { childList: true, subtree: true });
   if (detail) new MutationObserver(enhanceProgrammeDetail).observe(detail, { childList: true, subtree: true });
   new MutationObserver(syncPerspective).observe(document.body, { attributes: true, attributeFilter: ["data-perspective"] });
 
