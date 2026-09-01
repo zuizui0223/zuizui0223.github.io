@@ -105,7 +105,7 @@
     if (heading && heading.textContent.trim() === ORIGIN_ID) {
       const pulse = detail.querySelector(".detail-pulse");
       if (pulse) {
-        pulse.textContent = origin.line;
+        if (pulse.textContent !== origin.line) pulse.textContent = origin.line;
         const depth = `${origin.move}／残す: ${origin.keeps}／拒む: ${origin.refuses}`;
         pulse.title = depth;
         pulse.setAttribute("aria-label", `${origin.line} ${depth}`);
@@ -127,7 +127,7 @@
     const path = detail.querySelector(".path-code");
     const activeSeries = document.querySelector("[data-series].is-active")?.dataset.series;
     if (path && activeSeries === "flower") {
-      path.textContent = origin.displayPath;
+      if (path.textContent !== origin.displayPath) path.textContent = origin.displayPath;
       path.classList.add("origin-loop");
 
       if (!detail.querySelector(".origin-path-note")) {
