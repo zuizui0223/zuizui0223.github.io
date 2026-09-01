@@ -1,0 +1,70 @@
+.portal-niche { color: #b9c977; }
+
+.portal-niche .portal-line {
+  stroke-dasharray: 2 8;
+  opacity: .68;
+}
+
+.portal-niche .portal-node {
+  fill: rgba(8,9,12,.9);
+}
+
+.portal-niche text { font-size: 14px; }
+
+.niche-mini-spine {
+  fill: currentColor;
+  opacity: .28;
+}
+
+.portal-niche:hover .niche-mini-spine,
+.portal-niche:focus-visible .niche-mini-spine,
+.portal-niche.is-active .niche-mini-spine {
+  opacity: .72;
+}
+
+.axiom-ring button[data-axiom-series="niche"] {
+  top: 50%;
+  left: 3.5%;
+  right: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+}
+
+.axiom-ring button[data-axiom-series="niche"]:hover,
+.axiom-ring button[data-axiom-series="niche"]:focus-visible {
+  transform: translateY(calc(-50% - 2px));
+}
+
+.niche-question-spine {
+  display: block;
+  margin: 0 0 .42rem;
+  color: color-mix(in srgb, #b9c977 76%, #777c85);
+  font: .48rem ui-monospace, SFMono-Regular, Consolas, monospace;
+  letter-spacing: .08em;
+}
+
+.node-list button[aria-label^="odsp"],
+.book-card[data-book-repo="odsp"] {
+  border-color: color-mix(in srgb, #b9c977 22%, transparent);
+}
+
+body[data-perspective="coordinate"] .portal-niche .portal-line,
+body[data-perspective="boundary"] .portal-niche .portal-line {
+  stroke-width: 1.5;
+}
+
+body[data-perspective="coordinate"] .portal-niche,
+body[data-perspective="boundary"] .portal-niche {
+  filter: drop-shadow(0 0 8px currentColor);
+}
+
+@media (max-width: 720px) {
+  .axiom-ring button[data-axiom-series="niche"],
+  .axiom-ring button[data-axiom-series="niche"]:hover,
+  .axiom-ring button[data-axiom-series="niche"]:focus-visible {
+    position: static;
+    width: 100%;
+    transform: none;
+  }
+  .niche-question-spine { font-size: .45rem; }
+}
