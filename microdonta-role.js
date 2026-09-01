@@ -136,7 +136,7 @@
 
     const pulse = detail.querySelector(".detail-pulse");
     if (pulse) {
-      pulse.textContent = role.line;
+      if (pulse.textContent !== role.line) pulse.textContent = role.line;
       const depth = `${role.move}／残す: ${role.keeps}／拒む: ${role.refuses}`;
       pulse.title = depth;
       pulse.setAttribute("aria-label", `${role.line} ${depth}`);
