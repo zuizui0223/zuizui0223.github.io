@@ -1,0 +1,58 @@
+{
+  "checked_at": "2026-09-01",
+  "program_id": "niche-to-survey-four-chapter-v1",
+  "purpose": "Connect four repository-owned questions as one epistemic chapter sequence without turning them into one software pipeline or transferring claim ownership.",
+  "spine": "REPRESENT → THICKEN → REALIZE → OBSERVE",
+  "surface": "何を残す？ → 何が隠れる？ → どこまで届く？ → どこを見る？",
+  "axiom": "niche != map",
+  "dependency_rule": "chapter order is conceptual/epistemic; no chapter automatically validates or technically depends on the preceding repository output",
+  "chapters": [
+    {
+      "chapter": 1,
+      "repo": "sdmr",
+      "question": "WHAT belongs in the niche?",
+      "operation": "environment -> admitted representation",
+      "public_line": "環境は、入れただけでは niche にならない。",
+      "current_state": "scientific core closed; known-truth support retained; fresh empirical Product A ended empirical_confirmation_not_supported and not_promoted; Product B blocked",
+      "claim_firewall": "environmental plausibility, inclusion in a candidate library, or known-truth recovery is not an empirical universal-driver result"
+    },
+    {
+      "chapter": 2,
+      "repo": "odsp",
+      "question": "HOW THICK is it?",
+      "operation": "x-y -> x-y-z-t and projection-loss geometry",
+      "public_line": "地図は、niche を薄くする。",
+      "current_state": "active multidimensional niche-geometry chapter; conditional-information metrics and source-preserving temporal layer exist; independent empirical thickness applications remain open",
+      "claim_firewall": "the historical ODSP spatial-patch/topology programme remains superseded by EOG; raw record density is not unbiased ecological use"
+    },
+    {
+      "chapter": 3,
+      "repo": "eog",
+      "question": "WHERE can it become real?",
+      "operation": "local possibility -> compatible transition/distribution worlds -> reachability/realizability",
+      "public_line": "住める場所と、辿り着ける場所は違う。",
+      "current_state": "two favorable fresh heterogeneous paired endpoints support a replicated candidate general predictive complement; one valid third endpoint remains before paper-level closure",
+      "claim_firewall": "compatible world is not true history; local support is not realized distribution; current evidence is not universal superiority"
+    },
+    {
+      "chapter": 4,
+      "repo": "acsp",
+      "question": "WHERE can we justify looking next?",
+      "operation": "support/world evidence -> bounded survey candidate patches",
+      "public_line": "予測の終点は、次の観測の入口になる。",
+      "current_state": "validated Japanese 2.5% robust-support candidate-patch product; country-framed promotion failed preregistered gates; paper closed at bounded Japanese claim",
+      "claim_firewall": "candidate patch is not occupancy probability, exact occupied site, route/budget optimum, or validated global product"
+    }
+  ],
+  "handoffs": [
+    "SDMR to ODSP: from which environmental dimensions deserve representation to how much state information a flat representation discards",
+    "ODSP to EOG: from local multidimensional support geometry to whether locally possible states are reachable and distributionally realizable under multiple worlds",
+    "EOG to ACSP: from uncertain compatible worlds to a bounded decision about where additional field observation is justified"
+  ],
+  "non_handoffs": [
+    "ODSP does not modify or rescue SDMR Product A",
+    "EOG does not require ODSP output and owns the historical ODSP topology component separately",
+    "ACSP does not require EOG and its validated Japanese patch rule was independently confirmed under its own contract",
+    "a favorable later chapter cannot retroactively promote a failed or blocked earlier chapter"
+  ]
+}
