@@ -169,5 +169,5 @@
   window.setTimeout(() => { syncRenderedGlyphs(); syncPerspective(); }, 0);
 
   // Parser-time load: niche-program must run before app.js constructs its node map.
-  document.write('<script src="niche-program.js"><\\/script>');
+  document.write('<script src="niche-program.js"><\/script>');
 })();
