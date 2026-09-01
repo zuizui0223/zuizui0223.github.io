@@ -1,5 +1,7 @@
 {
   "checked_at": "2026-08-30",
+  "last_partial_update": "2026-09-01",
+  "partial_update_scope": ["sdmr", "odsp", "eog", "acsp"],
   "scope": "audited scientific-ref README ownership, claim ceiling, next question and repository status",
   "display_rule": "one active repository = one visible fragment",
   "tracking": {
@@ -39,9 +41,10 @@
     {"repo":"sch","readme_blob":"846930aac6e36ad4b8d5268469d998f665ee81ef","display_status":"open","scientific_ref":"codex/shared-cue-hypothesis-migration","ref_kind":"active_pr_head","pr":1},
     {"repo":"bita","readme_blob":"2891f96d5b0294eb02731ae615b0a2f4bda4bb2a","display_status":"result"},
     {"repo":"microdonta","readme_blob":"14cbb9bc2980056508487770d9941d23623eeece","display_status":"result"},
-    {"repo":"eog","readme_blob":"b2b2d2813f3e49a3bccc8a8a92abd8ef6c77f289","display_status":"bounded"},
-    {"repo":"acsp","readme_blob":"6dc6d9bd7561ad9fd33f9a25aa1edf73c5bdb0b9","display_status":"bounded"},
-    {"repo":"sdmr","readme_blob":"e16f5a46be8143d1ed7184f0c117a0f444905140","display_status":"open"},
+    {"repo":"sdmr","readme_blob":"df323c224a4060dae6e0454db2022e0e986431f9","display_status":"result"},
+    {"repo":"odsp","readme_blob":"9adfda03b5f1928e007b1931a99eca3b68ab4718","display_status":"open"},
+    {"repo":"eog","readme_blob":"d271ae92af397efd21cabd1f5bb07d5c09ea9fa8","display_status":"open"},
+    {"repo":"acsp","readme_blob":"a56e8dd63958ec2a2354a6e7b0ed195d1582e83f","display_status":"result"},
     {"repo":"crest","readme_blob":"67e7869ea0cd68b06a466a06ecb1002ce836a378","display_status":"result"},
     {"repo":"ccoc","readme_blob":"6b5fb4ef4bcb0e7308e1290296be0f443d95ed57","display_status":"result"},
     {"repo":"mltr","readme_blob":"fef70b35969ca3ce21c8fd1fe508aab4a0e2d880","display_status":"result"},
@@ -51,24 +54,34 @@
     {"repo":"eco-genetic-warning-extensions","readme_blob":"8c8726186f0572ea2ed601c6782238cd6f8b629f","display_status":"result"},
     {"repo":"theouni","readme_blob":"9f094d02d78f14524da6e9aba785b46470e2f175","display_status":"bounded"}
   ],
-  "superseded": [
+  "superseded_components": [
     {
-      "repo": "odsp",
-      "readme_blob": "66bf6fbf8578002b03b1a4ab094b7bde4ec965b3",
+      "repository": "odsp",
+      "component": "historical spatial-patch / support-topology programme",
+      "historical_readme_blob": "66bf6fbf8578002b03b1a4ab094b7bde4ec965b3",
       "successor": "eog",
-      "visible": false,
-      "reason": "tombstone; active support-topology ownership moved to EOG"
+      "current_repository_scope": "multidimensional niche geometry and representation layers",
+      "reason": "the repository name was reactivated for a new Chapter-2 scope; the old topology ownership remains with EOG"
     }
   ],
+  "programmes": {
+    "niche_to_survey": {
+      "id": "niche-to-survey-four-chapter-v1",
+      "chapters": ["sdmr", "odsp", "eog", "acsp"],
+      "audit": "niche-program-audit.json",
+      "rule": "epistemic chapter order != software dependency or transferred claim ownership"
+    }
+  },
   "philosophy": {
     "title": "PhD in zuizui",
-    "sentence": "Not ownership of answers, but responsibility for what is retained, safely forgotten, and left revisable.",
+    "sentence": "Not ownership of answers, but responsibility for what is retained, constrained, safely forgotten, and left revisable.",
     "axioms": [
       "difference is not a mean",
       "same colour is not the same state",
       "an island is not one response",
       "nondetection is not absence",
       "a shared cue is not one-way attraction",
+      "niche is not a map",
       "precision is not identification",
       "state is licensed forgetting"
     ]
