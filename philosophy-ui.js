@@ -108,7 +108,12 @@
   enhanceDetail();
   enhanceNodeList();
 
-  ["microdonta-role.js", "repo-tracker.js", "perspective.js", "origin.js"].forEach((src) => {
+  [
+    "microdonta-role.js?v=20260901c",
+    "repo-tracker.js",
+    "perspective.js",
+    "origin.js?v=20260901c"
+  ].forEach((src) => {
     if (document.querySelector(`script[src="${src}"]`)) return;
     const addon = document.createElement("script");
     addon.src = src;
