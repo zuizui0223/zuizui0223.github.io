@@ -134,16 +134,17 @@
 
   const seriesFilter = document.getElementById("seriesFilter");
   const detail = document.getElementById("detailPanel");
+
   function syncRenderedGlyphs() {
     const button = seriesFilter?.querySelector('[data-series="interaction"]');
     if (button) {
-      button.textContent = GLYPH;
+      if (button.textContent !== GLYPH) button.textContent = GLYPH;
       button.title = "相互作用";
       button.setAttribute("aria-label", "相互作用");
     }
     if (document.querySelector('[data-series="interaction"].is-active')) {
       const symbol = detail?.querySelector(".path-symbol");
-      if (symbol) symbol.textContent = GLYPH;
+      if (symbol && symbol.textContent !== GLYPH) symbol.textContent = GLYPH;
     }
     const heading = detail?.querySelector("h3");
     if (heading?.textContent.trim() === "sch") {
@@ -155,6 +156,7 @@
       }
     }
   }
+
   function syncPerspective() {
     const mode = document.body.dataset.perspective || "all";
     const related = mode === "coordinate" || mode === "boundary";
@@ -163,7 +165,7 @@
       element.classList.toggle("is-perspective-dim", mode !== "all" && !related);
     });
   }
-  if (seriesFilter) new MutationObserver(syncRenderedGlyphs).observe(seriesFilter, { childList: true, subtree: true });
+
   if (detail) new MutationObserver(syncRenderedGlyphs).observe(detail, { childList: true, subtree: true });
   new MutationObserver(syncPerspective).observe(document.body, { attributes: true, attributeFilter: ["data-perspective"] });
   window.setTimeout(() => { syncRenderedGlyphs(); syncPerspective(); }, 0);
