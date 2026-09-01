@@ -27,30 +27,30 @@
     thoughtMove: "一つの attraction/display coordinate A を、pollinator benefit と antagonist cost が同時に読む conflict coordinate として扱う。",
     thoughtKeeps: "同じ A 上の利益と損失、compromise・specialization・polymorphism・population change・branching・cue modularization を別の進化的終点として残す。",
     thoughtRefuses: "pollinator attraction を純利益とみなすこと、また sparse evidence や NOT_EVALUABLE を shared-cue conflict の不在へ変換すること。",
-    summary: "一つの共有 cue A に pollinator benefit M_A と antagonist cost G_A を同じ座標で置く。active PR は 868 件の凍結 systematic-screening universe を持ち、strict linked experiment・地理・same-code receiver evidence を別ゲートで進めている。",
-    ceiling: "一形質 evidence を BITA の A×D evidence と混同せず、未完 screening を systematic-review completion や meta-analytic effect と呼ばない。DIRECT_L4 / private-cue origin は現状 NOT_EVALUABLE。",
-    next: "凍結 868 cohort の screening と geography / receiver-assemblage coding を完了し、same-code experiment と historical transition gate を閉じる。",
+    summary: "一つの共有 cue A に pollinator benefit M_A と antagonist cost G_A を同じ座標で置く。active PR は凍結 systematic-screening universe を持ち、strict linked experiment・地理・same-code receiver evidence を別ゲートで進める。",
+    ceiling: "一形質 evidence を BITA の A×D evidence と混同せず、未完 screening を systematic-review completion や meta-analytic effect と呼ばない。",
+    next: "凍結 cohort の screening と geography / receiver-assemblage coding を完了し、same-code experiment と historical transition gate を閉じる。",
     scientificRef: SCH_REF,
     sourceUrl: SCH_PR
   };
 
-  if (!data.nodes.some((node) => node.id === "sch")) data.nodes.push(sch);
-  else Object.assign(data.nodes.find((node) => node.id === "sch"), sch);
+  const existingSch = data.nodes.find((node) => node.id === "sch");
+  if (existingSch) Object.assign(existingSch, sch);
+  else data.nodes.push(sch);
 
   const bita = data.nodes.find((node) => node.id === "bita");
-  if (bita) {
-    Object.assign(bita, {
-      series: ID,
-      pulse: "逃げ道が開いても、何が開けたかは一つに定まらない。",
-      thoughtMove: "one-trait conflict に defence coordinate D を加え、outcome-level escape sign と、その sign を生む relief / interference / joint-cost allocation を分ける。",
-      thoughtKeeps: "A×D total interaction が持つ escape-sign information と、rho / iota / kappa の compatible allocation set を同時に残す。",
-      thoughtRefuses: "total interaction の符号を full mechanism explanation とみなすこと、また residual を差し引きだけで kappa と命名すること。",
-      summary: "SCH の一形質 conflict に antagonist-reducing trait D を加える。A×D total interaction は条件を満たせば escape の符号を決められるが、同じ total surface だけでは relief・pollinator interference・remaining joint channel の配分は一点同定できない。",
-      ceiling: "route recurrence を prevalence や total A×D interaction と読まず、outcome-level escape と mechanism allocation を混同しない。現在の screened systems は robust positive empirical escape も full allocation もまだ閉じていない。",
-      next: "common-outcome A×D evidence を増やし、selective crossed consumer interventions と independent joint-cost assay で mechanism allocation を閉じる。",
-      layers: ["second coordinate", "escape sign", "identified set", "mechanism allocation"]
-    });
-  }
+  if (bita) Object.assign(bita, {
+    series: ID,
+    status: "result",
+    pulse: "逃げ道が開いても、何が開けたかは一つに定まらない。",
+    thoughtMove: "one-trait conflict に defence coordinate D を加え、outcome-level escape sign と、その sign を生む relief / interference / joint-cost allocation を分ける。",
+    thoughtKeeps: "A×D total interaction が持つ escape-sign information と、rho / iota / kappa の compatible allocation set を同時に残す。",
+    thoughtRefuses: "total interaction の符号を full mechanism explanation とみなすこと、また residual を差し引きだけで kappa と命名すること。",
+    summary: "SCH の一形質 conflict に antagonist-reducing trait D を加える。A×D total interaction は条件を満たせば escape の符号を決められるが、同じ total surface だけでは relief・pollinator interference・remaining joint channel の配分は一点同定できない。",
+    ceiling: "route recurrence を prevalence や total A×D interaction と読まず、outcome-level escape と mechanism allocation を混同しない。",
+    next: "common-outcome A×D evidence と selective crossed consumer interventions、independent joint-cost assay で allocation boundary を縮める。",
+    layers: ["second coordinate", "escape sign", "identified set", "mechanism allocation"]
+  });
 
   data.stories[ID] = {
     label: "相互作用",
@@ -60,91 +60,53 @@
   };
 
   if (data.stories.method) {
-    data.stories.method.nodes = data.stories.method.nodes.filter((id) => id !== "bita");
-    data.stories.method.text = "残る causal worlds を保ち、次観測・world set・external gate・sealed answer check へ進む。";
+    data.stories.method.nodes = (data.stories.method.nodes || []).filter((id) => id !== "bita");
   }
 
   data.edges = data.edges.filter((edge) => !(edge.from === "sch" && edge.to === "bita"));
   data.edges.push({ from: "sch", to: "bita", type: "solid", label: "shared cue → second-coordinate escape" });
 
   data.axes.forEach((axis) => {
-    if ((axis.name === "パターン" || axis.name === "メカニズム") && !axis.repos.includes("sch")) {
-      axis.repos.push("sch");
-    }
+    if ((axis.name === "パターン" || axis.name === "メカニズム") && !axis.repos.includes("sch")) axis.repos.push("sch");
   });
 
-  if (data.books?.seven) {
-    const books = data.books.seven;
-    const bitaBook = books.find((book) => book.repos?.[0] === "bita");
-    if (bitaBook) {
-      Object.assign(bitaBook, {
-        n: "B2",
-        series: ID,
-        title: `bita — ${bita?.pulse || "escape sign ≠ mechanism allocation"}`,
-        note: "second coordinate: escape sign と mechanism allocation を分ける。",
-        status: "1 repo = 1 chapter"
-      });
-      if (!books.some((book) => book.repos?.[0] === "sch")) {
-        books.splice(books.indexOf(bitaBook), 0, {
-          n: "B1",
-          title: `sch — ${sch.pulse}`,
-          chapters: 1,
-          series: ID,
-          repos: ["sch"],
-          note: "one shared cue 上の mutualist–antagonist conflict。",
-          status: "active PR ref"
-        });
-      }
-    }
-    let m = 1;
-    books.filter((book) => book.series === "method").forEach((book) => { book.n = `M${m++}`; });
-  }
-
-  if (data.books?.eight) {
-    const books = data.books.eight;
+  function patchBooks(route) {
+    const books = data.books?.[route];
+    if (!books) return;
     const bitaIndex = books.findIndex((book) => book.repos?.[0] === "bita");
-    if (bitaIndex >= 0) {
-      books[bitaIndex].series = ID;
-      books[bitaIndex].title = "Does a second trait create escape, and can its cause be allocated? — bita";
-      books[bitaIndex].note = "escape sign ≠ mechanism allocation。";
-      if (!books.some((book) => book.repos?.[0] === "sch")) {
-        books.splice(bitaIndex, 0, {
-          n: "",
-          title: "When does attraction become a conflict? — sch",
-          chapters: 1,
-          series: ID,
-          repos: ["sch"],
-          note: "one shared cue。",
-          status: "question route"
-        });
-      }
-    }
-    books.forEach((book, index) => { book.n = String(index + 1); });
-  }
-
-  const motifBook = (repo, line) => {
-    Object.values(data.books || {}).flat().filter((book) => book.repos?.[0] === repo).forEach((book) => {
-      book.title = `${repo} — ${line}`;
+    if (bitaIndex < 0) return;
+    const bitaBook = books[bitaIndex];
+    Object.assign(bitaBook, {
+      series: ID,
+      title: `bita — ${bita?.pulse || "escape sign ≠ mechanism allocation"}`,
+      note: "second coordinate: escape sign と mechanism allocation を分ける。"
     });
-  };
-  motifBook("sch", sch.pulse);
-  if (bita) motifBook("bita", bita.pulse);
+    if (!books.some((book) => book.repos?.[0] === "sch")) {
+      books.splice(bitaIndex, 0, {
+        n: "",
+        title: `sch — ${sch.pulse}`,
+        chapters: 1,
+        series: ID,
+        repos: ["sch"],
+        note: "one shared cue 上の mutualist–antagonist conflict。",
+        status: route === "seven" ? "active PR ref" : "question route"
+      });
+    }
+    if (route === "seven") {
+      let b = 1;
+      books.filter((book) => book.series === ID).forEach((book) => { book.n = `B${b++}`; });
+      let m = 1;
+      books.filter((book) => book.series === "method").forEach((book) => { book.n = `M${m++}`; });
+    } else {
+      books.forEach((book, index) => { book.n = String(index + 1); });
+    }
+  }
+  patchBooks("seven");
+  patchBooks("eight");
 
   window.ZUIZUI_THOUGHTS = window.ZUIZUI_THOUGHTS || {};
-  window.ZUIZUI_THOUGHTS.sch = {
-    line: sch.pulse,
-    move: sch.thoughtMove,
-    keeps: sch.thoughtKeeps,
-    refuses: sch.thoughtRefuses
-  };
-  if (bita) {
-    window.ZUIZUI_THOUGHTS.bita = {
-      line: bita.pulse,
-      move: bita.thoughtMove,
-      keeps: bita.thoughtKeeps,
-      refuses: bita.thoughtRefuses
-    };
-  }
+  window.ZUIZUI_THOUGHTS.sch = { line: sch.pulse, move: sch.thoughtMove, keeps: sch.thoughtKeeps, refuses: sch.thoughtRefuses };
+  if (bita) window.ZUIZUI_THOUGHTS.bita = { line: bita.pulse, move: bita.thoughtMove, keeps: bita.thoughtKeeps, refuses: bita.thoughtRefuses };
 
   if (!document.querySelector('link[href="interaction-series.css"]')) {
     const stylesheet = document.createElement("link");
@@ -152,9 +114,6 @@
     stylesheet.href = "interaction-series.css";
     document.head.appendChild(stylesheet);
   }
-
-  const brainDesc = document.getElementById("brain-desc");
-  if (brainDesc) brainDesc.textContent = "研究系列と横断系列が中心の空洞へ流れ込む抽象図。";
 
   const portals = document.querySelector(".portals");
   if (portals && !portals.querySelector('[data-portal="interaction"]')) {
@@ -175,7 +134,6 @@
 
   const seriesFilter = document.getElementById("seriesFilter");
   const detail = document.getElementById("detailPanel");
-
   function syncRenderedGlyphs() {
     const button = seriesFilter?.querySelector('[data-series="interaction"]');
     if (button) {
@@ -183,13 +141,10 @@
       button.title = "相互作用";
       button.setAttribute("aria-label", "相互作用");
     }
-
-    const active = document.querySelector('[data-series="interaction"].is-active');
-    if (active) {
+    if (document.querySelector('[data-series="interaction"].is-active')) {
       const symbol = detail?.querySelector(".path-symbol");
       if (symbol) symbol.textContent = GLYPH;
     }
-
     const heading = detail?.querySelector("h3");
     if (heading?.textContent.trim() === "sch") {
       const source = detail.querySelector(".detail-link");
@@ -200,8 +155,7 @@
       }
     }
   }
-
-  function syncPerspectiveIntersection() {
+  function syncPerspective() {
     const mode = document.body.dataset.perspective || "all";
     const related = mode === "coordinate" || mode === "boundary";
     document.querySelectorAll('[data-portal="interaction"], [data-axiom-series="interaction"]').forEach((element) => {
@@ -209,11 +163,11 @@
       element.classList.toggle("is-perspective-dim", mode !== "all" && !related);
     });
   }
-
   if (seriesFilter) new MutationObserver(syncRenderedGlyphs).observe(seriesFilter, { childList: true, subtree: true });
   if (detail) new MutationObserver(syncRenderedGlyphs).observe(detail, { childList: true, subtree: true });
-  new MutationObserver(syncPerspectiveIntersection).observe(document.body, { attributes: true, attributeFilter: ["data-perspective"] });
+  new MutationObserver(syncPerspective).observe(document.body, { attributes: true, attributeFilter: ["data-perspective"] });
+  window.setTimeout(() => { syncRenderedGlyphs(); syncPerspective(); }, 0);
 
-  syncRenderedGlyphs();
-  syncPerspectiveIntersection();
+  // Parser-time load: niche-program must run before app.js constructs its node map.
+  document.write('<script src="niche-program.js"><\\/script>');
 })();
