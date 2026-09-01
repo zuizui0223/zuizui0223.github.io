@@ -108,7 +108,7 @@
   window.ZUIZUI_THOUGHTS.sch = { line: sch.pulse, move: sch.thoughtMove, keeps: sch.thoughtKeeps, refuses: sch.thoughtRefuses };
   if (bita) window.ZUIZUI_THOUGHTS.bita = { line: bita.pulse, move: bita.thoughtMove, keeps: bita.thoughtKeeps, refuses: bita.thoughtRefuses };
 
-  if (!document.querySelector('link[href="interaction-series.css"]')) {
+  if (!document.querySelector('link[href="interaction-series.css"]') && !document.querySelector('link[href^="interaction-series.css?"]')) {
     const stylesheet = document.createElement("link");
     stylesheet.rel = "stylesheet";
     stylesheet.href = "interaction-series.css";
@@ -167,7 +167,4 @@
   if (detail) new MutationObserver(syncRenderedGlyphs).observe(detail, { childList: true, subtree: true });
   new MutationObserver(syncPerspective).observe(document.body, { attributes: true, attributeFilter: ["data-perspective"] });
   window.setTimeout(() => { syncRenderedGlyphs(); syncPerspective(); }, 0);
-
-  // Parser-time load: niche-program must run before app.js constructs its node map.
-  document.write('<script src="niche-program.js"><\/script>');
 })();
