@@ -1,23 +1,13 @@
 {
-  "checked_at": "2026-08-30",
+  "checked_at": "2026-09-01",
   "last_partial_update": "2026-09-01",
-  "partial_update_scope": ["sdmr", "odsp", "eog", "acsp"],
+  "partial_update_scope": ["boundary", "mrod", "sdmr", "odsp", "eog", "acsp"],
   "scope": "audited scientific-ref README ownership, claim ceiling, next question and repository status",
   "display_rule": "one active repository = one visible fragment",
   "tracking": {
     "movement": "Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
     "scientific_ref_detail": "Repositories are audited on the default branch unless an explicit scientific_ref is declared. SCH currently uses its active PR head because main is a placeholder.",
-    "claim_drift": "The current README blob on the audited scientific ref is compared with readme_blob when the philosophy layer is opened or a fragment is inspected.",
-    "cache_minutes": {
-      "repository_list": 15,
-      "repository_detail": 15,
-      "readme_audit": 360
-    },
-    "symbols": {
-      "pulse": "recent repository movement",
-      "diamond": "README differs from the audited public claim surface",
-      "dotted": "live verification unavailable"
-    },
+    "claim_drift": "README drift is an audit signal, not an automatic scientific reinterpretation.",
     "rule": "repository movement != scientific claim revision"
   },
   "status_semantics": {
@@ -40,7 +30,8 @@
     {"repo":"tnoa","readme_blob":"f2e8433a0711c41944dcd22a01123fb51d5ccff9","display_status":"result"},
     {"repo":"sch","readme_blob":"846930aac6e36ad4b8d5268469d998f665ee81ef","display_status":"open","scientific_ref":"codex/shared-cue-hypothesis-migration","ref_kind":"active_pr_head","pr":1},
     {"repo":"bita","readme_blob":"2891f96d5b0294eb02731ae615b0a2f4bda4bb2a","display_status":"result"},
-    {"repo":"microdonta","readme_blob":"14cbb9bc2980056508487770d9941d23623eeece","display_status":"result"},
+    {"repo":"boundary","readme_blob":"c3afa04fa27c19dcf94316ea2b9319b7344a8ef5","display_status":"bounded"},
+    {"repo":"mrod","readme_blob":"2678be1b7d4776c504f63774dbb18474c62c0fb8","display_status":"bounded"},
     {"repo":"sdmr","readme_blob":"df323c224a4060dae6e0454db2022e0e986431f9","display_status":"result"},
     {"repo":"odsp","readme_blob":"9adfda03b5f1928e007b1931a99eca3b68ab4718","display_status":"open"},
     {"repo":"eog","readme_blob":"d271ae92af397efd21cabd1f5bb07d5c09ea9fa8","display_status":"open"},
@@ -62,6 +53,13 @@
       "successor": "eog",
       "current_repository_scope": "multidimensional niche geometry and representation layers",
       "reason": "the repository name was reactivated for a new Chapter-2 scope; the old topology ownership remains with EOG"
+    },
+    {
+      "repository": "microdonta",
+      "component": "former combined theory-method repository identity",
+      "successors": ["boundary", "mrod"],
+      "visible": false,
+      "reason": "Paper A identification-boundary theory and Paper B observation-design methodology now have separate repositories"
     }
   ],
   "programmes": {
@@ -70,6 +68,10 @@
       "chapters": ["sdmr", "odsp", "eog", "acsp"],
       "audit": "niche-program-audit.json",
       "rule": "epistemic chapter order != software dependency or transferred claim ownership"
+    },
+    "mechanism_resolution": {
+      "spine": ["boundary", "mrod"],
+      "rule": "identification boundary != observation-selection method"
     }
   },
   "philosophy": {
@@ -82,7 +84,7 @@
       "nondetection is not absence",
       "a shared cue is not one-way attraction",
       "niche is not a map",
-      "precision is not identification",
+      "mechanistic proximity is not identification strength",
       "state is licensed forgetting"
     ]
   }
