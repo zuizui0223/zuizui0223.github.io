@@ -1,20 +1,12 @@
 {
-  "checked_at": "2026-08-30",
+  "checked_at": "2026-09-01",
   "repo": "microdonta",
-  "source_snapshot": {
-    "head": "e9f75ac84f12a0824105c69a8247888b63b618eb",
-    "readme_blob": "14cbb9bc2980056508487770d9941d23623eeece",
-    "paper_readme_blob": "47b646594e9ecfe7ddd746b0f9a71234a488723e",
-    "mainline_blob": "c74562fe972ee91fdcba59a7a4b5e660e9289cba",
-    "submission_manifest_blob": "3b69c509852af0ee29038ffc0088aff6f8fb66a9",
-    "two_paper_strategy_blob": "585a67119edb9a21faf0963e5b3c3f78c8b503f3"
-  },
   "decision": {
     "navigation_series": "method",
     "repository_character": "theory-method hinge",
     "paper_A": "theory — channel-identifiability boundary, bounded-drift identified intervals and breakdown points",
     "paper_B": "methodology — RACH admissible mechanism sets, validated NOV and sequential observation selection",
-    "site_role": "M1 — one chapter whose theory branch defines the boundary and whose method branch acts after that boundary"
+    "site_role": "M1 — general constrained-causal-world inference; not a chapter of the SDMR–ODSP–EOG–ACSP niche-to-survey programme"
   },
   "public_line": "測れない原因は、当てずに、制約で囲う。",
   "philosophy": {
@@ -23,64 +15,36 @@
     "constraint": "Natural history, physical feasibility and ecological knowledge are translated into explicit pre-data constraint grammar G(theta); they are not used as a post-hoc answer key.",
     "simulation_role": "Simulation is a possibility-bounding and consequence-propagating instrument, not a generator of latent causal truth.",
     "observation_role": "Observed patterns remove incompatible worlds but need not select one world; the surviving set A_epsilon is a legitimate result.",
-    "action": "Q* is the estimable candidate observation expected to separate the surviving mechanism worlds most efficiently under the declared objective.",
-    "three_moves": [
-      "translate natural-history and physical knowledge into auditable constraints",
-      "retain every constraint-feasible world compatible with the observation contract",
-      "choose the next observation that best separates the remaining worlds"
-    ]
-  },
-  "reasoning": {
-    "scientific_question": "How can unmeasured ecological causes be bounded without being invented, and what should be observed next once several causes remain possible?",
-    "paper_A_primary_output": [
-      "structural point/non/partial-identification boundary",
-      "bounded calibration-drift identified interval",
-      "breakdown point for sign conclusions",
-      "operational direct-measurement or calibration rule"
-    ],
-    "paper_B_primary_output": [
-      "restricted admissible causal hypothesis set",
-      "causal degeneracy and mechanism-equivalence structure",
-      "validated next-observation value",
-      "RACH-SEQ observation order and stopping rule",
-      "explicit not-estimable result when a predictive observation map is unavailable"
-    ],
-    "operational_contract": "The repository turns declared mechanism vocabulary, pre-data ecological/physical constraints, an observation map and candidate measurements into bounded inference and an executable next-observation decision.",
-    "publication_signal": "The repository now governs a boundary-theory paper and a separate Methods in Ecology and Evolution method paper; no result is primary evidence in both."
+    "action": "Q* is the estimable candidate observation expected to separate the surviving mechanism worlds most efficiently under the declared objective."
   },
   "classification_test": {
     "paper_level": "Paper A is theory; Paper B is methodology.",
     "repository_level": "The repository is a theory-method hinge because the impossibility/partial-identification boundary and the RACH observation-selection procedure are separately governed but share one epistemic program.",
-    "navigation_rule": "The site keeps one repository as one chapter and locates the chapter in the method route because its outward action is an executable observation-design procedure, while also listing it on the theory axis.",
+    "navigation_rule": "The site keeps one repository as one chapter and locates it in the generic method route; niche-to-survey is a separate four-chapter question programme.",
     "verdict": "method navigation, dual theory-method scientific character"
   },
   "contrast": {
     "with_bita": "BITA derives a specific interaction-allocation identified set. microdonta generalizes how ecological/physical constraints and observations retain compatible causal worlds and how a next measurement is selected.",
+    "with_niche_to_survey": "SDMR–ODSP–EOG–ACSP transforms an ecological possibility from representation through geometry and realizability to bounded survey action. microdonta instead supplies a general rule for constraining latent causal worlds and choosing discriminating observations.",
     "with_ced": "CED asks which finite evidence architecture licenses a target report. microdonta Paper B optimizes information about a declared mechanism set; mechanism information and target-safe reportability are not identical objectives.",
     "with_crest": "CREST defines contract-relative ecological state and safe forgetting. microdonta constrains and interrogates a declared causal-world family; it does not supply a universal ecological-state ontology.",
-    "with_eog": "Both preserve sets rather than force winners. microdonta constrains causal mechanisms and selects measurements; EOG contracts biogeographic world sets and separates update state from prediction representation."
+    "with_eog": "Both preserve sets rather than force winners, but the sets have different semantics: microdonta retains causal mechanisms; EOG retains biogeographic transition/distribution worlds. Their connection is a cross-series bridge, not chapter succession."
   },
   "claim_firewall": [
     "ecological plausibility is not causal identification",
     "a pre-data constraint is not an observed fact",
     "an admissible mechanism is not the true mechanism",
     "simulation fit is not field causal validation",
-    "post-outcome constraints cannot be used to rescue a preferred mechanism without opening a new protocol",
+    "post-outcome constraints cannot rescue a preferred mechanism without a new protocol",
     "a rich simulator is not automatically theorem-exact",
     "a proxy is not a channel measurement without stable or separate calibration",
-    "mechanism-information gain is not automatically target-safe reportability"
+    "mechanism-information gain is not automatically target-safe reportability",
+    "a cross-series bridge is not scientific ownership or software dependency"
   ],
   "portfolio_connections": {
     "incoming": "bita → microdonta: specific identified set → constrained causal-world programme",
-    "method_mainline": "microdonta → eog: admissible causal set and next observation → compatible-world update and forecast",
+    "cross_series": "microdonta ↔ eog: causal-world sets ↔ distribution-world sets",
     "theory_bridge": "microdonta ↔ ced: mechanism-information design ↔ evidence-licensed target report"
   },
-  "supersedes_for_microdonta": {
-    "file": "thought-audit.json and microdonta-role-audit.json v1",
-    "old_lines": [
-      "よい観測は、答えを増やすのではなく、残る世界を減らす。",
-      "原因を選べないとき、次の観測を選ぶ。"
-    ],
-    "reason": "The earlier lines captured observation choice but not the prior epistemic move: ecological and physical knowledge constrain a possible-world family without filling an unmeasured cause with one plausible story."
-  }
+  "niche_program_audit": "niche-program-audit.json"
 }
