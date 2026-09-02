@@ -50,4 +50,24 @@
       if (event.target === dialog) closeDialog();
     });
   }
+
+  const audit = document.querySelector(".philosophy-audit");
+  if (audit) {
+    audit.textContent = "28 · static";
+    audit.title = "28 active repositories";
+  }
+
+  function patchObservationPath() {
+    const observationActive = document.querySelector('[data-series="observation"].is-active');
+    const path = document.querySelector("#detailPanel .path-code");
+    if (!observationActive || !path) return;
+    path.textContent = "pollipi → insepi → TNOA → REC  ／  Ω → REC → record → TNOA";
+    path.title = "left: research development lineage; right: scientific information flow";
+    path.setAttribute("aria-label", "Research lineage: pollipi to insepi to TNOA to REC. Scientific information flow: exposure universe to REC to entered record to TNOA.");
+  }
+
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest?.('[data-series="observation"], [data-portal="observation"]');
+    if (trigger) window.requestAnimationFrame(patchObservationPath);
+  });
 })();
