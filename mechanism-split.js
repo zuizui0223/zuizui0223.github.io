@@ -119,4 +119,91 @@
     keeps: mrod.thoughtKeeps,
     refuses: mrod.thoughtRefuses
   };
+
+  // TNOA / REC: development lineage and scientific information flow point in opposite directions.
+  const tnoa = data.nodes.find((node) => node.id === "tnoa");
+  const rec = {
+    id: "rec",
+    label: "REC",
+    series: "observation",
+    x: .69,
+    y: .84,
+    status: "open",
+    layers: ["record entry", "exposure universe", "censoring", "shadow set", "field validation"],
+    pulse: "記録されなかったことは、起きなかったことではない。",
+    thoughtMove: "非検出を定義する前に gate-independent exposure universe Ω を定義し、acquisition・gate・archive entry のどこで exposure/event が usable record にならなかったかを分離する。",
+    thoughtKeeps: "master exposure ledger、pre-gate evidence、record-entry state K、reference-observable shadow set、reference-unresolved set、upstream loss と downstream coarsening の分解。",
+    thoughtRefuses: "event log 自体を denominator にすること、no record を no event / biological baseline とみなすこと、独立 reference なしに shadow composition を同定すること。",
+    summary: "TNOA の upstream counterpart である active Paper 2。TNOA が entered record の意味を扱うのに対し、REC は Ω→acquisition→gate→entry の選択を監査し、何が record に入らなかったかと、その ecological consequence を独立 reference design で問う。",
+    ceiling: "tested record に見えない世界を fundamentally unknowable world と呼ばず、design/exploration 段階を field-validated claim に昇格しない。REC の開発で TNOA Paper-1 frozen results を変更しない。",
+    next: "gate-independent exposure denominator と probability-sampled independent truth を持つ prospective field system で H1–H6 を凍結し、record-entry loss と TNOA semantic coarsening を同じ held-out evidence 上で分解する。"
+  };
+
+  data.nodes = data.nodes.filter((node) => node.id !== "rec");
+  data.nodes.push(rec);
+
+  if (tnoa) {
+    tnoa.status = "result";
+    tnoa.recordBoundary = "post-entry semantics";
+    tnoa.recRelation = "REC owns upstream record-entry selection; TNOA owns post-entry semantics";
+    tnoa.summary = "記録に入った後の process-preserving observation interface。B/T/N/U と T/C/N/O/A− を分離し、低 target support・nuisance・observability を biological absence へ潰さない。closed-world MEE Paper 1 は科学的に閉じ、forward field validation / record-entry generalization は REC が別所有する。";
+    tnoa.next = "Paper 1 は frozen のまま提出へ。field では REC が upstream record-entry loss を監査し、必要な場合だけ downstream TNOA coarsening と二段階分解する。";
+  }
+
+  if (data.series?.observation) {
+    data.series.observation.lane = "RECORD → EVIDENCE → SEMANTICS → RECORD-ENTRY SHADOW";
+  }
+
+  if (data.stories?.observation) {
+    const lineage = ["pollipi", "insepi", "tnoa", "rec"];
+    data.stories.observation.nodes = lineage.filter((id) => data.nodes.some((node) => node.id === id));
+    data.stories.observation.axiom = "記録 ≠ 世界";
+    data.stories.observation.text = "研究系譜は TNOA → REC。科学的な情報生成は Ω → REC → entered record → TNOA。前者は Paper 1 から Paper 2 への発展、後者は pre-entry selection から post-entry semantics への流れ。";
+    data.stories.observation.displayPath = "pollipi → insepi → TNOA → REC  ／  Ω → REC → record → TNOA";
+  }
+
+  data.edges = data.edges.filter((edge) => !(edge.from === "rec" || edge.to === "rec"));
+  data.edges.push(
+    { from: "pollipi", to: "rec", type: "bridge", label: "primary record contract → exposure / entry audit" },
+    { from: "rec", to: "tnoa", type: "solid", label: "record-entry selection → post-entry semantics" }
+  );
+
+  (data.axes || []).forEach((axis) => {
+    axis.repos = (axis.repos || []).filter((id) => id !== "rec");
+    if (["観測", "現実", "方法"].includes(axis.name)) axis.repos.push("rec");
+  });
+
+  const patchRecBook = (route) => {
+    const books = data.books?.[route];
+    if (!books) return;
+    const retained = books.filter((book) => book.repos?.[0] !== "rec");
+    let insertAt = retained.findIndex((book) => book.repos?.[0] === "tnoa");
+    insertAt = insertAt >= 0 ? insertAt + 1 : retained.length;
+    retained.splice(insertAt, 0, {
+      n: route === "seven" ? "O4" : "",
+      title: `REC — ${rec.pulse}`,
+      chapters: 1,
+      series: "observation",
+      repos: ["rec"],
+      note: "pre-entry exposure / gate / record-entry selection; TNOA is post-entry semantics",
+      status: "active Paper 2"
+    });
+    if (route === "seven") {
+      let index = 1;
+      retained.filter((book) => book.series === "observation").forEach((book) => { book.n = `O${index++}`; });
+    } else {
+      retained.forEach((book, index) => { book.n = String(index + 1); });
+    }
+    data.books[route] = retained;
+  };
+
+  patchRecBook("seven");
+  patchRecBook("eight");
+
+  window.ZUIZUI_THOUGHTS.rec = {
+    line: rec.pulse,
+    move: rec.thoughtMove,
+    keeps: rec.thoughtKeeps,
+    refuses: rec.thoughtRefuses
+  };
 })();
