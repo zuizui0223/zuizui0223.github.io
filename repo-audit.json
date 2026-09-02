@@ -1,7 +1,7 @@
 {
-  "checked_at": "2026-09-01",
-  "last_partial_update": "2026-09-01",
-  "partial_update_scope": ["boundary", "mrod", "sdmr", "odsp", "eog", "acsp"],
+  "checked_at": "2026-09-02",
+  "last_partial_update": "2026-09-02",
+  "partial_update_scope": ["tnoa", "rec", "boundary", "mrod", "sdmr", "odsp", "eog", "acsp"],
   "scope": "audited scientific-ref README ownership, claim ceiling, next question and repository status",
   "display_rule": "one active repository = one visible fragment",
   "tracking": {
@@ -27,7 +27,8 @@
     {"repo":"shimahotarubukuro","readme_blob":"c2a2f8d55df75b729ecdcf262da8ca3e8591a474","display_status":"result"},
     {"repo":"pollipi","readme_blob":"7375a7850ad0c48d1a56bb962a3130cd01e0d50e","display_status":"bounded"},
     {"repo":"insepi","readme_blob":"c13902bad0456fad81381d4a936fde706d4f47c2","display_status":"bounded"},
-    {"repo":"tnoa","readme_blob":"f2e8433a0711c41944dcd22a01123fb51d5ccff9","display_status":"result"},
+    {"repo":"tnoa","readme_blob":"0049e3795701ceb2afa4ad7ce1ab7247a6e0558e","display_status":"result"},
+    {"repo":"rec","readme_blob":"d0a7b30f9ce9be9618b63299b7c08b7887d9772c","display_status":"open"},
     {"repo":"sch","readme_blob":"846930aac6e36ad4b8d5268469d998f665ee81ef","display_status":"open","scientific_ref":"codex/shared-cue-hypothesis-migration","ref_kind":"active_pr_head","pr":1},
     {"repo":"bita","readme_blob":"2891f96d5b0294eb02731ae615b0a2f4bda4bb2a","display_status":"result"},
     {"repo":"boundary","readme_blob":"c3afa04fa27c19dcf94316ea2b9319b7344a8ef5","display_status":"bounded"},
@@ -72,6 +73,12 @@
     "mechanism_resolution": {
       "spine": ["boundary", "mrod"],
       "rule": "identification boundary != observation-selection method"
+    },
+    "record_entry_and_semantics": {
+      "development_lineage": ["tnoa", "rec"],
+      "scientific_information_flow": ["rec", "tnoa"],
+      "audit": "tnoa-rec-audit.json",
+      "rule": "pre-entry record selection != post-entry semantic coarsening; development lineage and information flow point in opposite directions"
     }
   },
   "philosophy": {
@@ -82,6 +89,7 @@
       "same colour is not the same state",
       "an island is not one response",
       "nondetection is not absence",
+      "no record is not no event",
       "a shared cue is not one-way attraction",
       "niche is not a map",
       "mechanistic proximity is not identification strength",
