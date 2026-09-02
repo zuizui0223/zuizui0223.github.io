@@ -1,0 +1,36 @@
+{
+  "checked_at": "2026-09-02",
+  "pair": ["tnoa", "rec"],
+  "decision": {
+    "scientific_information_flow": "REC -> entered record -> TNOA -> downstream inference",
+    "research_development_lineage": "TNOA Paper 1 -> REC Paper 2",
+    "relationship": "upstream record-entry counterpart, not successor replacement",
+    "site_rule": "show research lineage in the chapter path and scientific flow in the directed edge; do not collapse the two directions"
+  },
+  "tnoa": {
+    "owner": "post-entry observation semantics",
+    "question": "What observation state should be preserved once an observation has entered the scientific record?",
+    "object": "B + {T,N,U}, with separate target, nuisance, observability, attribution and optional independently validated absence evidence",
+    "status": "result / Paper-1 scientific package closed",
+    "firewall": "TNOA does not identify the biological composition of exposures that never entered the tested record and REC cannot retroactively alter TNOA Paper-1 frozen results"
+  },
+  "rec": {
+    "owner": "pre-entry exposure, acquisition, gate and archive/record-entry selection",
+    "question": "Which exposure opportunities or biological events never became usable records, why, and with what downstream ecological consequence?",
+    "object": "gate-independent exposure universe Omega, pre-gate evidence, acquisition/gate/entry states, reference-observable shadow set and reference-unresolved set",
+    "status": "open / active Paper-2 design and exploration programme",
+    "firewall": "REC studies worlds unseen by the tested record only when an independent exposure/reference design makes them auditable; it does not claim access to an unknowable biological world or completed field validation"
+  },
+  "mirror_rules": [
+    "REC: no record != no event",
+    "TNOA: low target support or not-target != biological absence"
+  ],
+  "joint_decomposition": "Where identifiable, REC Paper 2 may decompose upstream record-entry loss from downstream TNOA semantic coarsening on the same held-out evidence.",
+  "canonical_flow": "latent process -> Omega -> REC acquisition/gate/entry -> entered record -> TNOA semantics -> ecological inference",
+  "non_transfer_rules": [
+    "REC development does not modify TNOA D1-D5 results, thresholds, manuscript claims or submission package",
+    "TNOA post-entry information preservation does not prove that the entered record is an unbiased sample of biological exposure opportunities",
+    "an event log cannot serve as its own denominator for estimating events that never entered it",
+    "a master exposure ledger enumerates non-entry but independent reference truth is still required to identify biological composition of the shadow set"
+  ]
+}
