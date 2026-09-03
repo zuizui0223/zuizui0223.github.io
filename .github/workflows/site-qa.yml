@@ -1,0 +1,41 @@
+name: site graph qa
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check data.js
+          node --check philosophy-data.js
+          node --check thoughts.js
+          node --check interaction-series.js
+          node --check niche-program.js
+          node --check odsp-homepage-update.js
+          node --check mechanism-split.js
+          node --check app.js
+          node --check philosophy-ui.js
+      - name: Audit JSON syntax
+        run: |
+          python -m json.tool repo-audit.json >/dev/null
+          python -m json.tool repository-classification-audit.json >/dev/null
+          python -m json.tool portfolio-graph-audit.json >/dev/null
+          python -m json.tool viewpoint-audit.json >/dev/null
+          python -m json.tool niche-program-audit.json >/dev/null
+          python -m json.tool tnoa-rec-audit.json >/dev/null
+      - name: Canonical graph guards
+        run: |
+          grep -q '2026-09-03-canonical-v1' mechanism-split.js
+          grep -q 'branched_and_reverse_typed' portfolio-graph-audit.json
+          grep -q 'CCOC/MLTR/MRM' viewpoint-audit.json
+          grep -q '20260903j' index.html
+          ! grep -q 'microdonta-role' index.html
