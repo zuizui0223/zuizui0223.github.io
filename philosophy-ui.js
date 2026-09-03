@@ -19,6 +19,15 @@
     document.body.classList.remove("philosophy-open");
   }
 
+  const observationAxiom = document.querySelector('[data-axiom-series="observation"] span');
+  if (observationAxiom) observationAxiom.textContent = "記録 ≠ 世界";
+
+  const audit = document.querySelector(".philosophy-audit");
+  if (audit) {
+    audit.textContent = "28 · static";
+    audit.title = "28 active repositories";
+  }
+
   document.querySelectorAll("[data-philosophy]").forEach((trigger) => {
     trigger.addEventListener("click", openDialog);
     trigger.addEventListener("keydown", (event) => {
@@ -49,12 +58,6 @@
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) closeDialog();
     });
-  }
-
-  const audit = document.querySelector(".philosophy-audit");
-  if (audit) {
-    audit.textContent = "28 · static";
-    audit.title = "28 active repositories";
   }
 
   function patchObservationPath() {
