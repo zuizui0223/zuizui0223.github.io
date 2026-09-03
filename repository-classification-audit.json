@@ -1,0 +1,60 @@
+{
+  "checked_at": "2026-09-03",
+  "owner": "zuizui0223",
+  "repository_total": 31,
+  "classification_rule": "A visible scientific fragment must own an independent scientific question or inferential contract. Repository existence alone is not enough.",
+  "counts": {
+    "scientific_active": 29,
+    "meta_registry": 1,
+    "staging_unclassified": 1
+  },
+  "scientific_blocks": {
+    "azami": {
+      "repos": ["azami", "EAzami", "aza3"],
+      "spine": "present phenotype -> public evolutionary history -> own-data discrimination",
+      "chapter_questions": [
+        "WHAT variation exists now?",
+        "HOW was that diversity assembled through evolutionary time?",
+        "WHICH compatible histories can own linked data discriminate?"
+      ]
+    },
+    "flower": {"repos": ["fcp", "chun", "hotarubukuro"]},
+    "island": {"repos": ["island", "izu-core", "shimahotarubukuro"]},
+    "observation": {"repos": ["pollipi", "insepi", "tnoa", "rec"]},
+    "interaction": {"repos": ["sch", "bita"]},
+    "mechanism_resolution": {"repos": ["boundary", "mrod"]},
+    "niche_to_survey": {"repos": ["sdmr", "odsp", "eog", "acsp"]},
+    "theory": {"repos": ["crest", "ccoc", "mltr", "mrm", "ced", "eco-genetic-criticality", "eco-genetic-warning-extensions", "theouni"]}
+  },
+  "newly_classified": {
+    "aza3": {
+      "class": "scientific_active",
+      "series": "azami",
+      "chapter": 3,
+      "status": "open",
+      "owner": "own-data discrimination after EAzami public-data Chapter 2",
+      "public_line": "残った歴史は、同じ個体に結びついた証拠で分ける。",
+      "reason": "The README declares a distinct Chapter-3 question, fail-closed handoff contract, ranked history discriminators and an empty own-individual intake ledger. It therefore owns a real scientific gate even though own biological data are currently zero.",
+      "claim_ceiling": "No definitive Japan-wide species tree, causal history, functional mechanism or fitness conclusion is authorized before same-individual ancestry/phenotype/cytotype data and separately authorized functional evidence exist."
+    },
+    "284b": {
+      "class": "staging_unclassified",
+      "visible": false,
+      "status": "not_a_scientific_status",
+      "current_content": "single file containing 'from 2.8.4'",
+      "probable_provenance": "SDMR Product-A v2.8.4 descendant/seed",
+      "reason": "It currently declares no independent scientific question, inferential object, claim ceiling, input/output contract or terminal condition. Therefore it must not be promoted to open/result/bounded merely because a repository exists.",
+      "promotion_gate": "Declare a question that is not already owned by SDMR, define the inherited v2.8.4 boundary, specify evidence and terminal outcomes, and state non-transfer rules. Otherwise merge the work back into SDMR or retain it as staging."
+    }
+  },
+  "meta": {
+    "zuizui0223.github.io": {
+      "class": "meta_registry",
+      "scientific_fragment": false,
+      "role": "portfolio registry, provenance-preserving visualization and navigation"
+    }
+  },
+  "inventory": [
+    "hotarubukuro", "azami", "bita", "island", "mrod", "pollipi", "insepi", "acsp", "eco-genetic-criticality", "ccoc", "izu-core", "eco-genetic-warning-extensions", "mltr", "ced", "mrm", "shimahotarubukuro", "fcp", "eog", "odsp", "EAzami", "chun", "sdmr", "crest", "theouni", "tnoa", "zuizui0223.github.io", "aza3", "sch", "boundary", "rec", "284b"
+  ]
+}
