@@ -24,6 +24,8 @@
     flower: "◐",
     island: "⌁",
     observation: "◎",
+    interaction: "⋈",
+    niche: "◇",
     method: "∴",
     theory: "∞"
   };
@@ -68,9 +70,11 @@
     pollipi: [1090, 566],
     insepi: [930, 500],
     tnoa: [790, 408],
+    rec: [650, 500],
 
     bita: [300, 624],
-    microdonta: [438, 590],
+    boundary: [300, 548],
+    mrod: [438, 590],
     eog: [555, 536],
     acsp: [636, 478],
     sdmr: [684, 414],
