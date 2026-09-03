@@ -24,8 +24,8 @@
 
   const audit = document.querySelector(".philosophy-audit");
   if (audit) {
-    audit.textContent = "28 · static";
-    audit.title = "28 active repositories";
+    audit.textContent = "29 · static";
+    audit.title = "29 active scientific repositories · 1 staging repository";
   }
 
   document.querySelectorAll("[data-philosophy]").forEach((trigger) => {
@@ -77,7 +77,7 @@
   if (!document.querySelector('link[href^="phd-path.css"]')) {
     const link = document.createElement("link");
     link.rel = "stylesheet";
-    link.href = "phd-path.css?v=20260903g";
+    link.href = "phd-path.css?v=20260903h";
     document.head.appendChild(link);
   }
 
