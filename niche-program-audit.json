@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-01",
+  "checked_at": "2026-09-03",
   "program_id": "niche-to-survey-four-chapter-v1",
   "purpose": "Connect four repository-owned questions as one epistemic chapter sequence without turning them into one software pipeline or transferring claim ownership.",
   "spine": "REPRESENT → THICKEN → REALIZE → OBSERVE",
@@ -20,10 +20,10 @@
       "chapter": 2,
       "repo": "odsp",
       "question": "HOW THICK is it?",
-      "operation": "x-y -> x-y-z-t and projection-loss geometry",
+      "operation": "x-y -> added vertical / temporal / structural / identity axes -> thickness, partition and held-out transferability",
       "public_line": "地図は、niche を薄くする。",
-      "current_state": "active multidimensional niche-geometry chapter; conditional-information metrics and source-preserving temporal layer exist; independent empirical thickness applications remain open",
-      "claim_firewall": "the historical ODSP spatial-patch/topology programme remains superseded by EOG; raw record density is not unbiased ecological use"
+      "current_state": "multidimensional niche-geometry chapter with one prospectively unresolved temporal lane. The completed bat lane recovered descriptive vertical thickness (effective states ≈4.02) but its x-y-conditioned vertical organization did not generalize to either sealed individual. A separate Snapshot Serengeti contract now tests temporal thickness H(T|Site), temporal partition I(Species;T|Site), and three held-out site-fold gains; its terminal outcome has not yet been opened.",
+      "claim_firewall": "thickness != transferable organization; temporal thickness != identity partition; identity-time association != competition or causal displacement; camera detection time != automatically true activity-time niche. Historical ODSP topology remains superseded by EOG."
     },
     {
       "chapter": 3,
@@ -51,6 +51,7 @@
   ],
   "non_handoffs": [
     "ODSP does not modify or rescue SDMR Product A",
+    "the Snapshot Serengeti temporal lane is independent of the completed Tawaki and bat endpoints and cannot retune or rescue them",
     "EOG does not require ODSP output and owns the historical ODSP topology component separately",
     "ACSP does not require EOG and its validated Japanese patch rule was independently confirmed under its own contract",
     "a favorable later chapter cannot retroactively promote a failed or blocked earlier chapter"
