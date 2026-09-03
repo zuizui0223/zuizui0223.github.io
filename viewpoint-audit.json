@@ -19,22 +19,7 @@
       "surface": "原因より、座標。",
       "formula": "Ω × V → X_V",
       "meaning": "The same biological world may reveal different structure under space, evolutionary time, phenotype resolution, ecological context, assembly level, added niche axes, or the number of trait coordinates available to different receivers.",
-      "repositories": [
-        "azami",
-        "EAzami",
-        "fcp",
-        "chun",
-        "hotarubukuro",
-        "island",
-        "izu-core",
-        "shimahotarubukuro",
-        "sch",
-        "bita",
-        "sdmr",
-        "odsp",
-        "eog",
-        "acsp"
-      ],
+      "repositories": ["azami","EAzami","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","bita","sdmr","odsp","eog","acsp"],
       "firewall": "Changing coordinates, resolution, representation or receiver framing does not identify one causal mechanism or one realized distribution."
     },
     {
@@ -43,21 +28,7 @@
       "surface": "答えより、境界。",
       "formula": "U ≠ 0",
       "meaning": "Undetermined, set-valued, censored, constraint-bounded, adverse, unavailable, conflicting, blocked and failed-generalization outcomes are retained instead of being forced into success, absence or one best explanation.",
-      "repositories": [
-        "pollipi",
-        "insepi",
-        "tnoa",
-        "rec",
-        "sch",
-        "bita",
-        "boundary",
-        "mrod",
-        "sdmr",
-        "odsp",
-        "eog",
-        "acsp",
-        "eco-genetic-warning-extensions"
-      ],
+      "repositories": ["pollipi","insepi","tnoa","rec","sch","bita","boundary","mrod","sdmr","odsp","eog","acsp","eco-genetic-warning-extensions"],
       "firewall": "A negative, sparse, plausible, bounded, censored or blocked result is not automatically a biological null or causal truth, and repository movement is not scientific claim revision."
     },
     {
@@ -66,19 +37,7 @@
       "surface": "分類より、忘却。",
       "formula": "S(C) = Ω / ~C",
       "meaning": "State identity is defined by which distinctions may be safely forgotten for a declared future, history, mechanism, evidence and report responsibility.",
-      "repositories": [
-        "crest",
-        "ccoc",
-        "mltr",
-        "mrm",
-        "ced",
-        "eco-genetic-criticality",
-        "eco-genetic-warning-extensions",
-        "theouni",
-        "eog",
-        "tnoa",
-        "rec"
-      ],
+      "repositories": ["crest","ccoc","mltr","mrm","ced","eco-genetic-criticality","eco-genetic-warning-extensions","theouni","eog","tnoa","rec"],
       "firewall": "The quotient is contract-relative, not arbitrary, intrinsic, universal, or automatically identified by current evidence."
     }
   ],
@@ -105,14 +64,8 @@
     "surface": "記録 ≠ 世界",
     "canonical_flow": "latent process → Ω → REC → entered record → TNOA → ecological inference",
     "research_lineage": "TNOA Paper 1 → REC Paper 2",
-    "rec": {
-      "owner": "pre-entry exposure/acquisition/gate/archive selection",
-      "rule": "no record != no event"
-    },
-    "tnoa": {
-      "owner": "post-entry process-preserving observation semantics",
-      "rule": "low target support / not-target != biological absence"
-    },
+    "rec": {"owner": "pre-entry exposure/acquisition/gate/archive selection", "rule": "no record != no event"},
+    "tnoa": {"owner": "post-entry process-preserving observation semantics", "rule": "low target support / not-target != biological absence"},
     "joint_target": "Where identifiable, separate upstream REC loss from downstream TNOA semantic coarsening on the same held-out evidence.",
     "firewall": "REC does not retroactively alter TNOA Paper-1 results, and TNOA does not certify that the entered record is an unbiased sample of the exposure universe."
   },
@@ -127,6 +80,13 @@
       {"repo":"acsp","question":"WHERE can we justify looking next?"}
     ],
     "rule": "The sequence is a transformation of scientific questions, not a claim that one repository output is required by or validates the next."
+  },
+  "phd_path": {
+    "audit": "phd-path-audit.json",
+    "surface": "原点 → 記録 → 境界 → 次観測 → 忘却 → 渡す",
+    "stages": ["hotarubukuro", "REC/TNOA", "boundary", "mrod", "crest", "theouni"],
+    "compressed_evolution": "差を消さない → 記録を世界にしない → 決められない差を残す → 残る差に次観測を与える → 必要な差だけ残す → 証拠の住所ごと渡す",
+    "rule": "This is a philosophical traversal across repository-owned results, not a scientific dependency chain, causal pipeline, or transfer of evidence ownership."
   },
   "cross_repository_invariants": [
     "difference is not a mean",
