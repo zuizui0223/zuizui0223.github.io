@@ -1,0 +1,54 @@
+{
+  "checked_at": "2026-09-03",
+  "title": "PhD in zuizui",
+  "kind": "portfolio thought path",
+  "rule": "This path is a philosophical traversal across repository-owned results, not a scientific dependency chain and not a transfer of claim ownership.",
+  "surface": "原点 → 記録 → 境界 → 次観測 → 忘却 → 渡す",
+  "stages": [
+    {
+      "id": "origin",
+      "label": "原点",
+      "repo": "hotarubukuro",
+      "thought": "差を一つの原因へ畳めなかったことから始まる。",
+      "responsibility": "difference before explanation"
+    },
+    {
+      "id": "record",
+      "label": "記録",
+      "repos": ["rec", "tnoa"],
+      "entry_repo": "rec",
+      "thought": "記録されなかった世界と、記録された後に言ってよいことを分ける。",
+      "responsibility": "record entry != observation semantics != biological world"
+    },
+    {
+      "id": "boundary",
+      "label": "境界",
+      "repo": "boundary",
+      "thought": "測定が機構に近くても、識別できるとは限らない。",
+      "responsibility": "do not collapse non-identification into explanation"
+    },
+    {
+      "id": "next_observation",
+      "label": "次観測",
+      "repo": "mrod",
+      "thought": "残る原因を当てず、その差を最も分ける観測を選ぶ。",
+      "responsibility": "act on unresolved worlds without inventing one"
+    },
+    {
+      "id": "forgetting",
+      "label": "忘却",
+      "repo": "crest",
+      "thought": "必要な差だけを残し、安全に忘れられる差を契約で決める。",
+      "responsibility": "licensed compression"
+    },
+    {
+      "id": "handoff",
+      "label": "渡す",
+      "repo": "theouni",
+      "thought": "接続しても証拠の住所を移さず、次の問いへ渡す。",
+      "responsibility": "revisable provenance without central ownership"
+    }
+  ],
+  "compressed_evolution": "差を消さない → 記録を世界にしない → 決められない差を残す → 残る差に次観測を与える → 必要な差だけ残す → 証拠の住所ごと渡す",
+  "ending": "答えの所有ではなく、忘却の責任。"
+}
