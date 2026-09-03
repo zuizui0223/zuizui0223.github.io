@@ -1,122 +1,81 @@
 {
   "checked_at": "2026-09-03",
-  "last_partial_update": "2026-09-03",
-  "partial_update_scope": ["odsp", "aza3", "284b", "EAzami", "tnoa", "rec", "boundary", "mrod", "sdmr", "eog", "acsp"],
-  "scope": "audited scientific-ref README ownership, claim ceiling, next question, repository status and non-scientific staging boundary",
-  "display_rule": "one active scientific repository = one visible fragment; repository existence alone does not create a scientific fragment",
+  "last_full_relationship_audit": "2026-09-03",
+  "scope": "all 29 active scientific repositories: current README identity/status plus typed vertical, horizontal, provenance and meta relations",
+  "display_rule": "one active scientific repository = one visible fragment; repository existence alone does not create a scientific fragment; connection type never transfers evidence ownership",
+  "graph_audit": "portfolio-graph-audit.json",
   "repository_inventory": {
-    "owner_total": 31,
-    "scientific_active": 29,
-    "meta_registry": ["zuizui0223.github.io"],
-    "staging": ["284b"],
-    "classification_audit": "repository-classification-audit.json"
+    "owner_total":31,
+    "scientific_active":29,
+    "meta_registry":["zuizui0223.github.io"],
+    "staging":["284b"],
+    "classification_audit":"repository-classification-audit.json"
   },
   "tracking": {
-    "movement": "Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
-    "scientific_ref_detail": "Repositories are audited on the default branch unless an explicit scientific_ref is declared. SCH currently uses its active PR head because main is a placeholder.",
-    "claim_drift": "README drift is an audit signal, not an automatic scientific reinterpretation.",
-    "rule": "repository movement != scientific claim revision"
+    "movement":"Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
+    "scientific_ref_detail":"Repositories are audited on the default branch unless an explicit scientific_ref is declared. SCH currently uses its active PR head because main is a placeholder.",
+    "claim_drift":"README drift is an audit signal, not an automatic scientific reinterpretation.",
+    "rule":"repository movement != scientific claim revision"
   },
   "status_semantics": {
-    "result": "the current scientific core is closed; negative and conditional results count",
-    "bounded": "a repository-owned result exists with explicit external, empirical or transfer limits",
-    "open": "a prospectively frozen or explicitly staged scientific gate remains unresolved",
-    "stop": "retired or superseded; not an active fragment",
-    "staging": "repository exists but does not yet own an independent scientific question/inferential contract; this is not a scientific status"
+    "result":"the current scientific core is closed; negative and conditional results count",
+    "bounded":"a repository-owned result exists with explicit external, empirical or transfer limits",
+    "open":"a prospectively frozen or explicitly staged scientific gate remains unresolved",
+    "stop":"retired or superseded; not an active fragment",
+    "staging":"repository exists but does not yet own an independent scientific question/inferential contract; this is not a scientific status"
   },
   "active": [
-    {"repo":"azami","readme_blob":"d88b5bbc8edd219ae9974a8df0649b23ea9dc3e3","display_status":"bounded"},
+    {"repo":"azami","readme_blob":"3cb70131f89d3a9afa0a40b97b60022140e211a5","display_status":"bounded"},
     {"repo":"EAzami","readme_blob":"06aa1668cb72e2b27e07222fb2057259ff8ce341","display_status":"result"},
-    {"repo":"aza3","readme_blob":"7398e2ff93511bd9099407437feb80db3c95e8ba","display_status":"open","chapter":3,"role":"own-data discrimination after the public-data evolutionary-history ceiling"},
-    {"repo":"fcp","readme_blob":"bcb0e54c9d2d2ccb38345f070673bf5c2cc87569","display_status":"bounded"},
-    {"repo":"chun","readme_blob":"23f9ba3579ac8c29f02e9739d2b80ba773fb4d02","display_status":"result"},
-    {"repo":"hotarubukuro","readme_blob":"d83c13bb7cd48883671434f25d7f9dfc72395a15","display_status":"result"},
+    {"repo":"aza3","readme_blob":"7398e2ff93511bd9099407437feb80db3c95e8ba","display_status":"open","chapter":3,"role":"own-data discrimination after public-data evolutionary-history ceiling"},
+    {"repo":"fcp","readme_blob":"fea14585e58d5f3c5542ca604a2f091a0754001d","display_status":"bounded","role":"geographic-space arm of flower-colour variation programme"},
+    {"repo":"chun","readme_blob":"2dc710cbac8a223c9fc44aa09fef3c97ad6631a5","display_status":"result","role":"evolutionary-time arm of flower-colour variation programme"},
+    {"repo":"hotarubukuro","readme_blob":"7cf24695f2f87a420b1b9cd92c04fe99e531bda5","display_status":"result","role":"focal Campanula publication system and philosophical origin anchor; not dependent Chapter 3 of FCP/Chun"},
     {"repo":"island","readme_blob":"3b4979dab40da0522593623450a6121114711fbf","display_status":"result"},
     {"repo":"izu-core","readme_blob":"6d7f242ce54759bf0c7387328095ab4b7483c860","display_status":"result"},
     {"repo":"shimahotarubukuro","readme_blob":"c2a2f8d55df75b729ecdcf262da8ca3e8591a474","display_status":"result"},
     {"repo":"pollipi","readme_blob":"7375a7850ad0c48d1a56bb962a3130cd01e0d50e","display_status":"bounded"},
-    {"repo":"insepi","readme_blob":"c13902bad0456fad81381d4a936fde706d4f47c2","display_status":"bounded"},
-    {"repo":"tnoa","readme_blob":"0049e3795701ceb2afa4ad7ce1ab7247a6e0558e","display_status":"result"},
-    {"repo":"rec","readme_blob":"d0a7b30f9ce9be9618b63299b7c08b7887d9772c","display_status":"open"},
+    {"repo":"insepi","readme_blob":"a0b29c487807d212be00743d80d3bd423a18cfb7","display_status":"open","role":"V13 blinded physical observation-system intervention mainline; V14/V15 are separate side-line provenance for TNOA"},
+    {"repo":"tnoa","readme_blob":"0049e3795701ceb2afa4ad7ce1ab7247a6e0558e","display_status":"result","role":"post-entry process-preserving observation semantics"},
+    {"repo":"rec","readme_blob":"d0a7b30f9ce9be9618b63299b7c08b7887d9772c","display_status":"open","role":"pre-entry exposure / gate / archive censoring counterpart"},
     {"repo":"sch","readme_blob":"846930aac6e36ad4b8d5268469d998f665ee81ef","display_status":"open","scientific_ref":"codex/shared-cue-hypothesis-migration","ref_kind":"active_pr_head","pr":1},
-    {"repo":"bita","readme_blob":"2891f96d5b0294eb02731ae615b0a2f4bda4bb2a","display_status":"result"},
+    {"repo":"bita","readme_blob":"61ece481589b5a02b1e87ae7f345c262f0f7ab1f","display_status":"result"},
     {"repo":"boundary","readme_blob":"c3afa04fa27c19dcf94316ea2b9319b7344a8ef5","display_status":"bounded"},
-    {"repo":"mrod","readme_blob":"2678be1b7d4776c504f63774dbb18474c62c0fb8","display_status":"bounded"},
+    {"repo":"mrod","readme_blob":"237b04b1c0ee500f0f2b68b8eda2c0f1d97bc4ce","display_status":"bounded"},
     {"repo":"sdmr","readme_blob":"df323c224a4060dae6e0454db2022e0e986431f9","display_status":"result"},
     {"repo":"odsp","readme_blob":"dfe2c693557641a7f9a12780f7c6596e9568abf2","display_status":"open","role":"multidimensional niche geometry; vertical chain closed, independent Snapshot Serengeti temporal-partition gate prospectively open"},
     {"repo":"eog","readme_blob":"d271ae92af397efd21cabd1f5bb07d5c09ea9fa8","display_status":"open"},
     {"repo":"acsp","readme_blob":"a56e8dd63958ec2a2354a6e7b0ed195d1582e83f","display_status":"result"},
-    {"repo":"crest","readme_blob":"67e7869ea0cd68b06a466a06ecb1002ce836a378","display_status":"result"},
-    {"repo":"ccoc","readme_blob":"6b5fb4ef4bcb0e7308e1290296be0f443d95ed57","display_status":"result"},
-    {"repo":"mltr","readme_blob":"fef70b35969ca3ce21c8fd1fe508aab4a0e2d880","display_status":"result"},
-    {"repo":"mrm","readme_blob":"16d1e6fc57f36a0bf826f827739b6e12c79d101e","display_status":"result"},
-    {"repo":"ced","readme_blob":"896afc7e561f26e704515c0ff348074ff4588c3d","display_status":"result"},
-    {"repo":"eco-genetic-criticality","readme_blob":"73526dc75c5e37c00199341a9d957b0c065b5418","display_status":"result"},
-    {"repo":"eco-genetic-warning-extensions","readme_blob":"8c8726186f0572ea2ed601c6782238cd6f8b629f","display_status":"result"},
-    {"repo":"theouni","readme_blob":"9f094d02d78f14524da6e9aba785b46470e2f175","display_status":"bounded"}
+    {"repo":"crest","readme_blob":"67e7869ea0cd68b06a466a06ecb1002ce836a378","display_status":"result","role":"synthesis hub for future/history/mechanism obligations and least-information required state"},
+    {"repo":"ccoc","readme_blob":"cca70df254fce8c597ae376a34a1fa2fbd8e9f56","display_status":"result","role":"CREST future-sufficiency companion"},
+    {"repo":"mltr","readme_blob":"0f1ab2c9ee1a97660b5ce4e072ca4d382cd65d97","display_status":"result","role":"CREST historical/semantic companion"},
+    {"repo":"mrm","readme_blob":"d3f0167c5d7dc4b756b017a3e04e563ee85c10fc","display_status":"result","role":"CREST mechanistic companion"},
+    {"repo":"ced","readme_blob":"8a506a7b5a8619edea12cb98bbbfd275111bb4dc","display_status":"result","role":"downstream evidence licensing/reportability after required-state adequacy"},
+    {"repo":"eco-genetic-criticality","readme_blob":"dceeba2f0bbb70242f3067cd2b32aefd7aa8e9d6","display_status":"result","role":"mechanistic finite-model parent; separate eco-genetic series"},
+    {"repo":"eco-genetic-warning-extensions","readme_blob":"3e21512ff8cb6d002aab85854b9d84a8a9bb2766","display_status":"result","role":"condition recovery, warning validity, natural state-sufficiency extension"},
+    {"repo":"theouni","readme_blob":"9f094d02d78f14524da6e9aba785b46470e2f175","display_status":"bounded","role":"meta-theory, empirical admission rules, programme typing and portfolio registry; not final theory chapter"}
   ],
   "staging": [
-    {
-      "repo": "284b",
-      "visible": false,
-      "current_content": "single file: from 2.8.4",
-      "probable_provenance": "SDMR Product-A v2.8.4 descendant/seed",
-      "promotion_gate": "declare an independent scientific question, inherited v2.8.4 boundary, evidence contract, claim ceiling and terminal outcomes; otherwise remain staging or move work back into SDMR"
-    }
+    {"repo":"284b","visible":false,"current_content":"single file: from 2.8.4","probable_provenance":"SDMR Product-A v2.8.4 descendant/seed","promotion_gate":"declare an independent scientific question, inherited boundary, evidence contract, claim ceiling and terminal outcomes; otherwise remain staging or return to SDMR"}
   ],
   "superseded_components": [
-    {
-      "repository": "odsp",
-      "component": "historical spatial-patch / support-topology programme",
-      "historical_readme_blob": "66bf6fbf8578002b03b1a4ab094b7bde4ec965b3",
-      "successor": "eog",
-      "current_repository_scope": "multidimensional niche geometry: vertical/temporal/structural added axes, partition and held-out transferability",
-      "reason": "the repository name was reactivated for a new Chapter-2 scope; the old topology ownership remains with EOG"
-    },
-    {
-      "repository": "microdonta",
-      "component": "former combined theory-method repository identity",
-      "successors": ["boundary", "mrod"],
-      "visible": false,
-      "reason": "Paper A identification-boundary theory and Paper B observation-design methodology now have separate repositories"
-    }
+    {"repository":"odsp","component":"historical spatial-patch / support-topology programme","historical_readme_blob":"66bf6fbf8578002b03b1a4ab094b7bde4ec965b3","successor":"eog","current_repository_scope":"multidimensional niche geometry: vertical/temporal/structural added axes, partition and held-out transferability","reason":"old topology ownership remains with EOG; current ODSP N2->EOG N3 relation is epistemic rather than code ownership"},
+    {"repository":"microdonta","component":"former combined theory-method repository identity","successors":["boundary","mrod"],"visible":false,"reason":"Paper A identification-boundary theory and Paper B observation-design methodology now have separate repositories"}
   ],
   "programmes": {
-    "azami_three_chapter": {
-      "chapters": ["azami", "EAzami", "aza3"],
-      "spine": "present phenotypic breadth -> public evolutionary history -> own-data discrimination",
-      "rule": "Chapter 3 discriminates histories left compatible by Chapter 2; future own data do not retroactively confirm the public-data chapter"
-    },
-    "niche_to_survey": {
-      "id": "niche-to-survey-four-chapter-v1",
-      "chapters": ["sdmr", "odsp", "eog", "acsp"],
-      "audit": "niche-program-audit.json",
-      "rule": "epistemic chapter order != software dependency or transferred claim ownership"
-    },
-    "mechanism_resolution": {
-      "spine": ["boundary", "mrod"],
-      "rule": "identification boundary != observation-selection method"
-    },
-    "record_entry_and_semantics": {
-      "development_lineage": ["tnoa", "rec"],
-      "scientific_information_flow": ["rec", "tnoa"],
-      "audit": "tnoa-rec-audit.json",
-      "rule": "pre-entry record selection != post-entry semantic coarsening; development lineage and information flow point in opposite directions"
-    }
+    "azami":{"shape":"linear_handoff","nodes":["azami","EAzami","aza3"]},
+    "flower":{"shape":"complementary_arms_with_focal_origin","nodes":["fcp","chun","hotarubukuro"],"rule":"FCP space arm <-> Chun evolutionary-time arm; hotarubukuro is focal/origin anchor, not dependent Chapter 3"},
+    "island":{"shape":"linear_handoff","nodes":["island","izu-core","shimahotarubukuro"]},
+    "observation":{"shape":"branched_and_reverse_typed","nodes":["pollipi","insepi","tnoa","rec"],"rule":"PolliPi->InsePi physical mainline; InsePi...TNOA abstraction provenance; REC->TNOA information flow while TNOA->REC is research lineage"},
+    "interaction":{"shape":"conceptual_handoff","nodes":["sch","bita"]},
+    "mechanism_resolution":{"shape":"horizontal_abstraction","nodes":["bita","boundary","mrod"],"rule":"specific identified set -> general identification boundary -> next-observation design; not one evidence pipeline"},
+    "niche_to_survey":{"shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"rule":"chapter order != software dependency or retroactive validation"},
+    "crest_state_theory":{"shape":"hub","nodes":["ccoc","mltr","mrm","crest","ced","theouni"],"rule":"CCOC/MLTR/MRM are parallel companions -> CREST; CED is downstream evidence licensing; theouni is meta-layer"},
+    "ecogenetic":{"shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"]}
   },
   "philosophy": {
-    "title": "PhD in zuizui",
-    "sentence": "Not ownership of answers, but responsibility for what is retained, constrained, safely forgotten, and left revisable.",
-    "axioms": [
-      "difference is not a mean",
-      "same colour is not the same state",
-      "an island is not one response",
-      "nondetection is not absence",
-      "no record is not no event",
-      "a shared cue is not one-way attraction",
-      "niche is not a map",
-      "mechanistic proximity is not identification strength",
-      "state is licensed forgetting"
-    ]
+    "title":"PhD in zuizui",
+    "sentence":"Not ownership of answers, but responsibility for what is retained, constrained, safely forgotten, and left revisable.",
+    "scientific_dependency":false
   }
 }
