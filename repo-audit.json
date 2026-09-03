@@ -1,9 +1,16 @@
 {
-  "checked_at": "2026-09-02",
-  "last_partial_update": "2026-09-02",
-  "partial_update_scope": ["tnoa", "rec", "boundary", "mrod", "sdmr", "odsp", "eog", "acsp"],
-  "scope": "audited scientific-ref README ownership, claim ceiling, next question and repository status",
-  "display_rule": "one active repository = one visible fragment",
+  "checked_at": "2026-09-03",
+  "last_partial_update": "2026-09-03",
+  "partial_update_scope": ["aza3", "284b", "EAzami", "tnoa", "rec", "boundary", "mrod", "sdmr", "odsp", "eog", "acsp"],
+  "scope": "audited scientific-ref README ownership, claim ceiling, next question, repository status and non-scientific staging boundary",
+  "display_rule": "one active scientific repository = one visible fragment; repository existence alone does not create a scientific fragment",
+  "repository_inventory": {
+    "owner_total": 31,
+    "scientific_active": 29,
+    "meta_registry": ["zuizui0223.github.io"],
+    "staging": ["284b"],
+    "classification_audit": "repository-classification-audit.json"
+  },
   "tracking": {
     "movement": "Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
     "scientific_ref_detail": "Repositories are audited on the default branch unless an explicit scientific_ref is declared. SCH currently uses its active PR head because main is a placeholder.",
@@ -14,11 +21,13 @@
     "result": "the current scientific core is closed; negative and conditional results count",
     "bounded": "a repository-owned result exists with explicit external, empirical or transfer limits",
     "open": "a prospectively frozen or explicitly staged scientific gate remains unresolved",
-    "stop": "retired or superseded; not an active fragment"
+    "stop": "retired or superseded; not an active fragment",
+    "staging": "repository exists but does not yet own an independent scientific question/inferential contract; this is not a scientific status"
   },
   "active": [
     {"repo":"azami","readme_blob":"d88b5bbc8edd219ae9974a8df0649b23ea9dc3e3","display_status":"bounded"},
-    {"repo":"EAzami","readme_blob":"b99ea33d277d431e324ebb3989fc4206a80eeae1","display_status":"result"},
+    {"repo":"EAzami","readme_blob":"06aa1668cb72e2b27e07222fb2057259ff8ce341","display_status":"result"},
+    {"repo":"aza3","readme_blob":"7398e2ff93511bd9099407437feb80db3c95e8ba","display_status":"open","chapter":3,"role":"own-data discrimination after the public-data evolutionary-history ceiling"},
     {"repo":"fcp","readme_blob":"bcb0e54c9d2d2ccb38345f070673bf5c2cc87569","display_status":"bounded"},
     {"repo":"chun","readme_blob":"23f9ba3579ac8c29f02e9739d2b80ba773fb4d02","display_status":"result"},
     {"repo":"hotarubukuro","readme_blob":"d83c13bb7cd48883671434f25d7f9dfc72395a15","display_status":"result"},
@@ -46,6 +55,15 @@
     {"repo":"eco-genetic-warning-extensions","readme_blob":"8c8726186f0572ea2ed601c6782238cd6f8b629f","display_status":"result"},
     {"repo":"theouni","readme_blob":"9f094d02d78f14524da6e9aba785b46470e2f175","display_status":"bounded"}
   ],
+  "staging": [
+    {
+      "repo": "284b",
+      "visible": false,
+      "current_content": "single file: from 2.8.4",
+      "probable_provenance": "SDMR Product-A v2.8.4 descendant/seed",
+      "promotion_gate": "declare an independent scientific question, inherited v2.8.4 boundary, evidence contract, claim ceiling and terminal outcomes; otherwise remain staging or move work back into SDMR"
+    }
+  ],
   "superseded_components": [
     {
       "repository": "odsp",
@@ -64,6 +82,11 @@
     }
   ],
   "programmes": {
+    "azami_three_chapter": {
+      "chapters": ["azami", "EAzami", "aza3"],
+      "spine": "present phenotypic breadth -> public evolutionary history -> own-data discrimination",
+      "rule": "Chapter 3 discriminates histories left compatible by Chapter 2; future own data do not retroactively confirm the public-data chapter"
+    },
     "niche_to_survey": {
       "id": "niche-to-survey-four-chapter-v1",
       "chapters": ["sdmr", "odsp", "eog", "acsp"],
