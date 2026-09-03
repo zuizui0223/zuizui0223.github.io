@@ -1,7 +1,7 @@
 {
   "checked_at": "2026-09-03",
   "last_partial_update": "2026-09-03",
-  "partial_update_scope": ["aza3", "284b", "EAzami", "tnoa", "rec", "boundary", "mrod", "sdmr", "odsp", "eog", "acsp"],
+  "partial_update_scope": ["odsp", "aza3", "284b", "EAzami", "tnoa", "rec", "boundary", "mrod", "sdmr", "eog", "acsp"],
   "scope": "audited scientific-ref README ownership, claim ceiling, next question, repository status and non-scientific staging boundary",
   "display_rule": "one active scientific repository = one visible fragment; repository existence alone does not create a scientific fragment",
   "repository_inventory": {
@@ -43,7 +43,7 @@
     {"repo":"boundary","readme_blob":"c3afa04fa27c19dcf94316ea2b9319b7344a8ef5","display_status":"bounded"},
     {"repo":"mrod","readme_blob":"2678be1b7d4776c504f63774dbb18474c62c0fb8","display_status":"bounded"},
     {"repo":"sdmr","readme_blob":"df323c224a4060dae6e0454db2022e0e986431f9","display_status":"result"},
-    {"repo":"odsp","readme_blob":"9adfda03b5f1928e007b1931a99eca3b68ab4718","display_status":"open"},
+    {"repo":"odsp","readme_blob":"dfe2c693557641a7f9a12780f7c6596e9568abf2","display_status":"open","role":"multidimensional niche geometry; vertical chain closed, independent Snapshot Serengeti temporal-partition gate prospectively open"},
     {"repo":"eog","readme_blob":"d271ae92af397efd21cabd1f5bb07d5c09ea9fa8","display_status":"open"},
     {"repo":"acsp","readme_blob":"a56e8dd63958ec2a2354a6e7b0ed195d1582e83f","display_status":"result"},
     {"repo":"crest","readme_blob":"67e7869ea0cd68b06a466a06ecb1002ce836a378","display_status":"result"},
@@ -70,7 +70,7 @@
       "component": "historical spatial-patch / support-topology programme",
       "historical_readme_blob": "66bf6fbf8578002b03b1a4ab094b7bde4ec965b3",
       "successor": "eog",
-      "current_repository_scope": "multidimensional niche geometry and representation layers",
+      "current_repository_scope": "multidimensional niche geometry: vertical/temporal/structural added axes, partition and held-out transferability",
       "reason": "the repository name was reactivated for a new Chapter-2 scope; the old topology ownership remains with EOG"
     },
     {
