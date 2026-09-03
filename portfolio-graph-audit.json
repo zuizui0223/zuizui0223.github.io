@@ -1,0 +1,114 @@
+{
+  "checked_at": "2026-09-03",
+  "scope": "Canonical relationship graph for the 29 active scientific repositories. Relation type is part of the claim boundary: visually connecting repositories never transfers evidence ownership.",
+  "relation_types": {
+    "handoff": "A later project explicitly starts from a question, uncertainty, or bounded object left by the earlier project. Solid directed relation.",
+    "epistemic": "A fixed transformation of scientific questions; no software/data dependency or retroactive validation. Dashed directed relation.",
+    "abstraction": "A specific scientific problem motivates or instantiates a more general theory/method. Dotted directed relation.",
+    "provenance": "Developmental ancestry or origin-of-question relation; not current scientific dependence. Fine dotted directed relation.",
+    "complement": "Two projects are parallel/complementary views of the same umbrella question. Bidirectional relation.",
+    "component": "Parallel companion theory supplies one declared obligation to a synthesis hub; siblings are not sequential chapters. Dotted directed relation.",
+    "information_flow": "Direction in which the scientific object passes, which may differ from research-development chronology. Solid directed relation."
+  },
+  "vertical_programmes": [
+    {
+      "id": "azami",
+      "shape": "linear_handoff",
+      "nodes": ["azami", "EAzami", "aza3"],
+      "surface": "present phenotype -> public evolutionary history -> own-data discrimination",
+      "edges": [
+        {"from":"azami","to":"EAzami","type":"handoff"},
+        {"from":"EAzami","to":"aza3","type":"handoff"}
+      ]
+    },
+    {
+      "id": "island",
+      "shape": "linear_handoff",
+      "nodes": ["island", "izu-core", "shimahotarubukuro"],
+      "surface": "WHEN/WHERE -> conditional response WHY -> focal phenotype axes",
+      "edges": [
+        {"from":"island","to":"izu-core","type":"handoff"},
+        {"from":"izu-core","to":"shimahotarubukuro","type":"handoff"}
+      ]
+    },
+    {
+      "id": "interaction",
+      "shape": "conceptual_handoff",
+      "nodes": ["sch", "bita"],
+      "surface": "one shared cue -> second trait / escape and mechanism allocation",
+      "edges": [{"from":"sch","to":"bita","type":"handoff"}]
+    },
+    {
+      "id": "ecogenetic",
+      "shape": "parent_extension",
+      "nodes": ["eco-genetic-criticality", "eco-genetic-warning-extensions"],
+      "surface": "mechanistic finite-state parent -> condition/warning/state-validity extension",
+      "edges": [{"from":"eco-genetic-criticality","to":"eco-genetic-warning-extensions","type":"handoff"}]
+    },
+    {
+      "id": "niche",
+      "shape": "epistemic_sequence",
+      "nodes": ["sdmr", "odsp", "eog", "acsp"],
+      "surface": "REPRESENT -> THICKEN -> REALIZE -> OBSERVE",
+      "edges": [
+        {"from":"sdmr","to":"odsp","type":"epistemic"},
+        {"from":"odsp","to":"eog","type":"epistemic"},
+        {"from":"eog","to":"acsp","type":"epistemic"}
+      ],
+      "firewall": "No chapter output is required by or validates the next; the historical ODSP topology-to-EOG migration is provenance, not the current N2->N3 handoff."
+    }
+  ],
+  "nonlinear_constellations": [
+    {
+      "id": "flower",
+      "shape": "complementary_arms_with_focal_origin",
+      "nodes": ["fcp", "chun", "hotarubukuro"],
+      "relations": [
+        {"from":"fcp","to":"chun","type":"complement","meaning":"geographic-space arm <-> evolutionary-time arm"},
+        {"from":"hotarubukuro","to":"fcp","type":"provenance","meaning":"focal flower-colour system -> spatial programme"},
+        {"from":"hotarubukuro","to":"chun","type":"provenance","meaning":"focal flower-colour problem -> evolutionary-time/state-identity programme"}
+      ],
+      "firewall": "hotarubukuro is not Chapter 3 of FCP/Chun scientific dependence; polymorphism is narrower than the umbrella flower-colour variation programme."
+    },
+    {
+      "id": "observation",
+      "shape": "branched_development_plus_reverse_relation",
+      "nodes": ["pollipi", "insepi", "tnoa", "rec"],
+      "relations": [
+        {"from":"pollipi","to":"insepi","type":"handoff","meaning":"primary physical record -> blinded physical observer intervention diagnosis"},
+        {"from":"insepi","to":"tnoa","type":"provenance","meaning":"later target/nuisance/observability development -> reusable post-entry methods abstraction; not current InsePi V13 succession"},
+        {"from":"rec","to":"tnoa","type":"information_flow","meaning":"exposure / record entry -> entered process-preserving observation semantics"},
+        {"from":"tnoa","to":"rec","type":"provenance","meaning":"Paper-1 research lineage -> Paper-2 upstream counterpart"}
+      ],
+      "firewall": "Scientific information flow REC->TNOA and research-development lineage TNOA->REC are different relations and must remain separately typed."
+    },
+    {
+      "id": "crest_state_theory",
+      "shape": "hub",
+      "nodes": ["ccoc", "mltr", "mrm", "crest", "ced", "theouni"],
+      "relations": [
+        {"from":"ccoc","to":"crest","type":"component","meaning":"future-sufficiency obstruction"},
+        {"from":"mltr","to":"crest","type":"component","meaning":"historical/semantic obstruction"},
+        {"from":"mrm","to":"crest","type":"component","meaning":"mechanistic obstruction"},
+        {"from":"crest","to":"ced","type":"handoff","meaning":"required state distinctions -> evidence licensing/reportability"}
+      ],
+      "meta": {"repo":"theouni","role":"meta-theory/admission/portfolio registry; not final scientific chapter"},
+      "firewall": "CCOC, MLTR and MRM are siblings, not CCOC->MLTR->MRM chapters. CED is downstream evidence licensing. theouni wraps relation semantics rather than owning companion proofs."
+    }
+  ],
+  "horizontal_bridges": [
+    {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific floral interaction identified set -> general mechanistic identification boundary"},
+    {"from":"boundary","to":"mrod","type":"epistemic","meaning":"what can be identified -> which next observation best reduces the remaining mechanism ambiguity"}
+  ],
+  "lens_only_no_edge": [
+    {"repos":["mrod","ced"],"shared":"observation design","difference":"mechanism-learning utility != target-report licensing utility"},
+    {"repos":["rec","tnoa","ced"],"shared":"observation/evidence boundary","difference":"record entry != post-entry semantics != reportability theorem"},
+    {"repos":["eco-genetic-warning-extensions","crest","theouni"],"shared":"future-relevant state adequacy","difference":"empirical/model result != general required-state theorem != portfolio admission semantics"},
+    {"repos":["fcp","chun","azami","EAzami","odsp"],"shared":"coordinate-sensitive state structure","difference":"shared viewpoint alone creates no scientific edge"}
+  ],
+  "philosophy_path": {
+    "surface":"origin -> record -> boundary -> next observation -> forgetting -> pass forward",
+    "nodes":["hotarubukuro","REC/TNOA","boundary","mrod","crest","theouni"],
+    "scientific_dependency": false
+  }
+}
