@@ -2,6 +2,12 @@
   "checked_at": "2026-09-03",
   "purpose": "State the portfolio-level viewpoint without transferring scientific ownership from source repositories.",
   "repository_identity_source": "repo-audit.json",
+  "repository_inventory": {
+    "scientific_active": 29,
+    "meta_registry": 1,
+    "staging_unclassified": 1,
+    "classification_audit": "repository-classification-audit.json"
+  },
   "central_question": "Which distinctions become visible, necessary, identifiable, recordable, reportable, constrainable, realizable, or safely forgettable when the coordinate system, receiver set, niche representation, record-entry process, observation contract, physical/ecological constraint grammar, future responsibility, retained mechanism set, or report target changes?",
   "novelty_claim": {
     "allowed": "A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, record-, constraint-, evidence-, representation- and contract-relative state structure, while unresolved, negative, unavailable, censored and conflicting outcomes remain part of the scientific object.",
@@ -19,7 +25,7 @@
       "surface": "原因より、座標。",
       "formula": "Ω × V → X_V",
       "meaning": "The same biological world may reveal different structure under space, evolutionary time, phenotype resolution, ecological context, assembly level, added niche axes, or the number of trait coordinates available to different receivers.",
-      "repositories": ["azami","EAzami","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","bita","sdmr","odsp","eog","acsp"],
+      "repositories": ["azami","EAzami","aza3","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","bita","sdmr","odsp","eog","acsp"],
       "firewall": "Changing coordinates, resolution, representation or receiver framing does not identify one causal mechanism or one realized distribution."
     },
     {
@@ -28,7 +34,7 @@
       "surface": "答えより、境界。",
       "formula": "U ≠ 0",
       "meaning": "Undetermined, set-valued, censored, constraint-bounded, adverse, unavailable, conflicting, blocked and failed-generalization outcomes are retained instead of being forced into success, absence or one best explanation.",
-      "repositories": ["pollipi","insepi","tnoa","rec","sch","bita","boundary","mrod","sdmr","odsp","eog","acsp","eco-genetic-warning-extensions"],
+      "repositories": ["pollipi","insepi","tnoa","rec","sch","bita","boundary","mrod","sdmr","odsp","eog","acsp","aza3","eco-genetic-warning-extensions"],
       "firewall": "A negative, sparse, plausible, bounded, censored or blocked result is not automatically a biological null or causal truth, and repository movement is not scientific claim revision."
     },
     {
@@ -41,6 +47,16 @@
       "firewall": "The quotient is contract-relative, not arbitrary, intrinsic, universal, or automatically identified by current evidence."
     }
   ],
+  "azami_three_chapter_program": {
+    "surface": "現在を見る → 歴史を絞る → 自分の個体で分ける",
+    "spine": "azami → EAzami → aza3",
+    "chapters": [
+      {"repo":"azami","question":"WHAT variation exists now?"},
+      {"repo":"EAzami","question":"HOW was that diversity assembled through evolutionary time?"},
+      {"repo":"aza3","question":"WHICH compatible histories can own linked data discriminate?"}
+    ],
+    "rule": "aza3 begins from the histories left compatible by the public-data ceiling; future own data do not retroactively validate or rewrite EAzami Chapter 2."
+  },
   "mechanism_resolution_program": {
     "audit_source": "repo-audit.json",
     "spine": "boundary → mrod",
@@ -87,6 +103,12 @@
     "stages": ["hotarubukuro", "REC/TNOA", "boundary", "mrod", "crest", "theouni"],
     "compressed_evolution": "差を消さない → 記録を世界にしない → 決められない差を残す → 残る差に次観測を与える → 必要な差だけ残す → 証拠の住所ごと渡す",
     "rule": "This is a philosophical traversal across repository-owned results, not a scientific dependency chain, causal pipeline, or transfer of evidence ownership."
+  },
+  "staging_boundary": {
+    "repo": "284b",
+    "visible": false,
+    "rule": "repository existence without a declared independent scientific question and inferential contract is not an open scientific fragment",
+    "promotion_audit": "repository-classification-audit.json"
   },
   "cross_repository_invariants": [
     "difference is not a mean",
