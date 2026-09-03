@@ -1,135 +1,47 @@
 {
-  "checked_at": "2026-09-03",
-  "purpose": "State the portfolio-level viewpoint without transferring scientific ownership from source repositories.",
-  "repository_identity_source": "repo-audit.json",
-  "repository_inventory": {
-    "scientific_active": 29,
-    "meta_registry": 1,
-    "staging_unclassified": 1,
-    "classification_audit": "repository-classification-audit.json"
-  },
-  "central_question": "Which distinctions become visible, necessary, identifiable, recordable, reportable, constrainable, realizable, or safely forgettable when the coordinate system, receiver set, niche representation, record-entry process, observation contract, physical/ecological constraint grammar, future responsibility, retained mechanism set, or report target changes?",
+  "checked_at":"2026-09-03",
+  "purpose":"State the portfolio-level viewpoint without transferring scientific ownership from source repositories.",
+  "repository_identity_source":"repo-audit.json",
+  "canonical_graph":"portfolio-graph-audit.json",
+  "repository_inventory":{"scientific_active":29,"meta_registry":1,"staging_unclassified":1,"classification_audit":"repository-classification-audit.json"},
+  "central_question":"Which distinctions become visible, necessary, identifiable, recordable, reportable, constrainable, realizable, or safely forgettable when the coordinate system, receiver set, niche representation, record-entry process, observation contract, physical/ecological constraint grammar, future responsibility, retained mechanism set, or report target changes?",
   "novelty_claim": {
-    "allowed": "A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, record-, constraint-, evidence-, representation- and contract-relative state structure, while unresolved, negative, unavailable, censored and conflicting outcomes remain part of the scientific object.",
-    "forbidden": [
-      "priority for task-relative representation, abstention, partial identification, state abstraction, quotient theory, imperfect detection, shared-cue conflict, constrained simulation, niche geometry, reachability, or adaptive survey design in general",
-      "one universal ecological state, niche definition, observation vocabulary or record-entry mechanism already validated in nature",
-      "one causal mechanism shared by all empirical series",
-      "central synthesis ownership of source data, proofs, or primary claims"
-    ]
+    "allowed":"A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, record-, constraint-, evidence-, representation- and contract-relative state structure, while unresolved, negative, unavailable, censored and conflicting outcomes remain part of the scientific object.",
+    "forbidden":["one universal ecological state or mechanism already validated in nature","central synthesis ownership of source data, proofs, or primary claims","treating every visual connection as scientific dependency"]
   },
-  "lenses": [
-    {
-      "id": "coordinate",
-      "glyph": "⌖",
-      "surface": "原因より、座標。",
-      "formula": "Ω × V → X_V",
-      "meaning": "The same biological world may reveal different structure under space, evolutionary time, phenotype resolution, ecological context, assembly level, added niche axes, or the number of trait coordinates available to different receivers.",
-      "repositories": ["azami","EAzami","aza3","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","bita","sdmr","odsp","eog","acsp"],
-      "firewall": "Changing coordinates, resolution, representation or receiver framing does not identify one causal mechanism or one realized distribution."
-    },
-    {
-      "id": "boundary",
-      "glyph": "∅",
-      "surface": "答えより、境界。",
-      "formula": "U ≠ 0",
-      "meaning": "Undetermined, set-valued, censored, constraint-bounded, adverse, unavailable, conflicting, blocked and failed-generalization outcomes are retained instead of being forced into success, absence or one best explanation.",
-      "repositories": ["pollipi","insepi","tnoa","rec","sch","bita","boundary","mrod","sdmr","odsp","eog","acsp","aza3","eco-genetic-warning-extensions"],
-      "firewall": "A negative, sparse, plausible, bounded, censored or blocked result is not automatically a biological null or causal truth, and repository movement is not scientific claim revision."
-    },
-    {
-      "id": "forgetting",
-      "glyph": "≈",
-      "surface": "分類より、忘却。",
-      "formula": "S(C) = Ω / ~C",
-      "meaning": "State identity is defined by which distinctions may be safely forgotten for a declared future, history, mechanism, evidence and report responsibility.",
-      "repositories": ["crest","ccoc","mltr","mrm","ced","eco-genetic-criticality","eco-genetic-warning-extensions","theouni","eog","tnoa","rec"],
-      "firewall": "The quotient is contract-relative, not arbitrary, intrinsic, universal, or automatically identified by current evidence."
-    }
+  "relation_rule":"Scientific graph relations are typed. handoff, epistemic sequence, abstraction, provenance, complement, component and information flow are not interchangeable.",
+  "lenses":[
+    {"id":"coordinate","glyph":"⌖","surface":"原因より、座標。","formula":"Ω × V → X_V","repositories":["azami","EAzami","aza3","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","bita","sdmr","odsp","eog","acsp"],"firewall":"Changing coordinates, resolution, representation or receiver framing does not identify one causal mechanism or realized distribution."},
+    {"id":"boundary","glyph":"∅","surface":"答えより、境界。","formula":"U ≠ 0","repositories":["pollipi","insepi","tnoa","rec","sch","bita","boundary","mrod","sdmr","odsp","eog","acsp","aza3","eco-genetic-warning-extensions"],"firewall":"Negative, sparse, censored, unavailable or failed-generalization outcomes remain scientific objects rather than being rewritten as biological nulls."},
+    {"id":"forgetting","glyph":"≈","surface":"分類より、忘却。","formula":"S(C)=Ω/~C","repositories":["crest","ccoc","mltr","mrm","ced","eco-genetic-criticality","eco-genetic-warning-extensions","theouni","eog","tnoa","rec"],"firewall":"Contract-relative compression is not arbitrary, intrinsic, universal, or automatically identified by current evidence."}
   ],
-  "azami_three_chapter_program": {
-    "surface": "現在を見る → 歴史を絞る → 自分の個体で分ける",
-    "spine": "azami → EAzami → aza3",
-    "chapters": [
-      {"repo":"azami","question":"WHAT variation exists now?"},
-      {"repo":"EAzami","question":"HOW was that diversity assembled through evolutionary time?"},
-      {"repo":"aza3","question":"WHICH compatible histories can own linked data discriminate?"}
+  "scientific_graph": {
+    "vertical_programmes":[
+      {"id":"azami","shape":"linear_handoff","nodes":["azami","EAzami","aza3"],"surface":"現在を見る → 歴史を絞る → 自分の個体で分ける"},
+      {"id":"island","shape":"linear_handoff","nodes":["island","izu-core","shimahotarubukuro"],"surface":"WHEN/WHERE → conditional WHY → focal phenotype"},
+      {"id":"interaction","shape":"conceptual_handoff","nodes":["sch","bita"],"surface":"shared cue → second coordinate"},
+      {"id":"ecogenetic","shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"],"surface":"criticality → state/warning validity"},
+      {"id":"niche","shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"surface":"REPRESENT ⇢ THICKEN ⇢ REALIZE ⇢ OBSERVE","rule":"question order != software/data dependency"}
     ],
-    "rule": "aza3 begins from the histories left compatible by the public-data ceiling; future own data do not retroactively validate or rewrite EAzami Chapter 2."
-  },
-  "mechanism_resolution_program": {
-    "audit_source": "repo-audit.json",
-    "spine": "boundary → mrod",
-    "boundary": {
-      "owner": "boundary",
-      "surface": "近い証拠 ≠ 強い同定。",
-      "question": "What can the current observation map identify about mechanism in principle?",
-      "meaning": "Mechanistic proximity and identification strength are separate axes. Point, partial and non-identification remain distinct outcomes."
-    },
-    "mrod": {
-      "owner": "mrod",
-      "surface": "当てずに、分ける。",
-      "formula": "Aε → V(Q) → Q*",
-      "question": "Which next observation best reduces the residual mechanism ambiguity?",
-      "meaning": "Declared ecological and physical constraints plus observations define an admissible mechanism region; observation design acts on the remaining set instead of inventing a latent truth."
-    },
-    "rule": "identification boundary != observation-selection method; a boundary result may motivate an observation but does not itself choose or validate that observation"
-  },
-  "record_entry_and_semantics_program": {
-    "audit": "tnoa-rec-audit.json",
-    "surface": "記録 ≠ 世界",
-    "canonical_flow": "latent process → Ω → REC → entered record → TNOA → ecological inference",
-    "research_lineage": "TNOA Paper 1 → REC Paper 2",
-    "rec": {"owner": "pre-entry exposure/acquisition/gate/archive selection", "rule": "no record != no event"},
-    "tnoa": {"owner": "post-entry process-preserving observation semantics", "rule": "low target support / not-target != biological absence"},
-    "joint_target": "Where identifiable, separate upstream REC loss from downstream TNOA semantic coarsening on the same held-out evidence.",
-    "firewall": "REC does not retroactively alter TNOA Paper-1 results, and TNOA does not certify that the entered record is an unbiased sample of the exposure universe."
-  },
-  "niche_to_survey_program": {
-    "audit": "niche-program-audit.json",
-    "surface": "何を残す？ → 何が隠れる？ → どこまで届く？ → どこを見る？",
-    "spine": "REPRESENT → THICKEN → REALIZE → OBSERVE",
-    "chapters": [
-      {"repo":"sdmr","question":"WHAT belongs in the niche?"},
-      {"repo":"odsp","question":"HOW THICK is it?"},
-      {"repo":"eog","question":"WHERE can it become real?"},
-      {"repo":"acsp","question":"WHERE can we justify looking next?"}
+    "nonlinear_constellations":[
+      {"id":"flower","shape":"complementary_arms_with_focal_origin","nodes":["fcp","chun","hotarubukuro"],"surface":"space ↔ evolutionary time; focal/origin anchor"},
+      {"id":"observation","shape":"branched_and_reverse_typed","nodes":["pollipi","insepi","tnoa","rec"],"surface":"PolliPi→InsePi physical mainline; InsePi...TNOA abstraction; REC→TNOA information flow while TNOA→REC is research lineage"},
+      {"id":"crest_state_theory","shape":"hub","nodes":["ccoc","mltr","mrm","crest","ced","theouni"],"surface":"future/history/mechanism → required state → evidence licensing; theouni outside as meta-layer"}
     ],
-    "rule": "The sequence is a transformation of scientific questions, not a claim that one repository output is required by or validates the next."
+    "horizontal_bridges":[
+      {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific identified set -> general identification boundary"},
+      {"from":"boundary","to":"mrod","type":"epistemic","meaning":"identification boundary -> next-observation design"}
+    ],
+    "lens_only_no_edge":["mrod ↔ CED: mechanism-learning utility != target-report licensing","REC/TNOA ↔ CED: record entry / post-entry semantics != reportability theorem","eco-genetic-warning-extensions ↔ CREST/theouni: empirical state adequacy != general state theorem/meta admission","shared coordinate viewpoint alone creates no edge"]
   },
   "phd_path": {
-    "audit": "phd-path-audit.json",
-    "surface": "原点 → 記録 → 境界 → 次観測 → 忘却 → 渡す",
-    "stages": ["hotarubukuro", "REC/TNOA", "boundary", "mrod", "crest", "theouni"],
-    "compressed_evolution": "差を消さない → 記録を世界にしない → 決められない差を残す → 残る差に次観測を与える → 必要な差だけ残す → 証拠の住所ごと渡す",
-    "rule": "This is a philosophical traversal across repository-owned results, not a scientific dependency chain, causal pipeline, or transfer of evidence ownership."
+    "audit":"phd-path-audit.json",
+    "surface":"原点 → 記録 → 境界 → 次観測 → 忘却 → 渡す",
+    "stages":["hotarubukuro","REC/TNOA","boundary","mrod","crest","theouni"],
+    "scientific_dependency":false,
+    "rule":"This is a philosophical traversal across repository-owned results, not a causal pipeline, chapter sequence, or transfer of evidence ownership."
   },
-  "staging_boundary": {
-    "repo": "284b",
-    "visible": false,
-    "rule": "repository existence without a declared independent scientific question and inferential contract is not an open scientific fragment",
-    "promotion_audit": "repository-classification-audit.json"
-  },
-  "cross_repository_invariants": [
-    "difference is not a mean",
-    "visible similarity is not state identity",
-    "one perturbation is not one response",
-    "record is not world",
-    "no record is not no event",
-    "low target support is not biological absence",
-    "a shared cue is not one-way attraction",
-    "escape sign is not mechanism allocation",
-    "mechanistic proximity is not identification strength",
-    "ecological plausibility is not causal identification",
-    "simulation constrains possible worlds; it does not fill latent truth",
-    "constraints must be pre-data, explicit and provenance-preserving",
-    "niche representation is not realized distribution",
-    "a flat map is not the full ecological state space",
-    "local possibility is not reachability",
-    "candidate survey patch is not occupancy",
-    "required state is not identified state and is not reportable target by default",
-    "connection is not ownership",
-    "revision must preserve provenance"
-  ],
-  "phd_in_zuizui": "Not ownership of one final answer, but responsibility for which distinctions are retained, recorded, constrained, represented, left unresolved, safely forgotten, made actionable, and passed forward as revisable provenance."
+  "staging_boundary":{"repo":"284b","visible":false,"rule":"repository existence without an independent scientific question and inferential contract is not an open scientific fragment"},
+  "cross_repository_invariants":["difference is not a mean","visible similarity is not state identity","one perturbation is not one response","record is not world","no record is not no event","low target support is not biological absence","shared cue is not one-way attraction","escape sign is not mechanism allocation","mechanistic proximity is not identification strength","niche representation is not realized distribution","flat map is not full ecological state space","local possibility is not reachability","candidate survey patch is not occupancy","required state != identified state != reportable target","connection is not ownership","revision must preserve provenance"],
+  "phd_in_zuizui":"Not ownership of one final answer, but responsibility for which distinctions are retained, recorded, constrained, represented, left unresolved, safely forgotten, made actionable, and passed forward as revisable provenance."
 }
