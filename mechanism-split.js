@@ -206,4 +206,88 @@
     keeps: rec.thoughtKeeps,
     refuses: rec.thoughtRefuses
   };
+
+  // Azami Chapter 3: own-data discrimination after the completed public-data Chapter 2.
+  const eazami = data.nodes.find((node) => node.id === "EAzami");
+  const aza3 = {
+    id: "aza3",
+    series: "azami",
+    x: .43,
+    y: .31,
+    status: "open",
+    layers: ["chapter 3", "own data", "ancestry", "phenotype", "cytotype", "history discrimination"],
+    pulse: "残った歴史は、同じ個体に結びついた証拠で分ける。",
+    thoughtMove: "EAzami が公共データの同定限界で残した competing histories を、same-individual ancestry・phenotype・cytotype と、別途認可された function / fitness evidence で判別する。",
+    thoughtKeeps: "immutable individual identity、voucher / diagnostic image、same-library Japan-wide RAD-seq topology/network sensitivity、phenotype state、cytotype、authorization provenance、未判別の歴史集合。",
+    thoughtRefuses: "公共データ Chapter 2 を将来自前データで retroactive confirmation と呼ぶこと、RAD-seq一本を無条件の species tree と呼ぶこと、未認可の field/tissue/function evidence を存在するものとして扱うこと。",
+    summary: "EAzami Chapter 2 の public-data ceiling から始まる own-data Chapter 3。最初の成果は日本全体の same-library RAD-seq topology/network sensitivity で、各ゲノム記録を同一個体の表現型・cytotype・voucher/画像・認可記録へ結び、残る歴史仮説を判別する。",
+    ceiling: "own biological data は現在0。field/tissue authorization、definitive Japan-wide species-tree claim、機構・fitness の確定はいずれも未認可であり、open gate を result に昇格しない。",
+    next: "優先順位付き sampling discriminator に従って同一個体 intake を埋め、系統/ネットワーク感度で公共データ由来の competing histories を最初に分ける。"
+  };
+
+  data.nodes = data.nodes.filter((node) => node.id !== "aza3");
+  data.nodes.push(aza3);
+
+  if (eazami) {
+    eazami.status = "result";
+    eazami.next = "aza3 へ。公共データで残った histories を own Japan-wide ancestry × phenotype × cytotype の same-individual design で判別する。";
+  }
+
+  if (data.series?.azami) {
+    data.series.azami.lane = "PHENOTYPE → EVOLUTIONARY HISTORY → OWN-DATA DISCRIMINATION";
+  }
+
+  if (data.stories?.azami) {
+    data.stories.azami.nodes = ["azami", "EAzami", "aza3"];
+    data.stories.azami.text = "現在の表現型 breadth を置き、公共データで進化史の下限と曖昧さを分離し、残った histories だけを自前の同一個体データで判別する。";
+  }
+
+  data.edges = data.edges.filter((edge) => edge.from !== "aza3" && edge.to !== "aza3");
+  data.edges.push({ from: "EAzami", to: "aza3", type: "solid", label: "public-history ceiling → own-data discrimination" });
+
+  (data.axes || []).forEach((axis) => {
+    axis.repos = (axis.repos || []).filter((id) => id !== "aza3");
+    if (["時間", "現実", "メカニズム"].includes(axis.name)) axis.repos.push("aza3");
+  });
+
+  const patchAza3Book = (route) => {
+    const books = data.books?.[route];
+    if (!books) return;
+    const retained = books.filter((book) => book.repos?.[0] !== "aza3");
+    let insertAt = retained.findIndex((book) => book.repos?.[0] === "EAzami");
+    insertAt = insertAt >= 0 ? insertAt + 1 : retained.length;
+    retained.splice(insertAt, 0, {
+      n: route === "seven" ? "A3" : "",
+      title: `aza3 — ${aza3.pulse}`,
+      chapters: 1,
+      series: "azami",
+      repos: ["aza3"],
+      note: "own-data discrimination after public-data Chapter 2",
+      status: "open"
+    });
+    if (route === "seven") {
+      let index = 1;
+      retained.filter((book) => book.series === "azami").forEach((book) => { book.n = `A${index++}`; });
+    } else {
+      retained.forEach((book, index) => { book.n = String(index + 1); });
+    }
+    data.books[route] = retained;
+  };
+
+  patchAza3Book("seven");
+  patchAza3Book("eight");
+
+  window.ZUIZUI_THOUGHTS.aza3 = {
+    line: aza3.pulse,
+    move: aza3.thoughtMove,
+    keeps: aza3.thoughtKeeps,
+    refuses: aza3.thoughtRefuses
+  };
+
+  window.ZUIZUI_REPOSITORY_CLASSIFICATION = {
+    scientificActive: 29,
+    metaRegistry: ["zuizui0223.github.io"],
+    staging: ["284b"],
+    stagingRule: "repository existence without an independent scientific contract is not an open scientific fragment"
+  };
 })();
