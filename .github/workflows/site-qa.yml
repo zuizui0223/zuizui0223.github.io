@@ -32,10 +32,29 @@ jobs:
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
           python -m json.tool tnoa-rec-audit.json >/dev/null
-      - name: Canonical graph guards
+      - name: Canonical graph semantics
         run: |
-          grep -q '2026-09-03-canonical-v1' mechanism-split.js
-          grep -q 'branched_and_reverse_typed' portfolio-graph-audit.json
-          grep -q 'CCOC / MLTR / MRM' viewpoint-audit.json
-          grep -q '20260903j' index.html
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          graph = json.loads(Path('portfolio-graph-audit.json').read_text())
+          view = json.loads(Path('viewpoint-audit.json').read_text())
+          repo = json.loads(Path('repo-audit.json').read_text())
+
+          nonlinear = {x['id']: x for x in graph['nonlinear_constellations']}
+          vertical = {x['id']: x for x in graph['vertical_programmes']}
+          assert nonlinear['observation']['shape'] == 'branched_development_plus_reverse_relation'
+          assert nonlinear['crest_state_theory']['shape'] == 'hub'
+          assert nonlinear['flower']['shape'] == 'complementary_arms_with_focal_origin'
+          assert vertical['niche']['shape'] == 'epistemic_sequence'
+          assert vertical['ecogenetic']['shape'] == 'parent_extension'
+          assert view['phd_path']['scientific_dependency'] is False
+          assert repo['repository_inventory']['scientific_active'] == 29
+          assert not Path('microdonta-role.js').exists()
+          assert not Path('microdonta-role.css').exists()
+          PY
+      - name: Asset cache guard
+        run: |
+          grep -q '20260903k' index.html
           ! grep -q 'microdonta-role' index.html
