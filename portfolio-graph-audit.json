@@ -1,5 +1,5 @@
 {
-  "checked_at": "2026-09-03",
+  "checked_at": "2026-09-04",
   "scope": "Canonical relationship graph for the 29 active scientific repositories. Relation type is part of the claim boundary: visually connecting repositories never transfers evidence ownership.",
   "relation_types": {
     "handoff": "A later project explicitly starts from a question, uncertainty, or bounded object left by the earlier project. Solid directed relation.",
@@ -8,18 +8,19 @@
     "provenance": "Developmental ancestry or origin-of-question relation; not current scientific dependence. Fine dotted directed relation.",
     "complement": "Two projects are parallel/complementary views of the same umbrella question. Bidirectional relation.",
     "component": "Parallel companion theory supplies one declared obligation to a synthesis hub; siblings are not sequential chapters. Dotted directed relation.",
-    "information_flow": "Direction in which the scientific object passes, which may differ from research-development chronology. Solid directed relation."
+    "information_flow": "Direction in which a bounded scientific/operational object passes, which may differ from research-development chronology. Solid directed relation."
   },
   "vertical_programmes": [
     {
       "id": "azami",
-      "shape": "linear_handoff",
+      "shape": "linear_handoff_with_operational_return",
       "nodes": ["azami", "EAzami", "aza3"],
       "surface": "present phenotype -> public evolutionary history -> own-data discrimination",
       "edges": [
         {"from":"azami","to":"EAzami","type":"handoff"},
         {"from":"EAzami","to":"aza3","type":"handoff"}
-      ]
+      ],
+      "external_operational_bridge": "aza3 <-> ACSP; aza3 declares what evidence/sampling slot is needed, ACSP returns where to look, field truth returns to aza3"
     },
     {
       "id": "island",
@@ -47,7 +48,7 @@
     },
     {
       "id": "niche",
-      "shape": "epistemic_sequence",
+      "shape": "epistemic_sequence_with_empirical_return",
       "nodes": ["sdmr", "odsp", "eog", "acsp"],
       "surface": "REPRESENT -> THICKEN -> REALIZE -> OBSERVE",
       "edges": [
@@ -55,7 +56,8 @@
         {"from":"odsp","to":"eog","type":"epistemic"},
         {"from":"eog","to":"acsp","type":"epistemic"}
       ],
-      "firewall": "No chapter output is required by or validates the next; the historical ODSP topology-to-EOG migration is provenance, not the current N2->N3 handoff."
+      "firewall": "No chapter output is required by or validates the next; the historical ODSP topology-to-EOG migration is provenance, not the current N2->N3 handoff. ACSP may operationally serve an independently declared empirical sampling need without taking ownership of that biological question.",
+      "external_operational_bridge": "ACSP <-> aza3"
     }
   ],
   "nonlinear_constellations": [
@@ -100,6 +102,19 @@
     {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific floral interaction identified set -> general mechanistic identification boundary"},
     {"from":"boundary","to":"mrod","type":"epistemic","meaning":"what can be identified -> which next observation best reduces the remaining mechanism ambiguity"}
   ],
+  "cross_program_operational_bridges": [
+    {
+      "id": "aza3-acsp",
+      "nodes": ["aza3", "acsp"],
+      "surface": "WHAT to sample <-> WHERE to look",
+      "relations": [
+        {"from":"aza3","to":"acsp","type":"information_flow","meaning":"predeclared biological sampling slot -> bounded candidate search patch"},
+        {"from":"acsp","to":"aza3","type":"information_flow","meaning":"candidate patch -> field verification / private exact-site freeze / individual intake"}
+      ],
+      "audit": "aza3-acsp-field-bridge-audit.json",
+      "firewall": "aza3 owns taxon, contrast, biological priority, authorization and field truth; ACSP owns search framing, pinned selector and bounded candidate-patch generation. Candidate patch != occupancy != exact sampling site. ACSP evidence never retroactively validates EAzami."
+    }
+  ],
   "lens_only_no_edge": [
     {"repos":["mrod","ced"],"shared":"observation design","difference":"mechanism-learning utility != target-report licensing utility"},
     {"repos":["rec","tnoa","ced"],"shared":"observation/evidence boundary","difference":"record entry != post-entry semantics != reportability theorem"},
@@ -107,8 +122,8 @@
     {"repos":["fcp","chun","azami","EAzami","odsp"],"shared":"coordinate-sensitive state structure","difference":"shared viewpoint alone creates no scientific edge"}
   ],
   "philosophy_path": {
-    "surface":"origin -> record -> boundary -> next observation -> forgetting -> pass forward",
-    "nodes":["hotarubukuro","REC/TNOA","boundary","mrod","crest","theouni"],
+    "surface":"origin -> record -> boundary -> next observation -> empirical return -> forgetting -> pass forward",
+    "nodes":["hotarubukuro","REC/TNOA","boundary","mrod","ACSP/aza3","crest","theouni"],
     "scientific_dependency": false
   }
 }
