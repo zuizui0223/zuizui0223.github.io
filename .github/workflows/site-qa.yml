@@ -34,6 +34,7 @@ jobs:
           python -m json.tool niche-program-audit.json >/dev/null
           python -m json.tool tnoa-rec-audit.json >/dev/null
           python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
+          python -m json.tool ecosystem-system-audit.json >/dev/null
       - name: Canonical graph semantics
         run: |
           python - <<'PY'
@@ -44,6 +45,7 @@ jobs:
           view = json.loads(Path('viewpoint-audit.json').read_text())
           repo = json.loads(Path('repo-audit.json').read_text())
           classification = json.loads(Path('repository-classification-audit.json').read_text())
+          ecosystem = json.loads(Path('ecosystem-system-audit.json').read_text())
 
           nonlinear = {x['id']: x for x in graph['nonlinear_constellations']}
           vertical = {x['id']: x for x in graph['vertical_programmes']}
@@ -54,7 +56,14 @@ jobs:
           assert vertical['niche']['shape'] == 'epistemic_sequence'
           assert vertical['ecogenetic']['shape'] == 'parent_extension'
           assert standalone['state_measurement_empirical']['nodes'] == ['egwee']
-          assert any(x.get('from') == 'eco-genetic-warning-extensions' and x.get('to') == 'egwee' and x.get('type') == 'provenance' for x in graph['horizontal_bridges'])
+          assert graph['ecosystem_system']['id'] == 'research-ecosystem-system-v1'
+          assert ecosystem['system_rule'] == 'connection != ownership'
+          assert len(ecosystem['node_roles']) == 30
+          assert any(x.get('from') == 'hotarubukuro' and x.get('to') == 'izu-core' and x.get('type') == 'shared_substrate' for x in ecosystem['cross_series_relations'])
+          assert any(x.get('from') == 'izu-core' and x.get('to') == 'egwee' and x.get('type') == 'shared_substrate' for x in ecosystem['cross_series_relations'])
+          assert any(x.get('from') == 'tnoa' and x.get('to') == 'egwee' for x in ecosystem['cross_series_relations'])
+          assert any(x.get('from') == 'egwee' and x.get('to') == 'ced' for x in ecosystem['cross_series_relations'])
+          assert any(x.get('from') == 'mrod' and x.get('to') == 'acsp' and x.get('type') == 'complement' for x in ecosystem['cross_series_relations'])
           assert view['phd_path']['scientific_dependency'] is False
           assert repo['repository_inventory']['scientific_active'] == 30
           assert classification['counts']['scientific_active'] == 30
