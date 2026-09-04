@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-09-04",
+  "id": "aza3-acsp-field-bridge-v1",
+  "status": "active_operational_bridge",
+  "surface": "aza3: WHAT to sample ⇄ ACSP: WHERE to look",
+  "question": "How can a method programme return a field-search object to an empirical programme without taking ownership of biological priority or field truth?",
+  "repositories": ["aza3", "acsp"],
+  "request_flow": {
+    "from": "aza3",
+    "to": "acsp",
+    "object": "predeclared biological sampling slot",
+    "aza3_owns": ["taxon", "contrast", "sampling priority", "required evidence unit", "collection authorization"]
+  },
+  "return_flow": {
+    "from": "acsp",
+    "to": "aza3",
+    "object": "bounded candidate patch",
+    "acsp_owns": ["search framing", "pinned selector", "candidate-patch generation", "comparator contract"]
+  },
+  "field_return": [
+    "candidate patch",
+    "field verification",
+    "private exact-site freeze",
+    "individual intake",
+    "same-individual ancestry × phenotype × cytotype"
+  ],
+  "firewalls": [
+    "biological priority != search geography",
+    "candidate patch != occupancy",
+    "candidate patch != exact sampling site",
+    "ACSP does not choose the taxon or biological contrast",
+    "field-confirmed exact sites remain private and are owned by aza3",
+    "ACSP support does not retroactively validate EAzami evolutionary-history claims"
+  ],
+  "homepage": {
+    "azami_story": "azami → EAzami → aza3 ⇄ ACSP",
+    "niche_story": "SDMR ⇢ ODSP ⇢ EOG ⇢ ACSP ⇄ aza3",
+    "hero_bridge": "subtle series-level bridge between the azami and niche/survey portals",
+    "runtime_file": "aza3-acsp-bridge.js"
+  },
+  "interpretation": "This is the first explicit operational return path from the niche-to-survey methods programme into the Azami empirical programme: aza3 defines what evidence is missing, ACSP translates that need into where to look, and field truth returns to aza3."
+}
