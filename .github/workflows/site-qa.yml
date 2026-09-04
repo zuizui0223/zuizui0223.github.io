@@ -57,6 +57,7 @@ jobs:
           assert vertical['ecogenetic']['shape'] == 'parent_extension'
           assert standalone['state_measurement_empirical']['nodes'] == ['egwee']
           assert graph['ecosystem_system']['id'] == 'research-ecosystem-system-v1'
+          assert view['scientific_graph']['ecosystem_system']['audit'] == 'ecosystem-system-audit.json'
           assert ecosystem['system_rule'] == 'connection != ownership'
           assert len(ecosystem['node_roles']) == 30
           assert any(x.get('from') == 'hotarubukuro' and x.get('to') == 'izu-core' and x.get('type') == 'shared_substrate' for x in ecosystem['cross_series_relations'])
@@ -74,6 +75,8 @@ jobs:
       - name: Asset cache guard
         run: |
           grep -q 'aza3-acsp-bridge.js?v=20260904c' index.html
+          grep -q 'app.js?v=20260904a' index.html
           grep -q 'fill="url(#voidFill)" filter="url(#softGlow)"' index.html
+          grep -q 'shared_substrate' app.js
           grep -q '30 · static' index.html
           ! grep -q 'microdonta-role' index.html
