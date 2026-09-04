@@ -1,6 +1,6 @@
 {
   "checked_at": "2026-09-04",
-  "scope": "Canonical relationship graph for the 29 active scientific repositories. Relation type is part of the claim boundary: visually connecting repositories never transfers evidence ownership.",
+  "scope": "Canonical relationship graph for the 30 active scientific repositories. Relation type is part of the claim boundary: visually connecting repositories never transfers evidence ownership.",
   "relation_types": {
     "handoff": "A later project explicitly starts from a question, uncertainty, or bounded object left by the earlier project. Solid directed relation.",
     "epistemic": "A fixed transformation of scientific questions; no software/data dependency or retroactive validation. Dashed directed relation.",
@@ -44,7 +44,8 @@
       "shape": "parent_extension",
       "nodes": ["eco-genetic-criticality", "eco-genetic-warning-extensions"],
       "surface": "mechanistic finite-state parent -> condition/warning/state-validity extension",
-      "edges": [{"from":"eco-genetic-criticality","to":"eco-genetic-warning-extensions","type":"handoff"}]
+      "edges": [{"from":"eco-genetic-criticality","to":"eco-genetic-warning-extensions","type":"handoff"}],
+      "firewall": "EGWEE is not a third chapter of this vertical programme. Its relation to EGWE is migration/provenance only."
     },
     {
       "id": "niche",
@@ -58,6 +59,17 @@
       ],
       "firewall": "No chapter output is required by or validates the next; the historical ODSP topology-to-EOG migration is provenance, not the current N2->N3 handoff. ACSP may operationally serve an independently declared empirical sampling need without taking ownership of that biological question.",
       "external_operational_bridge": "ACSP <-> aza3"
+    }
+  ],
+  "standalone_programmes": [
+    {
+      "id": "state_measurement_empirical",
+      "shape": "independent_empirical_method_synthesis",
+      "nodes": ["egwee"],
+      "surface": "MEASURE -> PRESERVE -> RESIDUAL -> IDENTIFY",
+      "question": "Has a proposed ecological state/proxy earned endpoint-relevant predictive status, does its representation preserve the intended information, and only then may residual context or cross-study synthesis be interpreted?",
+      "status": "bounded",
+      "firewall": "EGWEE does not validate EGWE warning validity or EGC simulator closure, does not pool heterogeneous natural systems into one effect, and preserves not_identifiable/not_estimable/STOP as outcomes."
     }
   ],
   "nonlinear_constellations": [
@@ -100,7 +112,8 @@
   ],
   "horizontal_bridges": [
     {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific floral interaction identified set -> general mechanistic identification boundary"},
-    {"from":"boundary","to":"mrod","type":"epistemic","meaning":"what can be identified -> which next observation best reduces the remaining mechanism ambiguity"}
+    {"from":"boundary","to":"mrod","type":"epistemic","meaning":"what can be identified -> which next observation best reduces the remaining mechanism ambiguity"},
+    {"from":"eco-genetic-warning-extensions","to":"egwee","type":"provenance","meaning":"natural-data four-gate reader-facing programme migrated from EGWE into an independent empirical paper; no warning/model claim inheritance"}
   ],
   "cross_program_operational_bridges": [
     {
@@ -118,6 +131,8 @@
   "lens_only_no_edge": [
     {"repos":["mrod","ced"],"shared":"observation design","difference":"mechanism-learning utility != target-report licensing utility"},
     {"repos":["rec","tnoa","ced"],"shared":"observation/evidence boundary","difference":"record entry != post-entry semantics != reportability theorem"},
+    {"repos":["egwee","ced"],"shared":"evidence licensing before a deterministic interpretation","difference":"empirical measurement/representation gates != theorem-first finite evidence/reportability guarantees"},
+    {"repos":["egwee","sdmr"],"shared":"candidate coordinates must earn predictive admission","difference":"ecological state/proxy adequacy before residual context != environmental-variable admission to niche representation"},
     {"repos":["eco-genetic-warning-extensions","crest","theouni"],"shared":"future-relevant state adequacy","difference":"empirical/model result != general required-state theorem != portfolio admission semantics"},
     {"repos":["fcp","chun","azami","EAzami","odsp"],"shared":"coordinate-sensitive state structure","difference":"shared viewpoint alone creates no scientific edge"}
   ],
