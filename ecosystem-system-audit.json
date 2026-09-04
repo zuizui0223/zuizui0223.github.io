@@ -1,0 +1,130 @@
+{
+  "checked_at": "2026-09-04",
+  "id": "research-ecosystem-system-v1",
+  "scope": "All 30 active scientific repositories are placed in one ecological research system. Series remain distinct ownership units; cross-series relations specify only what object, question, evidence substrate or design role is shared or transferred.",
+  "system_surface": "VARIATION <-> STATE <-> RECORD <-> INFERENCE <-> NEXT OBSERVATION <-> FIELD RETURN",
+  "system_rule": "connection != ownership",
+  "functional_roles": {
+    "variation_and_history": ["hotarubukuro", "fcp", "chun", "azami", "EAzami", "island", "shimahotarubukuro", "sch", "bita"],
+    "state_and_representation": ["izu-core", "sdmr", "odsp", "eco-genetic-criticality", "eco-genetic-warning-extensions", "crest", "ccoc", "mltr", "mrm"],
+    "record_and_measurement": ["pollipi", "insepi", "rec", "tnoa", "egwee"],
+    "identification_and_reporting": ["boundary", "ced", "theouni"],
+    "next_observation_and_field_return": ["mrod", "acsp", "aza3", "eog"]
+  },
+  "node_roles": {
+    "hotarubukuro": "focal empirical origin: unresolved flower-colour variation",
+    "fcp": "geographic-space trait-state arm",
+    "chun": "evolutionary-time trait-state arm",
+    "azami": "present phenotype architecture",
+    "EAzami": "public-data evolutionary-history narrowing",
+    "aza3": "own-data history discrimination and field return",
+    "island": "macroecological island context",
+    "izu-core": "interaction-response architecture and proximal mechanism geometry",
+    "shimahotarubukuro": "focal island phenotype divergence",
+    "sch": "one-trait shared-cue interaction problem",
+    "bita": "second-coordinate escape and specific identified-set problem",
+    "pollipi": "physical ecological recording",
+    "insepi": "physical observer-system diagnosis",
+    "rec": "pre-entry exposure and record censoring",
+    "tnoa": "post-entry observation semantics",
+    "sdmr": "environmental-coordinate admission to niche representation",
+    "odsp": "multidimensional niche state-space geometry",
+    "eog": "realizability and reachability of ecological worlds",
+    "acsp": "bounded spatial next-observation search",
+    "boundary": "general mechanistic identification boundary",
+    "mrod": "next-measurement design for unresolved mechanisms",
+    "eco-genetic-criticality": "mechanistic finite-state and eco-genetic state separation",
+    "eco-genetic-warning-extensions": "future-relevant state and warning validity",
+    "egwee": "natural-data measurement and representation admission gates",
+    "ccoc": "future-sufficiency obstruction",
+    "mltr": "historical/semantic sufficiency obstruction",
+    "mrm": "mechanism-retention sufficiency obstruction",
+    "crest": "required-state synthesis",
+    "ced": "evidence licensing and reportability",
+    "theouni": "meta-level programme admission and portfolio grammar"
+  },
+  "cross_series_relations": [
+    {
+      "from": "hotarubukuro",
+      "to": "izu-core",
+      "type": "shared_substrate",
+      "object": "Campanula punctata / Izu pollination and breeding-system empirical substrate",
+      "meaning": "The focal flower-variation system and the island-response programme overlap in the same broader Campanula empirical system.",
+      "firewall": "Shared taxon/system context does not transfer flower-colour results into island-mechanism claims."
+    },
+    {
+      "from": "izu-core",
+      "to": "egwee",
+      "type": "shared_substrate",
+      "object": "Hiraiwa-Ushimaru Honshu-Izu functional interaction dataset",
+      "meaning": "The same empirical substrate is used under different frozen questions: response architecture in izu-core and partial-state residual-context adequacy in EGWEE.",
+      "firewall": "Shared data do not merge endpoints, holdout contracts or claim ownership."
+    },
+    {
+      "from": "tnoa",
+      "to": "egwee",
+      "type": "epistemic",
+      "object": "entered-record semantics before state/proxy admission",
+      "meaning": "A candidate ecological state should not be interpreted more strongly than the record semantics that support it.",
+      "firewall": "EGWEE does not require TNOA output and TNOA does not certify EGWEE state adequacy."
+    },
+    {
+      "from": "egwee",
+      "to": "ced",
+      "type": "epistemic",
+      "object": "empirically admitted state/proxy before deterministic report licensing",
+      "meaning": "Measurement/representation adequacy and reportability are consecutive but distinct inferential burdens.",
+      "firewall": "Passing an EGWEE gate does not automatically satisfy a CED evidence contract."
+    },
+    {
+      "from": "mrod",
+      "to": "acsp",
+      "type": "complement",
+      "object": "next-observation design",
+      "meaning": "MROD asks WHAT to measure next; ACSP asks WHERE to look next.",
+      "firewall": "Measurement-choice utility and spatial-search utility remain separate optimisation problems."
+    },
+    {
+      "from": "aza3",
+      "to": "acsp",
+      "type": "information_flow",
+      "object": "predeclared biological sampling slot",
+      "meaning": "aza3 declares missing evidence; ACSP translates that need into a bounded search patch.",
+      "firewall": "ACSP does not choose taxon, biological priority, exact site or collection truth."
+    },
+    {
+      "from": "acsp",
+      "to": "aza3",
+      "type": "information_flow",
+      "object": "candidate patch returned to field verification",
+      "meaning": "Search geography returns to aza3 for field confirmation, private exact-site freeze and individual intake.",
+      "firewall": "candidate patch != occupancy != exact sampling site"
+    },
+    {
+      "from": "eco-genetic-warning-extensions",
+      "to": "egwee",
+      "type": "provenance",
+      "object": "natural-data four-gate programme migration",
+      "meaning": "Reader-facing natural-data development moved from EGWE into an independent empirical-methods paper.",
+      "firewall": "EGWEE does not inherit or validate EGWE warning claims or EGC simulator closure."
+    }
+  ],
+  "system_cycle": [
+    "observe ecological variation",
+    "construct or retain a state representation",
+    "audit what entered the record and what the record means",
+    "test whether the state/proxy earned endpoint-relevant status",
+    "retain unresolved mechanism/world alternatives",
+    "license only what current evidence can report",
+    "choose what to measure and where to look next",
+    "return new field evidence to the empirical programme",
+    "revise the state without erasing provenance"
+  ],
+  "non_edges": [
+    "shared philosophy alone is not a scientific edge",
+    "shared organism alone does not transfer a result",
+    "shared dataset does not merge inferential contracts",
+    "methodological similarity does not imply software dependency",
+    "later evidence does not retroactively validate an earlier closed or failed gate"
+  ]
+}
