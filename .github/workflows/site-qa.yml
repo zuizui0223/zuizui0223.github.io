@@ -73,6 +73,7 @@ jobs:
           PY
       - name: Asset cache guard
         run: |
-          grep -q 'aza3-acsp-bridge.js?v=20260904b' index.html
+          grep -q 'aza3-acsp-bridge.js?v=20260904c' index.html
+          grep -q 'fill="url(#voidFill)" filter="url(#softGlow)"' index.html
           grep -q '30 · static' index.html
           ! grep -q 'microdonta-role' index.html
