@@ -14,7 +14,7 @@
 
   const seriesGlyphs = {
     azami: "✣", flower: "◐", island: "⌁", observation: "◎",
-    interaction: "⋈", niche: "◇", method: "∴", theory: "∞", ecogenetic: "↯"
+    interaction: "⋈", niche: "◇", method: "∴", theory: "∞", ecogenetic: "↯", ecosystem: "⊙"
   };
   const axisGlyphs = { "空間":"⌖", "時間":"◷", "観測":"◉", "現実":"○", "パターン":"≋", "メカニズム":"∵", "方法":"⌁", "理論":"∞" };
   const statusLabels = { result:"cleared", bounded:"bounded", open:"open", stop:"stop" };
@@ -26,7 +26,7 @@
     island:[1080,118], "izu-core":[910,218], shimahotarubukuro:[770,306],
     pollipi:[1090,566], insepi:[930,500], tnoa:[790,408], rec:[650,500],
     sch:[160,624], bita:[300,624], boundary:[300,548], mrod:[438,590],
-    sdmr:[684,414], odsp:[620,485], eog:[555,536], acsp:[636,590],
+    sdmr:[684,414], odsp:[620,485], eog:[555,536], acsp:[636,590], egwee:[528,435],
     crest:[300,350], ccoc:[125,270], mltr:[120,350], mrm:[125,430], ced:[480,350], theouni:[300,245],
     "eco-genetic-criticality":[290,520], "eco-genetic-warning-extensions":[455,520]
   };
@@ -39,7 +39,7 @@
     const first=cleaned.split(/(?<=[。！？!?])\s*/)[0]||cleaned;
     return first.length>max?`${first.slice(0,max-1)}…`:first;
   }
-  function searchable(node) { return [node.id,node.label,node.series,node.summary,node.ceiling,node.next,...(node.layers||[])].filter(Boolean).join(" ").toLowerCase(); }
+  function searchable(node) { return [node.id,node.label,node.series,node.systemRole,node.summary,node.ceiling,node.next,...(node.layers||[])].filter(Boolean).join(" ").toLowerCase(); }
   function isVisible(node) { return (!state.query||searchable(node).includes(state.query)) && (!state.story||data.stories[state.story].nodes.includes(node.id)); }
 
   function setActivePath(id) {
@@ -79,7 +79,7 @@
       handoff:{dash:[],arrow:"end"}, information_flow:{dash:[],arrow:"end"},
       epistemic:{dash:[6,6],arrow:"end"}, abstraction:{dash:[2,7],arrow:"end"},
       provenance:{dash:[1,8],arrow:"end"}, component:{dash:[2,5],arrow:"end"},
-      complement:{dash:[10,5],arrow:"both"}
+      complement:{dash:[10,5],arrow:"both"}, shared_substrate:{dash:[1,5],arrow:"none"}
     };
     return { relation, ...(styles[relation]||styles.abstraction) };
   }
@@ -111,7 +111,7 @@
   function renderNodeList(){nodeList.innerHTML="";data.nodes.filter(isVisible).forEach((node)=>{const button=document.createElement("button");button.type="button";button.style.setProperty("--node-color",data.series[node.series]?.color||"#737985");button.textContent=nodeLabel(node);button.title=`${nodeLabel(node)} · ${statusLabels[node.status]||node.status}`;button.setAttribute("aria-label",button.title);button.addEventListener("click",()=>selectNode(node.id));nodeList.appendChild(button);});}
   function renderWorld(){renderCanvas();renderNodeList();}
 
-  function selectNode(id){const node=byId.get(id);if(!node)return;state.selected=id;const meta=data.series[node.series]||data.series.theory,symbol=seriesGlyphs[node.series]||"·";detailPanel.style.setProperty("--series-color",meta.color);detailPanel.style.setProperty("--status-color",statusColors[node.status]||"#737985");detailPanel.innerHTML=`<div class="detail-content"><span class="path-symbol" aria-hidden="true">${symbol}</span><h3>${escapeHtml(nodeLabel(node))}</h3><span class="detail-status" aria-label="${escapeHtml(statusLabels[node.status]||node.status)}" title="${escapeHtml(statusLabels[node.status]||node.status)}"></span><details class="detail-more"><summary aria-label="more">＋</summary><p class="clue">${escapeHtml(compact(node.summary,110))}</p><p class="limit">${escapeHtml(node.ceiling)}</p><p class="next">${escapeHtml(node.next)}</p></details><a class="detail-link" href="https://github.com/zuizui0223/${encodeURIComponent(node.id)}" target="_blank" rel="noreferrer" aria-label="source" title="source">↗</a></div>`;renderCanvas();}
+  function selectNode(id){const node=byId.get(id);if(!node)return;state.selected=id;const meta=data.series[node.series]||data.series.theory,symbol=seriesGlyphs[node.series]||"·";detailPanel.style.setProperty("--series-color",meta.color);detailPanel.style.setProperty("--status-color",statusColors[node.status]||"#737985");detailPanel.innerHTML=`<div class="detail-content"><span class="path-symbol" aria-hidden="true">${symbol}</span><h3>${escapeHtml(nodeLabel(node))}</h3><span class="detail-status" aria-label="${escapeHtml(statusLabels[node.status]||node.status)}" title="${escapeHtml(statusLabels[node.status]||node.status)}"></span><details class="detail-more"><summary aria-label="more">＋</summary>${node.systemRole?`<p class="path-code">${escapeHtml(node.systemRole)}</p>`:""}<p class="clue">${escapeHtml(compact(node.summary,110))}</p><p class="limit">${escapeHtml(node.ceiling)}</p><p class="next">${escapeHtml(node.next)}</p></details><a class="detail-link" href="https://github.com/zuizui0223/${encodeURIComponent(node.id)}" target="_blank" rel="noreferrer" aria-label="source" title="source">↗</a></div>`;renderCanvas();}
 
   function storyPath(id,story){
     if(story.displayPath)return story.displayPath;
