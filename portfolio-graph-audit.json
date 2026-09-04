@@ -13,7 +13,7 @@
   "vertical_programmes": [
     {
       "id": "azami",
-      "shape": "linear_handoff_with_operational_return",
+      "shape": "linear_handoff",
       "nodes": ["azami", "EAzami", "aza3"],
       "surface": "present phenotype -> public evolutionary history -> own-data discrimination",
       "edges": [
@@ -48,7 +48,7 @@
     },
     {
       "id": "niche",
-      "shape": "epistemic_sequence_with_empirical_return",
+      "shape": "epistemic_sequence",
       "nodes": ["sdmr", "odsp", "eog", "acsp"],
       "surface": "REPRESENT -> THICKEN -> REALIZE -> OBSERVE",
       "edges": [
