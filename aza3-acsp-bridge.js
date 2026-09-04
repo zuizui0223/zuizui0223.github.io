@@ -44,6 +44,29 @@
     });
   }
 
+  let egwee = node("egwee");
+  const egweePatch = {
+    label: "EGWEE",
+    series: "ecogenetic",
+    x: .40,
+    y: .63,
+    status: "bounded",
+    layers: ["natural data", "measurement adequacy", "representation preservation", "residual context", "cross-study identifiability"],
+    pulse: "状態を試してから、残差を読む。",
+    thoughtMove: "自然データで candidate state / proxy が endpoint-relevant predictive status を得たか、分析表現がその情報を保存したかを先に判定し、その後でだけ geography・habitat・origin・history の residual information を解釈する。",
+    thoughtKeeps: "seven locked natural-data analyses、native ecological holdout units、measurement gate、representation gate、residual-context gate、cross-study identifiability、negative/not-identifiable/STOP outcomes。",
+    thoughtRefuses: "自然データをEGWE warning statisticやEGC simulator closureの外部検証と呼ぶこと、heterogeneous systemsを一つのeffect sizeへpoolすること、negative residualからstate completenessを結論すること。",
+    summary: "独立 natural-data four-gate empirical paper。state/proxy の測定妥当性と表現保存を residual context より先に検証し、何を次に解釈してよいかを fail-closed に決める。",
+    ceiling: "EGWE warning validity、EGC finite-model mechanism、universal urban/island/pollination law、negative residualからのstate completeness、既存archiveからのcommon origin effectは所有しない。",
+    next: "locked gate registryを変えず、Ecological Indicators向け manuscript・decision-tree figure・branch mapを閉じる。"
+  };
+  if (!egwee) {
+    egwee = { id: "egwee", ...egweePatch };
+    data.nodes.push(egwee);
+  } else {
+    Object.assign(egwee, egweePatch);
+  }
+
   if (data.stories?.azami) {
     data.stories.azami.nodes = unique(["azami", "EAzami", "aza3", "acsp"]);
     data.stories.azami.text = "現在を見る → 歴史を絞る → 何を採る？ ⇄ どこを探す？";
@@ -56,9 +79,16 @@
     data.stories.niche.displayPath = "SDMR ⇢ ODSP ⇢ EOG ⇢ ACSP ⇄ aza3";
   }
 
+  if (data.stories?.ecogenetic) {
+    data.stories.ecogenetic.nodes = unique(["eco-genetic-criticality", "eco-genetic-warning-extensions", "egwee"]);
+    data.stories.ecogenetic.text = "criticality → warning/state extension。EGWEEはそこから独立移管された natural-data measurement/representation paper。";
+    data.stories.ecogenetic.displayPath = "criticality → warning/state extension · EGWEE = independent natural-data four-gate";
+  }
+
   data.edges = (data.edges || []).filter((edge) => !(
     (edge.from === "aza3" && edge.to === "acsp") ||
-    (edge.from === "acsp" && edge.to === "aza3")
+    (edge.from === "acsp" && edge.to === "aza3") ||
+    (edge.from === "eco-genetic-warning-extensions" && edge.to === "egwee")
   ));
   data.edges.push(
     {
@@ -74,12 +104,40 @@
       type: "bridge",
       relation: "information_flow",
       label: "candidate patch → field verification / private exact site"
+    },
+    {
+      from: "eco-genetic-warning-extensions",
+      to: "egwee",
+      type: "bridge",
+      relation: "provenance",
+      label: "natural-data four-gate programme migrated to independent empirical paper"
     }
   );
 
+  (data.axes || []).forEach((axis) => {
+    if (["観測", "現実", "方法"].includes(axis.name) && !axis.repos.includes("egwee")) axis.repos.push("egwee");
+  });
+
+  ["seven", "eight"].forEach((route) => {
+    const books = data.books?.[route];
+    if (!books) return;
+    if (!books.some((book) => book.repos?.[0] === "egwee")) {
+      books.push({
+        n: route === "seven" ? "·" : String(books.length + 1),
+        title: "EGWEE — test the state before the residual",
+        chapters: 1,
+        series: "ecogenetic",
+        repos: ["egwee"],
+        note: "measurement → representation → residual context → identifiability",
+        status: "1 repo = 1 independent scientific fragment"
+      });
+    }
+    if (route === "eight") books.forEach((book, index) => { book.n = String(index + 1); });
+  });
+
   data.graphMeta = {
     ...(data.graphMeta || {}),
-    version: "2026-09-04-aza3-acsp-bridge-v1",
+    version: "2026-09-04-egwee-position-v1",
     bridgeAudit: "aza3-acsp-field-bridge-audit.json",
     operationalBridge: {
       id: "aza3-acsp",
@@ -87,11 +145,17 @@
       request: "aza3 biological sampling slot → ACSP",
       return: "ACSP candidate patch → aza3 field verification / private exact site",
       firewall: "biological priority != search geography; candidate patch != occupancy != exact site"
+    },
+    egwee: {
+      role: "independent natural-data measurement/representation gate programme",
+      provenance: "eco-genetic-warning-extensions → egwee is migration/provenance only",
+      surface: "MEASURE → PRESERVE → RESIDUAL → IDENTIFY",
+      firewall: "natural-data gate outcomes != validation of EGWE warning validity or EGC simulator closure"
     }
   };
 
   window.ZUIZUI_THOUGHTS = window.ZUIZUI_THOUGHTS || {};
-  ["aza3", "acsp"].forEach((id) => {
+  ["aza3", "acsp", "egwee"].forEach((id) => {
     const current = node(id);
     if (!current) return;
     window.ZUIZUI_THOUGHTS[id] = {
@@ -112,6 +176,12 @@
 
   const brainDesc = document.getElementById("brain-desc");
   if (brainDesc) {
-    brainDesc.textContent = "研究系列と横断系列が中心の空洞へ流れ、aza3のsampling needとACSPのsurvey searchが往復する抽象図。";
+    brainDesc.textContent = "研究系列と横断系列が中心の空洞へ流れ、aza3のsampling needとACSPのsurvey searchが往復し、EGWEEが自然データの状態検証境界を独立して担う抽象図。";
+  }
+
+  const auditLink = document.querySelector(".philosophy-audit");
+  if (auditLink) {
+    auditLink.textContent = "30 · static";
+    auditLink.title = "30 active scientific repositories · 1 staging repository";
   }
 })();
