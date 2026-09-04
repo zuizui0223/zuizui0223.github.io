@@ -1,27 +1,30 @@
 {
-  "checked_at":"2026-09-03",
+  "checked_at":"2026-09-04",
   "purpose":"State the portfolio-level viewpoint without transferring scientific ownership from source repositories.",
   "repository_identity_source":"repo-audit.json",
   "canonical_graph":"portfolio-graph-audit.json",
-  "repository_inventory":{"scientific_active":29,"meta_registry":1,"staging_unclassified":1,"classification_audit":"repository-classification-audit.json"},
-  "central_question":"Which distinctions become visible, necessary, identifiable, recordable, reportable, constrainable, realizable, or safely forgettable when the coordinate system, receiver set, niche representation, record-entry process, observation contract, physical/ecological constraint grammar, future responsibility, retained mechanism set, or report target changes?",
+  "repository_inventory":{"scientific_active":30,"meta_registry":1,"staging_unclassified":1,"classification_audit":"repository-classification-audit.json"},
+  "central_question":"Which distinctions become visible, necessary, identifiable, measurable, recordable, reportable, constrainable, realizable, or safely forgettable when the coordinate system, receiver set, niche representation, state/proxy measurement, record-entry process, observation contract, physical/ecological constraint grammar, future responsibility, retained mechanism set, or report target changes?",
   "novelty_claim": {
-    "allowed":"A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, record-, constraint-, evidence-, representation- and contract-relative state structure, while unresolved, negative, unavailable, censored and conflicting outcomes remain part of the scientific object.",
+    "allowed":"A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, measurement-, record-, constraint-, evidence-, representation- and contract-relative state structure, while unresolved, negative, unavailable, censored and conflicting outcomes remain part of the scientific object.",
     "forbidden":["one universal ecological state or mechanism already validated in nature","central synthesis ownership of source data, proofs, or primary claims","treating every visual connection as scientific dependency"]
   },
   "relation_rule":"Scientific graph relations are typed. handoff, epistemic sequence, abstraction, provenance, complement, component and information flow are not interchangeable.",
   "lenses":[
-    {"id":"coordinate","glyph":"⌖","surface":"原因より、座標。","formula":"Ω × V → X_V","repositories":["azami","EAzami","aza3","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","bita","sdmr","odsp","eog","acsp"],"firewall":"Changing coordinates, resolution, representation or receiver framing does not identify one causal mechanism or realized distribution."},
-    {"id":"boundary","glyph":"∅","surface":"答えより、境界。","formula":"U ≠ 0","repositories":["pollipi","insepi","tnoa","rec","sch","bita","boundary","mrod","sdmr","odsp","eog","acsp","aza3","eco-genetic-warning-extensions"],"firewall":"Negative, sparse, censored, unavailable or failed-generalization outcomes remain scientific objects rather than being rewritten as biological nulls."},
-    {"id":"forgetting","glyph":"≈","surface":"分類より、忘却。","formula":"S(C)=Ω/~C","repositories":["crest","ccoc","mltr","mrm","ced","eco-genetic-criticality","eco-genetic-warning-extensions","theouni","eog","tnoa","rec"],"firewall":"Contract-relative compression is not arbitrary, intrinsic, universal, or automatically identified by current evidence."}
+    {"id":"coordinate","glyph":"⌖","surface":"原因より、座標。","formula":"Ω × V → X_V","repositories":["azami","EAzami","aza3","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","bita","sdmr","odsp","eog","acsp","egwee"],"firewall":"Changing coordinates, resolution, representation or receiver framing does not identify one causal mechanism or realized distribution."},
+    {"id":"boundary","glyph":"∅","surface":"答えより、境界。","formula":"U ≠ 0","repositories":["pollipi","insepi","tnoa","rec","sch","bita","boundary","mrod","sdmr","odsp","eog","acsp","aza3","eco-genetic-warning-extensions","egwee"],"firewall":"Negative, sparse, censored, unavailable, failed-adequacy, non-identifiable or failed-generalization outcomes remain scientific objects rather than being rewritten as biological nulls."},
+    {"id":"forgetting","glyph":"≈","surface":"分類より、忘却。","formula":"S(C)=Ω/~C","repositories":["crest","ccoc","mltr","mrm","ced","eco-genetic-criticality","eco-genetic-warning-extensions","egwee","theouni","eog","tnoa","rec"],"firewall":"Contract-relative compression is not arbitrary, intrinsic, universal, or automatically identified by current evidence; an empirical proxy must first earn endpoint-relevant status and preserve the distinctions it claims to encode."}
   ],
   "scientific_graph": {
     "vertical_programmes":[
       {"id":"azami","shape":"linear_handoff","nodes":["azami","EAzami","aza3"],"surface":"現在を見る → 歴史を絞る → 自分の個体で分ける"},
       {"id":"island","shape":"linear_handoff","nodes":["island","izu-core","shimahotarubukuro"],"surface":"WHEN/WHERE → conditional WHY → focal phenotype"},
       {"id":"interaction","shape":"conceptual_handoff","nodes":["sch","bita"],"surface":"shared cue → second coordinate"},
-      {"id":"ecogenetic","shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"],"surface":"criticality → state/warning validity"},
+      {"id":"ecogenetic","shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"],"surface":"criticality → state/warning validity","rule":"EGWEE is not Chapter 3; EGWE→EGWEE is provenance/migration only"},
       {"id":"niche","shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"surface":"REPRESENT ⇢ THICKEN ⇢ REALIZE ⇢ OBSERVE","rule":"question order != software/data dependency"}
+    ],
+    "standalone_programmes":[
+      {"id":"state_measurement_empirical","shape":"independent_empirical_method_synthesis","nodes":["egwee"],"surface":"MEASURE → PRESERVE → RESIDUAL → IDENTIFY","rule":"test candidate state/proxy adequacy and representation before residual context; no EGWE/EGC claim inheritance"}
     ],
     "nonlinear_constellations":[
       {"id":"flower","shape":"complementary_arms_with_focal_origin","nodes":["fcp","chun","hotarubukuro"],"surface":"space ↔ evolutionary time; focal/origin anchor"},
@@ -30,9 +33,10 @@
     ],
     "horizontal_bridges":[
       {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific identified set -> general identification boundary"},
-      {"from":"boundary","to":"mrod","type":"epistemic","meaning":"identification boundary -> next-observation design"}
+      {"from":"boundary","to":"mrod","type":"epistemic","meaning":"identification boundary -> next-observation design"},
+      {"from":"eco-genetic-warning-extensions","to":"egwee","type":"provenance","meaning":"reader-facing natural-data four-gate programme migrated to an independent empirical paper"}
     ],
-    "lens_only_no_edge":["mrod ↔ CED: mechanism-learning utility != target-report licensing","REC/TNOA ↔ CED: record entry / post-entry semantics != reportability theorem","eco-genetic-warning-extensions ↔ CREST/theouni: empirical state adequacy != general state theorem/meta admission","shared coordinate viewpoint alone creates no edge"]
+    "lens_only_no_edge":["mrod ↔ CED: mechanism-learning utility != target-report licensing","REC/TNOA ↔ CED: record entry / post-entry semantics != reportability theorem","EGWEE ↔ CED: empirical measurement/representation gate != theorem-first evidence licensing","EGWEE ↔ SDMR: state/proxy predictive admission != environmental-variable niche admission","eco-genetic-warning-extensions ↔ CREST/theouni: empirical state adequacy != general state theorem/meta admission","shared coordinate viewpoint alone creates no edge"]
   },
   "phd_path": {
     "audit":"phd-path-audit.json",
@@ -42,6 +46,6 @@
     "rule":"This is a philosophical traversal across repository-owned results, not a causal pipeline, chapter sequence, or transfer of evidence ownership."
   },
   "staging_boundary":{"repo":"284b","visible":false,"rule":"repository existence without an independent scientific question and inferential contract is not an open scientific fragment"},
-  "cross_repository_invariants":["difference is not a mean","visible similarity is not state identity","one perturbation is not one response","record is not world","no record is not no event","low target support is not biological absence","shared cue is not one-way attraction","escape sign is not mechanism allocation","mechanistic proximity is not identification strength","niche representation is not realized distribution","flat map is not full ecological state space","local possibility is not reachability","candidate survey patch is not occupancy","required state != identified state != reportable target","connection is not ownership","revision must preserve provenance"],
-  "phd_in_zuizui":"Not ownership of one final answer, but responsibility for which distinctions are retained, recorded, constrained, represented, left unresolved, safely forgotten, made actionable, and passed forward as revisable provenance."
+  "cross_repository_invariants":["difference is not a mean","visible similarity is not state identity","one perturbation is not one response","record is not world","no record is not no event","low target support is not biological absence","shared cue is not one-way attraction","escape sign is not mechanism allocation","mechanistic proximity is not identification strength","candidate state/proxy is not adequate by plausibility alone","representation can erase a biological distinction","niche representation is not realized distribution","flat map is not full ecological state space","local possibility is not reachability","candidate survey patch is not occupancy","required state != identified state != reportable target","connection is not ownership","revision must preserve provenance"],
+  "phd_in_zuizui":"Not ownership of one final answer, but responsibility for which distinctions are retained, measured, recorded, constrained, represented, left unresolved, safely forgotten, made actionable, and passed forward as revisable provenance."
 }
