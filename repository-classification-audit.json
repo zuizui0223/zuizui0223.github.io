@@ -1,9 +1,9 @@
 {
-  "checked_at": "2026-09-03",
+  "checked_at": "2026-09-04",
   "owner": "zuizui0223",
-  "repository_total": 31,
+  "repository_total": 32,
   "classification_rule": "A visible scientific fragment must own an independent scientific question or inferential contract. Repository existence alone is not enough. Programme membership does not imply a linear dependency.",
-  "counts": {"scientific_active":29,"meta_registry":1,"staging_unclassified":1},
+  "counts": {"scientific_active":30,"meta_registry":1,"staging_unclassified":1},
   "graph_audit": "portfolio-graph-audit.json",
   "scientific_blocks": {
     "azami": {"repos":["azami","EAzami","aza3"],"shape":"linear_handoff","spine":"present phenotype -> public evolutionary history -> own-data discrimination"},
@@ -14,7 +14,8 @@
     "mechanism_resolution": {"repos":["boundary","mrod"],"shape":"abstraction_and_design","spine":"identification boundary -> next observation"},
     "niche_to_survey": {"repos":["sdmr","odsp","eog","acsp"],"shape":"epistemic_sequence","spine":"REPRESENT -> THICKEN -> REALIZE -> OBSERVE"},
     "crest_state_theory": {"repos":["ccoc","mltr","mrm","crest","ced","theouni"],"shape":"hub_plus_meta","spine":"CCOC/MLTR/MRM -> CREST -> CED; theouni is meta-layer"},
-    "ecogenetic": {"repos":["eco-genetic-criticality","eco-genetic-warning-extensions"],"shape":"parent_extension","spine":"mechanistic finite-state parent -> state/warning/natural-data extension"}
+    "ecogenetic": {"repos":["eco-genetic-criticality","eco-genetic-warning-extensions"],"shape":"parent_extension","spine":"mechanistic finite-state parent -> condition/warning/state/process-portability extension"},
+    "state_measurement_empirical": {"repos":["egwee"],"shape":"independent_empirical_method_synthesis","spine":"measurement adequacy -> representation preservation -> residual context -> cross-study identifiability"}
   },
   "newly_classified": {
     "aza3": {
@@ -22,6 +23,13 @@
       "owner":"own-data discrimination after EAzami public-data Chapter 2",
       "public_line":"残った歴史は、同じ個体に結びついた証拠で分ける。",
       "claim_ceiling":"No definitive Japan-wide species tree, causal history, functional mechanism or fitness conclusion before same-individual ancestry/phenotype/cytotype data and separately authorized functional evidence exist."
+    },
+    "egwee": {
+      "class":"scientific_active","series":"state_measurement_empirical","status":"bounded",
+      "owner":"independent natural-data four-gate empirical paper",
+      "public_line":"状態を試してから、残差を読む。",
+      "provenance":"reader-facing natural-data programme migrated from eco-genetic-warning-extensions on 2026-09-04; migration is provenance, not scientific claim inheritance",
+      "claim_ceiling":"Does not validate EGWE warning validity or EGC simulator closure, does not pool heterogeneous natural systems, does not infer state completeness from negative residual-context tests, and retains not_identifiable/not_estimable/STOP as terminal outcomes."
     },
     "284b": {
       "class":"staging_unclassified","visible":false,"status":"not_a_scientific_status",
@@ -31,5 +39,5 @@
     }
   },
   "meta": {"zuizui0223.github.io":{"class":"meta_registry","scientific_fragment":false,"role":"portfolio registry, provenance-preserving visualization and navigation"}},
-  "inventory": ["hotarubukuro","azami","bita","island","mrod","pollipi","insepi","acsp","eco-genetic-criticality","ccoc","izu-core","eco-genetic-warning-extensions","mltr","ced","mrm","shimahotarubukuro","fcp","eog","odsp","EAzami","chun","sdmr","crest","theouni","tnoa","zuizui0223.github.io","aza3","sch","boundary","rec","284b"]
+  "inventory": ["hotarubukuro","azami","bita","island","mrod","pollipi","insepi","acsp","eco-genetic-criticality","ccoc","izu-core","eco-genetic-warning-extensions","egwee","mltr","ced","mrm","shimahotarubukuro","fcp","eog","odsp","EAzami","chun","sdmr","crest","theouni","tnoa","zuizui0223.github.io","aza3","sch","boundary","rec","284b"]
 }
