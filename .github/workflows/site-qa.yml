@@ -22,6 +22,7 @@ jobs:
           node --check niche-program.js
           node --check odsp-homepage-update.js
           node --check mechanism-split.js
+          node --check aza3-acsp-bridge.js
           node --check app.js
           node --check philosophy-ui.js
       - name: Audit JSON syntax
@@ -32,6 +33,7 @@ jobs:
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
           python -m json.tool tnoa-rec-audit.json >/dev/null
+          python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
       - name: Canonical graph semantics
         run: |
           python - <<'PY'
@@ -41,20 +43,27 @@ jobs:
           graph = json.loads(Path('portfolio-graph-audit.json').read_text())
           view = json.loads(Path('viewpoint-audit.json').read_text())
           repo = json.loads(Path('repo-audit.json').read_text())
+          classification = json.loads(Path('repository-classification-audit.json').read_text())
 
           nonlinear = {x['id']: x for x in graph['nonlinear_constellations']}
           vertical = {x['id']: x for x in graph['vertical_programmes']}
+          standalone = {x['id']: x for x in graph.get('standalone_programmes', [])}
           assert nonlinear['observation']['shape'] == 'branched_development_plus_reverse_relation'
           assert nonlinear['crest_state_theory']['shape'] == 'hub'
           assert nonlinear['flower']['shape'] == 'complementary_arms_with_focal_origin'
           assert vertical['niche']['shape'] == 'epistemic_sequence'
           assert vertical['ecogenetic']['shape'] == 'parent_extension'
+          assert standalone['state_measurement_empirical']['nodes'] == ['egwee']
+          assert any(x.get('from') == 'eco-genetic-warning-extensions' and x.get('to') == 'egwee' and x.get('type') == 'provenance' for x in graph['horizontal_bridges'])
           assert view['phd_path']['scientific_dependency'] is False
-          assert repo['repository_inventory']['scientific_active'] == 29
+          assert repo['repository_inventory']['scientific_active'] == 30
+          assert classification['counts']['scientific_active'] == 30
+          assert classification['newly_classified']['egwee']['class'] == 'scientific_active'
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
       - name: Asset cache guard
         run: |
-          grep -q '20260903k' index.html
+          grep -q 'aza3-acsp-bridge.js?v=20260904b' index.html
+          grep -q '30 · static' index.html
           ! grep -q 'microdonta-role' index.html
