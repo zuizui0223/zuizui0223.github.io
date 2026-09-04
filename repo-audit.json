@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-03",
-  "last_full_relationship_audit": "2026-09-03",
-  "scope": "all 29 active scientific repositories: current README identity/status plus typed vertical, horizontal, provenance and meta relations",
+  "checked_at": "2026-09-04",
+  "last_full_relationship_audit": "2026-09-04",
+  "scope": "all 30 active scientific repositories: current README identity/status plus typed vertical, horizontal, provenance and meta relations",
   "display_rule": "one active scientific repository = one visible fragment; repository existence alone does not create a scientific fragment; connection type never transfers evidence ownership",
   "graph_audit": "portfolio-graph-audit.json",
   "repository_inventory": {
-    "owner_total":31,
-    "scientific_active":29,
+    "owner_total":32,
+    "scientific_active":30,
     "meta_registry":["zuizui0223.github.io"],
     "staging":["284b"],
     "classification_audit":"repository-classification-audit.json"
@@ -52,7 +52,8 @@
     {"repo":"mrm","readme_blob":"d3f0167c5d7dc4b756b017a3e04e563ee85c10fc","display_status":"result","role":"CREST mechanistic companion"},
     {"repo":"ced","readme_blob":"8a506a7b5a8619edea12cb98bbbfd275111bb4dc","display_status":"result","role":"downstream evidence licensing/reportability after required-state adequacy"},
     {"repo":"eco-genetic-criticality","readme_blob":"dceeba2f0bbb70242f3067cd2b32aefd7aa8e9d6","display_status":"result","role":"mechanistic finite-model parent; separate eco-genetic series"},
-    {"repo":"eco-genetic-warning-extensions","readme_blob":"3e21512ff8cb6d002aab85854b9d84a8a9bb2766","display_status":"result","role":"condition recovery, warning validity, natural state-sufficiency extension"},
+    {"repo":"eco-genetic-warning-extensions","readme_blob":"3e21512ff8cb6d002aab85854b9d84a8a9bb2766","display_status":"result","role":"condition recovery, warning validity, state representation and process-portability extension; historical natural-data copies retained only for provenance after EGWEE migration"},
+    {"repo":"egwee","readme_blob":"1199292fe1d6984c6fbbd4928729f6edf880d688","display_status":"bounded","role":"independent natural-data four-gate empirical-methods paper: measurement adequacy -> representation preservation -> residual context -> cross-study identifiability"},
     {"repo":"theouni","readme_blob":"9f094d02d78f14524da6e9aba785b46470e2f175","display_status":"bounded","role":"meta-theory, empirical admission rules, programme typing and portfolio registry; not final theory chapter"}
   ],
   "staging": [
@@ -71,7 +72,8 @@
     "mechanism_resolution":{"shape":"horizontal_abstraction","nodes":["bita","boundary","mrod"],"rule":"specific identified set -> general identification boundary -> next-observation design; not one evidence pipeline"},
     "niche_to_survey":{"shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"rule":"chapter order != software dependency or retroactive validation"},
     "crest_state_theory":{"shape":"hub","nodes":["ccoc","mltr","mrm","crest","ced","theouni"],"rule":"CCOC/MLTR/MRM are parallel companions -> CREST; CED is downstream evidence licensing; theouni is meta-layer"},
-    "ecogenetic":{"shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"]}
+    "ecogenetic":{"shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"],"rule":"mechanistic parent -> warning/state/process-portability extension; EGWEE is not Chapter 3"},
+    "state_measurement_empirical":{"shape":"independent_empirical_method_synthesis","nodes":["egwee"],"rule":"natural-data four-gate paper; migrated from EGWE for provenance but owns no EGWE warning-validity or EGC simulator claim"}
   },
   "philosophy": {
     "title":"PhD in zuizui",
