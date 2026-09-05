@@ -1,8 +1,8 @@
 {
-  "checked_at": "2026-09-04",
-  "scope": "Canonical relationship graph for the 30 active scientific repositories. The portfolio is one ecological research system, while every repository and series retains independent evidence ownership.",
+  "checked_at": "2026-09-05",
+  "scope": "Canonical relationship graph for the 31 active scientific repositories. The portfolio is one ecological research system, while every repository and series retains independent evidence ownership.",
   "relation_types": {
-    "handoff": "A later project explicitly starts from a question, uncertainty, or bounded object left by the earlier project. Solid directed relation.",
+    "handoff": "A later project explicitly starts from a question, uncertainty, bounded object or declared receipt left by the earlier project. Solid directed relation.",
     "epistemic": "A fixed transformation or ordering of scientific questions; no software/data dependency or retroactive validation. Dashed directed relation.",
     "abstraction": "A specific scientific problem motivates or instantiates a more general theory/method. Dotted directed relation.",
     "provenance": "Developmental ancestry or origin-of-question relation; not current scientific dependence. Fine dotted directed relation.",
@@ -35,10 +35,14 @@
     },
     {
       "id": "interaction",
-      "shape": "conceptual_handoff",
-      "nodes": ["sch", "bita"],
-      "surface": "one shared cue -> second trait / escape and mechanism allocation",
-      "edges": [{"from":"sch","to":"bita","type":"handoff"}]
+      "shape": "three_world_architecture_programme",
+      "nodes": ["sch", "balance", "bita"],
+      "surface": "SHARED COORDINATE -> MIDDLE WORLD -> DIFFERENTIATED COORDINATES",
+      "edges": [
+        {"from":"sch","to":"balance","type":"handoff","meaning":"causal compromise geometry / fitness-scale conflict load -> middle-world domain"},
+        {"from":"balance","to":"bita","type":"handoff","meaning":"architecture reserve and critical crossing -> differentiated-world architecture test"}
+      ],
+      "firewall": "SCH establishes conflict/compromise, BALANCE owns the L>0 and Phi<0 interior regime, and BITA owns Phi=0/+ differentiation and mechanism allocation. BALANCE is not algebraic glue, and no chapter retroactively validates another."
     },
     {
       "id": "ecogenetic",
@@ -58,7 +62,7 @@
         {"from":"odsp","to":"eog","type":"epistemic"},
         {"from":"eog","to":"acsp","type":"epistemic"}
       ],
-      "firewall": "No chapter output is required by or validates the next. ACSP may serve an independently declared empirical sampling need without taking ownership of that biological question.",
+      "firewall": "No chapter output is required by or validates the next. ODSP N2 terminal receipts do not automatically become EOG N3 states. ACSP may serve an independently declared empirical sampling need without taking ownership of that biological question.",
       "external_operational_bridge": "ACSP <-> aza3"
     }
   ],
@@ -95,7 +99,7 @@
         {"from":"rec","to":"tnoa","type":"information_flow","meaning":"exposure / record entry -> entered process-preserving observation semantics"},
         {"from":"tnoa","to":"rec","type":"provenance","meaning":"Paper-1 research lineage -> Paper-2 upstream counterpart"}
       ],
-      "firewall": "Scientific information flow REC->TNOA and research-development lineage TNOA->REC are different relations."
+      "firewall": "Scientific information flow REC->TNOA and research-development lineage TNOA->REC are different relations. New PolliPi V3/TNOA bridge development remains prospective external validation and does not revise frozen TNOA Paper-1 claims."
     },
     {
       "id": "crest_state_theory",
@@ -112,7 +116,7 @@
     }
   ],
   "horizontal_bridges": [
-    {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific floral interaction identified set -> general mechanistic identification boundary"},
+    {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific differentiated-world identified set / mechanism-allocation problem -> general mechanistic identification boundary"},
     {"from":"boundary","to":"mrod","type":"epistemic","meaning":"what can be identified -> which next observation best reduces remaining mechanism ambiguity"},
     {"from":"eco-genetic-warning-extensions","to":"egwee","type":"provenance","meaning":"natural-data four-gate reader-facing programme migrated from EGWE into an independent empirical paper; no warning/model claim inheritance"}
   ],
@@ -133,7 +137,7 @@
     "id": "research-ecosystem-system-v1",
     "audit": "ecosystem-system-audit.json",
     "surface": "VARIATION <-> STATE <-> RECORD <-> INFERENCE <-> NEXT OBSERVATION <-> FIELD RETURN",
-    "rule": "All repositories belong to one ecological research system, but connection never transfers ownership.",
+    "rule": "All 31 active scientific repositories belong to one ecological research system, but connection never transfers ownership.",
     "cross_series_relations": [
       {"from":"hotarubukuro","to":"izu-core","type":"shared_substrate","object":"Campanula punctata / Izu pollination and breeding-system empirical substrate"},
       {"from":"izu-core","to":"egwee","type":"shared_substrate","object":"Hiraiwa-Ushimaru Honshu-Izu functional interaction dataset"},
@@ -159,6 +163,7 @@
     {"repos":["mrod","ced"],"shared":"observation design","difference":"mechanism-learning utility != target-report licensing utility"},
     {"repos":["rec","tnoa","ced"],"shared":"observation/evidence boundary","difference":"record entry != post-entry semantics != reportability theorem"},
     {"repos":["egwee","sdmr"],"shared":"candidate coordinates must earn predictive admission","difference":"ecological state/proxy adequacy before residual context != environmental-variable admission to niche representation"},
+    {"repos":["balance","eco-genetic-criticality","crest"],"shared":"regime/state boundaries and persistence","difference":"trait-architecture middle world != eco-genetic finite criticality != general required-state theorem"},
     {"repos":["eco-genetic-warning-extensions","crest","theouni"],"shared":"future-relevant state adequacy","difference":"empirical/model result != general required-state theorem != portfolio admission semantics"},
     {"repos":["fcp","chun","azami","EAzami","odsp"],"shared":"coordinate-sensitive state structure","difference":"shared viewpoint alone creates no scientific edge"}
   ],
