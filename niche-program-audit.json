@@ -1,11 +1,11 @@
 {
-  "checked_at": "2026-09-03",
+  "checked_at": "2026-09-05",
   "program_id": "niche-to-survey-four-chapter-v1",
   "purpose": "Connect four repository-owned questions as one epistemic chapter sequence without turning them into one software pipeline or transferring claim ownership.",
   "spine": "REPRESENT → THICKEN → REALIZE → OBSERVE",
   "surface": "何を残す？ → 何が隠れる？ → どこまで届く？ → どこを見る？",
   "axiom": "niche != map",
-  "dependency_rule": "chapter order is conceptual/epistemic; no chapter automatically validates or technically depends on the preceding repository output",
+  "dependency_rule": "chapter order is conceptual/epistemic; no chapter automatically validates, promotes, or technically depends on the preceding repository output",
   "chapters": [
     {
       "chapter": 1,
@@ -20,10 +20,10 @@
       "chapter": 2,
       "repo": "odsp",
       "question": "HOW THICK is it?",
-      "operation": "x-y -> added vertical / temporal / structural / identity axes -> thickness, partition and held-out transferability",
-      "public_line": "地図は、niche を薄くする。",
-      "current_state": "multidimensional niche-geometry chapter with one prospectively unresolved temporal lane. The completed bat lane recovered descriptive vertical thickness (effective states ≈4.02) but its x-y-conditioned vertical organization did not generalize to either sealed individual. A separate Snapshot Serengeti contract now tests temporal thickness H(T|Site), temporal partition I(Species;T|Site), and three held-out site-fold gains; its terminal outcome has not yet been opened.",
-      "claim_firewall": "thickness != transferable organization; temporal thickness != identity partition; identity-time association != competition or causal displacement; camera detection time != automatically true activity-time niche. Historical ODSP topology remains superseded by EOG."
+      "operation": "x-y -> added vertical / temporal / structural / identity axes -> thickness, partition, state-resolved prediction and held-out transferability",
+      "public_line": "厚みがあることと、その編成が外へ移ることは別の性質だ。",
+      "current_state": "N2 empirical chain scientifically closed. Tawaki remains unavailable. The bat lane recovered descriptive vertical thickness H(Z|X,Y)=1.3918623 nats (~4.02 effective states) but negative held-out gains for both sealed bats. Snapshot Serengeti recovered temporal thickness H(T|Site)=1.6396236 nats (~5.15/6 states), species-time partition I(Species;T|Site)=0.224276 nats with permutation p=0.005, and positive transfer gain in all 3 held-out site folds. The BOP_RODENT state-prediction endpoint improved held-out log score in 27/30 individuals and Brier in 30/30 but is mixed under the frozen all-individual rule.",
+      "claim_firewall": "thickness != transferable organization; temporal thickness != identity partition; identity-time association != competition or causal displacement; camera detection time != automatically true activity-time niche; average predictive improvement != all-individual generalization; no N2 terminal receipt automatically becomes an N3 EOG state artifact. Historical ODSP topology remains superseded by EOG."
     },
     {
       "chapter": 3,
@@ -32,7 +32,7 @@
       "operation": "local possibility -> compatible transition/distribution worlds -> reachability/realizability",
       "public_line": "住める場所と、辿り着ける場所は違う。",
       "current_state": "two favorable fresh heterogeneous paired endpoints support a replicated candidate general predictive complement; one valid third endpoint remains before paper-level closure",
-      "claim_firewall": "compatible world is not true history; local support is not realized distribution; current evidence is not universal superiority"
+      "claim_firewall": "compatible world is not true history; local support is not realized distribution; current evidence is not universal superiority; EOG does not inherit an empirical state merely because ODSP closed positively on another endpoint"
     },
     {
       "chapter": 4,
@@ -45,13 +45,14 @@
     }
   ],
   "handoffs": [
-    "SDMR to ODSP: from which environmental dimensions deserve representation to how much state information a flat representation discards",
-    "ODSP to EOG: from local multidimensional support geometry to whether locally possible states are reachable and distributionally realizable under multiple worlds",
+    "SDMR to ODSP: from which environmental dimensions deserve representation to how much state information a flat representation discards and whether added-axis organization transfers",
+    "ODSP to EOG: epistemic question order only—from local multidimensional support geometry to whether locally possible states are reachable and distributionally realizable under multiple worlds",
     "EOG to ACSP: from uncertain compatible worlds to a bounded decision about where additional field observation is justified"
   ],
   "non_handoffs": [
     "ODSP does not modify or rescue SDMR Product A",
-    "the Snapshot Serengeti temporal lane is independent of the completed Tawaki and bat endpoints and cannot retune or rescue them",
+    "the completed Tawaki, bat, Serengeti and BOP_RODENT endpoints cannot be rerun or retuned to seek a preferred cross-chapter result",
+    "a positive ODSP temporal-transfer result and mixed state-prediction result do not issue an empirical N3 state payload",
     "EOG does not require ODSP output and owns the historical ODSP topology component separately",
     "ACSP does not require EOG and its validated Japanese patch rule was independently confirmed under its own contract",
     "a favorable later chapter cannot retroactively promote a failed or blocked earlier chapter"
