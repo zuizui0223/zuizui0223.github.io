@@ -1,16 +1,17 @@
 {
-  "checked_at": "2026-09-04",
+  "checked_at": "2026-09-05",
   "owner": "zuizui0223",
-  "repository_total": 32,
-  "classification_rule": "A visible scientific fragment must own an independent scientific question or inferential contract. Repository existence alone is not enough. Programme membership does not imply a linear dependency.",
-  "counts": {"scientific_active":30,"meta_registry":1,"staging_unclassified":1},
+  "repository_total": 33,
+  "classification_rule": "A visible scientific fragment must own an independent scientific question or inferential contract. Repository existence alone is not enough. Programme membership does not imply a linear evidence dependency.",
+  "counts": {"scientific_active":31,"meta_registry":1,"staging_unclassified":1},
   "graph_audit": "portfolio-graph-audit.json",
+  "ecosystem_audit": "ecosystem-system-audit.json",
   "scientific_blocks": {
     "azami": {"repos":["azami","EAzami","aza3"],"shape":"linear_handoff","spine":"present phenotype -> public evolutionary history -> own-data discrimination"},
     "flower": {"repos":["fcp","chun","hotarubukuro"],"shape":"complementary_arms_with_focal_origin","spine":"space <-> evolutionary time; hotarubukuro is focal/origin anchor, not Chapter-3 dependence"},
     "island": {"repos":["island","izu-core","shimahotarubukuro"],"shape":"linear_handoff","spine":"WHEN/WHERE -> conditional response WHY -> focal phenotype axes"},
     "observation": {"repos":["pollipi","insepi","tnoa","rec"],"shape":"branched_and_reverse_typed","spine":"PolliPi -> InsePi physical mainline; InsePi ... TNOA abstraction; REC -> TNOA information flow while TNOA -> REC is development lineage"},
-    "interaction": {"repos":["sch","bita"],"shape":"conceptual_handoff","spine":"shared cue -> second-coordinate escape/allocation"},
+    "interaction": {"repos":["sch","balance","bita"],"shape":"three_world_architecture_programme","spine":"shared-coordinate compromise -> persistent middle world -> differentiated-coordinate architecture"},
     "mechanism_resolution": {"repos":["boundary","mrod"],"shape":"abstraction_and_design","spine":"identification boundary -> next observation"},
     "niche_to_survey": {"repos":["sdmr","odsp","eog","acsp"],"shape":"epistemic_sequence","spine":"REPRESENT -> THICKEN -> REALIZE -> OBSERVE"},
     "crest_state_theory": {"repos":["ccoc","mltr","mrm","crest","ced","theouni"],"shape":"hub_plus_meta","spine":"CCOC/MLTR/MRM -> CREST -> CED; theouni is meta-layer"},
@@ -31,6 +32,13 @@
       "provenance":"reader-facing natural-data programme migrated from eco-genetic-warning-extensions on 2026-09-04; migration is provenance, not scientific claim inheritance",
       "claim_ceiling":"Does not validate EGWE warning validity or EGC simulator closure, does not pool heterogeneous natural systems, does not infer state completeness from negative residual-context tests, and retains not_identifiable/not_estimable/STOP as terminal outcomes."
     },
+    "balance": {
+      "class":"scientific_active","series":"interaction","chapter":2,"status":"bounded",
+      "scientific_ref":"analysis/middle-world-v1","pr":2,
+      "owner":"the ecological middle world where shared-coordinate conflict is real but differentiated architecture still has negative net margin",
+      "public_line":"葛藤があっても、分化が得とは限らない。",
+      "claim_ceiling":"Theory, implementation and six propositions do not establish natural prevalence, historical splitting, macroevolutionary reversibility or a true parallel-world fitness gap. Empirical promotion requires matched SCH/BITA worldlines on a common fitness scale."
+    },
     "284b": {
       "class":"staging_unclassified","visible":false,"status":"not_a_scientific_status",
       "current_content":"single file containing 'from 2.8.4'",
@@ -39,5 +47,5 @@
     }
   },
   "meta": {"zuizui0223.github.io":{"class":"meta_registry","scientific_fragment":false,"role":"portfolio registry, provenance-preserving visualization and navigation"}},
-  "inventory": ["hotarubukuro","azami","bita","island","mrod","pollipi","insepi","acsp","eco-genetic-criticality","ccoc","izu-core","eco-genetic-warning-extensions","egwee","mltr","ced","mrm","shimahotarubukuro","fcp","eog","odsp","EAzami","chun","sdmr","crest","theouni","tnoa","zuizui0223.github.io","aza3","sch","boundary","rec","284b"]
+  "inventory": ["hotarubukuro","azami","bita","balance","island","mrod","pollipi","insepi","acsp","eco-genetic-criticality","ccoc","izu-core","eco-genetic-warning-extensions","egwee","mltr","ced","mrm","shimahotarubukuro","fcp","eog","odsp","EAzami","chun","sdmr","crest","theouni","tnoa","zuizui0223.github.io","aza3","sch","boundary","rec","284b"]
 }
