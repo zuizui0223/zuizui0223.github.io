@@ -1,32 +1,33 @@
 {
-  "checked_at": "2026-09-04",
-  "last_full_relationship_audit": "2026-09-04",
-  "scope": "all 30 active scientific repositories: current README identity/status plus typed vertical, horizontal, provenance and meta relations",
+  "checked_at": "2026-09-05",
+  "last_full_relationship_audit": "2026-09-05",
+  "scope": "all 31 active scientific repositories: current README identity/status plus typed vertical, horizontal, provenance, shared-substrate, operational and ecosystem relations",
   "display_rule": "one active scientific repository = one visible fragment; repository existence alone does not create a scientific fragment; connection type never transfers evidence ownership",
   "graph_audit": "portfolio-graph-audit.json",
+  "ecosystem_audit": "ecosystem-system-audit.json",
   "repository_inventory": {
-    "owner_total":32,
-    "scientific_active":30,
-    "meta_registry":["zuizui0223.github.io"],
-    "staging":["284b"],
-    "classification_audit":"repository-classification-audit.json"
+    "owner_total": 33,
+    "scientific_active": 31,
+    "meta_registry": ["zuizui0223.github.io"],
+    "staging": ["284b"],
+    "classification_audit": "repository-classification-audit.json"
   },
   "tracking": {
-    "movement":"Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
-    "scientific_ref_detail":"Repositories are audited on the default branch unless an explicit scientific_ref is declared. SCH currently uses its active PR head because main is a placeholder.",
-    "claim_drift":"README drift is an audit signal, not an automatic scientific reinterpretation.",
-    "rule":"repository movement != scientific claim revision"
+    "movement": "Live public GitHub repository metadata. pushed_at marks repository motion, not scientific revision.",
+    "scientific_ref_detail": "Repositories are audited on the default branch unless an explicit scientific_ref is declared. BALANCE currently uses active PR #2 because the reader-facing middle-world formulation and six-proposition result set are on analysis/middle-world-v1. SCH PR #1 has merged and SCH is audited on main.",
+    "claim_drift": "README drift is an audit signal, not an automatic scientific reinterpretation.",
+    "rule": "repository movement != scientific claim revision"
   },
   "status_semantics": {
-    "result":"the current scientific core is closed; negative and conditional results count",
-    "bounded":"a repository-owned result exists with explicit external, empirical or transfer limits",
-    "open":"a prospectively frozen or explicitly staged scientific gate remains unresolved",
-    "stop":"retired or superseded; not an active fragment",
-    "staging":"repository exists but does not yet own an independent scientific question/inferential contract; this is not a scientific status"
+    "result": "the current scientific core is closed; negative, mixed and conditional results count",
+    "bounded": "a repository-owned result exists with explicit external, empirical or transfer limits",
+    "open": "a prospectively frozen or explicitly staged scientific gate remains unresolved",
+    "stop": "retired or superseded; not an active fragment",
+    "staging": "repository exists but does not yet own an independent scientific question/inferential contract; this is not a scientific status"
   },
   "active": [
     {"repo":"azami","readme_blob":"3cb70131f89d3a9afa0a40b97b60022140e211a5","display_status":"bounded"},
-    {"repo":"EAzami","readme_blob":"06aa1668cb72e2b27e07222fb2057259ff8ce341","display_status":"result"},
+    {"repo":"EAzami","readme_blob":"19f39e75ce0abfae00d2b5ca9e6bb8f685f9d69d","display_status":"result","role":"public-data evolutionary-time paper: repeated capitulum differentiation at unequal depths; no recurring tested coarse historical trigger identified under current public-data gates"},
     {"repo":"aza3","readme_blob":"7398e2ff93511bd9099407437feb80db3c95e8ba","display_status":"open","chapter":3,"role":"own-data discrimination after public-data evolutionary-history ceiling"},
     {"repo":"fcp","readme_blob":"fea14585e58d5f3c5542ca604a2f091a0754001d","display_status":"bounded","role":"geographic-space arm of flower-colour variation programme"},
     {"repo":"chun","readme_blob":"2dc710cbac8a223c9fc44aa09fef3c97ad6631a5","display_status":"result","role":"evolutionary-time arm of flower-colour variation programme"},
@@ -38,12 +39,13 @@
     {"repo":"insepi","readme_blob":"a0b29c487807d212be00743d80d3bd423a18cfb7","display_status":"open","role":"V13 blinded physical observation-system intervention mainline; V14/V15 are separate side-line provenance for TNOA"},
     {"repo":"tnoa","readme_blob":"0049e3795701ceb2afa4ad7ce1ab7247a6e0558e","display_status":"result","role":"post-entry process-preserving observation semantics"},
     {"repo":"rec","readme_blob":"d0a7b30f9ce9be9618b63299b7c08b7887d9772c","display_status":"open","role":"pre-entry exposure / gate / archive censoring counterpart"},
-    {"repo":"sch","readme_blob":"846930aac6e36ad4b8d5268469d998f665ee81ef","display_status":"open","scientific_ref":"codex/shared-cue-hypothesis-migration","ref_kind":"active_pr_head","pr":1},
-    {"repo":"bita","readme_blob":"61ece481589b5a02b1e87ae7f345c262f0f7ab1f","display_status":"result"},
+    {"repo":"sch","readme_blob":"4b30ab595cdbc95463b5064155964c571741c5a8","display_status":"bounded","chapter":1,"role":"shared-coordinate conflict and causal compromise geometry; merged main is authoritative"},
+    {"repo":"balance","readme_blob":"2afe1a0f810c6ead31130dbd5d323ceca4518cbd","display_status":"bounded","chapter":2,"role":"independent middle-world regime between conflict and profitable differentiation","scientific_ref":"analysis/middle-world-v1","ref_kind":"active_pr_head","pr":2},
+    {"repo":"bita","readme_blob":"5cb3fafa190d21d7049d57a0400424e7392d1b49","display_status":"result","chapter":3,"role":"differentiated-coordinate architecture gain and mechanism-allocation boundary"},
     {"repo":"boundary","readme_blob":"c3afa04fa27c19dcf94316ea2b9319b7344a8ef5","display_status":"bounded"},
     {"repo":"mrod","readme_blob":"237b04b1c0ee500f0f2b68b8eda2c0f1d97bc4ce","display_status":"bounded"},
     {"repo":"sdmr","readme_blob":"df323c224a4060dae6e0454db2022e0e986431f9","display_status":"result"},
-    {"repo":"odsp","readme_blob":"dfe2c693557641a7f9a12780f7c6596e9568abf2","display_status":"open","role":"multidimensional niche geometry; vertical chain closed, independent Snapshot Serengeti temporal-partition gate prospectively open"},
+    {"repo":"odsp","readme_blob":"bf8dcf97bbe6036b1cd94572b71f654def4384e9","display_status":"result","role":"closed N2 multidimensional niche-geometry/state-prediction chain; vertical, temporal and state-prediction endpoints retain distinct transfer outcomes"},
     {"repo":"eog","readme_blob":"d271ae92af397efd21cabd1f5bb07d5c09ea9fa8","display_status":"open"},
     {"repo":"acsp","readme_blob":"a56e8dd63958ec2a2354a6e7b0ed195d1582e83f","display_status":"result"},
     {"repo":"crest","readme_blob":"67e7869ea0cd68b06a466a06ecb1002ce836a378","display_status":"result","role":"synthesis hub for future/history/mechanism obligations and least-information required state"},
@@ -60,7 +62,7 @@
     {"repo":"284b","visible":false,"current_content":"single file: from 2.8.4","probable_provenance":"SDMR Product-A v2.8.4 descendant/seed","promotion_gate":"declare an independent scientific question, inherited boundary, evidence contract, claim ceiling and terminal outcomes; otherwise remain staging or return to SDMR"}
   ],
   "superseded_components": [
-    {"repository":"odsp","component":"historical spatial-patch / support-topology programme","historical_readme_blob":"66bf6fbf8578002b03b1a4ab094b7bde4ec965b3","successor":"eog","current_repository_scope":"multidimensional niche geometry: vertical/temporal/structural added axes, partition and held-out transferability","reason":"old topology ownership remains with EOG; current ODSP N2->EOG N3 relation is epistemic rather than code ownership"},
+    {"repository":"odsp","component":"historical spatial-patch / support-topology programme","historical_readme_blob":"66bf6fbf8578002b03b1a4ab094b7bde4ec965b3","successor":"eog","current_repository_scope":"multidimensional niche geometry and state-resolved prediction across vertical/temporal/other added axes","reason":"old topology ownership remains with EOG; current ODSP->EOG relation is epistemic rather than code ownership"},
     {"repository":"microdonta","component":"former combined theory-method repository identity","successors":["boundary","mrod"],"visible":false,"reason":"Paper A identification-boundary theory and Paper B observation-design methodology now have separate repositories"}
   ],
   "programmes": {
@@ -68,16 +70,16 @@
     "flower":{"shape":"complementary_arms_with_focal_origin","nodes":["fcp","chun","hotarubukuro"],"rule":"FCP space arm <-> Chun evolutionary-time arm; hotarubukuro is focal/origin anchor, not dependent Chapter 3"},
     "island":{"shape":"linear_handoff","nodes":["island","izu-core","shimahotarubukuro"]},
     "observation":{"shape":"branched_and_reverse_typed","nodes":["pollipi","insepi","tnoa","rec"],"rule":"PolliPi->InsePi physical mainline; InsePi...TNOA abstraction provenance; REC->TNOA information flow while TNOA->REC is research lineage"},
-    "interaction":{"shape":"conceptual_handoff","nodes":["sch","bita"]},
-    "mechanism_resolution":{"shape":"horizontal_abstraction","nodes":["bita","boundary","mrod"],"rule":"specific identified set -> general identification boundary -> next-observation design; not one evidence pipeline"},
-    "niche_to_survey":{"shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"rule":"chapter order != software dependency or retroactive validation"},
+    "interaction":{"shape":"three_world_architecture_programme","nodes":["sch","balance","bita"],"rule":"SCH owns shared-coordinate conflict/compromise; BALANCE owns L>0 and Phi<0 middle-world position/depth/topology/persistence; BITA owns Phi=0/+ differentiated architecture and mechanism allocation"},
+    "mechanism_resolution":{"shape":"horizontal_abstraction","nodes":["bita","boundary","mrod"],"rule":"specific differentiated-world identified set -> general identification boundary -> next-observation design; not one evidence pipeline"},
+    "niche_to_survey":{"shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"rule":"chapter order != software dependency, automatic state promotion or retroactive validation"},
     "crest_state_theory":{"shape":"hub","nodes":["ccoc","mltr","mrm","crest","ced","theouni"],"rule":"CCOC/MLTR/MRM are parallel companions -> CREST; CED is downstream evidence licensing; theouni is meta-layer"},
     "ecogenetic":{"shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"],"rule":"mechanistic parent -> warning/state/process-portability extension; EGWEE is not Chapter 3"},
     "state_measurement_empirical":{"shape":"independent_empirical_method_synthesis","nodes":["egwee"],"rule":"natural-data four-gate paper; migrated from EGWE for provenance but owns no EGWE warning-validity or EGC simulator claim"}
   },
   "philosophy": {
     "title":"PhD in zuizui",
-    "sentence":"Not ownership of answers, but responsibility for what is retained, constrained, safely forgotten, and left revisable.",
+    "sentence":"Not ownership of answers, but responsibility for what is retained, constrained, safely forgotten, returned to observation, and left revisable.",
     "scientific_dependency":false
   }
 }
