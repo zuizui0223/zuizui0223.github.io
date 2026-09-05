@@ -1,12 +1,12 @@
 {
-  "checked_at": "2026-09-04",
+  "checked_at": "2026-09-05",
   "id": "research-ecosystem-system-v1",
-  "scope": "All 30 active scientific repositories are placed in one ecological research system. Series remain distinct ownership units; cross-series relations specify only what object, question, evidence substrate or design role is shared or transferred.",
+  "scope": "All 31 active scientific repositories are placed in one ecological research system. Series remain distinct ownership units; cross-series relations specify only what object, question, evidence substrate or design role is shared or transferred.",
   "system_surface": "VARIATION <-> STATE <-> RECORD <-> INFERENCE <-> NEXT OBSERVATION <-> FIELD RETURN",
   "system_rule": "connection != ownership",
   "functional_roles": {
     "variation_and_history": ["hotarubukuro", "fcp", "chun", "azami", "EAzami", "island", "shimahotarubukuro", "sch", "bita"],
-    "state_and_representation": ["izu-core", "sdmr", "odsp", "eco-genetic-criticality", "eco-genetic-warning-extensions", "crest", "ccoc", "mltr", "mrm"],
+    "state_and_representation": ["izu-core", "balance", "sdmr", "odsp", "eco-genetic-criticality", "eco-genetic-warning-extensions", "crest", "ccoc", "mltr", "mrm"],
     "record_and_measurement": ["pollipi", "insepi", "rec", "tnoa", "egwee"],
     "identification_and_reporting": ["boundary", "ced", "theouni"],
     "next_observation_and_field_return": ["mrod", "acsp", "aza3", "eog"]
@@ -16,19 +16,20 @@
     "fcp": "geographic-space trait-state arm",
     "chun": "evolutionary-time trait-state arm",
     "azami": "present phenotype architecture",
-    "EAzami": "public-data evolutionary-history narrowing",
+    "EAzami": "public-data evolutionary-history narrowing: repeated differentiation resolved more strongly than recurring coarse historical cause",
     "aza3": "own-data history discrimination and field return",
     "island": "macroecological island context",
     "izu-core": "interaction-response architecture and proximal mechanism geometry",
     "shimahotarubukuro": "focal island phenotype divergence",
-    "sch": "one-trait shared-cue interaction problem",
-    "bita": "second-coordinate escape and specific identified-set problem",
+    "sch": "shared-coordinate functional conflict and compromise geometry",
+    "balance": "middle-world architecture reserve, depth, topology and persistence before differentiation pays",
+    "bita": "differentiated-coordinate architecture and specific mechanism-allocation problem",
     "pollipi": "physical ecological recording",
     "insepi": "physical observer-system diagnosis",
     "rec": "pre-entry exposure and record censoring",
     "tnoa": "post-entry observation semantics",
     "sdmr": "environmental-coordinate admission to niche representation",
-    "odsp": "multidimensional niche state-space geometry",
+    "odsp": "closed N2 multidimensional niche geometry and state-resolved prediction",
     "eog": "realizability and reachability of ecological worlds",
     "acsp": "bounded spatial next-observation search",
     "boundary": "general mechanistic identification boundary",
@@ -43,6 +44,15 @@
     "ced": "evidence licensing and reportability",
     "theouni": "meta-level programme admission and portfolio grammar"
   },
+  "within_series_state_transitions": [
+    {
+      "series": "interaction",
+      "path": ["sch", "balance", "bita"],
+      "surface": "shared-coordinate compromise -> middle world -> differentiated architecture",
+      "object_flow": "conflict load L -> architecture reserve / margin Phi -> differentiated-world gain and mechanism allocation",
+      "firewall": "the path orders questions and declared receipts; it does not make one chapter's evidence sufficient for the next"
+    }
+  ],
   "cross_series_relations": [
     {
       "from": "hotarubukuro",
@@ -125,6 +135,7 @@
     "shared organism alone does not transfer a result",
     "shared dataset does not merge inferential contracts",
     "methodological similarity does not imply software dependency",
+    "BALANCE/EGC/CREST regime-boundary similarity does not create a scientific dependency",
     "later evidence does not retroactively validate an earlier closed or failed gate"
   ]
 }
