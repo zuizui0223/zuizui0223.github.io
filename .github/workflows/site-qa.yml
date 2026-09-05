@@ -23,6 +23,7 @@ jobs:
           node --check odsp-homepage-update.js
           node --check mechanism-split.js
           node --check aza3-acsp-bridge.js
+          node --check portfolio-latest.js
           node --check app.js
           node --check philosophy-ui.js
       - name: Audit JSON syntax
@@ -32,6 +33,7 @@ jobs:
           python -m json.tool portfolio-graph-audit.json >/dev/null
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
+          python -m json.tool interaction-audit.json >/dev/null
           python -m json.tool tnoa-rec-audit.json >/dev/null
           python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
           python -m json.tool ecosystem-system-audit.json >/dev/null
@@ -46,6 +48,8 @@ jobs:
           repo = json.loads(Path('repo-audit.json').read_text())
           classification = json.loads(Path('repository-classification-audit.json').read_text())
           ecosystem = json.loads(Path('ecosystem-system-audit.json').read_text())
+          interaction = json.loads(Path('interaction-audit.json').read_text())
+          niche = json.loads(Path('niche-program-audit.json').read_text())
 
           nonlinear = {x['id']: x for x in graph['nonlinear_constellations']}
           vertical = {x['id']: x for x in graph['vertical_programmes']}
@@ -55,28 +59,47 @@ jobs:
           assert nonlinear['flower']['shape'] == 'complementary_arms_with_focal_origin'
           assert vertical['niche']['shape'] == 'epistemic_sequence'
           assert vertical['ecogenetic']['shape'] == 'parent_extension'
+          assert vertical['interaction']['shape'] == 'three_world_architecture_programme'
+          assert vertical['interaction']['nodes'] == ['sch', 'balance', 'bita']
           assert standalone['state_measurement_empirical']['nodes'] == ['egwee']
           assert graph['ecosystem_system']['id'] == 'research-ecosystem-system-v1'
           assert view['scientific_graph']['ecosystem_system']['audit'] == 'ecosystem-system-audit.json'
+          assert view['scientific_graph']['vertical_programmes'][2]['nodes'] == ['sch', 'balance', 'bita']
           assert ecosystem['system_rule'] == 'connection != ownership'
-          assert len(ecosystem['node_roles']) == 30
+          assert len(ecosystem['node_roles']) == 31
+          assert ecosystem['node_roles']['balance'].startswith('middle-world')
           assert any(x.get('from') == 'hotarubukuro' and x.get('to') == 'izu-core' and x.get('type') == 'shared_substrate' for x in ecosystem['cross_series_relations'])
           assert any(x.get('from') == 'izu-core' and x.get('to') == 'egwee' and x.get('type') == 'shared_substrate' for x in ecosystem['cross_series_relations'])
           assert any(x.get('from') == 'tnoa' and x.get('to') == 'egwee' for x in ecosystem['cross_series_relations'])
           assert any(x.get('from') == 'egwee' and x.get('to') == 'ced' for x in ecosystem['cross_series_relations'])
           assert any(x.get('from') == 'mrod' and x.get('to') == 'acsp' and x.get('type') == 'complement' for x in ecosystem['cross_series_relations'])
-          assert view['phd_path']['scientific_dependency'] is False
-          assert repo['repository_inventory']['scientific_active'] == 30
-          assert classification['counts']['scientific_active'] == 30
+          assert interaction['programme']['path'] == ['sch', 'balance', 'bita']
+          assert [x['status'] for x in interaction['chapters']] == ['bounded', 'bounded', 'result']
+          niche_by_repo = {x['repo']: x for x in niche['chapters']}
+          assert 'scientifically closed' in niche_by_repo['odsp']['current_state']
+          active = {x['repo']: x for x in repo['active']}
+          assert repo['repository_inventory']['owner_total'] == 33
+          assert repo['repository_inventory']['scientific_active'] == 31
+          assert active['sch']['display_status'] == 'bounded'
+          assert 'scientific_ref' not in active['sch']
+          assert active['balance']['display_status'] == 'bounded'
+          assert active['balance']['scientific_ref'] == 'analysis/middle-world-v1'
+          assert active['bita']['chapter'] == 3
+          assert active['odsp']['display_status'] == 'result'
+          assert classification['counts']['scientific_active'] == 31
+          assert classification['newly_classified']['balance']['class'] == 'scientific_active'
           assert classification['newly_classified']['egwee']['class'] == 'scientific_active'
+          assert view['phd_path']['scientific_dependency'] is False
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
       - name: Asset cache guard
         run: |
           grep -q 'aza3-acsp-bridge.js?v=20260904c' index.html
+          grep -q 'portfolio-latest.js?v=20260905a' index.html
           grep -q 'app.js?v=20260904a' index.html
           grep -q 'fill="url(#voidFill)" filter="url(#softGlow)"' index.html
           grep -q 'shared_substrate' app.js
-          grep -q '30 · static' index.html
+          grep -q '31 · static' index.html
+          grep -q 'SCH → BALANCE → BITA' portfolio-latest.js
           ! grep -q 'microdonta-role' index.html
