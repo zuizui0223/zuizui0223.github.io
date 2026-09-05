@@ -1,48 +1,73 @@
 {
-  "checked_at": "2026-08-30",
+  "checked_at": "2026-09-05",
   "series": "interaction",
   "glyph": "⋈",
-  "axiom": "合図 ≠ 一方通行",
-  "question": "What happens when one floral cue is read by both mutualists and antagonists, and can a second defence coordinate release that conflict without collapsing outcome and mechanism into one claim?",
+  "axiom": "葛藤 ≠ 即分化",
+  "question": "When multiple fitness-relevant functions share one phenotypic coordinate, where does compromise settle, when does a persistent middle world exist, and when does adding a differentiated coordinate become worth its architectural cost?",
+  "programme": {
+    "shape": "three_world_architecture_programme",
+    "path": ["sch", "balance", "bita"],
+    "surface": "SHARED COORDINATE -> MIDDLE WORLD -> DIFFERENTIATED COORDINATES",
+    "fitness_scale_rule": "cross-chapter bridge quantities must be comparable on an explicitly declared common fitness scale; direct and decomposed routes are not averaged when they disagree"
+  },
   "chapters": [
     {
       "chapter": "B1",
       "repo": "sch",
-      "scientific_ref": "codex/shared-cue-hypothesis-migration",
-      "pr": 1,
-      "status": "open",
-      "one_line": "共有された合図では、魅力は味方だけに届かない。",
-      "estimand": "M_A, G_A and S_A = M_A - G_A on one predeclared attraction/display coordinate A",
-      "current_boundary": "The active PR has a frozen 868-record systematic-screening universe; screening, geography coding, same-code receiver evidence and historical L4 transition evidence remain incomplete. DIRECT_L4 / private-cue origin is NOT_EVALUABLE rather than absent.",
-      "refuses": "Treating pollinator attraction as pure benefit, sparse evidence as biological absence, or SCH evidence as if it were BITA A×D evidence."
+      "scientific_ref": "main",
+      "status": "bounded",
+      "one_line": "一つの形質座標に二つの機能を押し込めると、妥協が生まれる。",
+      "estimand": "shared-coordinate state-specific functional optima, combined compromise optimum, and fitness-scale conflict load L",
+      "current_boundary": "REAL_WORLD_MULTIFUNCTIONALITY_RECOVERED and CASE_LEVEL_COMPROMISE_RECOVERED are retained; the state-specific causal compromise analyzer is ready. Pure-function optima are not identified by default and the decisive full causal compromise experiment remains unexecuted.",
+      "handoff": "a qualified causal compromise receipt and L on the declared common fitness scale",
+      "refuses": "Treating multifunctionality as conflict by itself, state-specific optima as pure-function optima, or SCH evidence as evidence that differentiation is profitable."
     },
     {
       "chapter": "B2",
+      "repo": "balance",
+      "scientific_ref": "analysis/middle-world-v1",
+      "pr": 2,
+      "status": "bounded",
+      "one_line": "葛藤があっても、分化が得とは限らない。",
+      "estimand": "middle-world membership L>0 and Phi=sL-K<0, plus reserve rho=K-sL, position xi=L/(L+rho), depth d_B=min(L,rho), environmental width/topology and switching-cost hysteresis",
+      "direct_route": "L>0 and Delta_W=W_D*-W_S*<0",
+      "registered_bridge": "Delta_W=sL-K; mismatch is a bridge failure requiring scale/context/cost/channel diagnosis rather than averaging",
+      "current_boundary": "Six middle-world propositions and regression tests are implemented on the active PR. Natural-data recovery from matched SCH/BITA worldlines remains an explicit empirical gate; preferred prospective systems include Pedicularis rex with Peucedanum multivittatum as an observational anchor.",
+      "handoff": "architecture reserve / margin, critical crossing and any matched direct-worldline receipt",
+      "refuses": "Treating BALANCE as algebraic glue, inferring historical splitting or macroevolutionary reversibility from lower gates, or rescuing a direct/decomposed mismatch post hoc."
+    },
+    {
+      "chapter": "B3",
       "repo": "bita",
       "scientific_ref": "main",
       "status": "result",
-      "one_line": "逃げ道が開いても、何が開けたかは一つに定まらない。",
-      "estimand": "Delta_AD W and its compatible allocation among antagonist relief, pollinator interference and remaining joint channel",
-      "current_boundary": "A valid total A×D interaction can decide the outcome-level escape sign under the declared common-outcome design, while the same total surface does not point-identify mechanism allocation. Current screened systems do not yet establish robust positive empirical escape or full allocation.",
-      "refuses": "Calling the total sign a full mechanism explanation or naming the residual joint channel by subtraction alone."
+      "one_line": "分化は、回収できる妥協損失が追加コストを上回るときに得になる。",
+      "estimand": "recoverable shared-architecture loss R, differentiated-architecture cost K, Delta_arch=R-K, critical interface Phi=0/+ and the compatible mechanism allocation for the worked A×D interaction",
+      "current_boundary": "The nested-architecture result is closed at differentiation favored iff K<R; the quadratic corollary gives R=sL. In the floral worked case, outcome-level escape and mechanism allocation remain separate inferential objects.",
+      "horizontal_bridge": "the specific differentiated-world identified-set / mechanism-allocation problem abstracts to boundary, then boundary orders MROD next-observation design",
+      "refuses": "Calling positive architecture gain complete functional independence, historical splitting, or a point-identified mechanism allocation."
     }
   ],
   "sequence": [
-    "one shared cue carries benefit and cost",
-    "evolution may compromise, specialize, maintain polymorphism, differentiate, branch or modularize",
-    "a second antagonist-reducing coordinate may create outcome-level escape",
-    "escape sign and mechanism allocation are separate questions"
+    "shared functions occupy one phenotypic coordinate and can generate a compromise load",
+    "a non-empty interior may persist where conflict exists but differentiated architecture still has negative net margin",
+    "the interior has position, depth, environmental width, topology and possible switching-cost hysteresis",
+    "differentiation becomes favorable only after the architecture boundary is crossed",
+    "outcome-level architecture gain and mechanism allocation remain separate questions"
   ],
   "cross_series_bridge": {
     "from": "bita",
-    "to": "microdonta",
-    "meaning": "BITA supplies a concrete identified-set problem; microdonta generalizes how surviving causal worlds guide the next observation.",
-    "ownership": "bridge only; neither repository acquires the other's primary scientific claims"
+    "to": "boundary",
+    "then": "mrod",
+    "meaning": "BITA supplies a concrete differentiated-world identified-set problem; boundary generalizes the identification ceiling; MROD asks which next measurement best reduces the surviving mechanism ambiguity.",
+    "ownership": "bridge only; no repository acquires another repository's primary scientific claims"
   },
   "claim_firewall": [
-    "SCH is not a one-trait subset of the BITA estimand; it owns a distinct one-coordinate conflict question.",
-    "BITA may use SCH as biological motivation for adding D, but SCH evidence does not demonstrate an A×D interaction.",
-    "The series is biological first and identification-aware second; moving BITA out of the generic method series does not remove its partial-identification contribution.",
-    "The active SCH scientific surface is currently on PR #1 rather than the nearly empty default branch."
+    "SCH, BALANCE and BITA own different worlds rather than being nested estimands of one dataset.",
+    "SCH evidence can motivate or supply a conflict-load receipt to BALANCE but does not establish BALANCE membership without the differentiation-side test.",
+    "BALANCE membership does not establish that differentiation eventually occurs in history; it identifies a current architecture regime under the declared scale.",
+    "BITA may inherit a declared common fitness scale but must separately justify recoverable loss and architecture cost or use a prospectively matched direct worldline.",
+    "The merged SCH main branch is authoritative; the former PR #1 scientific-ref override is retired.",
+    "BALANCE currently uses active PR #2 because the reader-facing middle-world theory/result set is not yet merged to main."
   ]
 }
