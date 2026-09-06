@@ -22,7 +22,7 @@
 - **dashed `?`** — scientifically plausible だが未閉合。クリックすると closure condition を notebook に出す。
 - **sealed** — scientific question がまだ独立していない staging。
 
-したがって謎の線を装飾で追加しません。**全伏線には「何が得られれば開くか」が必要**です。
+したがって謎の線を装飾で追加しません。**全伏線には「何が得られれば開くか」が必要**です。`puzzle-closure-audit.json` が各 `?` の問い・開錠条件・昇格規則を保持します。
 
 ## Main scientific architecture
 
@@ -50,6 +50,7 @@ PolliPi · InsePi · EGWEE · ACSP · aza3 / island / flower systems
 
 - `CREST → CED` and `Boundary → CED`: required state / identified set → honest reportability.
 - `MRM ⇢ Boundary → MROD`: response-relevant mechanism distinction → identifiability → next observation. MRM→MROD direct adapter is still locked.
+- `CED ? MROD`: target-resolution design と mechanism-resolution design は近いが同一ではなく、共通candidate-observation contractができるまで locked。
 - `EGWE ⇢ PAYOFF`: relational future-relevant state may condition the ecological context and architecture payoff quantities; **proposed interface, not validation**.
 - reverse `PAYOFF/BITA ⇢ EGWE`: architecture may generate interaction architecture / relational state; **locked until one common system measures architecture → relational state → future function**.
 - `EGWE → EGWEE ⇄ island/urban contexts`: natural-data state adequacy / residual context; **not genetic-warning validation**.
@@ -83,6 +84,7 @@ TMOP is an evidence-mode lens only。正確な membership は `tmop-audit.json`�
 - `repository-classification-audit.json`
 - `tmop-audit.json`
 - `world-ontology-audit.json` — world layers, lens-specific radius semantics, established/locked contacts and closure conditions
+- `puzzle-closure-audit.json` — every visible scientific `?`, its unlock condition, and sealed→locked→proposed→solid promotion rule
 - `theory-reality-audit.json`
 - `portfolio-graph-audit.json`
 - `ecosystem-system-audit.json`
