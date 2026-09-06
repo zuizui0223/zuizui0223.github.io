@@ -20,6 +20,7 @@ jobs:
         run: |
           node --check tower.js
           node --check tower-data.js
+          node --check tower-perspective-clue.js
           node tests/tower_contract.cjs
       - name: Install browser test dependencies
         run: |
