@@ -12,32 +12,41 @@
   }
 
   const defs=svg.querySelector("defs");
-  if(defs&&!defs.querySelector("#coreArrow")){
-    defs.insertAdjacentHTML("beforeend",`<marker id="coreArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#d9d0aa"/></marker>`);
+  if(defs&&!defs.querySelector("#coreArrowStrong")){
+    defs.insertAdjacentHTML("beforeend",`<marker id="coreArrowStrong" viewBox="0 0 12 12" refX="9.5" refY="6" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1L11 6L1 11Z" fill="#f0ead7" stroke="#08090c" stroke-width="1.2"/></marker>`);
   }
 
   const existing=svg.querySelector(".cross-core-layer");
   if(existing)existing.remove();
-  const particles=svg.querySelector(".particles");
-  if(!particles)return;
 
+  // Outer-ring network: the bridges connect the visible cores directly rather than
+  // disappearing into the central void. Paths stay outside the black centre.
   const routes=[
-    {id:"flower-island",cls:"shared",d:"M500 294C520 272 548 284 560 320",symbol:"≈",x:532,y:286,title:"hotarubukuro ↔ izu-core · shared empirical substrate",markers:"both"},
-    {id:"island-ecogenetic",cls:"shared",d:"M560 320C625 350 620 420 548 438",symbol:"≈",x:615,y:382,title:"izu-core ↔ EGWEE · shared Honshu–Izu substrate",markers:"both"},
-    {id:"observation-ecogenetic",cls:"epistemic",d:"M566 408C566 424 558 435 548 438",symbol:"⇢",x:568,y:429,title:"TNOA → EGWEE · record semantics before state admission",markers:"end"},
-    {id:"ecogenetic-theory",cls:"epistemic",d:"M548 438C520 472 470 466 445 410",symbol:"⇢",x:496,y:460,title:"EGWEE → CED · state adequacy before reportability",markers:"end"},
-    {id:"interaction-method",cls:"abstraction",d:"M570 360C610 395 570 444 510 442",symbol:"⇢",x:575,y:413,title:"BITA → Boundary → MROD · mechanism set to identification and next measurement",markers:"end"},
-    {id:"method-niche",cls:"complement",d:"M510 442C470 472 415 430 430 365",symbol:"⇄",x:462,y:449,title:"MROD ↔ ACSP · WHAT to measure / WHERE to look",markers:"both"},
-    {id:"niche-azami",cls:"information",d:"M430 365C418 345 426 330 446 324",symbol:"⇄",x:424,y:343,title:"ACSP ↔ aza3 · search patch / biological sampling slot",markers:"both"}
+    {id:"flower-island",cls:"shared",d:"M538 78C625 34 758 47 826 118",label:"substrate",x:686,y:54,title:"hotarubukuro ↔ izu-core · shared empirical substrate",markers:"none"},
+    {id:"island-ecogenetic",cls:"shared",d:"M850 144C930 274 905 525 718 638",label:"substrate",x:895,y:365,title:"izu-core ↔ EGWEE · shared Honshu–Izu substrate",markers:"none"},
+    {id:"observation-ecogenetic",cls:"epistemic",d:"M838 600C806 630 760 650 720 650",label:"record → state",x:780,y:634,title:"TNOA → EGWEE · record semantics before state admission",markers:"end"},
+    {id:"ecogenetic-theory",cls:"epistemic",d:"M682 652C568 704 315 694 183 604",label:"state → claim",x:432,y:681,title:"EGWEE → CED · state adequacy before reportability",markers:"end"},
+    {id:"interaction-method",cls:"abstraction",d:"M900 374C862 515 720 642 520 657",label:"identify → design",x:742,y:588,title:"BITA → Boundary → MROD · mechanism set to identification and next measurement",markers:"end"},
+    {id:"method-niche",cls:"complement",d:"M482 660C314 706 132 580 104 374",label:"WHAT ⇄ WHERE",x:257,y:625,title:"MROD ↔ ACSP · WHAT to measure / WHERE to look",markers:"both"},
+    {id:"niche-azami",cls:"information",d:"M88 338C89 246 119 177 174 143",label:"search ⇄ field",x:111,y:236,title:"ACSP ↔ aza3 · search patch / biological sampling slot",markers:"both"}
   ];
 
+  const labelMarkup=r=>{
+    const width=Math.max(76,r.label.length*8.2+20);
+    const x=(r.x-width/2).toFixed(1);
+    return `<rect class="core-bridge-label-bg" x="${x}" y="${(r.y-13).toFixed(1)}" width="${width.toFixed(1)}" height="26"/><text class="core-bridge-label" x="${r.x}" y="${r.y}">${r.label}</text>`;
+  };
+
   const markup=routes.map(r=>{
-    const ms=r.markers==="both"?' marker-start="url(#coreArrow)" marker-end="url(#coreArrow)"':r.markers==="end"?' marker-end="url(#coreArrow)"':'';
-    return `<g class="core-bridge-group" data-core-bridge="${r.id}"><title>${r.title}</title><path class="core-bridge ${r.cls}" d="${r.d}"${ms}/><path class="core-bridge-hit" d="${r.d}"/><text class="core-bridge-symbol" x="${r.x}" y="${r.y}">${r.symbol}</text></g>`;
+    const ms=r.markers==="both"?' marker-start="url(#coreArrowStrong)" marker-end="url(#coreArrowStrong)"':r.markers==="end"?' marker-end="url(#coreArrowStrong)"':'';
+    return `<g class="core-bridge-group" data-core-bridge="${r.id}"><title>${r.title}</title><path class="core-bridge-halo" d="${r.d}"/><path class="core-bridge ${r.cls}" d="${r.d}"${ms}/><path class="core-bridge-hit" d="${r.d}"/>${labelMarkup(r)}</g>`;
   }).join("");
-  const junctions=[[500,294],[560,320],[566,408],[548,438],[445,410],[570,360],[510,442],[430,365],[446,324]].map(([x,y])=>`<circle class="core-junction" cx="${x}" cy="${y}" r="2.5"/>`).join("");
-  particles.insertAdjacentHTML("beforebegin",`<g class="cross-core-layer" aria-label="cross-core scientific bridges">${markup}${junctions}</g>`);
+
+  const junctions=[[538,78],[826,118],[850,144],[718,638],[838,600],[720,650],[682,652],[183,604],[900,374],[520,657],[482,660],[104,374],[88,338],[174,143]]
+    .map(([x,y])=>`<circle class="core-junction" cx="${x}" cy="${y}" r="4"/>`).join("");
+
+  portals.insertAdjacentHTML("beforebegin",`<g class="cross-core-layer" aria-label="cross-core scientific bridges">${markup}${junctions}</g>`);
 
   const desc=document.getElementById("brain-desc");
-  if(desc)desc.textContent="研究核を放射状に置き、花色↔島、生態遺伝↔島/観測/理論、相互作用→方法、方法↔ニッチ↔アザミの主要横断bridgeを内側の横線として示す研究宇宙。";
+  if(desc)desc.textContent="研究核を放射状に置き、外周の太い横断線で花色↔島↔生態遺伝、観測→生態遺伝→理論、相互作用→方法↔ニッチ↔アザミを直接つないだ研究宇宙。";
 })();
