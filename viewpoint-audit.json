@@ -1,1 +1,75 @@
-{"checked_at":"2026-09-06","purpose":"State the portfolio-level viewpoint without transferring scientific ownership from source repositories.","repository_identity_source":"repo-audit.json","canonical_graph":"portfolio-graph-audit.json","ecosystem_system":"ecosystem-system-audit.json","evidence_partition":"evidence-partition-audit.json","repository_inventory":{"scientific_active":33,"meta_registry":1,"staging_unclassified":1,"classification_audit":"repository-classification-audit.json"},"central_question":"Which distinctions become visible, necessary, identifiable, measurable, recordable, reportable, constrainable, realizable, actionable, or safely forgettable when the coordinate system, receiver set, architecture regime, niche representation, state/proxy measurement, reference information, record-entry process, observation contract, future responsibility, retained mechanism set, sampling location, or report target changes?","novelty_claim":{"allowed":"A portfolio-level viewpoint: ecological variation is treated as coordinate-, receiver-, architecture-, measurement-, record-, evidence-, representation- and contract-relative state structure, while unresolved/negative/mixed/unavailable outcomes remain part of the object.","forbidden":["one universal ecological state or mechanism already validated in nature","central synthesis ownership of source data/proofs/claims","treating evidence-mode overlap as scientific dependency","treating shared substrate as shared conclusion"]},"lenses":[{"id":"coordinate","glyph":"⌖","surface":"原因より、座標。","repositories":["azami","EAzami","aza3","fcp","chun","hotarubukuro","island","izu-core","shimahotarubukuro","sch","balance","bita","payoff","sdmr","odsp","eog","acsp","egwee"]},{"id":"boundary","glyph":"∅","surface":"答えより、境界。","repositories":["pollipi","insepi","v3","tnoa","rec","sch","balance","bita","boundary","mrod","sdmr","odsp","eog","acsp","aza3","eco-genetic-warning-extensions","egwee","ced"]},{"id":"forgetting","glyph":"≈","surface":"分類より、忘却。","repositories":["crest","ccoc","mltr","mrm","ced","eco-genetic-criticality","eco-genetic-warning-extensions","egwee","theouni","eog","tnoa","v3","rec","odsp"]}],"scientific_graph":{"vertical_programmes":[{"id":"azami","shape":"linear_handoff","nodes":["azami","EAzami","aza3"]},{"id":"island","shape":"linear_handoff","nodes":["island","izu-core","shimahotarubukuro"]},{"id":"interaction","shape":"three_world_architecture_programme","nodes":["sch","balance","bita"],"abstraction":["payoff"],"rule":"PAYOFF is not Chapter 4"},{"id":"ecogenetic","shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"]},{"id":"niche","shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"]}],"standalone_programmes":[{"id":"state_measurement_empirical","nodes":["egwee"]}],"nonlinear_constellations":[{"id":"flower","shape":"complementary_arms_with_focal_origin","nodes":["fcp","chun","hotarubukuro"]},{"id":"observation","shape":"branched_information_order","nodes":["pollipi","insepi","v3","rec","tnoa"]},{"id":"interaction_game","shape":"cross_chapter_abstraction","nodes":["sch","balance","bita","payoff"]},{"id":"crest_state_theory","shape":"hub","nodes":["ccoc","mltr","mrm","crest","ced","theouni"]}],"horizontal_bridges":[{"from":"bita","to":"boundary","type":"abstraction"},{"from":"boundary","to":"mrod","type":"epistemic"},{"from":"eco-genetic-warning-extensions","to":"egwee","type":"provenance"}],"ecosystem_system":{"audit":"ecosystem-system-audit.json","surface":"VARIATION ⇄ STATE ⇄ RECORD ⇄ IDENTIFY ⇄ DESIGN ⇄ FIELD ⇄ UPDATE","rule":"All 33 active scientific repositories are placed in one ecological system; evidence-mode overlap is shown separately and is not a claim-transfer graph."}},"evidence_mode_view":{"surface":"THEORY/SIMULATION ∩ METHODS ∩ PUBLIC DATA ∩ OWN/NEW DATA","audit":"evidence-partition-audit.json","rule":"This is a variance-partitioning-style evidence composition lens, not a causal decomposition or importance score."},"phd_path":{"surface":"原点 → 記録 → 境界 → 次観測 → 忘却 → 渡す","stages":["hotarubukuro","REC/TNOA","boundary","mrod","crest","theouni"],"scientific_dependency":false},"staging_boundary":{"repo":"284b","visible":false},"cross_repository_invariants":["record != world","no record != no event","candidate state/proxy != adequate by plausibility","representation can erase biological distinction","niche thickness != transferability","local possibility != reachability","candidate patch != occupancy","functional conflict != immediate differentiation","static architecture advantage != invasion success","required state != identified state != reportable target","connection != ownership","shared evidence mode != shared conclusion"],"phd_in_zuizui":"Responsibility for which distinctions are retained, measured, recorded, constrained, represented, left unresolved, safely forgotten, made actionable, returned to field, and passed forward as revisable provenance."}
+{
+  "checked_at": "2026-09-06",
+  "purpose": "State the portfolio-level viewpoint without transferring scientific ownership from source repositories.",
+  "repository_identity_source": "repo-audit.json",
+  "canonical_graph": "portfolio-graph-audit.json",
+  "ecosystem_system": "ecosystem-system-audit.json",
+  "theory_reality_interface": "theory-reality-audit.json",
+  "evidence_partition": "evidence-partition-audit.json",
+  "repository_inventory": {"scientific_active":33,"meta_registry":1,"staging_unclassified":1,"classification_audit":"repository-classification-audit.json"},
+  "central_question": "Which distinctions of ecological reality survive a chosen observation or representation, which become identifiable, and where can an abstract result be brought back into a real organism, dataset, sensor or field design so that reality can test or revise the theory?",
+  "identity": {
+    "surface": "THEORY WORLDS <-> CONTACT <-> REAL WORLDS",
+    "one_line": "理論世界と現実世界のあいだで、どの区別を測れる形にし、どの失敗や残差を理論へ戻せるかを探す。",
+    "strength": "The portfolio repeatedly turns empirical awkwardness into formal objects, then turns formal boundaries back into measurement, survey or field designs."
+  },
+  "novelty_claim": {
+    "allowed": "A portfolio-level research style: ecological states, observations and models are treated as representations whose adequacy is tested at explicit theory-reality interfaces; unresolved, negative, mixed and unobservable distinctions remain scientific objects.",
+    "forbidden": ["one universal ecological theory already validated in nature","claiming that every repository belongs to one causal pipeline","equating empirical projection with external validation","transferring source-repository claim ownership to the homepage synthesis"]
+  },
+  "lenses": [
+    {"id":"coordinate","glyph":"⌖","surface":"原因より、座標。","meaning":"change the coordinate/state representation and ask which ecological distinctions become visible"},
+    {"id":"boundary","glyph":"∅","surface":"答えより、境界。","meaning":"make explicit what the current data/observation map cannot distinguish"},
+    {"id":"forgetting","glyph":"≈","surface":"分類より、忘却。","meaning":"compress only distinctions that the declared scientific contract permits us to forget"},
+    {"id":"contact","glyph":"⇄","surface":"理論より、接点。","meaning":"find a measurable empirical interface where theory can meet reality and reality can force theory revision"}
+  ],
+  "scientific_graph": {
+    "real_worlds": {
+      "flower":["hotarubukuro","fcp","chun"],
+      "island":["island","izu-core","shimahotarubukuro"],
+      "azami":["azami","EAzami","aza3"],
+      "field_observation":["pollipi","insepi"],
+      "natural_state_gate":["egwee"]
+    },
+    "theory_worlds": {
+      "observability":["rec","v3","tnoa","boundary","mrod"],
+      "state_report":["ccoc","mltr","mrm","crest","ced","theouni"],
+      "interaction":["sch","balance","bita","payoff"],
+      "niche_world":["sdmr","odsp","eog","acsp"],
+      "eco_genetic":["eco-genetic-criticality","eco-genetic-warning-extensions"]
+    },
+    "observation_reframe": {
+      "theory":"REC / V3 / TNOA are sibling information operations -> Boundary -> MROD",
+      "application":"PolliPi / InsePi are flower-visitation physical implementations/testbeds",
+      "rule":"historical inspiration direction and current conceptual hierarchy are intentionally separated"
+    },
+    "primary_contacts": [
+      "TNOA -> PolliPi/InsePi: observation distinctions become a physical visitation-observation design",
+      "REC -> PolliPi: non-entered support becomes a prospective same-system empirical gate",
+      "BITA -> Boundary: a specific mechanism ambiguity becomes general identification theory",
+      "Boundary -> MROD -> ACSP/field: unresolved distinctions become next-measurement/search design",
+      "EGWE -> EGWEE -> CED: future-relevant-state theory meets natural-data adequacy and then reportability",
+      "ACSP <-> aza3: abstract spatial search returns to own primary data"
+    ]
+  },
+  "evidence_mode_view": {"surface":"T ∩ M ∩ O ∩ P","audit":"tmop-audit.json","rule":"Evidence mode is an independent lens; it does not define the theory-reality hierarchy."},
+  "phd_path": {
+    "surface": "現実の違和感 → 抽象化 → 境界 → 接点 → 次観測 → 現実へ戻る",
+    "stages": ["empirical distinction","state/observation abstraction","identification boundary","measurable interface","next observation","field/natural-data return"],
+    "scientific_dependency": false
+  },
+  "cross_repository_invariants": [
+    "record != world",
+    "no record != no event",
+    "observable != uniquely interpretable",
+    "retained side information can refine without justifying subtraction",
+    "precision != identification",
+    "empirical projection != validation",
+    "candidate patch != occupancy",
+    "future-relevant state != plausible proxy",
+    "required state != identified state != reportable target",
+    "developmental ancestry != conceptual hierarchy",
+    "connection != ownership"
+  ],
+  "phd_in_zuizui": "Not ownership of one final ecological answer, but repeated construction of interfaces where abstract distinctions become measurable and real failures become theory-revising evidence."
+}
