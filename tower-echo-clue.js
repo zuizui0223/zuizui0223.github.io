@@ -29,10 +29,10 @@
     resize();x.clearRect(0,0,w,h);const s=S.snapshot();
     if(s.visited?.length){const visited=new Set(s.visited),positions=new Map(s.positions.map(p=>[p.id,p])),offsets=[[-15,-13],[15,-13],[-15,13],[15,13],[0,-18]];
       E.forEach((e,i)=>{if(!visited.has(e.unlock))return;const contact=contacts.get(e.contact);if(!contact)return;
-        for(const id of [e.from,e.to]){const p=positions.get(id);if(!p?.visible||!p.screen)return;const [dx,dy]=offsets[i%offsets.length];rune(e.rune,Math.max(11,Math.min(w-11,p.screen.x+dx)),Math.max(88,Math.min(h-88,p.screen.y+dy)),contact.status,repoFloor.get(id));}
+        for(const id of [e.from,e.to]){const p=positions.get(id);if(!p?.visible||!p.screen)continue;const [dx,dy]=offsets[i%offsets.length];rune(e.rune,Math.max(11,Math.min(w-11,p.screen.x+dx)),Math.max(88,Math.min(h-88,p.screen.y+dy)),contact.status,repoFloor.get(id));}
       });
     }
-    requestAnimationFrame(loop);
   }
+  document.addEventListener('zuizui:tower-frame',loop);
   requestAnimationFrame(loop);
 })();

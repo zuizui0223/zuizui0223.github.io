@@ -44,7 +44,7 @@
       segment(a,al.a,bed,color,dash,al.ready);segment(al.b,b,bed,color,dash,al.ready);
       if(al.ready){x.beginPath();x.arc(al.x,al.y,2.3,0,Math.PI*2);x.fillStyle='rgba(239,211,159,.9)';x.fill();}
     }
-    requestAnimationFrame(loop);
   }
+  document.addEventListener('zuizui:tower-frame',loop);
   requestAnimationFrame(loop);
 })();

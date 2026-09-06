@@ -100,19 +100,93 @@ function buildRelic(kind,col){
  default:prism(0,15,0,34,90,col);prism(0,44,0,17,37,'#ead6b3');
  }
 }
+// Five chamber plans echo the outer building without rewriting a repository's role.
+function stonePolygon(poly,y,h,col,tag='solid'){
+ addFace(poly.map(([x,z])=>[x,y+h,z]),[0,1,0],col,tag);
+ for(let i=0;i<poly.length;i++){
+  const a=poly[i],b=poly[(i+1)%poly.length],dx=b[0]-a[0],dz=b[1]-a[1],l=Math.hypot(dx,dz)||1;
+  addFace([[a[0],y,a[1]],[b[0],y,b[1]],[b[0],y+h,b[1]],[a[0],y+h,a[1]]],[dz/l,0,-dx/l],col,tag);
+ }
+}
+function roundStone(x,y,z,r,h,col,rz=r,n=40){stonePolygon(Array.from({length:n},(_,i)=>[x+r*Math.cos(i*TAU/n),z+rz*Math.sin(i*TAU/n)]),y,h,col);}
+function chamberArc(x,y,z,r,ri,h,a,b,col,n=32){
+ for(let i=0;i<n;i++){
+  const t=a+(b-a)*i/n,u=a+(b-a)*(i+1)/n,m=(t+u)/2,q=(rr,t,dy)=>[x+rr*Math.cos(t),y+dy,z+rr*Math.sin(t)];
+  addFace([q(ri,t,h),q(r,t,h),q(r,u,h),q(ri,u,h)],[0,1,0],col);
+  addFace([q(r,t,0),q(r,u,0),q(r,u,h),q(r,t,h)],[Math.cos(m),0,Math.sin(m)],col);
+  addFace([q(ri,u,0),q(ri,t,0),q(ri,t,h),q(ri,u,h)],[-Math.cos(m),0,-Math.sin(m)],col);
+ }
+}
+function chamberRing(o,r,ri,d,col,angle=0){
+ const q=(rr,t,z)=>[o[0]+rr*Math.cos(t)*Math.cos(angle)+z*Math.sin(angle),o[1]+rr*Math.sin(t),o[2]-rr*Math.cos(t)*Math.sin(angle)+z*Math.cos(angle)];
+ for(let i=0;i<48;i++){
+  const t=i*TAU/48,u=(i+1)*TAU/48,m=(t+u)/2;
+  for(const z of[-d/2,d/2])addFace([q(ri,t,z),q(r,t,z),q(r,u,z),q(ri,u,z)],[Math.sin(angle)*Math.sign(z),0,Math.cos(angle)*Math.sign(z)],col);
+  addFace([q(r,t,-d/2),q(r,u,-d/2),q(r,u,d/2),q(r,t,d/2)],[Math.cos(m)*Math.cos(angle),Math.sin(m),-Math.cos(m)*Math.sin(angle)],col);
+ }
+}
+function cypress(x,z,h){
+ box(x,5,z,3,h*.3,3,'#ac9165');
+ const n=8,r=h*.17,pts=Array.from({length:n},(_,i)=>[x+r*Math.cos(i*TAU/n),h*.48,z+r*Math.sin(i*TAU/n)]);
+ for(let i=0;i<n;i++){const j=(i+1)%n,a=(i+.5)*TAU/n;
+  addFace([[x,10,z],pts[j],pts[i]],[Math.cos(a),.2,Math.sin(a)],'#3a6053');
+  addFace([pts[i],pts[j],[x,h,z]],[Math.cos(a),.2,Math.sin(a)],'#537965');
+ }
+}
+function walkway(end,col){
+ const L=Math.hypot(end[0],end[2]),nx=-end[2]/L*15,nz=end[0]/L*15;
+ stonePolygon([[nx,nz],[end[0]+nx,end[2]+nz],[end[0]-nx,end[2]-nz],[-nx,-nz]].reverse(),-5,10,col);
+}
+function chamberFloor(f,col){
+ const P=window.ZUIZUI_ARCHITECTURE.palette;
+ const oct=[[-196,-122],[-122,-196],[126,-196],[196,-126],[196,121],[121,196],[-123,196],[-196,126]];
+ if(f===0){
+  stonePolygon(oct,-22,14,P.ink);stonePolygon(oct.map(([x,z])=>[x*.96,z*.96]),-8,13,P.chalk);
+  chamberArc(101,5,92,69,34,1,-.6,3.9,P.water);chamberArc(101,5,92,74,69,6,-.6,3.9,P.light);
+  box(-108,5,-94,77,5,51,P.jade);cypress(-128,-109,109);cypress(-94,-89,68);
+  box(-63,5,114,111,7,21,P.clayLight);
+ }else if(f===1){
+  stonePolygon(oct,-20,15,P.clay);stonePolygon(oct.map(([x,z])=>[x*.94,z*.94]),-5,10,P.clayLight);
+  box(95,5,-126,12,142,13,P.chalk);box(141,5,-106,12,112,13,P.chalk);
+  for(let i=0;i<7;i++)box(-140+i*10,5,-144,4,73+(i%2)*19,8,P.clay);
+  box(-110,80,-144,66,6,11,P.chalk);
+ }else if(f===2){
+  roundStone(0,-18,0,212,17,P.jadeDark);roundStone(0,-1,0,201,6,P.chalk);
+  chamberArc(0,5,0,207,196,35,3.26,5.92,P.jade);
+  chamberArc(0,5,0,206,199,11,.15,2.55,P.light);
+  chamberRing([27,116,-117],68,51,12,P.light,.08);
+  box(27,5,-117,18,44,26,P.clayLight);
+ }else if(f===3){
+  roundStone(0,-12,0,80,17,P.chalk,66,20);
+  for(const [x,z,h]of[[-130,-74,121],[-84,-127,147],[123,68,79]]){
+   box(x,5,z,12,h,45,P.chalk);box(x,h+5,z,17,4,49,P.light);
+  }
+  box(-111,5,-83,7,101,16,P.jade);
+ }else{
+  stonePolygon([[-199,-61],[-148,-156],[26,-200],[186,-68],[200,118],[29,193],[-175,102]],-19,15,P.jade);
+  roundStone(0,-4,0,199,9,P.chalk,185);
+  for(const[x,z,h]of[[-125,-91,128],[71,-139,150],[118,99,78]])box(x,5,z,7,h,7,P.jadeDark);
+  chamberArc(0,139,-19,160,157,4,3.03,5.36,P.brass,40);
+  chamberRing([-94,130,-83],41,38,3,P.brass,-.45);
+  chamberRing([-94,130,-83],25,23,3,P.brass,1.12);
+  box(-94,5,-83,5,88,5,P.brass);
+ }
+}
 function buildRoom(){
- const r=repos.get(state.room),col=D.floors[r[1]].color;faces=[];doors=exits(state.room);$('roomDoors').replaceChildren();
+ const r=repos.get(state.room),col=window.ZUIZUI_ARCHITECTURE.stages[r[1]].color;faces=[];doors=exits(state.room);$('roomDoors').replaceChildren();
  $('roomFloor').textContent=D.floors[r[1]].roman;$('roomTitle').textContent=short(state.room);$('roomCounter').textContent=String(visited.size).padStart(2,'0')+' / '+D.repos.length;
  $('roomInscriptions').innerHTML=[...(membership[state.room]||'?')].map(t=>`<button data-rune="${t}" aria-label="${alphabet[t]?alphabet[t].name+'（'+t+'）の記号を調べる':'分類未監査'}">${glyph(t)}<span>${decoded.has(t)?t:'·'}</span></button>`).join('');
- box(0,-22,0,406,12,406,'#343f48');box(0,-10,0,388,10,388,'#5e7378');box(0,0,0,362,5,362,col);
+ chamberFloor(r[1],col);
  // Thresholds are distributed in one fixed room; camera rotation reveals backs.
  const bySide=[[],[],[],[]];doors.forEach((d,i)=>{d.side=i%4;bySide[d.side].push(d);});
  for(let side=0;side<4;side++){
   const list=bySide[side];list.forEach((d,i)=>{d.t=(i-(list.length-1)/2)*Math.min(88,266/Math.max(1,list.length));d.point=wallPoint(side,d.t,46);d.normal=inward[side];});
   // Narrow pillars/frame walls avoid painting a solid wall behind an open door.
+  if(r[1]===2||r[1]===3||r[1]===4)continue;
+  const wallHeight=r[1]===0?33:132;
   const slots=list.map(d=>d.t).sort((a,b)=>a-b);let a=-182;
-  for(const t of[...slots.map(x=>x-27),182]){if(t>a){const p=wallPoint(side,(a+t)/2,5);box(p[0],p[1],p[2],side%2?8:t-a,107,side%2?t-a:8,col,'wall:'+side);}a=t+54;}
-  const p=wallPoint(side,0,112);box(p[0],p[1],p[2],side%2?10:372,9,side%2?372:10,col,'wall:'+side);
+  for(const t of[...slots.map(x=>x-27),182]){if(t>a){const p=wallPoint(side,(a+t)/2,5);box(p[0],p[1],p[2],side%2?11:t-a,wallHeight,side%2?t-a:11,col,'wall:'+side);}a=t+54;}
+  const p=wallPoint(side,0,wallHeight+5);box(p[0],p[1],p[2],side%2?10:372,9,side%2?372:10,col,'wall:'+side);
  }
  doors.forEach(d=>{
   const b=document.createElement('button');b.className='room-door '+d.status;b.dataset.exit=d.key;b.dataset.target=d.target||'';
@@ -120,6 +194,7 @@ function buildRoom(){
   b.innerHTML=`<span class="door-sigil">${d.target?glyph((membership[d.target]||'?')[0]):'↟'}</span><span class="door-name">${d.target?esc(short(d.target)):'↟'}</span><small>${d.reverse?'←':d.status==='navigation'?'⌁':statusGlyph[d.status]}</small>`;
   b.onclick=()=>{if(performance.now()<state.suppress)return;useExit(d);};$('roomDoors').appendChild(b);d.button=b;
  });
+ if(r[1]===3)for(const d of doors)walkway(d.point,col);
  buildRelic(art[state.room][0],col);resize();
 }
 function project(p){const[x,y,z]=p,c=Math.cos(state.yaw),s=Math.sin(state.yaw),cp=Math.cos(state.pitch),sp=Math.sin(state.pitch),z1=x*s+z*c;return{x:camera.x+(x*c-z*s)*camera.scale,y:camera.y+(-(y-34)*cp+z1*sp)*camera.scale,d:y*sp+z1*cp};}
@@ -134,15 +209,20 @@ function draw(){
  const shadow=project([0,-35,0]);const g=ctx.createRadialGradient(shadow.x,shadow.y,0,shadow.x,shadow.y,270*camera.scale);g.addColorStop(0,col+'20');g.addColorStop(1,'#08090c00');ctx.fillStyle=g;ctx.fillRect(0,0,camera.w,camera.h);
  const visible=[];
  for(const f of faces){if(f.tag.startsWith('wall:')&&facing(inward[+f.tag.slice(5)])<.12)continue;if(facing(f.n)<=.01)continue;const ps=f.v.map(project);visible.push({f,ps,d:ps.reduce((s,p)=>s+p.d,0)/ps.length});}
- visible.sort((a,b)=>a.d-b.d);for(const p of visible)poly(p.ps,shade(p.f.color,p.f.n),'#0b101212');
+ visible.sort((a,b)=>a.d-b.d);for(const p of visible)poly(p.ps,shade(p.f.color,p.f.n),shade(p.f.color,p.f.n));
  // A quiet floor engraving: evidence languages, not numerical confidence scores.
  for(let i=-3;i<=3;i++){if(Math.abs(i)<2){line([[-164,5.5,i*43],[-60,5.5,i*43]],'#263b3b19');line([[60,5.5,i*43],[164,5.5,i*43]],'#263b3b19');line([[i*43,5.5,-164],[i*43,5.5,-60]],'#263b3b19');line([[i*43,5.5,60],[i*43,5.5,164]],'#263b3b19');}else{line([[-164,5.5,i*43],[164,5.5,i*43]],'#263b3b19');line([[i*43,5.5,-164],[i*43,5.5,164]],'#263b3b19');}}
  positions=[];
  for(const d of doors){const p=project(d.point),visibleSide=facing(d.normal)>.20;
   const occluded=visible.some(v=>v.f.tag==='relic'&&v.d>p.d+5&&inPoly(p,v.ps));
   const on=visibleSide&&!occluded&&p.x>25&&p.x<camera.w-25&&p.y>105&&p.y<camera.h-100;
-  d.button.hidden=!on;d.button.tabIndex=on?0:-1;d.button.style.left=p.x+'px';d.button.style.top=p.y+'px';
-  d.button.style.setProperty('--door-size',clamp(camera.scale*50,40,66)+'px');
+  d.button.hidden=!on;d.button.tabIndex=on?0:-1;
+  // Project the actual doorway plane. Its silhouette narrows and tilts with the wall.
+  const tangent=[d.normal[2],0,-d.normal[0]],corner=(u,v)=>project(d.point.map((x,i)=>x+tangent[i]*u+(i===1?v:0)));
+  const tl=corner(-19,27),tr=corner(19,27),bl=corner(-19,-27),bw=54,bh=54*1.42;
+  d.button.style.left=tl.x+'px';d.button.style.top=tl.y+'px';d.button.style.margin='0';d.button.style.transformOrigin='0 0';
+  d.button.style.transform=`matrix(${(tr.x-tl.x)/bw},${(tr.y-tl.y)/bw},${(bl.x-tl.x)/bh},${(bl.y-tl.y)/bh},0,0)`;
+  d.button.style.setProperty('--door-size',bw+'px');
   positions.push({key:d.key,target:d.target,status:d.status,reverse:d.reverse,point:[...d.point],x:p.x,y:p.y,visible:on});
   if(on){const base=wallPoint(d.side,d.t,6);const inner=base.map((v,i)=>v+d.normal[i]*34);const mid=[inner[0]*.4,6,inner[2]*.4];line([base,inner,mid],d.status==='open'||d.status==='proposed'?'#685f577a':'#5558546a',1.1,d.status==='open'||d.status==='proposed'?[4,6]:[]);}
  }
@@ -229,6 +309,6 @@ cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
 document.addEventListener('keydown',e=>{if(!state.room||plan.open||$('notebook').open||e.altKey||e.ctrlKey||e.metaKey)return;if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','Escape'].includes(e.key)){e.preventDefault();e.stopImmediatePropagation();if(e.key==='Escape'||e.key==='Home')navigate(null);else if(e.key==='ArrowLeft')turn(-.2);else if(e.key==='ArrowRight')turn(.2);else if(e.key==='ArrowUp'||e.key==='ArrowDown'){state.pitch=clamp(state.pitch+(e.key==='ArrowUp'?.06:-.06),.32,.75);requestDraw();}}},true);
 addEventListener('resize',resize,{passive:true});document.addEventListener('visibilitychange',requestDraw);reduced.addEventListener('change',requestDraw);
 // Inspection is read-only. No setter can unlock or promote a scientific claim.
-window.ZUIZUI_ROOMS=Object.freeze({snapshot:()=>({room:state.room,yaw:state.yaw,targetYaw:state.target,pitch:state.pitch,visited:[...visited],decoded:[...decoded],positions:positions.map(p=>({...p,point:[...p.point]})),membership:{...membership},mapOpen:plan.open,science:JSON.stringify(D.contacts)}),version:'2026-09-06-rooms-1'});
+window.ZUIZUI_ROOMS=Object.freeze({snapshot:()=>({room:state.room,yaw:state.yaw,targetYaw:state.target,pitch:state.pitch,visited:[...visited],decoded:[...decoded],positions:positions.map(p=>({...p,point:[...p.point]})),membership:{...membership},chamber:state.room?window.ZUIZUI_ARCHITECTURE.stages[repos.get(state.room)[1]].id:null,mapOpen:plan.open,science:JSON.stringify(D.contacts)}),version:'2026-09-06-rooms-1'});
 if(location.hash.startsWith('#room='))route();
 })();

@@ -27,121 +27,9 @@
   let rippleUntil=0,returned=false,visited=new Set(),suppressClickUntil=0;
   const storageKey='zuizui.tower.discoveries.v1';
   try { const saved=JSON.parse(localStorage.getItem(storageKey)||'[]'); if(Array.isArray(saved)) visited=new Set(saved.filter(x=>D.motifs.some(m=>m.id===x))); } catch (_) { /* privacy mode still permits play */ }
-  const faces=[], repoPoints=[], sightPairs=[];
-  const offsets=[[-10,8],[8,0],[-6,-4],[7,3],[0,0]];
-  const halves=[143,132,121,110,99];
-  const heights=[0,136,272,408,544];
-  const rgb = hex => hex.replace('#','').match(/.{2}/g).map(s=>parseInt(s,16));
-  function material(hex,n,boost=1) {
-    const light=clamp((.66+.20*n[1]-.12*n[0]+.10*n[2])*boost,.35,1.14);
-    return `rgb(${rgb(hex).map(v=>Math.round(clamp(v*light,0,255))).join(',')})`;
-  }
-  function face(points,normal,color,layer=-1,boost=1) { faces.push({points,normal,fill:material(color,normal,boost),layer}); }
-  function box(x,y,z,w,h,d,color,layer=-1) {
-    const a=x-w/2,b=x+w/2,c=z-d/2,e=z+d/2,t=y+h;
-    face([[a,t,c],[b,t,c],[b,t,e],[a,t,e]],[0,1,0],color,layer);
-    face([[a,y,e],[b,y,e],[b,t,e],[a,t,e]],[0,0,1],color,layer);
-    face([[b,y,c],[a,y,c],[a,t,c],[b,t,c]],[0,0,-1],color,layer);
-    face([[b,y,e],[b,y,c],[b,t,c],[b,t,e]],[1,0,0],color,layer);
-    face([[a,y,c],[a,y,e],[a,t,e],[a,t,c]],[-1,0,0],color,layer);
-  }
-  function rotatePoint(p,a,origin=[0,0,0]) { const c=Math.cos(a),s=Math.sin(a); return [origin[0]+p[0]*c+p[2]*s,origin[1]+p[1],origin[2]-p[0]*s+p[2]*c]; }
-  function arch(origin,a,color,layer) {
-    const t = p=>rotatePoint(p,a,origin);
-    const n = v=>rotatePoint(v,a);
-    function part(x,y,z,w,h,d) {
-      const verts=[[x-w/2,y,z-d/2],[x+w/2,y,z-d/2],[x+w/2,y,z+d/2],[x-w/2,y,z+d/2]];
-      face(verts.map(p=>t([p[0],y+h,p[2]])),[0,1,0],color,layer);
-      for(let i=0;i<4;i++) {
-        const j=(i+1)%4;
-        const ns=[[0,0,-1],[1,0,0],[0,0,1],[-1,0,0]][i];
-        face([t(verts[i]),t(verts[j]),t([verts[j][0],y+h,verts[j][2]]),t([verts[i][0],y+h,verts[i][2]])],n(ns),color,layer);
-      }
-    }
-    part(-15,0,0,6,28,9); part(15,0,0,6,28,9);
-    const inner=12,outer=18,steps=10;
-    for(let j=0;j<steps;j++) {
-      const a0=j*Math.PI/steps,a1=(j+1)*Math.PI/steps;
-      const q=(r,a,z)=>t([r*Math.cos(a),28+r*Math.sin(a),z]);
-      for(const z of [-4.5,4.5]) face([q(inner,a0,z),q(outer,a0,z),q(outer,a1,z),q(inner,a1,z)],n([0,0,Math.sign(z)]),color,layer);
-      const am=(a0+a1)/2;
-      face([q(outer,a0,-4.5),q(outer,a1,-4.5),q(outer,a1,4.5),q(outer,a0,4.5)],n([Math.cos(am),Math.sin(am),0]),color,layer);
-      face([q(inner,a1,-4.5),q(inner,a0,-4.5),q(inner,a0,4.5),q(inner,a1,4.5)],n([-Math.cos(am),-Math.sin(am),0]),color,layer,.7);
-    }
-  }
-  function perimeter(t,r) {
-    const k=Math.floor(t)%4,f=t-Math.floor(t);
-    return [
-      {x:lerp(-r,r,f),z:r,n:[0,0,1],a:0},
-      {x:r,z:lerp(r,-r,f),n:[1,0,0],a:Math.PI/2},
-      {x:lerp(r,-r,f),z:-r,n:[0,0,-1],a:Math.PI},
-      {x:-r,z:lerp(-r,r,f),n:[-1,0,0],a:-Math.PI/2}
-    ][k];
-  }
-  // A single connected building, built once. The central void is never filled.
-  box(0,-54,0,385,23,345,'#313b40');
-  box(0,-31,0,342,17,308,'#5b7771');
-  box(0,-14,0,310,14,280,'#8aa596');
-  for(let f=0;f<5;f++) {
-    const y=heights[f],r=halves[f],[ox,oz]=offsets[f],col=D.floors[f].color,hole=34;
-    box(ox-r/2-hole/2,y,oz,r-hole,13,r*2,col,f);
-    box(ox+r/2+hole/2,y,oz,r-hole,13,r*2,col,f);
-    box(ox,y,oz-r/2-hole/2,hole*2,13,r-hole,col,f);
-    box(ox,y,oz+r/2+hole/2,hole*2,13,r-hole,col,f);
-    // Double cornice and open, load-bearing columns connect the terraces.
-    for(const s of [-1,1]) {
-      box(ox+s*(r-3),y+13,oz,6,5,r*2,col,f);
-      box(ox,y,oz+s*(r-3),r*2,5,6,col,f);
-    }
-    if(f<4) for(const sx of [-1,1]) for(const sz of [-1,1]) {
-      box(sx*43,y+13,sz*43,13,123,13,col,f);
-      box(sx*43,y+114,sz*43,22,10,22,col,f);
-      box(sx*43,y+18,sz*43,21,9,21,col,f);
-    }
-    const rows=D.repos.filter(r=>r[1]===f);
-    rows.forEach((row,j)=>{
-      const p=perimeter((j+.42)/rows.length*4,r-24);
-      const origin=[ox+p.x,y+18,oz+p.z];
-      arch(origin,p.a,col,f);
-      const marker=rotatePoint([0,34,6],p.a,origin);
-      repoPoints.push({row,point:marker,normal:p.n,layer:f,button:null,screen:null});
-    });
-    // Two fragments are separated along a camera ray at the solution angle.
-    const m=D.motifs[f],a=m.angle,pc=.42,k=55;
-    const center=[ox+Math.sin(a)*(r-17),y+73,oz+Math.cos(a)*(r-17)];
-    const ray=[Math.sin(a)*Math.cos(pc)*k,Math.sin(pc)*k,Math.cos(a)*Math.cos(pc)*k];
-    const pair=[-1,1].map(s=>center.map((v,i)=>v+s*ray[i]/2));
-    pair.forEach(p=>{
-      box(p[0],y+18,p[2],5,p[1]-y-18,5,col,f);
-      box(p[0],p[1]-4,p[2],12,3,12,'#c4ab79',f);
-    });
-    sightPairs.push(pair);
-  }
-  // Spiral exterior stairs: the steps are actual 3D solids, not a skewed SVG.
-  for(let f=0;f<4;f++) {
-    const a=f*Math.PI/2,lo=halves[f],hi=halves[f+1],N=25;
-    for(let j=0;j<N;j++) {
-      const t=j/(N-1),p=rotatePoint([lerp(lo+9,hi-1,t),heights[f]+18+136*t,lerp(lo-35,-hi+28,t)],a);
-      const w=(f%2)?10:27,d=(f%2)?27:10;
-      box(p[0],p[1]-6,p[2],w,6,d,D.floors[f].color,f);
-    }
-    // A continuous slender stringer makes ascent visually readable.
-    const s=rotatePoint([lo+9,heights[f]+13,lo-35],a),e=rotatePoint([hi-1,heights[f+1]+12,-hi+28],a);
-    const width=10,normal=rotatePoint([1,0,0],a);
-    const v=rotatePoint([width/2,0,0],a);
-    face([[s[0]-v[0],s[1],s[2]-v[2]],[e[0]-v[0],e[1],e[2]-v[2]],[e[0]-v[0],e[1]-13,e[2]-v[2]],[s[0]-v[0],s[1]-13,s[2]-v[2]]],normal.map(n=>-n),'#667779',f);
-    face([[s[0]+v[0],s[1],s[2]+v[2]],[e[0]+v[0],e[1],e[2]+v[2]],[e[0]+v[0],e[1]-13,e[2]+v[2]],[s[0]+v[0],s[1]-13,s[2]+v[2]]],normal,'#889893',f);
-  }
-  // Open observatory at the crown, with a five-sided seed rather than a throne.
-  for(const x of [-38,38]) for(const z of [-38,38]) box(x,562,z,10,65,10,'#c8bbab',4);
-  box(0,627,0,95,9,95,'#d6c7af',4);
-  box(0,636,0,71,6,71,'#d6c7af',4);
-  box(0,642,0,38,6,38,'#b89b70',4);
-  // Small botanical forms root the architecture in a physical field.
-  for(const [x,z,h] of [[-141,114,18],[-126,130,12],[139,-130,20],[125,-146,13],[-143,-126,15]]) {
-    box(x,0,z,3,h,3,'#758b68',0);
-    box(x,h,z,9,4,9,'#d0a7a5',0);
-  }
+  const model=window.ZUIZUI_ARCHITECTURE.build(D);
+  const {faces,repoPoints,sightPairs}=model;
+  const heights=model.stages.map(f=>f.height);
   function project(p) {
     const [x,y,z]=p,c=Math.cos(yaw),s=Math.sin(yaw),cp=Math.cos(pitch),sp=Math.sin(pitch);
     const x1=x*c-z*s,z1=x*s+z*c;
@@ -189,21 +77,37 @@
     const el=$('hoverLabel');el.textContent=label(o.row[0]);el.classList.add('is-visible');
     el.style.left=clamp(o.screen.x+20,8,W-el.offsetWidth-12)+'px';el.style.top=clamp(o.screen.y-31,80,H-90)+'px';
   }
+  function covered(p,surfaces) {
+    for(const {face,ps} of surfaces) {
+      if(face.role==='clue')continue;
+      const a=ps[0];
+      for(let i=1;i<ps.length-1;i++){
+        const b=ps[i],c=ps[i+1],det=(b.y-c.y)*(a.x-c.x)+(c.x-b.x)*(a.y-c.y);
+        if(Math.abs(det)<1e-8)continue;
+        const u=((b.y-c.y)*(p.x-c.x)+(c.x-b.x)*(p.y-c.y))/det;
+        const v=((c.y-a.y)*(p.x-c.x)+(a.x-c.x)*(p.y-c.y))/det,w=1-u-v;
+        if(u>=0&&v>=0&&w>=0&&u*a.d+v*b.d+w*c.d>p.d+2)return true;
+      }
+    }
+    return false;
+  }
   function draw(now) {
     ctx.clearRect(0,0,W,H);
     const blend=clamp(progress/.12,0,1),f=clamp((progress-.12)/.83,0,1)*4;
     currentFloor=Math.round(f);
-    const baseScale=Math.min(H*(W<760?.81:.75)/780,W*.86/560);
+    const baseScale=Math.min(H*(W<760?.78:.79)/850,W*.88/570);
     scale=baseScale*(1+blend*(W<760?.38:.55));
-    cx=W*(W<760?.47:lerp(.605,.52,blend));cy=H*lerp(W<760?.51:.49,.55,blend);
-    focusY=lerp(306,f*136+52,blend);
+    cx=W*(W<760?.49:lerp(.62,.52,blend));cy=H*lerp(W<760?.52:.49,.55,blend);
+    const lo=Math.floor(f),hi=Math.min(4,lo+1);
+    focusY=lerp(344,lerp(heights[lo],heights[hi],f-lo)+52,blend);
+    document.body.dataset.floor=model.stages[currentFloor].id;
     document.body.classList.toggle('is-climbing',progress>.035);
     // Quiet ground rings and a cast shadow, no ornamental scientific edges.
     const shadow=project([0,-60,0]);
     const g=ctx.createRadialGradient(shadow.x,shadow.y,10,shadow.x,shadow.y,240*scale);
     g.addColorStop(0,'#00000070');g.addColorStop(1,'#00000000');ctx.fillStyle=g;
     ctx.beginPath();ctx.ellipse(shadow.x,shadow.y,250*scale,80*scale,0,0,TAU);ctx.fill();
-    circle3(228,-54,'#738e8732');circle3(243,-54,'#738e8717');
+    
     const cameraNormal=[Math.sin(yaw)*Math.cos(pitch),Math.sin(pitch),Math.cos(yaw)*Math.cos(pitch)];
     const visible=[];
     for(const face of faces) {
@@ -214,11 +118,13 @@
       visible.push({face,ps,depth:ps.reduce((s,p)=>s+p.d,0)/ps.length});
     }
     visible.sort((a,b)=>a.depth-b.depth);
-    for(const {face,ps} of visible) polygon(ps,face.fill,'#0b0e1212');
+    for(const {face,ps} of visible) polygon(ps,face.fill,face.fill);
+    // The model's restrained metal inlays remain in world coordinates.
+    for(const d of model.decor)line3(d.points,d.color,d.width,d.dash);
     // Brass identifiers remain small. Their names appear only on request.
     for(const o of repoPoints) {
       const p=project(o.point);o.screen=p;
-      const on=facing(o.normal)>.15&&p.y>85&&p.y<H-85;
+      const on=facing(o.normal)>.15&&p.x>20&&p.x<W-20&&p.y>85&&p.y<H-85&&!covered(p,visible);
       const active=on&&(progress<.035||o.layer===currentFloor);
       o.button.setAttribute('aria-hidden',!active);o.button.tabIndex=active?0:-1;
       o.button.style.left=p.x+'px';o.button.style.top=p.y+'px';
@@ -240,9 +146,6 @@
       }
       ctx.restore();
     }
-    // A faceted seed above the roof. It is the same object in every perspective.
-    const crown=[[0,685,0],[17,665,0],[0,665,17],[-17,665,0],[0,665,-17],[0,651,0]];
-    for(let i=1;i<=4;i++){const j=i===4?1:i+1;line3([crown[0],crown[i],crown[j],crown[0]],visited.size===5?'#efd5a5b0':'#c2ab825a',1);line3([crown[i],crown[5]],'#b89d704a',.8);}
     if(visited.size===5) {
       circle3(228,-52,'#d6bc8799',1.3);
       for(let f0=0;f0<4;f0++) line3([[0,heights[f0]+25,0],[0,heights[f0+1]+25,0]],'#e9cd9560',1,[2,7]);
@@ -259,6 +162,7 @@
     [...$('floorRail').children].forEach((b,i)=>b.setAttribute('aria-current',i===currentFloor));
     $('returnButton').hidden=visited.size!==5||returned;
     if(hovered)placeLabel(hovered);
+    document.dispatchEvent(new Event('zuizui:tower-frame'));
   }
   function tick(now) {
     frame=0;
@@ -357,5 +261,5 @@
   reducedQuery.addEventListener('change',e=>{reduced=e.matches;requestDraw();});
   setupDom();resize();
   // Read-only inspection used by regression tests, not a route that unlocks science.
-  window.ZUIZUI_TOWER_STATE=Object.freeze({snapshot:()=>({yaw,targetYaw,pitch,progress,currentFloor,visited:[...visited],returned,alignment:alignment(),faceCount:faces.length,repoCount:repoPoints.length,positions:repoPoints.map(o=>({id:o.row[0],point:[...o.point],screen:o.screen,visible:o.button.getAttribute('aria-hidden')==='false'}))})});
+  window.ZUIZUI_TOWER_STATE=Object.freeze({snapshot:()=>({yaw,targetYaw,pitch,progress,currentFloor,visited:[...visited],returned,alignment:alignment(),faceCount:faces.length,repoCount:repoPoints.length,architectureVersion:model?window.ZUIZUI_ARCHITECTURE.version:null,stages:model.spans,positions:repoPoints.map(o=>({id:o.row[0],point:[...o.point],screen:o.screen,visible:o.button.getAttribute('aria-hidden')==='false'}))})});
 })();
