@@ -1,11 +1,12 @@
 {
   "checked_at": "2026-09-06",
-  "schema": "zuizui.world_ontology.v1",
+  "schema": "zuizui.world_ontology.v2",
   "principle": "The portfolio is not one hierarchy. It is a set of partially overlapping worlds connected by typed interfaces. A perspective can change which relation is foregrounded without changing source-repository claim ownership.",
-  "radial_semantics": {
-    "outside": "ontic breadth: distinctions that may exist or matter even when current evidence cannot see them",
-    "inside": "epistemic compression: distinctions that survive observation, representation, identification and reporting",
-    "return_path": "design/action sends an unresolved scientific question back outward to new observation and field evidence"
+  "perspective_specific_radius": {
+    "world_lens": "outside = greater ontic breadth / distinctions that may matter before observation; inside = greater epistemic compression toward report",
+    "state_lens": "centre/depth = conceptual requirement: CREST integrates the distinctions a valid state must retain before asking whether they are observable",
+    "field_lens": "outward = return from inferred/model worlds to physical survey and primary evidence",
+    "rule": "inside/outside is not intrinsic. Every lens declares what its radius means. Changing perspective may invert apparent depth without changing science."
   },
   "world_layers": [
     {"id":"omega","label":"Ω / possible & latent worlds","meaning":"histories, mechanisms, counterfactual futures and state distinctions that may matter before observation is considered"},
@@ -30,14 +31,14 @@
     "evidence_licensing": {
       "question":"Does the current experiment/record identify enough of the required state to license the requested report?",
       "repositories":["ced"],
-      "role":"intersection of required-state and observation/evidence axes; CED is not a fourth structural obstruction"
+      "role":"principal intersection of required-state and observation/evidence axes; CED is not a fourth structural obstruction"
     }
   },
   "programme_worlds": {
     "trait_architecture": {
       "repositories":["sch","balance","bita","payoff"],
       "path":"shared-coordinate conflict -> middle-world persistence -> differentiated architecture -> population-game transport",
-      "world_role":"generator of alternative architecture/payoff worlds",
+      "world_role":"alternative architecture/payoff worlds",
       "reality_contact":"SCH/BALANCE/BITA have empirical anchors and planned matched tests; PAYOFF is an abstraction layer"
     },
     "eco_genetic_state": {
@@ -107,12 +108,13 @@
     {"from":"odsp","to":"eog","type":"possible_world_expansion"},
     {"from":"eog","to":"acsp","type":"field_return"},
     {"from":"acsp","to":"aza3/field","type":"candidate_patch","meaning":"where to look next; not guaranteed occupancy"},
+    {"from":"eco-genetic-warning-extensions","to":"payoff","type":"proposed_context_interface","meaning":"future-relevant relational state may condition ecological context e and therefore architecture payoff quantities L(e), s(e), K(e), phi(e), eta(e); conceptual interface only"},
     {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","meaning":"candidate future-relevant-state logic -> natural-data adequacy gates; not validation of finite simulator"},
     {"from":"island/izu-core","to":"eco-genetic-warning-extensions/egwee","type":"natural_regime_contact","meaning":"island systems are one contrasting route through the state-convergence test"},
     {"from":"bita","to":"boundary","type":"specific_to_general","meaning":"mechanism-allocation ambiguity -> general identification boundary"}
   ],
   "candidate_locked_contacts": [
-    {"id":"architecture_to_relational_state","from":"sch/balance/bita/payoff","to":"eco-genetic-criticality/eco-genetic-warning-extensions","meaning":"trait/architecture differentiation may generate interaction architecture and therefore alter relational eco-genetic state","closure_condition":"one common model or natural system must measure architecture state -> interaction/relational state -> future function on a matched scale; no current claim transfer"},
+    {"id":"architecture_to_relational_state","from":"sch/balance/bita/payoff","to":"eco-genetic-criticality/eco-genetic-warning-extensions","meaning":"reverse direction: architecture differentiation may generate interaction architecture and therefore alter relational eco-genetic state","closure_condition":"one common model or natural system must measure architecture state -> interaction/relational state -> future function on a matched scale; no current claim transfer"},
     {"id":"mrm_to_mrod","from":"mrm","to":"mrod","meaning":"idealized mechanism-discrimination burden -> practical sequential observation choice","closure_condition":"explicit adapter showing how MRM response signatures/costs map into MROD admissible regions/candidate observations"},
     {"id":"crest_to_natural_state","from":"crest/ced","to":"egwee/field systems","meaning":"required state and reportability -> empirical measurement contract","closure_condition":"natural system where candidate state, observation contract and held-out future endpoint are synchronized"},
     {"id":"acsp_field_truth","from":"acsp","to":"field survey","meaning":"candidate patches -> new primary data","closure_condition":"prospective surveys with explicit detectability/effort denominator; success is enrichment, not guaranteed presence"},
@@ -129,7 +131,7 @@
     {"id":"observe","glyph":"◎","question":"Where are distinctions lost, refined, preserved, identified, or actively recovered?"},
     {"id":"state","glyph":"◇","question":"Which distinctions must an ecological state retain under future/history/mechanism/evidence responsibilities?"},
     {"id":"field","glyph":"⌖","question":"How does a theoretical uncertainty become a concrete place or measurement to sample next?"},
-    {"id":"evolve","glyph":"⋈","question":"How do conflict and architecture produce alternative evolutionary worlds, and can those worlds feed future relational state?"}
+    {"id":"evolve","glyph":"⋈","question":"How do conflict and architecture produce alternative evolutionary worlds, and how can relational state condition those payoff worlds?"}
   ],
   "puzzle_design_rule": "Every mysterious edge must have an audit-backed reveal: established contacts are solid, candidate contacts are visibly locked with a stated closure condition, and staging remains sealed. No decorative connection is allowed without a scientific receipt or an explicit unresolved hypothesis."
 }
