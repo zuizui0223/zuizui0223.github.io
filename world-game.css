@@ -21,6 +21,7 @@
 .wg-edge-group{pointer-events:stroke;cursor:pointer}
 .wg-edge-halo{fill:none;stroke:#08090c;stroke-width:10;stroke-linecap:round;stroke-linejoin:round}
 .wg-edge{fill:none;stroke:var(--edge,#d9d0aa);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;opacity:.9}
+#wgArrow path{fill:#d9d0aa}
 .wg-edge-group.is-locked .wg-edge{stroke-dasharray:5 7;opacity:.7}
 .wg-edge-group:hover .wg-edge{stroke-width:5;filter:drop-shadow(0 0 8px var(--edge))}
 .wg-edge-label-bg{fill:#08090c;fill-opacity:.96;stroke:var(--edge,#d9d0aa);stroke-opacity:.35;rx:6;ry:6}
