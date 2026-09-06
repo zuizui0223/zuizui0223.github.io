@@ -1,0 +1,74 @@
+{
+  "checked_at": "2026-09-06",
+  "schema": "zuizui.theory_reality_interface.v1",
+  "identity": {
+    "surface": "THEORY WORLDS <-> CONTACT <-> REAL WORLDS",
+    "principle": "zuizuiの強みは、抽象理論を現実の生物・データ・観測系へ降ろせる接点と、現実側の失敗・残差・観測不能性を再び理論へ戻せる接点を見つけること。",
+    "rule": "developmental ancestry is not conceptual hierarchy; theory-real contact is typed and never transfers claim ownership"
+  },
+  "reality_worlds": {
+    "flower": ["hotarubukuro", "fcp", "chun"],
+    "island": ["island", "izu-core", "shimahotarubukuro"],
+    "azami": ["azami", "EAzami", "aza3"],
+    "physical_observation": ["pollipi", "insepi"],
+    "natural_state_gate": ["egwee"]
+  },
+  "theory_worlds": {
+    "observability_and_identification": ["rec", "v3", "tnoa", "boundary", "mrod"],
+    "state_and_representation": ["ccoc", "mltr", "mrm", "crest", "ced", "theouni"],
+    "interaction_architecture": ["sch", "balance", "bita", "payoff"],
+    "niche_world_and_survey": ["sdmr", "odsp", "eog", "acsp"],
+    "eco_genetic_state": ["eco-genetic-criticality", "eco-genetic-warning-extensions"]
+  },
+  "interface_or_hybrid_repositories": ["izu-core", "sch", "balance", "bita", "rec", "sdmr", "odsp", "eog", "acsp", "egwee"],
+  "observation_architecture": {
+    "conceptual_source": "Omega / possible ecological worlds",
+    "statement": "Unobservability is relative to a scientific target and an observation map. The important object is which distinctions in Omega survive record entry, refinement and semantic representation.",
+    "operators": {
+      "rec": "missing support: exposures/world states that fail to become usable rows; external exposure/reference is required to speak empirically about the non-entered world",
+      "v3": "retained refinement: already-available side/reference information may contract compatible world sets without destructive subtraction",
+      "tnoa": "semantic preservation: on retained support, target/nuisance/observability/attribution/unresolved distinctions are preserved instead of prematurely collapsed",
+      "boundary": "identification boundary: the current observation map induces observational equivalence and determines which scientific distinctions are identifiable in principle",
+      "mrod": "active refinement: choose a future observation that most usefully splits the remaining compatible mechanism/world set"
+    },
+    "topology": "REC, V3 and TNOA are sibling information operations, not a mandatory linear pipeline. They constrain or refine the observation map that Boundary audits; MROD acts after the surviving unresolved set is explicit.",
+    "application": {
+      "pollipi": "flower-visitation physical implementation focused on retaining a comparable primary record and target-facing candidate evidence",
+      "insepi": "physical observation-system intervention testbed focused on nuisance/observability/shared-optical failure diagnosis",
+      "rule": "PolliPi/InsePi are applications/testbeds of the observation problem, not the conceptual parents of REC/V3/TNOA/Boundary/MROD even though they were historically important in discovering those questions"
+    }
+  },
+  "contact_edges": [
+    {"from":"rec","to":"boundary","type":"identification_limit","object":"non-entered support creates distinctions the final record cannot identify"},
+    {"from":"v3","to":"boundary","type":"refinement","object":"retained side information contracts compatible worlds before identification is judged"},
+    {"from":"tnoa","to":"boundary","type":"semantic_interface","object":"preserved observation states determine which distinctions remain available to identify"},
+    {"from":"boundary","to":"mrod","type":"design_handoff","object":"surviving equivalence/identified set -> next observation choice"},
+    {"from":"tnoa","to":"pollipi","type":"operationalization","object":"target-facing process-preserving observation semantics -> flower-visitor recording design"},
+    {"from":"tnoa","to":"insepi","type":"operationalization","object":"nuisance/observability distinctions -> physical observer-failure diagnosis"},
+    {"from":"rec","to":"pollipi","type":"empirical_gate","object":"prospective same-system exposure/entry audit for REC H6"},
+    {"from":"bita","to":"boundary","type":"abstraction","object":"specific mechanism-allocation ambiguity -> general identification boundary"},
+    {"from":"mrod","to":"acsp","type":"complement","object":"WHAT to measure <-> WHERE to look"},
+    {"from":"aza3","to":"acsp","type":"field_request","object":"biological sampling need -> bounded search geography"},
+    {"from":"acsp","to":"aza3","type":"field_return","object":"candidate patch -> field verification and primary-data intake"},
+    {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","object":"future-relevant-state idea -> independent natural-data adequacy gates; not external validation of the finite model"},
+    {"from":"izu-core","to":"egwee","type":"shared_substrate","object":"Honshu-Izu functional interaction data under different questions"},
+    {"from":"egwee","to":"ced","type":"evidence_handoff","object":"empirical measurement/representation adequacy before reportability licensing"},
+    {"from":"hotarubukuro","to":"izu-core","type":"shared_substrate","object":"Campanula/Izu ecological system"},
+    {"from":"sch","to":"payoff","type":"abstraction","object":"conflict/compromise payoff -> population game"},
+    {"from":"balance","to":"payoff","type":"abstraction","object":"middle-world margin -> invasion/coordination game"},
+    {"from":"bita","to":"payoff","type":"abstraction","object":"architecture gain/cost -> population game"}
+  ],
+  "development_history_not_current_hierarchy": [
+    "PolliPi/InsePi historically motivated parts of TNOA/V3, but current conceptual direction is theory -> application as well as application failure -> theory revision.",
+    "TNOA historically preceded REC, but REC is conceptually upstream with respect to record entry.",
+    "V3 is not fixed between REC and TNOA; it is a refinement operator that can act wherever retained side information exists before irreversible loss/coarsening."
+  ],
+  "portfolio_cycle": [
+    "encounter a real biological/measurement distinction",
+    "abstract the relevant state/observation/interaction/world object",
+    "derive a boundary, theorem, or design rule",
+    "project it back into a measurable natural or physical system",
+    "treat failure, non-identifiability and residual structure as new scientific information",
+    "revise the theoretical representation without erasing provenance"
+  ]
+}
