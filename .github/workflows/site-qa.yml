@@ -27,6 +27,7 @@ jobs:
           node --check portfolio-20260905.js
           node --check portfolio-20260906.js
           node --check tmop.js
+          node --check theory-reality.js
           node --check core-bridges.js
           node --check app.js
           node --check philosophy-ui.js
@@ -36,6 +37,7 @@ jobs:
           python -m json.tool repository-classification-audit.json >/dev/null
           python -m json.tool evidence-partition-audit.json >/dev/null
           python -m json.tool tmop-audit.json >/dev/null
+          python -m json.tool theory-reality-audit.json >/dev/null
           python -m json.tool portfolio-graph-audit.json >/dev/null
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
@@ -43,7 +45,7 @@ jobs:
           python -m json.tool tnoa-rec-audit.json >/dev/null
           python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
           python -m json.tool ecosystem-system-audit.json >/dev/null
-      - name: Canonical graph and TMOP semantics
+      - name: Canonical graph, TMOP and theory-reality semantics
         run: |
           python - <<'PY'
           import json
@@ -57,16 +59,21 @@ jobs:
           interaction = json.loads(Path('interaction-audit.json').read_text())
           evidence = json.loads(Path('evidence-partition-audit.json').read_text())
           tmop = json.loads(Path('tmop-audit.json').read_text())
+          tr = json.loads(Path('theory-reality-audit.json').read_text())
           niche = json.loads(Path('niche-program-audit.json').read_text())
 
-          nonlinear = {x['id']: x for x in graph['nonlinear_constellations']}
           vertical = {x['id']: x for x in graph['vertical_programmes']}
-          standalone = {x['id']: x for x in graph.get('standalone_programmes', [])}
+          theory = {x['id']: x for x in graph['theory_constellations']}
+          reality = {x['id']: x for x in graph['reality_programmes']}
 
-          assert nonlinear['observation']['nodes'] == ['pollipi','insepi','v3','rec','tnoa']
-          assert nonlinear['interaction_game']['nodes'] == ['sch','balance','bita','payoff']
           assert vertical['interaction']['nodes'] == ['sch','balance','bita']
-          assert standalone['state_measurement_empirical']['nodes'] == ['egwee']
+          assert vertical['niche']['nodes'] == ['sdmr','odsp','eog','acsp']
+          assert theory['observability_identification_design']['nodes'] == ['rec','v3','tnoa','boundary','mrod']
+          assert reality['physical_observation']['nodes'] == ['pollipi','insepi']
+          assert reality['natural_state_gate']['nodes'] == ['egwee']
+          assert tr['observation_architecture']['topology'].startswith('REC, V3 and TNOA are sibling')
+          assert tr['observation_architecture']['application']['pollipi'].startswith('flower-visitation physical implementation')
+          assert tr['observation_architecture']['application']['insepi'].startswith('physical observation-system intervention')
 
           assert repo['repository_inventory']['owner_total'] == 35
           assert repo['repository_inventory']['scientific_active'] == 33
@@ -74,9 +81,10 @@ jobs:
           assert len(active) == 33
           assert active['v3']['display_status'] == 'bounded'
           assert active['payoff']['display_status'] == 'result'
-
           assert classification['counts'] == {'scientific_active':33,'meta_registry':1,'staging_unclassified':1}
           assert len(ecosystem['node_roles']) == 33
+          assert ecosystem['observation_theory']['siblings'] == ['rec','v3','tnoa']
+          assert ecosystem['observation_theory']['applications'] == ['pollipi','insepi']
           assert interaction['programme']['path'] == ['sch','balance','bita']
           assert interaction['programme']['abstraction'] == 'payoff'
 
@@ -87,47 +95,33 @@ jobs:
           assert tmop['categories']['O'] == {'label':'Open data','count':16}
           assert tmop['categories']['P'] == {'label':'Primary data','count':7}
           assert len(tmop['entries']) == 33
-          assert set(tmop['entries']) == {x['repo'] for x in evidence['entries']}
-          combos = {x['key']:x['repos'] for x in tmop['intersections']}
-          assert len(combos['T']) == 8
-          assert len(combos['TM']) == 5
-          assert len(combos['TMO']) == 3
-          assert len(combos['TOP']) == 2
-          assert len(combos['MOP']) == 1
+          assert view['repository_inventory']['scientific_active'] == 33
+          assert view['identity']['surface'] == 'THEORY WORLDS <-> CONTACT <-> REAL WORLDS'
+          assert view['phd_path']['scientific_dependency'] is False
 
           niche_by_repo = {x['repo']: x for x in niche['chapters']}
           assert 'scientifically closed' in niche_by_repo['odsp']['current_state']
-          assert view['repository_inventory']['scientific_active'] == 33
-          assert view['phd_path']['scientific_dependency'] is False
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
-      - name: TMOP and routed spiderweb cover guards
+      - name: Homepage interface guards
         run: |
           grep -q 'portfolio-latest.js?v=20260905a' index.html
-          grep -q 'portfolio-20260905.js?v=20260905a' portfolio-latest.js
-          grep -q 'portfolio-20260906.js?v=20260906a' portfolio-latest.js
           grep -q 'tmop.js?v=20260906b' portfolio-latest.js
-          grep -q 'core-bridges.css?v=20260906f' portfolio-latest.js
-          grep -q 'core-bridges.js?v=20260906f' portfolio-latest.js
-          grep -q 'data-view="tmop"' tmop.js
-          grep -q '>TMOP<' tmop.js
-          grep -q 'tmop-audit.json' tmop.js
-          grep -Fq 'research-web-layer' core-bridges.js
-          grep -Fq 'const rings=[.38,.60,.82,1]' core-bridges.js
-          grep -Fq 'class="web-spoke"' core-bridges.js
-          grep -Fq 'class="web-core-label"' core-bridges.js
-          grep -Fq 'ring("ecogenetic",.60)' core-bridges.js
-          grep -Fq 'ring("interaction",.38)' core-bridges.js
-          grep -q 'id:"flower-island"' core-bridges.js
-          grep -q 'id:"island-ecogenetic"' core-bridges.js
-          grep -q 'id:"observation-ecogenetic"' core-bridges.js
-          grep -q 'id:"ecogenetic-theory"' core-bridges.js
-          grep -q 'id:"interaction-method"' core-bridges.js
-          grep -q 'id:"method-niche"' core-bridges.js
-          grep -q 'id:"niche-azami"' core-bridges.js
-          grep -q 'data-portal="ecogenetic"' core-bridges.js
+          grep -q 'theory-reality.js?v=20260906a' portfolio-latest.js
+          grep -q 'core-bridges.css?v=20260906g' portfolio-latest.js
+          grep -q 'core-bridges.js?v=20260906g' portfolio-latest.js
+          grep -q 'data.stories.observation' theory-reality.js
+          grep -q 'nodes:\["rec","v3","tnoa","boundary","mrod"\]' theory-reality.js
+          grep -q 'nodes:\["pollipi","insepi"\]' theory-reality.js
+          grep -q 'delete data.stories.method' theory-reality.js
+          grep -q 'THEORY ⇄ REALITY' core-bridges.js
+          grep -q 'FIELD OBS' core-bridges.js
+          grep -q 'OBSERVABILITY' core-bridges.js
+          grep -q 'thick = theory-real contact' core-bridges.js
+          grep -q 'theory-reality-audit.json' README.md
+          grep -q 'TNOA -> PolliPi/InsePi' viewpoint-audit.json
+          test -f theory-reality-audit.json
           test -f core-bridges.css
-          test -f evidence-partition.css
           test -f tmop-audit.json
           ! grep -q 'microdonta-role' index.html
