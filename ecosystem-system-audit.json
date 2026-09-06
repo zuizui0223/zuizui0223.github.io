@@ -1,19 +1,17 @@
 {
   "checked_at": "2026-09-06",
-  "id": "research-ecosystem-system-v2",
-  "scope": "All 33 active scientific repositories placed in one theory-reality ecological research system. Series remain distinct ownership units.",
-  "system_surface": "REALITY <-> OBSERVATION <-> DISTINCTIONS <-> IDENTIFICATION <-> DESIGN <-> REALITY",
-  "system_rule": "connection != ownership; developmental ancestry != conceptual hierarchy; empirical projection != validation",
+  "id": "research-ecosystem-system-v3",
+  "scope": "All 33 active scientific repositories placed in one layered world-state-access-domain-contact-field system. Series remain distinct ownership units.",
+  "system_surface": "WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD -> UPDATE",
+  "system_rule": "connection != ownership; developmental ancestry != conceptual hierarchy; empirical projection != validation; radius != importance",
   "theory_reality_audit": "theory-reality-audit.json",
   "evidence_partition_audit": "evidence-partition-audit.json",
-  "functional_roles": {
-    "real_biological_worlds": ["hotarubukuro","fcp","chun","azami","EAzami","aza3","island","izu-core","shimahotarubukuro"],
-    "physical_observation_worlds": ["pollipi","insepi"],
-    "observability_identification_design": ["rec","v3","tnoa","boundary","mrod"],
-    "state_representation_reporting": ["ccoc","mltr","mrm","crest","ced","theouni"],
-    "eco_genetic_state": ["eco-genetic-criticality","eco-genetic-warning-extensions","egwee"],
-    "interaction_architecture": ["sch","balance","bita","payoff"],
-    "niche_world_survey": ["sdmr","odsp","eog","acsp"]
+  "layers": {
+    "world_required_state": ["ccoc","mltr","mrm","crest","theouni"],
+    "access_identification_reporting": ["rec","v3","tnoa","boundary","mrod","ced"],
+    "domain_theory": ["eco-genetic-criticality","eco-genetic-warning-extensions","sch","balance","bita","payoff","sdmr","odsp","eog"],
+    "contact": ["egwee","acsp","pollipi","insepi"],
+    "real_systems": ["hotarubukuro","fcp","chun","island","izu-core","shimahotarubukuro","azami","EAzami","aza3"]
   },
   "node_roles": {
     "hotarubukuro":"focal Campanula flower-colour geography publication system",
@@ -25,76 +23,85 @@
     "island":"macroecological island floral/reproductive WHEN-WHERE analysis",
     "izu-core":"conditional island interaction-response geometry and empirical interface",
     "shimahotarubukuro":"focal Izu Campanula floral phenotype divergence",
-    "pollipi":"physical flower-visitor primary-record system; application/testbed rather than parent theory",
+    "pollipi":"physical flower-visitor primary-record system; target-facing observation application",
     "insepi":"physical observer-system intervention diagnosis focused on nuisance/observability/shared-optical failure",
-    "rec":"missing-support / record-entry censoring: what existed but failed to become a usable row",
-    "v3":"retained-side-information refinement: contract compatible world sets without destructive subtraction",
-    "tnoa":"semantic preservation on retained support: keep target/nuisance/observability/attribution/unresolved distinctions",
+    "rec":"missing-support / record-entry censoring",
+    "v3":"retained-side-information refinement",
+    "tnoa":"semantic preservation on retained support",
     "boundary":"identification boundary induced by the current observation map",
     "mrod":"active next-observation design for remaining compatible mechanism/world distinctions",
     "ccoc":"future/composition state-sufficiency obstruction",
     "mltr":"history/semantic transport obstruction",
     "mrm":"retained-mechanism response obstruction",
     "crest":"contract-relative required-state synthesis",
-    "ced":"evidence licensing and reportability",
+    "ced":"evidence licensing and reportability interface",
     "theouni":"meta-theory, admission grammar and portfolio registry",
     "eco-genetic-criticality":"finite eco-genetic criticality/state-separation parent",
     "eco-genetic-warning-extensions":"relational future-state and warning-validity extension",
-    "egwee":"independent natural-data measurement/representation adequacy interface",
+    "egwee":"independent natural-data state/proxy adequacy interface; natural context does not validate warning",
     "sch":"shared-coordinate functional conflict and compromise geometry",
     "balance":"middle-world reserve/depth/topology/persistence before differentiation pays",
     "bita":"differentiated-coordinate architecture gain and mechanism-allocation boundary",
-    "payoff":"population-game abstraction of architecture invasion/coexistence/coordination",
-    "sdmr":"environmental-coordinate admission and leakage-free SDM method",
+    "payoff":"population-game/spatial/temporal transport of architecture payoff",
+    "sdmr":"environmental-coordinate admission and leakage-free SDM method; empirical promotion not supported",
     "odsp":"multidimensional niche geometry and state-resolved prediction",
     "eog":"compatible-world reconstruction, reachability and forecast",
-    "acsp":"bounded candidate-patch survey prioritization and field-return interface"
+    "acsp":"bounded candidate-patch survey prioritization; field interface, not occupancy or guaranteed detection"
   },
-  "observation_theory": {
-    "conceptual_source":"Omega / possible ecological worlds",
-    "siblings":["rec","v3","tnoa"],
-    "boundary":"boundary",
-    "design":"mrod",
-    "applications":["pollipi","insepi"],
-    "rule":"REC/V3/TNOA are sibling information operations. They feed the current observation map; Boundary audits surviving equivalence and MROD chooses a future distinction. PolliPi/InsePi instantiate the problem physically for flower-visitation observation."
+  "state_access_interface": {
+    "required_state":"CREST with CCOC/MLTR/MRM defines what distinctions must be retained for the scientific contract.",
+    "observational_access":"REC/V3/TNOA determine support/refinement/semantic structure; Boundary determines what is structurally identifiable; MROD chooses a future distinguishing observation.",
+    "reportability":"CED asks whether current evidence identifies enough of the required distinction to license the requested target/report.",
+    "key_relations":[
+      {"from":"crest","to":"ced","object":"required state -> evidence licensing"},
+      {"from":"mrm","to":"boundary","object":"mechanism-relevant distinction -> identifiability"},
+      {"from":"boundary","to":"ced","object":"identified/compatible set -> reportability"},
+      {"from":"boundary","to":"mrod","object":"unresolved set -> next observation"}
+    ]
   },
   "within_series_state_transitions": [
     {"series":"interaction","path":["sch","balance","bita"],"surface":"shared-coordinate compromise -> middle world -> differentiated architecture","abstraction":"payoff"},
-    {"series":"niche","path":["sdmr","odsp","eog","acsp"],"surface":"represent -> thicken -> realize -> observe"},
-    {"series":"azami","path":["azami","EAzami","aza3"],"surface":"present phenotype -> public history -> own-data discrimination"}
+    {"series":"niche","path":["sdmr","odsp","eog","acsp"],"surface":"environmental coordinate admission -> multidimensional state -> compatible/reachable worlds -> candidate survey patches","rule":"epistemic sequence, not automatic evidence inheritance"},
+    {"series":"azami","path":["azami","EAzami","aza3"],"surface":"present phenotype -> public history -> own-data discrimination"},
+    {"series":"island","path":["island","izu-core","shimahotarubukuro"],"surface":"WHEN/WHERE -> conditional response geometry -> focal phenotype"}
   ],
-  "theory_reality_contacts": [
-    {"from":"tnoa","to":"pollipi","type":"operationalization","object":"target-facing observation semantics -> flower-visitor record"},
-    {"from":"tnoa","to":"insepi","type":"operationalization","object":"nuisance/observability distinctions -> physical observer diagnosis"},
+  "domain_interfaces": [
+    {"from":"eco-genetic-warning-extensions","to":"payoff","type":"proposed_interface","object":"relational future-relevant state may condition the ecological context underlying L,s,K,phi,eta; no same-system validation yet"},
+    {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","object":"state idea -> natural-data adequacy gates; warning statistic is not externally validated"},
+    {"from":"izu-core","to":"egwee","type":"shared_substrate","object":"Honshu-Izu functional data used under a distinct state-adequacy question"},
+    {"from":"eog","to":"acsp","type":"handoff","object":"compatible/reachable worlds -> candidate patches"},
+    {"from":"mrod","to":"acsp","type":"complement","object":"WHAT to measure <-> WHERE to look"}
+  ],
+  "contact_to_field": [
+    {"from":"tnoa","to":"pollipi","type":"operationalization","object":"target-facing semantics -> flower-visitor record"},
+    {"from":"tnoa","to":"insepi","type":"operationalization","object":"nuisance/observability distinctions -> physical diagnosis"},
     {"from":"rec","to":"pollipi","type":"empirical_gate","object":"prospective exposure/entry same-system audit"},
-    {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","object":"future-relevant-state idea -> natural-data adequacy gates"},
-    {"from":"egwee","to":"ced","type":"epistemic","object":"empirical state adequacy -> reportability licensing"},
-    {"from":"aza3","to":"acsp","type":"information_flow","object":"what biological evidence is needed -> where to search"},
-    {"from":"acsp","to":"aza3","type":"field_return","object":"candidate geography -> field verification / primary-data intake"},
-    {"from":"bita","to":"boundary","type":"abstraction","object":"specific mechanism ambiguity -> general identification boundary"}
+    {"from":"acsp","to":"aza3","type":"field_return","object":"candidate patch -> field verification / primary-data intake"}
   ],
-  "cross_series_relations": [
-    {"from":"hotarubukuro","to":"izu-core","type":"shared_substrate","object":"Campanula/Izu ecological substrate"},
-    {"from":"izu-core","to":"egwee","type":"shared_substrate","object":"Honshu-Izu functional interaction data under different questions"},
-    {"from":"mrod","to":"acsp","type":"complement","object":"WHAT to measure <-> WHERE to look"},
-    {"from":"sch","to":"payoff","type":"abstraction","object":"conflict/compromise payoff -> population game"},
-    {"from":"balance","to":"payoff","type":"abstraction","object":"middle-world margin -> invasion/coordination game"},
-    {"from":"bita","to":"payoff","type":"abstraction","object":"architecture gain/cost -> population game"}
-  ],
+  "staging": {
+    "284b": {
+      "current_content":"from 2.8.4",
+      "placement":"ghost next to SDMR only",
+      "scientific_active":false,
+      "rule":"not a fifth niche chapter until it declares an independent question and evidence contract"
+    }
+  },
   "system_cycle": [
     "encounter a distinction or failure in a real biological/measurement system",
-    "abstract a state, observation, interaction or world object",
-    "derive a boundary, theorem or design rule",
-    "project the object back into a measurable natural or physical system",
-    "retain negative, non-identifiable, failed-transport and residual outcomes as scientific information",
-    "use them to revise the representation or choose the next observation",
-    "return to field or natural data without erasing provenance"
+    "formalize ecological worlds and determine which distinctions a scientific state must retain",
+    "audit what observation preserves, loses or cannot identify",
+    "build domain-specific state/payoff/world models",
+    "find an executable natural-data, instrument or survey contact",
+    "return to field or primary data",
+    "use failure, non-identifiability, adverse transport and residual context to revise the representation without erasing provenance"
   ],
   "non_edges": [
     "shared philosophy or TMOP membership alone is not a scientific edge",
     "PolliPi/InsePi development ancestry does not make them conceptually upstream of TNOA/V3/REC",
-    "EGWEE does not externally validate the EGC/EGWE finite-model mechanism",
-    "shared organism or dataset does not transfer conclusions",
+    "EGWEE natural examples do not externally validate the EGC/EGWE warning statistic",
+    "EGWE-to-PAYOFF is a proposed state-to-payoff interface, not a current empirical bridge",
+    "ACSP candidate patches do not imply occupancy or guaranteed detection",
+    "284b is staging only",
     "later empirical work does not retroactively validate an earlier bounded/failed gate"
   ]
 }
