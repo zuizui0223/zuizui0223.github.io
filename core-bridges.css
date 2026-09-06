@@ -1,44 +1,31 @@
-.portal-ecogenetic{color:#cf9f72}
-
-/* Spiderweb scaffold: always visible, quiet, structural. */
-.spiderweb-layer{pointer-events:none;opacity:1}
-.web-frame,.web-ring,.web-spoke,.web-inner-boundary{fill:none;stroke:#d9d0aa;stroke-linecap:round;stroke-linejoin:round}
-.web-frame{stroke-width:2.2;opacity:.48;filter:drop-shadow(0 0 5px rgba(217,208,170,.18))}
-.web-ring{stroke-width:1.45;opacity:.30}
-.web-ring-1{opacity:.38}.web-ring-2{opacity:.30}.web-ring-3{opacity:.24}
-.web-spoke{stroke-width:1.25;opacity:.27;stroke-dasharray:2 6}
-.web-inner-boundary{stroke-width:1.1;opacity:.18;stroke-dasharray:2 5}
-
-/* Core names: readable without decoding glyphs. */
-.web-core-label{fill:#e8e3d4;stroke:#08090c;stroke-width:4;paint-order:stroke;stroke-linejoin:round;font:700 13px ui-monospace,SFMono-Regular,Consolas,monospace;text-anchor:middle;dominant-baseline:middle;letter-spacing:.04em;opacity:.92;pointer-events:none}
-.web-core-label-island,.web-core-label-interaction,.web-core-label-observation,.web-core-label-ecogenetic{ text-anchor:start }
-.web-core-label-theory,.web-core-label-niche,.web-core-label-azami{ text-anchor:end }
-
-/* Scientific cross-links: brighter than the web scaffold. */
-.web-link-group{pointer-events:stroke;cursor:help}
-.web-link-halo{fill:none;stroke:#020305;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;opacity:.98;pointer-events:none}
-.web-link{fill:none;stroke:#f3eedf;stroke-width:4.6;stroke-linecap:round;stroke-linejoin:round;opacity:.96;filter:drop-shadow(0 0 7px rgba(243,238,223,.42));transition:stroke-width .16s ease,opacity .16s ease,filter .16s ease}
-.web-link-shared .web-link{stroke:#b9c977;stroke-dasharray:8 6}
-.web-link-epistemic .web-link{stroke:#e6b85c;stroke-dasharray:13 6}
-.web-link-abstraction .web-link{stroke:#d28dac;stroke-dasharray:5 5}
-.web-link-complement .web-link{stroke:#7cb7d6}
-.web-link-information .web-link{stroke:#e98191}
-.web-link-hit{fill:none;stroke:transparent;stroke-width:25;pointer-events:stroke}
-.web-link-group:hover .web-link,.web-link-group.is-related .web-link{stroke-width:6.4;opacity:1;filter:drop-shadow(0 0 13px rgba(243,238,223,.82))}
-
-.web-link-label-bg{fill:#08090c;fill-opacity:.95;stroke:#e6dfcb;stroke-opacity:.35;stroke-width:1.1;rx:8;ry:8;pointer-events:none}
-.web-link-label{fill:#f5f0e1;stroke:#08090c;stroke-width:3;paint-order:stroke;stroke-linejoin:round;font:700 11.5px ui-monospace,SFMono-Regular,Consolas,monospace;text-anchor:middle;dominant-baseline:middle;letter-spacing:.015em;pointer-events:none}
-
-/* Portals sit over the web vertices. */
-.spiderweb-layer + .portals .portal-node{stroke-width:1.5}
-.spiderweb-layer + .portals .portal-line{opacity:.35}
-
-@media (max-width:720px){
-  .web-frame{stroke-width:2.8;opacity:.58}
-  .web-ring{stroke-width:1.9}
-  .web-spoke{stroke-width:1.6;opacity:.34}
-  .web-link-halo{stroke-width:12}
-  .web-link{stroke-width:5.4}
-  .web-link-label{font-size:12.5px}
-  .web-core-label{font-size:14px}
-}
+.research-web-layer{pointer-events:none}
+.web-scaffold{opacity:1}
+.web-ring{fill:none;stroke:rgba(233,230,221,.24);stroke-width:1.5;vector-effect:non-scaling-stroke}
+.web-ring-1{stroke-opacity:.44}
+.web-ring-2{stroke-opacity:.56}
+.web-ring-3{stroke-opacity:.68}
+.web-ring-4{stroke:rgba(233,230,221,.34);stroke-width:2}
+.web-spoke{stroke:rgba(233,230,221,.19);stroke-width:1.55;vector-effect:non-scaling-stroke}
+.web-centre-halo{fill:#08090c;stroke:rgba(217,208,170,.12);stroke-width:12}
+.web-centre{fill:#050608;stroke:#d9d0aa;stroke-opacity:.5;stroke-width:1.6;filter:drop-shadow(0 0 14px rgba(217,208,170,.12))}
+.web-centre-title,.web-centre-sub{fill:#d9d0aa;text-anchor:middle;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;pointer-events:none}
+.web-centre-title{font-size:12px;font-weight:700;letter-spacing:.16em}
+.web-centre-sub{font-size:9px;opacity:.62;letter-spacing:.1em}
+.web-bridge-group{pointer-events:stroke;cursor:help}
+.web-bridge-halo{fill:none;stroke:#08090c;stroke-width:11;stroke-linecap:round;stroke-linejoin:round;opacity:.98;pointer-events:none}
+.web-bridge{fill:none;stroke:var(--bridge,#f0ead7);stroke-width:4.6;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:var(--bridge-dash,none);opacity:.98;filter:drop-shadow(0 0 7px color-mix(in srgb,var(--bridge,#f0ead7) 58%,transparent));transition:stroke-width .18s ease,filter .18s ease}
+.web-bridge-group:hover .web-bridge{stroke-width:6.4;filter:drop-shadow(0 0 13px color-mix(in srgb,var(--bridge,#f0ead7) 82%,transparent))}
+.web-bridge-label-bg{fill:#08090c;fill-opacity:.97;stroke:var(--bridge,#d9d0aa);stroke-opacity:.65;stroke-width:1;rx:6;ry:6;pointer-events:none}
+.web-bridge-label{fill:var(--bridge,#f3eedf);stroke:#08090c;stroke-width:3;paint-order:stroke;stroke-linejoin:round;font:700 11px ui-monospace,SFMono-Regular,Consolas,monospace;text-anchor:middle;dominant-baseline:middle;pointer-events:none}
+.web-core{pointer-events:all;cursor:pointer;opacity:1;filter:none;transition:filter .18s ease}
+.web-core-halo{fill:#08090c;stroke:var(--core);stroke-opacity:.22;stroke-width:11;transition:stroke-opacity .18s ease}
+.web-core-node{fill:#08090c!important;stroke:var(--core)!important;stroke-width:2.4!important}
+.web-core-glyph{fill:var(--core)!important;font:700 17px ui-monospace,SFMono-Regular,Consolas,monospace!important;text-anchor:middle!important;pointer-events:none}
+.web-core-label{fill:#f0ede3!important;stroke:#08090c;stroke-width:4;paint-order:stroke;stroke-linejoin:round;font:700 12px ui-monospace,SFMono-Regular,Consolas,monospace!important;letter-spacing:.07em;pointer-events:none}
+.web-core:hover,.web-core:focus-visible,.web-core.is-active{filter:drop-shadow(0 0 13px var(--core))}
+.web-core:hover .web-core-halo,.web-core:focus-visible .web-core-halo,.web-core.is-active .web-core-halo{stroke-opacity:.72}
+.web-core:hover .web-core-node,.web-core:focus-visible .web-core-node,.web-core.is-active .web-core-node{transform:none!important;fill:#0b0d12!important}
+.web-legend text{fill:#8e9298;font:600 9px ui-monospace,SFMono-Regular,Consolas,monospace;letter-spacing:.08em}
+.web-legend .legend-bridge{--bridge:#d9d0aa;stroke-width:4;stroke-dasharray:none;filter:none}
+.portal-line,.portal-hit{display:none}
+@media (max-width:720px){.web-ring{stroke-width:1.9}.web-spoke{stroke-width:1.9}.web-bridge-halo{stroke-width:13}.web-bridge{stroke-width:5.4}.web-bridge-label{font-size:12px}.web-core-label{font-size:13px}.web-core-node{stroke-width:3!important}}
