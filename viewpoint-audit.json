@@ -7,14 +7,15 @@
   "theory_reality_interface": "theory-reality-audit.json",
   "evidence_partition": "evidence-partition-audit.json",
   "repository_inventory": {"scientific_active":33,"meta_registry":1,"staging_unclassified":1,"classification_audit":"repository-classification-audit.json"},
-  "central_question": "Which distinctions of ecological reality survive a chosen observation or representation, which become identifiable, and where can an abstract result be brought back into a real organism, dataset, sensor or field design so that reality can test or revise the theory?",
+  "central_question": "Which distinctions of ecological reality must a scientific state retain, which survive observation and become identifiable/reportable, and where can domain theory be returned to a measurable natural, physical or field system?",
   "identity": {
-    "surface": "THEORY WORLDS <-> CONTACT <-> REAL WORLDS",
-    "one_line": "理論世界と現実世界のあいだで、どの区別を測れる形にし、どの失敗や残差を理論へ戻せるかを探す。",
-    "strength": "The portfolio repeatedly turns empirical awkwardness into formal objects, then turns formal boundaries back into measurement, survey or field designs."
+    "surface": "WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD",
+    "one_line": "理論世界と現実世界のあいだで、必要な区別を定義し、観測できる区別を監査し、測れる接点へ戻す。",
+    "strength": "The portfolio repeatedly turns empirical awkwardness into formal objects, then turns formal boundaries back into measurement, survey or field designs.",
+    "radius_rule": "distance to measurement, not scientific importance"
   },
   "novelty_claim": {
-    "allowed": "A portfolio-level research style: ecological states, observations and models are treated as representations whose adequacy is tested at explicit theory-reality interfaces; unresolved, negative, mixed and unobservable distinctions remain scientific objects.",
+    "allowed": "A portfolio-level research style: ecological worlds, states, observations and domain models are treated as representations whose adequacy is tested at explicit theory-reality interfaces; unresolved, negative, mixed and unobservable distinctions remain scientific objects.",
     "forbidden": ["one universal ecological theory already validated in nature","claiming that every repository belongs to one causal pipeline","equating empirical projection with external validation","transferring source-repository claim ownership to the homepage synthesis"]
   },
   "lenses": [
@@ -24,52 +25,63 @@
     {"id":"contact","glyph":"⇄","surface":"理論より、接点。","meaning":"find a measurable empirical interface where theory can meet reality and reality can force theory revision"}
   ],
   "scientific_graph": {
-    "real_worlds": {
+    "world_state": ["ccoc","mltr","mrm","crest","theouni"],
+    "access": {
+      "observation_operations":["rec","v3","tnoa"],
+      "identification":["boundary"],
+      "design":["mrod"],
+      "evidence_reporting":["ced"]
+    },
+    "domain_theory": {
+      "eco_genetic":["eco-genetic-criticality","eco-genetic-warning-extensions"],
+      "interaction_payoff":["sch","balance","bita","payoff"],
+      "niche_world":["sdmr","odsp","eog"]
+    },
+    "contact": {
+      "natural_state_gate":["egwee"],
+      "survey":["acsp"],
+      "physical_observation":["pollipi","insepi"]
+    },
+    "real_systems": {
       "flower":["hotarubukuro","fcp","chun"],
       "island":["island","izu-core","shimahotarubukuro"],
-      "azami":["azami","EAzami","aza3"],
-      "field_observation":["pollipi","insepi"],
-      "natural_state_gate":["egwee"]
-    },
-    "theory_worlds": {
-      "observability":["rec","v3","tnoa","boundary","mrod"],
-      "state_report":["ccoc","mltr","mrm","crest","ced","theouni"],
-      "interaction":["sch","balance","bita","payoff"],
-      "niche_world":["sdmr","odsp","eog","acsp"],
-      "eco_genetic":["eco-genetic-criticality","eco-genetic-warning-extensions"]
-    },
-    "observation_reframe": {
-      "theory":"REC / V3 / TNOA are sibling information operations -> Boundary -> MROD",
-      "application":"PolliPi / InsePi are flower-visitation physical implementations/testbeds",
-      "rule":"historical inspiration direction and current conceptual hierarchy are intentionally separated"
+      "azami":["azami","EAzami","aza3"]
     },
     "primary_contacts": [
-      "TNOA -> PolliPi/InsePi: observation distinctions become a physical visitation-observation design",
-      "REC -> PolliPi: non-entered support becomes a prospective same-system empirical gate",
-      "BITA -> Boundary: a specific mechanism ambiguity becomes general identification theory",
-      "Boundary -> MROD -> ACSP/field: unresolved distinctions become next-measurement/search design",
-      "EGWE -> EGWEE -> CED: future-relevant-state theory meets natural-data adequacy and then reportability",
-      "ACSP <-> aza3: abstract spatial search returns to own primary data"
+      "CCOC/MLTR/MRM -> CREST: which distinctions are required",
+      "CREST -> CED and MRM -> Boundary: required distinctions meet evidence/identifiability",
+      "REC/V3/TNOA -> Boundary -> MROD: what observation preserves, what is identifiable, what to measure next",
+      "EGWE -> PAYOFF: proposed relational-state-to-architecture-payoff interface, not a validation bridge",
+      "EGWE -> EGWEE <-> island/urban contexts: state adequacy and residual context, not warning validation",
+      "SDMR -> ODSP -> EOG -> ACSP: coordinate admission -> multidimensional state -> worlds -> survey patches",
+      "TNOA/REC -> PolliPi/InsePi: observation theory becomes a physical visitation-observation design",
+      "ACSP <-> aza3: candidate geography returns to own primary data"
     ]
   },
-  "evidence_mode_view": {"surface":"T ∩ M ∩ O ∩ P","audit":"tmop-audit.json","rule":"Evidence mode is an independent lens; it does not define the theory-reality hierarchy."},
+  "staging_boundary": {
+    "repo":"284b",
+    "status":"staging only",
+    "current_content":"from 2.8.4",
+    "display":"ghost next to SDMR; not a fifth niche chapter"
+  },
+  "evidence_mode_view": {"surface":"T ∩ M ∩ O ∩ P","audit":"tmop-audit.json","rule":"Evidence mode is an independent lens; it does not define the world-to-field hierarchy."},
   "phd_path": {
-    "surface": "現実の違和感 → 抽象化 → 境界 → 接点 → 次観測 → 現実へ戻る",
-    "stages": ["empirical distinction","state/observation abstraction","identification boundary","measurable interface","next observation","field/natural-data return"],
+    "surface": "現実の違和感 → 世界/状態 → 観測境界 → ドメイン理論 → 接点 → 現実へ戻る",
+    "stages": ["empirical distinction","required state","observation/identification","domain model","measurable interface","field/natural-data return"],
     "scientific_dependency": false
   },
   "cross_repository_invariants": [
     "record != world",
     "no record != no event",
     "observable != uniquely interpretable",
-    "retained side information can refine without justifying subtraction",
     "precision != identification",
-    "empirical projection != validation",
-    "candidate patch != occupancy",
-    "future-relevant state != plausible proxy",
     "required state != identified state != reportable target",
+    "empirical projection != validation",
+    "candidate patch != occupancy != guaranteed detection",
+    "same marginals != same future",
+    "conflict != immediate differentiation",
     "developmental ancestry != conceptual hierarchy",
     "connection != ownership"
   ],
-  "phd_in_zuizui": "Not ownership of one final ecological answer, but repeated construction of interfaces where abstract distinctions become measurable and real failures become theory-revising evidence."
+  "phd_in_zuizui": "Not ownership of one final ecological answer, but repeated construction of interfaces where required distinctions become measurable and real failures become theory-revising evidence."
 }
