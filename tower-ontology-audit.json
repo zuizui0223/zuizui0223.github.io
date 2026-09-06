@@ -1,0 +1,81 @@
+{
+  "checked_at": "2026-09-06",
+  "schema": "zuizui.tower_ontology.v1",
+  "inventory": {
+    "owner_total": 35,
+    "research_programmes": 34,
+    "meta_registry": ["zuizui0223.github.io"],
+    "staging_unclassified": [],
+    "note": "284b is an active research/development programme with an independent cross-estimand relation-space question; active does not mean fully validated."
+  },
+  "principle": "The portfolio is one navigable tower but not one ontological nesting. Floors are an itinerary. Scientific relations are typed maps, obligations and empirical contacts; camera angle changes visibility only.",
+  "world_semantics": {
+    "omega": "declared possible/latent ecological worlds before the current observation contract is applied",
+    "observable": "distinctions accessible to the declared physical/reference channels",
+    "record": "signals/rows retained after entry, censoring and reversible processing",
+    "represented": "retained distinctions after semantic organization",
+    "identified": "compatible/equivalence classes allowed by the observation/model contract",
+    "reportable": "targets licensed by the evidence contract",
+    "action": "new measurement or survey chosen to split unresolved worlds or return to field",
+    "inside_outside_rule": "No repository has an intrinsic inside/outside rank. Under an observation lens, moving toward report means epistemic compression; under a state lens, depth means distinctions that must be retained; under a field lens, outward means return to physical measurement."
+  },
+  "floors": [
+    {"floor": 1, "id": "field", "glyph": "⌁", "question": "Where does an abstract result meet organisms, instruments and new primary evidence?", "repositories": ["hotarubukuro","fcp","chun","azami","EAzami","aza3","island","izu-core","shimahotarubukuro"]},
+    {"floor": 2, "id": "record", "glyph": "◎", "question": "What entered the record, what was retained, and what distinctions did the record preserve?", "repositories": ["pollipi","insepi","rec","v3","tnoa"]},
+    {"floor": 3, "id": "possibility", "glyph": "⌖", "question": "Which worlds remain compatible, which coordinates describe them, and where should we look next?", "repositories": ["boundary","mrod","sdmr","odsp","eog","284b","acsp"]},
+    {"floor": 4, "id": "distinction", "glyph": "◇", "question": "Which distinctions must an adequate state retain, and which of them are evidence-reportable?", "repositories": ["ccoc","mltr","mrm","crest","ced","theouni"]},
+    {"floor": 5, "id": "future", "glyph": "⋈", "question": "How do architecture and relational state alter future function, payoff and vulnerability?", "repositories": ["sch","balance","bita","payoff","eco-genetic-criticality","eco-genetic-warning-extensions","egwee"]}
+  ],
+  "orthogonal_worlds": {
+    "observation_identification_design": {
+      "repositories": ["rec","v3","tnoa","boundary","mrod"],
+      "topology": "REC / V3 / TNOA are sibling information operations -> Boundary -> MROD",
+      "meaning": "missing support, retained side information and semantic preservation determine observational equivalence; unresolved equivalence then becomes an active next-observation problem"
+    },
+    "required_state_reporting": {
+      "repositories": ["ccoc","mltr","mrm","crest","ced"],
+      "topology": "CCOC / MLTR / MRM -> CREST -> CED, with Boundary also entering CED",
+      "meaning": "future/history/mechanism impose state obligations; CED checks whether current evidence licenses the requested target"
+    },
+    "niche_world_reconstruction": {
+      "repositories": ["sdmr","odsp","eog","acsp"],
+      "topology": "coordinate admission -> multidimensional state -> compatible/reachable worlds -> bounded candidate patches",
+      "meaning": "epistemic corridor, not automatic claim inheritance"
+    },
+    "cross_estimand_relation_space": {
+      "repositories": ["284b"],
+      "inputs": ["sdmr","eog","other role-appropriate estimators"],
+      "meaning": "independently obtained answers may use different estimands/estimators and accessible areas; they are projected to a prospectively frozen common biological relation space and checked against an external relation",
+      "claim_ceiling": "284b is not a universal estimator and does not require plant and pollinator raw suitability surfaces to be equal"
+    },
+    "trait_architecture_game": {
+      "repositories": ["sch","balance","bita","payoff"],
+      "topology": "shared-coordinate conflict -> middle-world persistence -> differentiated architecture -> population-game transport"
+    },
+    "eco_genetic_future_state": {
+      "repositories": ["eco-genetic-criticality","eco-genetic-warning-extensions","egwee"],
+      "topology": "finite state theory -> future-relevant relational state/warning validity -> independent natural-data state-adequacy gates",
+      "claim_ceiling": "EGWEE natural-data adequacy is not validation of a genetic-warning statistic or of the finite simulator"
+    }
+  },
+  "reality_contacts": {
+    "physical_observation": ["pollipi","insepi"],
+    "natural_state_gate": ["egwee"],
+    "survey_return": ["acsp","aza3","island"],
+    "rule": "A candidate patch is not occupancy, exact location or guaranteed detection; the closable field claim is prospective enrichment/efficiency under controlled effort and detectability."
+  },
+  "current_cross_world_contacts": [
+    {"from":["crest","boundary"],"to":["ced"],"status":"established","type":"evidence_licensing"},
+    {"from":["boundary"],"to":["mrod"],"status":"established","type":"active_design"},
+    {"from":["sdmr","odsp"],"to":["eog"],"status":"bounded","type":"conceptual_corridor"},
+    {"from":["sdmr","eog"],"to":["284b"],"status":"bounded","type":"cross_estimand_relation_check"},
+    {"from":["eog"],"to":["acsp"],"status":"established","type":"survey_handoff"},
+    {"from":["eco-genetic-warning-extensions"],"to":["payoff"],"status":"proposed","type":"state_to_context"},
+    {"from":["eco-genetic-warning-extensions"],"to":["egwee"],"status":"bounded","type":"empirical_projection"},
+    {"from":["island","izu-core"],"to":["egwee"],"status":"proposed","type":"natural_regime_state_test"}
+  ],
+  "supersedes_for_current_tower": {
+    "legacy_files": ["repo-audit.json","repository-classification-audit.json","world-ontology-audit.json","puzzle-closure-audit.json","theory-reality-audit.json","viewpoint-audit.json","ecosystem-system-audit.json","niche-program-audit.json","tmop-audit.json"],
+    "scope": "Only their pre-tower inventory/classification statements, especially the former 284b staging status. Their repository-specific claim firewalls remain historical evidence and are not silently promoted."
+  }
+}
