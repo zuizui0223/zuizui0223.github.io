@@ -2,6 +2,7 @@
   "checked_at": "2026-09-06",
   "scope": "Canonical typed relationship graph for 33 active scientific repositories, layered from ecological worlds to required state, scientific access, domain theory, contact and field return.",
   "theory_reality_audit": "theory-reality-audit.json",
+  "world_ontology_audit": "world-ontology-audit.json",
   "relation_types": {
     "handoff": "later project starts from a bounded object/question/receipt left by earlier project",
     "epistemic": "ordered scientific questions without automatic evidence transfer",
@@ -15,7 +16,8 @@
     "empirical_projection": "a theory-motivated object is tested as an empirical measurement/gate without claiming validation of the source theory",
     "field_return": "a design/search object returns to primary-data collection",
     "conceptual_interface": "two independent theory objects meet at one declared question without proof or evidence transfer",
-    "proposed_interface": "a scientifically plausible cross-program mapping not yet closed in one matched empirical/theoretical system"
+    "proposed_interface": "a scientifically plausible cross-program mapping not yet closed in one matched empirical/theoretical system",
+    "locked_interface": "a reverse or stronger cross-program mapping shown as a puzzle clue only because its explicit closure condition is not yet met"
   },
   "vertical_programmes": [
     {"id":"azami","shape":"linear_handoff","nodes":["azami","EAzami","aza3"],"surface":"present phenotype -> public evolutionary history -> own-data discrimination"},
@@ -54,7 +56,7 @@
         {"from":"crest","to":"ced","type":"handoff","meaning":"required state -> evidence licensing"}
       ],
       "meta":{"repo":"theouni","role":"meta-theory/admission/portfolio registry"},
-      "placement":"deeper than observation theory because it defines which distinctions are required before asking whether they are observable"
+      "placement":"deeper than observation theory in the state lens because it defines which distinctions are required before asking whether they are observable"
     },
     {"id":"interaction_game","shape":"cross_chapter_abstraction","nodes":["sch","balance","bita","payoff"],"relations":[{"from":"sch","to":"payoff","type":"abstraction"},{"from":"balance","to":"payoff","type":"abstraction"},{"from":"bita","to":"payoff","type":"abstraction"}]}
   ],
@@ -62,7 +64,8 @@
     {"from":"mrm","to":"boundary","type":"conceptual_interface","meaning":"mechanism distinction required by a relevant future -> can the current observation map identify it?"},
     {"from":"boundary","to":"ced","type":"conceptual_interface","meaning":"identified/compatible set -> what target may be honestly reported?"},
     {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific mechanism-allocation ambiguity -> general identification boundary"},
-    {"from":"eco-genetic-warning-extensions","to":"payoff","type":"proposed_interface","meaning":"future-relevant relational state may condition L(e), s(e), K(e), phi(e), eta(e); not yet a matched-system validation bridge"}
+    {"from":"eco-genetic-warning-extensions","to":"payoff","type":"proposed_interface","meaning":"future-relevant relational state may condition L(e), s(e), K(e), phi(e), eta(e); not yet a matched-system validation bridge"},
+    {"from":"payoff","to":"eco-genetic-warning-extensions","type":"locked_interface","meaning":"reverse architecture -> relational eco-genetic state requires a matched system measuring architecture state -> interaction/alignment -> future function"}
   ],
   "theory_reality_contacts": [
     {"from":"tnoa","to":"pollipi","type":"operationalization","meaning":"target-facing process-preserving semantics -> flower-visitor recording design"},
@@ -97,6 +100,6 @@
   "ecosystem_system": {
     "audit":"ecosystem-system-audit.json",
     "surface":"WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD -> UPDATE",
-    "rule":"connection != ownership; empirical projection != validation; radius != importance"
+    "rule":"connection != ownership; empirical projection != validation; radius != importance; perspective change != claim change"
   }
 }
