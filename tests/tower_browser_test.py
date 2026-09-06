@@ -14,9 +14,10 @@ OUT.mkdir(exist_ok=True)
 def inline_site() -> str:
     html = (ROOT / 'index.html').read_text()
     html = html.replace('<link rel="stylesheet" href="tower.css?v=20260906t1">', '<style>' + (ROOT/'tower.css').read_text() + '</style>')
-    for name in ('tower-data.js', 'tower.js', 'tower-perspective-clue.js'):
+    scripts=('tower-data.js','tower.js','tower-echo-data.js','tower-perspective-clue.js','tower-echo-clue.js')
+    for name in scripts:
         html = re.sub(rf'<script src="{re.escape(name)}\?v=[^"]+" defer></script>', '', html)
-    return html.replace('</body>', ''.join('<script>'+ (ROOT/name).read_text() + '</script>' for name in ('tower-data.js', 'tower.js', 'tower-perspective-clue.js')) + '</body>')
+    return html.replace('</body>', ''.join('<script>'+ (ROOT/name).read_text() + '</script>' for name in scripts) + '</body>')
 
 def main():
     parser=argparse.ArgumentParser()
@@ -39,6 +40,8 @@ def main():
         check('five motifs; all have sources and closure receipts', len(data['motifs'])==5 and all(m['sourceBlob'] and m['receipt'] for m in data['motifs']))
         contacts={c['id'] for c in data['contacts']}
         check('all typed contacts covered by motifs', contacts=={c for m in data['motifs'] for c in m['contacts']})
+        check('five cross-floor recurrences are immutable clue data',page.evaluate('Object.isFrozen(ZUIZUI_TOWER_ECHOES)&&ZUIZUI_TOWER_ECHOES.length===5'))
+        check('cross-floor rune canvas is mounted without labels',page.locator('#crossFloorEchoes').count()==1 and page.locator('#crossFloorEchoes').get_attribute('aria-hidden')=='true')
         check('284b is a relation-space programme, not empty staging', next(r for r in data['repos'] if r[0]=='284b')[4].endswith('relation-check'))
         check('scientific metadata deep-frozen', page.evaluate('Object.isFrozen(ZUIZUI_TOWER)&&ZUIZUI_TOWER.contacts.every(Object.isFrozen)'))
         page.locator('#turnRight').click();page.wait_for_timeout(60)
@@ -68,6 +71,7 @@ def main():
             check(f'floor {i+1}: click records discovery',m['id'] in snap()['visited'])
         check('five discoveries reveal field-return control',page.locator('#returnButton').is_visible())
         check('all scientific statuses unchanged after completion',page.evaluate('ZUIZUI_TOWER')==data)
+        check('cross-floor clue layer survives a full ascent',page.locator('#crossFloorEchoes').get_attribute('data-echoes')=='5')
         page.screenshot(path=str(OUT/'five-discoveries.png'))
         page.locator('#returnButton').click();page.wait_for_timeout(100)
         check('ending returns to the field instead of claiming all proofs',snap()['returned'] and snap()['currentFloor']==0)
@@ -86,7 +90,6 @@ def main():
             check(f'{width}x{height}: no horizontal overflow',device.evaluate('document.documentElement.scrollWidth<=innerWidth'))
             check(f'{width}x{height}: repository count stable',device.evaluate('ZUIZUI_TOWER_STATE.snapshot().repoCount')==34)
             if width==390:
-                # Use real touch events to exercise horizontal gesture handling.
                 session=device.context.new_cdp_session(device)
                 original=device.evaluate('ZUIZUI_TOWER_STATE.snapshot().targetYaw')
                 session.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':170,'y':430}]})
