@@ -1,74 +1,132 @@
 {
   "checked_at": "2026-09-06",
-  "schema": "zuizui.theory_reality_interface.v1",
+  "schema": "zuizui.theory_reality_interface.v2",
   "identity": {
-    "surface": "THEORY WORLDS <-> CONTACT <-> REAL WORLDS",
-    "principle": "zuizuiの強みは、抽象理論を現実の生物・データ・観測系へ降ろせる接点と、現実側の失敗・残差・観測不能性を再び理論へ戻せる接点を見つけること。",
-    "rule": "developmental ancestry is not conceptual hierarchy; theory-real contact is typed and never transfers claim ownership"
+    "surface": "WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD",
+    "principle": "zuizuiの強みは、現実の生物・観測・データから抽象的な区別を取り出し、その理論が要求する区別を再び測定可能な現実へ戻す接点を設計すること。",
+    "radius_meaning": "distance to measurement, not importance, maturity, truth, or prestige",
+    "rule": "developmental ancestry is not conceptual hierarchy; projection is not validation; connection never transfers claim ownership"
   },
-  "reality_worlds": {
-    "flower": ["hotarubukuro", "fcp", "chun"],
-    "island": ["island", "izu-core", "shimahotarubukuro"],
-    "azami": ["azami", "EAzami", "aza3"],
-    "physical_observation": ["pollipi", "insepi"],
-    "natural_state_gate": ["egwee"]
+  "layers": {
+    "world_required_state": {
+      "hub": "crest",
+      "companions": ["ccoc", "mltr", "mrm", "theouni"],
+      "question": "Which distinctions among ecological worlds must a scientifically adequate state retain under the declared future/history/mechanism/target contract?",
+      "relations": {
+        "ccoc": "future/composition obstruction",
+        "mltr": "history/semantic transport obstruction",
+        "mrm": "mechanism-response obstruction",
+        "crest": "unique least-information contract-relative state synthesis",
+        "theouni": "portfolio/meta-theory and cross-repository admission grammar"
+      }
+    },
+    "access_identification_reporting": {
+      "observation_operations": ["rec", "v3", "tnoa"],
+      "identification": ["boundary"],
+      "design": ["mrod"],
+      "evidence_reporting": ["ced"],
+      "question": "Which required distinctions survive the observation map, which remain identifiable, what may be reported, and which new observation should be acquired?",
+      "topology": "REC/V3/TNOA are sibling information operations; Boundary audits observational equivalence; MROD actively refines the unresolved set; CED joins required-state obligations to evidence and reportability."
+    },
+    "domain_theory": {
+      "interaction_architecture": ["sch", "balance", "bita", "payoff"],
+      "eco_genetic_state": ["eco-genetic-criticality", "eco-genetic-warning-extensions"],
+      "niche_worlds": ["sdmr", "odsp", "eog"],
+      "question": "How do measurable ecological domains instantiate state, future function, payoff, geometry and possible-world structure?"
+    },
+    "contact": {
+      "physical_observation": ["pollipi", "insepi"],
+      "natural_state_gate": ["egwee"],
+      "survey_prioritization": ["acsp"],
+      "question": "Where does an abstract distinction become an executable physical, natural-data, or survey operation?"
+    },
+    "real_systems": {
+      "flower": ["hotarubukuro", "fcp", "chun"],
+      "island": ["island", "izu-core", "shimahotarubukuro"],
+      "azami": ["azami", "EAzami", "aza3"]
+    }
   },
-  "theory_worlds": {
-    "observability_and_identification": ["rec", "v3", "tnoa", "boundary", "mrod"],
-    "state_and_representation": ["ccoc", "mltr", "mrm", "crest", "ced", "theouni"],
-    "interaction_architecture": ["sch", "balance", "bita", "payoff"],
-    "niche_world_and_survey": ["sdmr", "odsp", "eog", "acsp"],
-    "eco_genetic_state": ["eco-genetic-criticality", "eco-genetic-warning-extensions"]
+  "crest_observation_relationship": {
+    "summary": "Not parallel universes. CREST-side theory defines distinctions that are scientifically required; observation-side theory asks whether those distinctions survive and can be identified. CED is the principal reportability interface between the two.",
+    "direct_interfaces": [
+      {"from":"crest","to":"ced","object":"required state -> evidence licensing"},
+      {"from":"mrm","to":"boundary","object":"mechanism distinction required by a relevant future -> is that distinction identifiable under the current observation map?"},
+      {"from":"boundary","to":"ced","object":"identified/compatible set -> target/reportability audit"},
+      {"from":"boundary","to":"mrod","object":"remaining equivalence set -> active next-observation design"}
+    ],
+    "placement": "CREST/CCOC/MLTR/MRM are deeper/inner because they define required distinctions before asking how they are measured. REC/V3/TNOA/Boundary/MROD/CED lie farther outward because they mediate scientific access to those distinctions."
   },
-  "interface_or_hybrid_repositories": ["izu-core", "sch", "balance", "bita", "rec", "sdmr", "odsp", "eog", "acsp", "egwee"],
   "observation_architecture": {
     "conceptual_source": "Omega / possible ecological worlds",
-    "statement": "Unobservability is relative to a scientific target and an observation map. The important object is which distinctions in Omega survive record entry, refinement and semantic representation.",
-    "operators": {
-      "rec": "missing support: exposures/world states that fail to become usable rows; external exposure/reference is required to speak empirically about the non-entered world",
-      "v3": "retained refinement: already-available side/reference information may contract compatible world sets without destructive subtraction",
-      "tnoa": "semantic preservation: on retained support, target/nuisance/observability/attribution/unresolved distinctions are preserved instead of prematurely collapsed",
-      "boundary": "identification boundary: the current observation map induces observational equivalence and determines which scientific distinctions are identifiable in principle",
-      "mrod": "active refinement: choose a future observation that most usefully splits the remaining compatible mechanism/world set"
+    "rec": "missing support: some exposures/world states fail to become usable rows",
+    "v3": "retained refinement: side/reference information contracts compatible world sets when justified",
+    "tnoa": "semantic preservation: retained evidence is not prematurely collapsed into target/non-target",
+    "boundary": "current observation map determines observational equivalence and structural identifiability",
+    "mrod": "future observation is chosen to split the remaining compatible mechanism/world set",
+    "ced": "evidence architecture licenses only target/state distinctions actually earned by the experiment/record",
+    "applications": {
+      "pollipi": "target-facing flower-visitor primary record implementation",
+      "insepi": "nuisance/observability/shared-optical physical intervention diagnosis"
+    }
+  },
+  "domain_interfaces": {
+    "eco_genetic_to_interaction_payoff": {
+      "status": "proposed conceptual interface",
+      "mapping": "future-relevant relational ecological state S_rel(t) may condition ecological context e and therefore the measurable architecture quantities L(e), s(e), K(e), phi(e), eta(e)",
+      "direction": "state -> payoff is currently the safe primary direction",
+      "firewall": "No current same-natural-system evidence demonstrates that EGWE relational state variables generate the SCH/BALANCE/BITA/PAYOFF parameters; no validation or conclusion transfer."
     },
-    "topology": "REC, V3 and TNOA are sibling information operations, not a mandatory linear pipeline. They constrain or refine the observation map that Boundary audits; MROD acts after the surviving unresolved set is explicit.",
-    "application": {
-      "pollipi": "flower-visitation physical implementation focused on retaining a comparable primary record and target-facing candidate evidence",
-      "insepi": "physical observation-system intervention testbed focused on nuisance/observability/shared-optical failure diagnosis",
-      "rule": "PolliPi/InsePi are applications/testbeds of the observation problem, not the conceptual parents of REC/V3/TNOA/Boundary/MROD even though they were historically important in discovering those questions"
+    "eco_genetic_to_island_urban": {
+      "status": "active natural-data state-adequacy interface through EGWEE",
+      "mapping": "ask whether island/mainland/urban/history context still improves endpoint prediction after conditioning on a measured future-relevant state",
+      "firewall": "The natural-data examples test state/proxy adequacy and residual context. They do not validate the genetic-warning statistic or finite EGWE model in nature."
+    },
+    "niche_to_survey": {
+      "sequence": ["sdmr", "odsp", "eog", "acsp"],
+      "surface": "environmental coordinate admission -> multidimensional state -> compatible/reachable worlds -> bounded candidate survey patches",
+      "dependency_rule": "epistemic sequence, not automatic evidence inheritance",
+      "acsp_ceiling": "ACSP enriches held-out occurrence recovery relative to same-size random selection in its validated Japanese screening contract; candidate patch != occupancy probability != guaranteed detection != exact occupied location"
+    },
+    "sdmr_staging": {
+      "repo": "284b",
+      "current_content": "from 2.8.4",
+      "status": "staging ghost only",
+      "rule": "Do not place 284b as an independent scientific chapter until it declares its own scientific question, inherited boundary, evidence contract and claim ceiling."
     }
   },
   "contact_edges": [
-    {"from":"rec","to":"boundary","type":"identification_limit","object":"non-entered support creates distinctions the final record cannot identify"},
-    {"from":"v3","to":"boundary","type":"refinement","object":"retained side information contracts compatible worlds before identification is judged"},
-    {"from":"tnoa","to":"boundary","type":"semantic_interface","object":"preserved observation states determine which distinctions remain available to identify"},
-    {"from":"boundary","to":"mrod","type":"design_handoff","object":"surviving equivalence/identified set -> next observation choice"},
-    {"from":"tnoa","to":"pollipi","type":"operationalization","object":"target-facing process-preserving observation semantics -> flower-visitor recording design"},
-    {"from":"tnoa","to":"insepi","type":"operationalization","object":"nuisance/observability distinctions -> physical observer-failure diagnosis"},
-    {"from":"rec","to":"pollipi","type":"empirical_gate","object":"prospective same-system exposure/entry audit for REC H6"},
+    {"from":"rec","to":"boundary","type":"identification_limit","object":"missing support -> identification ceiling"},
+    {"from":"v3","to":"boundary","type":"refinement","object":"retained side information -> compatible-world contraction"},
+    {"from":"tnoa","to":"boundary","type":"semantic_interface","object":"preserved observation semantics -> distinguishable evidence states"},
+    {"from":"boundary","to":"mrod","type":"design_handoff","object":"unresolved equivalence set -> next observation"},
+    {"from":"crest","to":"ced","type":"evidence_handoff","object":"required state -> evidential licensing"},
+    {"from":"mrm","to":"boundary","type":"conceptual_interface","object":"response-relevant mechanism distinction -> observational identifiability"},
+    {"from":"boundary","to":"ced","type":"conceptual_interface","object":"identified set -> target/reportability"},
+    {"from":"tnoa","to":"pollipi","type":"operationalization","object":"target-facing semantics -> flower-visitor record design"},
+    {"from":"tnoa","to":"insepi","type":"operationalization","object":"nuisance/observability distinctions -> physical failure diagnosis"},
+    {"from":"rec","to":"pollipi","type":"empirical_gate","object":"same-system exposure/entry audit"},
     {"from":"bita","to":"boundary","type":"abstraction","object":"specific mechanism-allocation ambiguity -> general identification boundary"},
+    {"from":"eco-genetic-warning-extensions","to":"payoff","type":"proposed_interface","object":"relational state -> context-dependent architecture payoff"},
+    {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","object":"future-relevant-state idea -> natural-data adequacy gates"},
+    {"from":"izu-core","to":"egwee","type":"shared_substrate","object":"Honshu-Izu functional data under different questions"},
+    {"from":"egwee","to":"ced","type":"evidence_handoff","object":"natural-data adequacy -> reportability licensing"},
+    {"from":"eog","to":"acsp","type":"survey_handoff","object":"compatible/reachable worlds -> candidate patches"},
     {"from":"mrod","to":"acsp","type":"complement","object":"WHAT to measure <-> WHERE to look"},
-    {"from":"aza3","to":"acsp","type":"field_request","object":"biological sampling need -> bounded search geography"},
-    {"from":"acsp","to":"aza3","type":"field_return","object":"candidate patch -> field verification and primary-data intake"},
-    {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","object":"future-relevant-state idea -> independent natural-data adequacy gates; not external validation of the finite model"},
-    {"from":"izu-core","to":"egwee","type":"shared_substrate","object":"Honshu-Izu functional interaction data under different questions"},
-    {"from":"egwee","to":"ced","type":"evidence_handoff","object":"empirical measurement/representation adequacy before reportability licensing"},
-    {"from":"hotarubukuro","to":"izu-core","type":"shared_substrate","object":"Campanula/Izu ecological system"},
-    {"from":"sch","to":"payoff","type":"abstraction","object":"conflict/compromise payoff -> population game"},
-    {"from":"balance","to":"payoff","type":"abstraction","object":"middle-world margin -> invasion/coordination game"},
-    {"from":"bita","to":"payoff","type":"abstraction","object":"architecture gain/cost -> population game"}
+    {"from":"aza3","to":"acsp","type":"field_request","object":"sampling need -> search geography"},
+    {"from":"acsp","to":"aza3","type":"field_return","object":"candidate patch -> primary-data verification"}
   ],
   "development_history_not_current_hierarchy": [
-    "PolliPi/InsePi historically motivated parts of TNOA/V3, but current conceptual direction is theory -> application as well as application failure -> theory revision.",
-    "TNOA historically preceded REC, but REC is conceptually upstream with respect to record entry.",
-    "V3 is not fixed between REC and TNOA; it is a refinement operator that can act wherever retained side information exists before irreversible loss/coarsening."
+    "PolliPi/InsePi historically motivated TNOA/V3 questions, but conceptual hierarchy now places the general observation theory upstream of those visitation applications.",
+    "TNOA historically preceded REC, but REC is upstream with respect to record entry.",
+    "V3 is a refinement operator and is not fixed between REC and TNOA.",
+    "284b is provenance from SDMR v2.8.4 only, not a scientific successor until promoted by an explicit contract."
   ],
   "portfolio_cycle": [
-    "encounter a real biological/measurement distinction",
-    "abstract the relevant state/observation/interaction/world object",
-    "derive a boundary, theorem, or design rule",
-    "project it back into a measurable natural or physical system",
-    "treat failure, non-identifiability and residual structure as new scientific information",
-    "revise the theoretical representation without erasing provenance"
+    "encounter a real biological, data or measurement distinction",
+    "abstract the relevant ecological world/state/observation/payoff object",
+    "derive a boundary, theorem or design rule",
+    "identify where that object can be measured in a natural or physical system",
+    "treat failure, non-identifiability, adverse transport and residual context as scientific information",
+    "revise the representation and return to field without erasing provenance"
   ]
 }
