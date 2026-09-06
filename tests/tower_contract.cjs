@@ -2,7 +2,9 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const context={window:{}};
 vm.runInNewContext(fs.readFileSync('tower-data.js','utf8'),context);
+vm.runInNewContext(fs.readFileSync('tower-echo-data.js','utf8'),context);
 const d=JSON.parse(JSON.stringify(context.window.ZUIZUI_TOWER));
+const echoes=JSON.parse(JSON.stringify(context.window.ZUIZUI_TOWER_ECHOES));
 const ontology=JSON.parse(fs.readFileSync('tower-ontology-audit.json','utf8'));
 const closure=JSON.parse(fs.readFileSync('tower-closure-audit.json','utf8'));
 assert.equal(ontology.schema,'zuizui.tower_ontology.v1');
@@ -21,7 +23,7 @@ assert.equal(d.repos.length,34);
 assert.equal(d.floors.length,5);
 assert.equal(d.motifs.length,5);
 assert.equal(d.contacts.length,17);
-const contacts=new Set(d.contacts.map(c=>c.id));
+const contacts=new Map(d.contacts.map(c=>[c.id,c]));
 assert.equal(contacts.size,d.contacts.length);
 for(const r of d.repos)assert(r[1]>=0&&r[1]<5);
 for(const c of d.contacts){
@@ -35,9 +37,20 @@ for(const m of d.motifs){
   for(const id of m.repos)assert(ids.has(id));
   for(const id of m.contacts)assert(contacts.has(id));
 }
-assert.deepEqual(new Set(d.motifs.flatMap(m=>m.contacts)),contacts);
+assert.deepEqual(new Set(d.motifs.flatMap(m=>m.contacts)),new Set(contacts.keys()));
+const repoFloor=new Map(d.repos.map(r=>[r[0],r[1]])),motifs=new Set(d.motifs.map(m=>m.id));
+assert.equal(echoes.length,5);
+assert.equal(new Set(echoes.map(e=>e.id)).size,echoes.length);
+for(const e of echoes){
+  assert(ids.has(e.from)&&ids.has(e.to));
+  assert.notEqual(repoFloor.get(e.from),repoFloor.get(e.to),'echoes must recur across floors');
+  assert(motifs.has(e.unlock));
+  const c=contacts.get(e.contact);assert(c,e.contact);
+  assert(c.from.includes(e.from),`${e.id} source must already exist in typed contact`);
+  assert(c.to.includes(e.to),`${e.id} target must already exist in typed contact`);
+}
 assert(d.repos.find(r=>r[0]==='284b')[4].includes('relation-check'));
-assert.equal(d.contacts.find(c=>c.id==='state-payoff').status,'proposed');
-assert.equal(d.contacts.find(c=>c.id==='field-return').status,'open');
+assert.equal(contacts.get('state-payoff').status,'proposed');
+assert.equal(contacts.get('field-return').status,'open');
 assert(!fs.readFileSync('index.html','utf8').includes('src="world-game'));
-console.log('Tower contract: 34 entrances, 5 motifs, 17 typed contacts, current ontology + closure ledgers; boundaries preserved.');
+console.log('Tower contract: 34 entrances, 5 motifs, 17 typed contacts, 5 cross-floor rune recurrences; no invented edges.');
