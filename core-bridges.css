@@ -1,0 +1,13 @@
+.portal-ecogenetic{color:#cf9f72}
+.cross-core-layer{opacity:.98}
+.core-bridge{fill:none;stroke:#d9d0aa;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;opacity:.62;filter:drop-shadow(0 0 4px rgba(217,208,170,.28));transition:opacity .2s ease,stroke-width .2s ease}
+.core-bridge.shared{stroke-dasharray:2 7}
+.core-bridge.epistemic{stroke-dasharray:8 6}
+.core-bridge.abstraction{stroke-dasharray:3 5}
+.core-bridge.complement,.core-bridge.information{stroke-dasharray:none}
+.core-bridge-hit{fill:none;stroke:transparent;stroke-width:18;pointer-events:stroke}
+.core-bridge-group{pointer-events:stroke;cursor:help}
+.core-bridge-group:hover .core-bridge{opacity:1;stroke-width:3}
+.core-bridge-symbol{fill:#e4dfcf;stroke:#08090c;stroke-width:4;paint-order:stroke;stroke-linejoin:round;font:600 14px ui-monospace,SFMono-Regular,Consolas,monospace;text-anchor:middle;dominant-baseline:middle;opacity:.92;pointer-events:none}
+.core-junction{fill:#d9d0aa;opacity:.72;filter:drop-shadow(0 0 4px rgba(217,208,170,.4))}
+@media (max-width:720px){.core-bridge{stroke-width:2.8;opacity:.72}.core-bridge-symbol{font-size:16px}}
