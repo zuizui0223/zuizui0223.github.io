@@ -1,1 +1,78 @@
-{"checked_at":"2026-09-06","scope":"Canonical typed relationship graph for 33 active scientific repositories. Evidence ownership remains repository-local; V3 and PAYOFF are newly audited active nodes.","relation_types":{"handoff":"later project starts from a bounded object/question/receipt left by earlier project","epistemic":"ordered scientific questions without software/data dependency or retroactive validation","abstraction":"specific scientific problem or object is lifted to a more general theory/method","provenance":"developmental ancestry/origin relation, not current scientific dependence","complement":"projects solve complementary parts of a larger task without evidence transfer","component":"parallel companion supplies one declared obligation to a synthesis hub","information_flow":"bounded scientific/operational object passes in the stated direction","shared_substrate":"same taxon/archive/data/system under different frozen contracts; no conclusion transfer"},"vertical_programmes":[{"id":"azami","shape":"linear_handoff","nodes":["azami","EAzami","aza3"],"surface":"present phenotype -> public evolutionary history -> own-data discrimination","edges":[{"from":"azami","to":"EAzami","type":"handoff"},{"from":"EAzami","to":"aza3","type":"handoff"}]},{"id":"island","shape":"linear_handoff","nodes":["island","izu-core","shimahotarubukuro"],"surface":"WHEN/WHERE -> conditional response WHY -> focal phenotype axes","edges":[{"from":"island","to":"izu-core","type":"handoff"},{"from":"izu-core","to":"shimahotarubukuro","type":"handoff"}]},{"id":"interaction","shape":"three_world_architecture_programme","nodes":["sch","balance","bita"],"surface":"SHARED COORDINATE -> MIDDLE WORLD -> DIFFERENTIATED COORDINATES","edges":[{"from":"sch","to":"balance","type":"handoff"},{"from":"balance","to":"bita","type":"handoff"}],"firewall":"PAYOFF is a game-theoretic abstraction over these three chapter-owned payoff objects; it is not Chapter 4 and does not acquire their empirical claims."},{"id":"ecogenetic","shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"],"surface":"mechanistic finite-state parent -> relational state/warning extension","edges":[{"from":"eco-genetic-criticality","to":"eco-genetic-warning-extensions","type":"handoff"}]},{"id":"niche","shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"surface":"REPRESENT -> THICKEN -> REALIZE -> OBSERVE","edges":[{"from":"sdmr","to":"odsp","type":"epistemic"},{"from":"odsp","to":"eog","type":"epistemic"},{"from":"eog","to":"acsp","type":"epistemic"}]}],"standalone_programmes":[{"id":"state_measurement_empirical","shape":"independent_empirical_method_synthesis","nodes":["egwee"],"surface":"MEASURE -> PRESERVE -> RESIDUAL -> IDENTIFY","status":"bounded"}],"nonlinear_constellations":[{"id":"flower","shape":"complementary_arms_with_focal_origin","nodes":["fcp","chun","hotarubukuro"],"relations":[{"from":"fcp","to":"chun","type":"complement"},{"from":"hotarubukuro","to":"fcp","type":"provenance"},{"from":"hotarubukuro","to":"chun","type":"provenance"}]},{"id":"observation","shape":"branched_development_plus_reverse_relation","nodes":["pollipi","insepi","v3","rec","tnoa"],"relations":[{"from":"pollipi","to":"insepi","type":"handoff","meaning":"physical primary record -> blinded observer-system physical diagnosis"},{"from":"pollipi","to":"v3","type":"provenance","meaning":"PolliPi V3 lineage -> standalone generic reference-refinement method"},{"from":"v3","to":"rec","type":"epistemic","meaning":"retained reference information before record-entry support selection"},{"from":"rec","to":"tnoa","type":"information_flow","meaning":"exposure/entry -> entered process-preserving semantics"},{"from":"tnoa","to":"rec","type":"provenance","meaning":"Paper-1 lineage -> upstream Paper-2 counterpart"},{"from":"insepi","to":"tnoa","type":"provenance","meaning":"target/nuisance/observability side-line -> reusable semantic abstraction"}],"firewall":"V3 is not V13 succession; REC->TNOA is information flow while TNOA->REC is development lineage."},{"id":"interaction_game","shape":"cross_chapter_abstraction","nodes":["sch","balance","bita","payoff"],"relations":[{"from":"sch","to":"payoff","type":"abstraction","meaning":"shared conflict load L -> architecture payoff generator"},{"from":"balance","to":"payoff","type":"abstraction","meaning":"static middle-world margin Phi -> invasion/coordination game layer"},{"from":"bita","to":"payoff","type":"abstraction","meaning":"recoverable loss R and architecture cost K -> population architecture payoff"}],"firewall":"PAYOFF adds population frequency feedback and game dynamics; it does not validate natural frequency dependence or historical architecture transitions."},{"id":"crest_state_theory","shape":"hub","nodes":["ccoc","mltr","mrm","crest","ced","theouni"],"relations":[{"from":"ccoc","to":"crest","type":"component"},{"from":"mltr","to":"crest","type":"component"},{"from":"mrm","to":"crest","type":"component"},{"from":"crest","to":"ced","type":"handoff"}],"meta":{"repo":"theouni","role":"meta-theory/admission/portfolio registry"}}],"horizontal_bridges":[{"from":"bita","to":"boundary","type":"abstraction","meaning":"specific mechanism-allocation identified set -> general mechanistic identification boundary"},{"from":"boundary","to":"mrod","type":"epistemic","meaning":"what can be identified -> which next observation reduces remaining ambiguity"},{"from":"eco-genetic-warning-extensions","to":"egwee","type":"provenance","meaning":"natural-data four-gate programme migration"}],"cross_program_operational_bridges":[{"id":"aza3-acsp","nodes":["aza3","acsp"],"surface":"WHAT to sample <-> WHERE to look","relations":[{"from":"aza3","to":"acsp","type":"information_flow"},{"from":"acsp","to":"aza3","type":"information_flow"}]}],"ecosystem_system":{"id":"research-ecosystem-system-v1","audit":"ecosystem-system-audit.json","evidence_partition_audit":"evidence-partition-audit.json","surface":"VARIATION <-> STATE <-> RECORD <-> INFERENCE <-> NEXT OBSERVATION <-> FIELD RETURN","rule":"All 33 active scientific repositories belong to one ecological research system, but connection never transfers ownership."},"lens_only_no_edge":[{"repos":["mrod","ced"],"shared":"observation design","difference":"mechanism-learning utility != target-report licensing"},{"repos":["v3","rec","tnoa"],"shared":"information retention around observation","difference":"reference refinement != record entry != post-entry semantics"},{"repos":["balance","eco-genetic-criticality","crest"],"shared":"regime/state boundaries","difference":"trait-architecture middle world != finite eco-genetic criticality != general required-state theory"},{"repos":["payoff","crest"],"shared":"formal state/action dynamics","difference":"evolutionary architecture game != contract-relative state theory"}],"philosophy_path":{"surface":"origin -> record -> boundary -> next observation -> empirical return -> forgetting -> pass forward","scientific_dependency":false}}
+{
+  "checked_at": "2026-09-06",
+  "scope": "Canonical typed relationship graph for 33 active scientific repositories, reorganized around theory-world / real-world interfaces. Evidence ownership remains repository-local.",
+  "theory_reality_audit": "theory-reality-audit.json",
+  "relation_types": {
+    "handoff": "later project starts from a bounded object/question/receipt left by earlier project",
+    "epistemic": "ordered scientific questions without automatic evidence transfer",
+    "abstraction": "a specific problem/object is lifted to a more general theory/method",
+    "provenance": "developmental ancestry/origin, not current conceptual hierarchy",
+    "complement": "projects solve complementary parts of a larger task",
+    "component": "parallel companion supplies one declared obligation to a synthesis hub",
+    "information_flow": "bounded scientific/operational object passes in the stated direction",
+    "shared_substrate": "same taxon/archive/data/system under different frozen contracts",
+    "operationalization": "a theoretical distinction is instantiated in a physical/empirical design",
+    "empirical_projection": "a theory-motivated object is tested as an empirical measurement/gate without claiming validation of the source theory",
+    "field_return": "a design/search object returns to primary-data collection"
+  },
+  "vertical_programmes": [
+    {"id":"azami","shape":"linear_handoff","nodes":["azami","EAzami","aza3"],"surface":"present phenotype -> public evolutionary history -> own-data discrimination"},
+    {"id":"island","shape":"linear_handoff","nodes":["island","izu-core","shimahotarubukuro"],"surface":"WHEN/WHERE -> conditional response WHY -> focal phenotype axes"},
+    {"id":"interaction","shape":"three_world_architecture_programme","nodes":["sch","balance","bita"],"surface":"SHARED COORDINATE -> MIDDLE WORLD -> DIFFERENTIATED COORDINATES","abstraction":"payoff","firewall":"PAYOFF is a population-game lift, not Chapter 4."},
+    {"id":"ecogenetic","shape":"parent_extension","nodes":["eco-genetic-criticality","eco-genetic-warning-extensions"],"surface":"finite eco-genetic state -> relational future-state / warning validity"},
+    {"id":"niche","shape":"epistemic_sequence","nodes":["sdmr","odsp","eog","acsp"],"surface":"REPRESENT -> THICKEN -> REALIZE -> OBSERVE"}
+  ],
+  "reality_programmes": [
+    {"id":"flower","shape":"complementary_empirical_arms","nodes":["hotarubukuro","fcp","chun"]},
+    {"id":"physical_observation","shape":"application_testbed","nodes":["pollipi","insepi"],"surface":"PRIMARY FLOWER-VISITOR RECORD -> PHYSICAL OBSERVER DIAGNOSIS"},
+    {"id":"natural_state_gate","shape":"empirical_interface","nodes":["egwee"],"surface":"MEASURE -> PRESERVE -> RESIDUAL -> IDENTIFY"}
+  ],
+  "theory_constellations": [
+    {
+      "id":"observability_identification_design",
+      "shape":"sibling_information_operations_to_boundary_to_design",
+      "nodes":["rec","v3","tnoa","boundary","mrod"],
+      "surface":"MISSING SUPPORT / RETAINED REFINEMENT / SEMANTIC PRESERVATION -> IDENTIFICATION BOUNDARY -> NEXT OBSERVATION",
+      "relations":[
+        {"from":"rec","to":"boundary","type":"epistemic","meaning":"non-entered support creates an identification ceiling"},
+        {"from":"v3","to":"boundary","type":"epistemic","meaning":"retained side information can contract compatible worlds"},
+        {"from":"tnoa","to":"boundary","type":"epistemic","meaning":"preserved observation semantics determine which distinctions survive"},
+        {"from":"boundary","to":"mrod","type":"handoff","meaning":"remaining equivalence/identified set -> next observation design"}
+      ],
+      "firewall":"REC, V3 and TNOA are sibling information operations, not a mandatory literal sequence."
+    },
+    {"id":"crest_state_theory","shape":"hub","nodes":["ccoc","mltr","mrm","crest","ced","theouni"],"relations":[{"from":"ccoc","to":"crest","type":"component"},{"from":"mltr","to":"crest","type":"component"},{"from":"mrm","to":"crest","type":"component"},{"from":"crest","to":"ced","type":"handoff"}],"meta":{"repo":"theouni","role":"meta-theory/admission/portfolio registry"}},
+    {"id":"interaction_game","shape":"cross_chapter_abstraction","nodes":["sch","balance","bita","payoff"],"relations":[{"from":"sch","to":"payoff","type":"abstraction"},{"from":"balance","to":"payoff","type":"abstraction"},{"from":"bita","to":"payoff","type":"abstraction"}]}
+  ],
+  "theory_reality_contacts": [
+    {"from":"tnoa","to":"pollipi","type":"operationalization","meaning":"target-facing process-preserving semantics -> flower-visitor recording design"},
+    {"from":"tnoa","to":"insepi","type":"operationalization","meaning":"nuisance/observability distinctions -> physical observer-failure diagnosis"},
+    {"from":"rec","to":"pollipi","type":"empirical_projection","meaning":"prospective same-system exposure/record-entry audit"},
+    {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","meaning":"future-relevant-state idea -> independent natural-data adequacy gates; not validation of the finite model"},
+    {"from":"egwee","to":"ced","type":"epistemic","meaning":"empirical measurement/representation adequacy before reportability licensing"},
+    {"from":"aza3","to":"acsp","type":"information_flow","meaning":"biological sampling need -> bounded search geography"},
+    {"from":"acsp","to":"aza3","type":"field_return","meaning":"candidate patch -> field verification / primary-data intake"},
+    {"from":"bita","to":"boundary","type":"abstraction","meaning":"specific mechanism-allocation ambiguity -> general identification boundary"}
+  ],
+  "cross_program_relations": [
+    {"from":"hotarubukuro","to":"izu-core","type":"shared_substrate","meaning":"Campanula/Izu ecological system"},
+    {"from":"izu-core","to":"egwee","type":"shared_substrate","meaning":"Honshu-Izu functional interaction data under different frozen questions"},
+    {"from":"mrod","to":"acsp","type":"complement","meaning":"WHAT to measure <-> WHERE to look"}
+  ],
+  "development_history_not_current_hierarchy": [
+    "PolliPi/InsePi historically motivated TNOA/V3 questions, but are currently physical applications/testbeds beneath the general observation theory.",
+    "TNOA historically preceded REC, but REC is conceptually upstream with respect to record entry.",
+    "V3 is not a fixed stage between REC and TNOA; it is a refinement operator wherever retained side information exists before irreversible loss/coarsening."
+  ],
+  "ecosystem_system": {
+    "audit":"ecosystem-system-audit.json",
+    "surface":"REALITY <-> OBSERVATION <-> DISTINCTIONS <-> IDENTIFICATION <-> DESIGN <-> REALITY",
+    "rule":"connection != ownership; empirical projection != validation"
+  },
+  "lens_only_no_edge": [
+    {"repos":["rec","v3","tnoa"],"shared":"observation information","difference":"missing support != retained refinement != semantic preservation"},
+    {"repos":["mrod","acsp"],"shared":"next observation","difference":"WHAT to measure != WHERE to look"},
+    {"repos":["eco-genetic-warning-extensions","egwee"],"shared":"future-relevant empirical state","difference":"finite-model state result != natural-data state/proxy adequacy"},
+    {"repos":["balance","eco-genetic-criticality","crest"],"shared":"state/regime boundary language","difference":"distinct scientific objects and contracts"}
+  ]
+}
