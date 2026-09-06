@@ -45,7 +45,7 @@ jobs:
           python -m json.tool tnoa-rec-audit.json >/dev/null
           python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
           python -m json.tool ecosystem-system-audit.json >/dev/null
-      - name: Canonical graph, TMOP and theory-reality semantics
+      - name: Canonical layered semantics
         run: |
           python - <<'PY'
           import json
@@ -69,11 +69,22 @@ jobs:
           assert vertical['interaction']['nodes'] == ['sch','balance','bita']
           assert vertical['niche']['nodes'] == ['sdmr','odsp','eog','acsp']
           assert theory['observability_identification_design']['nodes'] == ['rec','v3','tnoa','boundary','mrod']
+          assert theory['crest_state_theory']['nodes'] == ['ccoc','mltr','mrm','crest','ced','theouni']
           assert reality['physical_observation']['nodes'] == ['pollipi','insepi']
           assert reality['natural_state_gate']['nodes'] == ['egwee']
-          assert tr['observation_architecture']['topology'].startswith('REC, V3 and TNOA are sibling')
-          assert tr['observation_architecture']['application']['pollipi'].startswith('flower-visitation physical implementation')
-          assert tr['observation_architecture']['application']['insepi'].startswith('physical observation-system intervention')
+
+          assert tr['schema'] == 'zuizui.theory_reality_interface.v2'
+          assert tr['identity']['surface'] == 'WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD'
+          assert tr['layers']['world_required_state']['hub'] == 'crest'
+          assert tr['layers']['access_identification_reporting']['observation_operations'] == ['rec','v3','tnoa']
+          assert tr['layers']['access_identification_reporting']['identification'] == ['boundary']
+          assert tr['layers']['access_identification_reporting']['design'] == ['mrod']
+          assert tr['layers']['access_identification_reporting']['evidence_reporting'] == ['ced']
+          assert tr['domain_interfaces']['niche_to_survey']['sequence'] == ['sdmr','odsp','eog','acsp']
+          assert tr['domain_interfaces']['sdmr_staging']['repo'] == '284b'
+          assert tr['domain_interfaces']['sdmr_staging']['status'] == 'staging ghost only'
+          assert tr['domain_interfaces']['eco_genetic_to_interaction_payoff']['status'] == 'proposed conceptual interface'
+          assert 'not warning' in tr['domain_interfaces']['eco_genetic_to_island_urban']['firewall'].lower()
 
           assert repo['repository_inventory']['owner_total'] == 35
           assert repo['repository_inventory']['scientific_active'] == 33
@@ -82,12 +93,16 @@ jobs:
           assert active['v3']['display_status'] == 'bounded'
           assert active['payoff']['display_status'] == 'result'
           assert classification['counts'] == {'scientific_active':33,'meta_registry':1,'staging_unclassified':1}
+
+          assert ecosystem['id'] == 'research-ecosystem-system-v3'
           assert len(ecosystem['node_roles']) == 33
-          assert ecosystem['observation_theory']['siblings'] == ['rec','v3','tnoa']
-          assert ecosystem['observation_theory']['applications'] == ['pollipi','insepi']
+          assert ecosystem['layers']['world_required_state'] == ['ccoc','mltr','mrm','crest','theouni']
+          assert ecosystem['layers']['contact'] == ['egwee','acsp','pollipi','insepi']
+          assert ecosystem['staging']['284b']['scientific_active'] is False
+          assert 'guaranteed detection' in ecosystem['node_roles']['acsp']
+
           assert interaction['programme']['path'] == ['sch','balance','bita']
           assert interaction['programme']['abstraction'] == 'payoff'
-
           assert evidence['set_counts'] == {'theory_simulation':21,'methods':13,'public_data':16,'own_new_data':7}
           assert tmop['schema'] == 'zuizui.tmop.v1'
           assert tmop['categories']['T'] == {'label':'Theory','count':21}
@@ -95,8 +110,10 @@ jobs:
           assert tmop['categories']['O'] == {'label':'Open data','count':16}
           assert tmop['categories']['P'] == {'label':'Primary data','count':7}
           assert len(tmop['entries']) == 33
+
           assert view['repository_inventory']['scientific_active'] == 33
-          assert view['identity']['surface'] == 'THEORY WORLDS <-> CONTACT <-> REAL WORLDS'
+          assert view['identity']['surface'] == 'WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD'
+          assert view['staging_boundary']['repo'] == '284b'
           assert view['phd_path']['scientific_dependency'] is False
 
           niche_by_repo = {x['repo']: x for x in niche['chapters']}
@@ -104,23 +121,30 @@ jobs:
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
-      - name: Homepage interface guards
+      - name: Homepage layered-interface guards
         run: |
           grep -q 'portfolio-latest.js?v=20260905a' index.html
           grep -q 'tmop.js?v=20260906b' portfolio-latest.js
-          grep -q 'theory-reality.js?v=20260906a' portfolio-latest.js
-          grep -q 'core-bridges.css?v=20260906g' portfolio-latest.js
-          grep -q 'core-bridges.js?v=20260906g' portfolio-latest.js
-          grep -q 'data.stories.observation' theory-reality.js
-          grep -q 'nodes:\["rec","v3","tnoa","boundary","mrod"\]' theory-reality.js
-          grep -q 'nodes:\["pollipi","insepi"\]' theory-reality.js
-          grep -q 'delete data.stories.method' theory-reality.js
-          grep -q 'THEORY ⇄ REALITY' core-bridges.js
-          grep -q 'FIELD OBS' core-bridges.js
-          grep -q 'OBSERVABILITY' core-bridges.js
-          grep -q 'thick = theory-real contact' core-bridges.js
+          grep -q 'theory-reality.js?v=20260906b' portfolio-latest.js
+          grep -q 'core-bridges.css?v=20260906h' portfolio-latest.js
+          grep -q 'core-bridges.js?v=20260906h' portfolio-latest.js
+          grep -Fq 'data.stories.state' theory-reality.js
+          grep -Fq 'data.stories.observation' theory-reality.js
+          grep -Fq 'data.stories.identify' theory-reality.js
+          grep -Fq 'data.stories.design' theory-reality.js
+          grep -Fq 'data.stories.evidence' theory-reality.js
+          grep -Fq 'data.stories.survey' theory-reality.js
+          grep -Fq 'proposed_interface' theory-reality.js
+          grep -Fq 'WORLD / STATE' core-bridges.js
+          grep -Fq 'ACCESS' core-bridges.js
+          grep -Fq 'DOMAIN THEORY' core-bridges.js
+          grep -Fq 'CONTACT' core-bridges.js
+          grep -Fq 'REAL SYSTEMS' core-bridges.js
+          grep -Fq '284b · staging from SDMR 2.8.4' core-bridges.js
+          grep -Fq 'state → payoff  (proposed)' core-bridges.js
+          grep -Fq 'candidate patches ≠ occupancy' core-bridges.js
           grep -q 'theory-reality-audit.json' README.md
-          grep -q 'TNOA -> PolliPi/InsePi' viewpoint-audit.json
+          grep -q 'candidate patch ≠ occupancy' README.md
           test -f theory-reality-audit.json
           test -f core-bridges.css
           test -f tmop-audit.json
