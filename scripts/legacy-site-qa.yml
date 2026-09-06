@@ -1,0 +1,187 @@
+name: site graph qa
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript syntax
+        run: |
+          node --check data.js
+          node --check philosophy-data.js
+          node --check thoughts.js
+          node --check interaction-series.js
+          node --check niche-program.js
+          node --check odsp-homepage-update.js
+          node --check mechanism-split.js
+          node --check aza3-acsp-bridge.js
+          node --check portfolio-latest.js
+          node --check portfolio-20260905.js
+          node --check portfolio-20260906.js
+          node --check tmop.js
+          node --check theory-reality.js
+          node --check core-bridges.js
+          node --check world-game.js
+          node --check world-game-corrections.js
+          node --check app.js
+          node --check philosophy-ui.js
+      - name: Audit JSON syntax
+        run: |
+          python -m json.tool repo-audit.json >/dev/null
+          python -m json.tool repository-classification-audit.json >/dev/null
+          python -m json.tool evidence-partition-audit.json >/dev/null
+          python -m json.tool tmop-audit.json >/dev/null
+          python -m json.tool theory-reality-audit.json >/dev/null
+          python -m json.tool world-ontology-audit.json >/dev/null
+          python -m json.tool puzzle-closure-audit.json >/dev/null
+          python -m json.tool portfolio-graph-audit.json >/dev/null
+          python -m json.tool viewpoint-audit.json >/dev/null
+          python -m json.tool niche-program-audit.json >/dev/null
+          python -m json.tool interaction-audit.json >/dev/null
+          python -m json.tool tnoa-rec-audit.json >/dev/null
+          python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
+          python -m json.tool ecosystem-system-audit.json >/dev/null
+      - name: Canonical layered semantics
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          graph = json.loads(Path('portfolio-graph-audit.json').read_text())
+          view = json.loads(Path('viewpoint-audit.json').read_text())
+          repo = json.loads(Path('repo-audit.json').read_text())
+          classification = json.loads(Path('repository-classification-audit.json').read_text())
+          ecosystem = json.loads(Path('ecosystem-system-audit.json').read_text())
+          interaction = json.loads(Path('interaction-audit.json').read_text())
+          evidence = json.loads(Path('evidence-partition-audit.json').read_text())
+          tmop = json.loads(Path('tmop-audit.json').read_text())
+          tr = json.loads(Path('theory-reality-audit.json').read_text())
+          wo = json.loads(Path('world-ontology-audit.json').read_text())
+          puzzle = json.loads(Path('puzzle-closure-audit.json').read_text())
+          niche = json.loads(Path('niche-program-audit.json').read_text())
+
+          vertical = {x['id']: x for x in graph['vertical_programmes']}
+          theory = {x['id']: x for x in graph['theory_constellations']}
+          reality = {x['id']: x for x in graph['reality_programmes']}
+
+          assert vertical['interaction']['nodes'] == ['sch','balance','bita']
+          assert vertical['niche']['nodes'] == ['sdmr','odsp','eog','acsp']
+          assert theory['observability_identification_design']['nodes'] == ['rec','v3','tnoa','boundary','mrod']
+          assert theory['crest_state_theory']['nodes'] == ['ccoc','mltr','mrm','crest','ced','theouni']
+          assert reality['physical_observation']['nodes'] == ['pollipi','insepi']
+          assert reality['natural_state_gate']['nodes'] == ['egwee']
+
+          assert tr['schema'] == 'zuizui.theory_reality_interface.v2'
+          assert tr['identity']['surface'] == 'WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD'
+          assert tr['layers']['world_required_state']['hub'] == 'crest'
+          assert tr['layers']['access_identification_reporting']['observation_operations'] == ['rec','v3','tnoa']
+          assert tr['layers']['access_identification_reporting']['identification'] == ['boundary']
+          assert tr['layers']['access_identification_reporting']['design'] == ['mrod']
+          assert tr['layers']['access_identification_reporting']['evidence_reporting'] == ['ced']
+          assert tr['domain_interfaces']['niche_to_survey']['sequence'] == ['sdmr','odsp','eog','acsp']
+          assert tr['domain_interfaces']['sdmr_staging']['repo'] == '284b'
+          assert tr['domain_interfaces']['sdmr_staging']['status'] == 'staging ghost only'
+          assert tr['domain_interfaces']['eco_genetic_to_interaction_payoff']['status'] == 'proposed conceptual interface'
+          assert 'not warning' in tr['domain_interfaces']['eco_genetic_to_island_urban']['firewall'].lower()
+
+          assert wo['schema'] == 'zuizui.world_ontology.v2'
+          assert wo['orthogonal_theory_axes']['state_requirement']['repositories'] == ['ccoc','mltr','mrm','crest']
+          assert wo['orthogonal_theory_axes']['observation_identification']['repositories'] == ['rec','v3','tnoa','boundary','mrod']
+          assert wo['orthogonal_theory_axes']['evidence_licensing']['repositories'] == ['ced']
+          assert wo['programme_worlds']['niche_to_survey']['repositories'] == ['sdmr','odsp','eog','acsp']
+          assert wo['sealed_fragment']['repo'] == '284b'
+          assert wo['sealed_fragment']['current_content'] == 'from 2.8.4'
+          assert len(wo['perspective_lenses']) == 5
+          locked = {x['id']:x for x in wo['candidate_locked_contacts']}
+          assert 'architecture_to_relational_state' in locked
+          assert 'mrm_to_mrod' in locked
+          assert 'acsp_field_truth' in locked
+          safe = [x for x in wo['established_contacts'] if x['from']=='eco-genetic-warning-extensions' and x['to']=='payoff']
+          assert len(safe) == 1
+          assert safe[0]['type'] == 'proposed_context_interface'
+          assert 'guarantee' in wo['programme_worlds']['niche_to_survey']['reality_contact']
+
+          assert puzzle['schema'] == 'zuizui.puzzle_closure.v1'
+          portal_ids = {x['id'] for x in puzzle['locked_portals']}
+          for required in ['eog_to_mrod','mrod_to_pollipi','mrod_to_insepi','ced_to_mrod','mrm_to_mrod','crest_ced_to_egwee','acsp_to_field_truth','sdmr_to_284b','egwe_to_payoff_context','payoff_architecture_to_relational_state','island_urban_state_convergence']:
+              assert required in portal_ids
+          assert puzzle['sealed_fragments'][0]['repo'] == '284b'
+          assert puzzle['closure_states'] == ['sealed','locked','proposed','solid']
+
+          assert repo['repository_inventory']['owner_total'] == 35
+          assert repo['repository_inventory']['scientific_active'] == 33
+          active = {x['repo']: x for x in repo['active']}
+          assert len(active) == 33
+          assert active['v3']['display_status'] == 'bounded'
+          assert active['payoff']['display_status'] == 'result'
+          assert classification['counts'] == {'scientific_active':33,'meta_registry':1,'staging_unclassified':1}
+
+          assert ecosystem['id'] == 'research-ecosystem-system-v3'
+          assert len(ecosystem['node_roles']) == 33
+          assert ecosystem['layers']['world_required_state'] == ['ccoc','mltr','mrm','crest','theouni']
+          assert ecosystem['layers']['contact'] == ['egwee','acsp','pollipi','insepi']
+          assert ecosystem['staging']['284b']['scientific_active'] is False
+          assert 'guaranteed detection' in ecosystem['node_roles']['acsp']
+
+          assert interaction['programme']['path'] == ['sch','balance','bita']
+          assert interaction['programme']['abstraction'] == 'payoff'
+          assert evidence['set_counts'] == {'theory_simulation':21,'methods':13,'public_data':16,'own_new_data':7}
+          assert tmop['schema'] == 'zuizui.tmop.v1'
+          assert tmop['categories']['T'] == {'label':'Theory','count':21}
+          assert tmop['categories']['M'] == {'label':'Method','count':13}
+          assert tmop['categories']['O'] == {'label':'Open data','count':16}
+          assert tmop['categories']['P'] == {'label':'Primary data','count':7}
+          assert len(tmop['entries']) == 33
+
+          assert view['repository_inventory']['scientific_active'] == 33
+          assert view['identity']['surface'] == 'WORLD -> STATE -> ACCESS -> DOMAIN -> CONTACT -> FIELD'
+          assert view['staging_boundary']['repo'] == '284b'
+          assert view['phd_path']['scientific_dependency'] is False
+
+          niche_by_repo = {x['repo']: x for x in niche['chapters']}
+          assert 'scientifically closed' in niche_by_repo['odsp']['current_state']
+          assert niche['staging']['repo'] == '284b'
+          assert 'guaranteed' in niche['chapters'][3]['claim_firewall']
+          assert not Path('microdonta-role.js').exists()
+          assert not Path('microdonta-role.css').exists()
+          PY
+      - name: Homepage perspective-puzzle guards
+        run: |
+          grep -q 'portfolio-latest.js?v=20260905a' index.html
+          grep -q 'tmop.js?v=20260906b' portfolio-latest.js
+          grep -q 'theory-reality.js?v=20260906b' portfolio-latest.js
+          grep -q 'core-bridges.css?v=20260906h' portfolio-latest.js
+          grep -q 'core-bridges.js?v=20260906h' portfolio-latest.js
+          grep -q 'world-game.css?v=20260906a' portfolio-latest.js
+          grep -q 'world-game.js?v=20260906a' portfolio-latest.js
+          grep -q 'world-game-corrections.js?v=20260906a' portfolio-latest.js
+          grep -Fq 'Ω WORLD' world-game.js
+          grep -Fq '◎ OBSERVE' world-game.js
+          grep -Fq '◇ STATE' world-game.js
+          grep -Fq '⌖ FIELD' world-game.js
+          grep -Fq '⋈ EVOLVE' world-game.js
+          grep -Fq 'candidate ≠ certainty' world-game.js
+          grep -Fq '284b' world-game.js
+          grep -Fq 'state → payoff  (proposed)' world-game-corrections.js
+          grep -Fq 'target design ≠ mechanism design' world-game-corrections.js
+          grep -Fq '接点を見つける' world-game-corrections.js
+          grep -q 'world-ontology-audit.json' README.md
+          grep -q 'puzzle-closure-audit.json' README.md
+          grep -q 'candidate patch ≠ occupancy' README.md
+          test -f theory-reality-audit.json
+          test -f world-ontology-audit.json
+          test -f puzzle-closure-audit.json
+          test -f world-game.css
+          test -f world-game.js
+          test -f world-game-corrections.js
+          test -f core-bridges.css
+          test -f tmop-audit.json
+          ! grep -q 'microdonta-role' index.html

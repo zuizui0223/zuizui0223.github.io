@@ -1,93 +1,78 @@
-# Research Worldlines
+# zuizui — one tower, five languages
 
-`zuizui0223` の **33 active scientific repositories** を一つの research system として表示する静的サイトです。inventory は **35 total = 33 scientific + 1 meta + 1 staging (`284b`)**。
+The homepage is one persistent 3D building, not a set of interchangeable maps.
+Scroll to ascend. Drag horizontally to rotate. Align two fragments and touch the
+seal. Five discoveries reveal a return to the field, not a claim that every
+scientific problem has been solved.
 
-## Cover — perspective puzzle
+The visible surface contains the tower, small glyphs and minimal controls.
+Repository names, explanations, sources and closure conditions live in an
+optional notebook. All research remains accessible without playing.
 
-トップは一つの固定された正解図ではなく、同じ research universe を複数の視点で組み替えます。
+## Current sources of truth
 
-- **Ω WORLD** — possible/latent world → observable support → retained record → identified/compatible state → reportable target。外側ほど ontic な区別が多く、内側ほど epistemic compression が強い。
-- **◎ OBSERVE** — `REC / V3 / TNOA → Boundary → MROD`。REC/V3/TNOA は sibling information operations。PolliPi/InsePi は訪花観察への physical application/testbed。
-- **◇ STATE** — `CCOC / MLTR / MRM → CREST → CED`。未来・履歴・機構が要求する区別と、それを証拠が report できるかを分ける。この lens では CREST が conceptual depth / centre になる。
-- **⌖ FIELD** — `SDMR → ODSP → EOG → ACSP → FIELD RETURN`。environmental coordinate admission → multidimensional state → compatible/reachable worlds → bounded candidate patches。
-- **⋈ EVOLVE** — `SCH → BALANCE → BITA → PAYOFF` と `EGC → EGWE → EGWEE` の接点を見る。現在安全な conceptual direction は `EGWE state ⇢ PAYOFF context`。reverse の architecture → relational state は未閉合。
+- `tower-data.js`: 34 research doorways, five motifs, 17 typed contacts, source
+  blob identities, and claim boundaries. **Visitor discovery never changes
+  scientific status.**
+- `TOWER_AUDIT.md`: spatial semantics and the relationship re-audit.
+- `tower.js`: dependency-free XYZ geometry, camera projection, input handling
+  and discovery state. It does not replace the scientific repositories.
+- `tower.css`: responsive layout and reduced-motion treatment.
 
-つまり **inside / outside は intrinsic ではありません**。各 lens が半径の意味を宣言し、視点を変えると同じrepoが別の関係としてつながります。
+The 2026-09-06 inventory is 35 repositories including this website. The tower
+shows 33 previously classified scientific repositories plus **284b as an active
+relation-space research/development programme**, not an empty staging door.
+This inclusion is not a claim that all 34 research programmes are validated.
 
-デザイン原理は、塔の階層ごとに異なる言語を読み解き最後に相互関係を回収するタイプの puzzle と、視点変更で hidden path が成立する impossible-geometry puzzle の考え方を研究地図へ移したものです。ゲーム固有のアートやUIを複製せず、**階層・翻訳・視点変更・伏線回収**だけを研究情報設計として使います。
+## Reading the architecture
 
-### Solid / locked / sealed
+| Floor | Reading encounter | Main entrances |
+|---|---|---|
+| I | Field | flowers, thistles, islands and primary observations |
+| II | Record | PolliPi, InsePi, REC, V3, TNOA |
+| III | Compatible possibilities | Boundary, MROD, SDMR, ODSP, EOG, 284b, ACSP |
+| IV | Required distinctions | CCOC, MLTR, MRM, CREST, CED, THEOUNI |
+| V | Future and architecture | SCH, BALANCE, BITA, PAYOFF, EGC, EGWE, EGWEE |
 
-- **solid** — source repository/auditで成立している typed contact。
-- **dashed `?`** — scientifically plausible だが未閉合。クリックすると closure condition を notebook に出す。
-- **sealed** — scientific question がまだ独立していない staging。
+Floor height is an itinerary, not a ranking of truth, theory, evidence or causal
+priority. One doorway may have roles and contacts across multiple floors.
+Observation and adequate-state representations are generally maps/quotients,
+not automatically nested physical universes.
 
-したがって謎の線を装飾で追加しません。**全伏線には「何が得られれば開くか」が必要**です。`puzzle-closure-audit.json` が各 `?` の問い・開錠条件・昇格規則を保持します。
+`candidate patch ≠ occupancy ≠ guaranteed detection`.
+`empirical projection ≠ warning validation`.
+`discovery ≠ scientific closure`.
 
-## Main scientific architecture
+## Earlier map and audit snapshots
 
-```text
-WORLD / REQUIRED STATE
-CCOC · MLTR · MRM → CREST
-                     ↓
-                   CED
-                     ↑
-ACCESS / IDENTIFICATION
-REC · V3 · TNOA → Boundary → MROD
+`archive.html` preserves the former homepage. `ARCHIVE_README.md` preserves its
+former description. Their assets are retained, including `world-ontology-audit.json`
+and `puzzle-closure-audit.json`.
 
-DOMAIN WORLDS
-SCH → BALANCE → BITA → PAYOFF
-EGC → EGWE → EGWEE
-SDMR → ODSP → EOG → ACSP
+Those files are historical snapshots, **not the current classification of 284b**.
+The earlier “from 2.8.4 / empty staging” description is superseded by the actual
+relation-space design document cited in `TOWER_AUDIT.md`. Other legacy claim
+firewalls remain useful; they do not prove a cross-repository adapter exists.
 
-REAL / FIELD CONTACTS
-PolliPi · InsePi · EGWEE · ACSP · aza3 / island / flower systems
+## Test and run
+
+Serve the repository with any static web server, for example
+`python -m http.server 8000`. No build step, CDN, API key, external font or WebGL
+is required. The tower itself makes no remote data request.
+
+Browser tests:
+
+```sh
+python -m pip install playwright==1.57.0
+python -m playwright install chromium
+python tests/tower_browser_test.py
+# For an already installed browser:
+python tests/tower_browser_test.py --chromium /usr/bin/chromium
 ```
 
-中心原理：**理論世界と現実世界の接点を見つける。**
-
-### Important cross-links
-
-- `CREST → CED` and `Boundary → CED`: required state / identified set → honest reportability.
-- `MRM ⇢ Boundary → MROD`: response-relevant mechanism distinction → identifiability → next observation. MRM→MROD direct adapter is still locked.
-- `CED ? MROD`: target-resolution design と mechanism-resolution design は近いが同一ではなく、共通candidate-observation contractができるまで locked。
-- `EGWE ⇢ PAYOFF`: relational future-relevant state may condition the ecological context and architecture payoff quantities; **proposed interface, not validation**.
-- reverse `PAYOFF/BITA ⇢ EGWE`: architecture may generate interaction architecture / relational state; **locked until one common system measures architecture → relational state → future function**.
-- `EGWE → EGWEE ⇄ island/urban contexts`: natural-data state adequacy / residual context; **not genetic-warning validation**.
-- `SDMR → ODSP → EOG → ACSP`: coordinate admission → multidimensional state → compatible/reachable worlds → candidate survey patches.
-- `ACSP`: **candidate patch ≠ occupancy ≠ guaranteed detection**. Validated claim is enrichment over same-size random under the Japanese screening contract.
-- `284b`: current content is only `from 2.8.4`; displayed only as an SDMR sealed/staging fragment, not a fifth niche chapter.
-
-## TMOP
-
-- **T** — Theory
-- **M** — Method
-- **O** — Open data
-- **P** — Primary data
-
-TMOP is an evidence-mode lens only。正確な membership は `tmop-audit.json`。
-
-## Boundaries
-
-- `connection != ownership`
-- `developmental ancestry != conceptual hierarchy`
-- `required state != identified state != reportable target`
-- `empirical projection != validation`
-- `shared substrate != shared conclusion`
-- `candidate patch != occupancy`
-- `TMOP overlap != scientific dependency`
-- `perspective change != claim change`
-
-## Audit files
-
-- `repo-audit.json`
-- `repository-classification-audit.json`
-- `tmop-audit.json`
-- `world-ontology-audit.json` — world layers, lens-specific radius semantics, established/locked contacts and closure conditions
-- `puzzle-closure-audit.json` — every visible scientific `?`, its unlock condition, and sealed→locked→proposed→solid promotion rule
-- `theory-reality-audit.json`
-- `portfolio-graph-audit.json`
-- `ecosystem-system-audit.json`
-- `viewpoint-audit.json`
-- `interaction-audit.json`
-- `niche-program-audit.json`
+The browser suite exercises all five puzzles through actual controls, immutable
+world positions and claim metadata, mobile touch rotation, repository search,
+focus restoration, viewport overflow and return to the field. It is UI
+verification, not re-execution of scientific results. `tests/tower_contract.cjs`
+checks graph coverage and metadata separately. The earlier map regression guards
+are preserved under `scripts/legacy-site-qa.yml` and run against the archive.
