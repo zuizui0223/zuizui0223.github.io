@@ -4,10 +4,7 @@
   if(!data)return;
   const node=id=>data.nodes.find(n=>n.id===id);
   const patch=(id,values)=>{const n=node(id);if(n)Object.assign(n,values);return n};
-  const uniq=a=>[...new Set(a)];
 
-  // Conceptual hierarchy != development history.
-  // Observation theory is upstream; PolliPi/InsePi are physical applications/testbeds.
   data.series.observation={...(data.series.observation||{}),label:"観測可能性",color:"#63bfe0",lane:"MISSING SUPPORT / REFINEMENT / SEMANTICS → IDENTIFY → DESIGN"};
   data.series.fieldobs={label:"訪花観察実装",color:"#4fa8c9",lane:"PRIMARY RECORD → PHYSICAL DIAGNOSIS"};
   data.series.naturalstate={label:"自然データ接点",color:"#d5aa78",lane:"MEASURE → PRESERVE → RESIDUAL → IDENTIFY"};
@@ -34,7 +31,6 @@
     text:"future-relevant state の発想を自然データで測定・表現・残差のgateとして試す独立empirical interface。",
     displayPath:"THEORY ⇄ EGWEE ⇄ NATURAL DATA"
   };
-  // The old method story made BITA→Boundary→MROD look like one series.
   delete data.stories.method;
 
   const replacePairs=new Set([
@@ -45,27 +41,17 @@
   data.edges=(data.edges||[]).filter(e=>!replacePairs.has(`${e.from}|${e.to}`));
   data.edges.push(
     {from:"pollipi",to:"insepi",type:"solid",relation:"handoff",label:"primary flower-visitor record → physical observer diagnosis"},
-
-    // Sibling information operations feed the identification boundary; they are not a mandatory linear pipeline.
     {from:"rec",to:"boundary",type:"bridge",relation:"epistemic",label:"non-entered support → identification ceiling"},
     {from:"v3",to:"boundary",type:"bridge",relation:"epistemic",label:"retained side information → compatible-world refinement"},
     {from:"tnoa",to:"boundary",type:"bridge",relation:"epistemic",label:"preserved semantics → distinguishable observation states"},
     {from:"boundary",to:"mrod",type:"solid",relation:"handoff",label:"remaining equivalence set → next observation design"},
-
-    // Theory → physical visitation application/testbed.
     {from:"tnoa",to:"pollipi",type:"bridge",relation:"information_flow",label:"target-facing process-preserving semantics → flower-visitor record"},
     {from:"tnoa",to:"insepi",type:"bridge",relation:"information_flow",label:"nuisance/observability distinctions → physical diagnosis"},
     {from:"rec",to:"pollipi",type:"bridge",relation:"epistemic",label:"prospective exposure/entry audit → same-system field test"},
-
-    // Specific mechanism ambiguity → general identification theory.
     {from:"bita",to:"boundary",type:"bridge",relation:"abstraction",label:"specific mechanism-allocation ambiguity → general identification boundary"},
-
-    // WHAT / WHERE and field return.
     {from:"mrod",to:"acsp",type:"bridge",relation:"complement",label:"WHAT to measure ↔ WHERE to look"},
     {from:"aza3",to:"acsp",type:"bridge",relation:"information_flow",label:"biological sampling need → bounded search geography"},
     {from:"acsp",to:"aza3",type:"bridge",relation:"information_flow",label:"candidate patch → field verification / primary-data intake"},
-
-    // Theory ↔ natural-data interfaces; no finite-model validation is implied.
     {from:"eco-genetic-warning-extensions",to:"egwee",type:"bridge",relation:"epistemic",label:"future-relevant-state idea → natural-data adequacy gates (projection, not validation)"},
     {from:"izu-core",to:"egwee",type:"bridge",relation:"shared_substrate",label:"Honshu–Izu functional data · different frozen questions"},
     {from:"egwee",to:"ced",type:"bridge",relation:"epistemic",label:"empirical state/proxy adequacy → reportability licensing"}
@@ -83,4 +69,11 @@
     theory:["observation","theory","interaction","niche","ecogenetic"],
     reality:["fieldobs","naturalstate","flower","island","azami"]
   };
+
+  const philosophy=document.querySelector(".philosophy-core p");
+  if(philosophy)philosophy.innerHTML="理論世界と現実世界の、<br />接点を見つける。";
+  const tail=document.querySelector(".philosophy-tail");
+  if(tail)tail.textContent="抽象化　／　測る　／　戻す";
+  const ending=document.querySelector(".ending small");
+  if(ending)ending.textContent="接点の設計";
 })();
