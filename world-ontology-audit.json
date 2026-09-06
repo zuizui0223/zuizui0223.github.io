@@ -51,7 +51,7 @@
       "repositories":["sdmr","odsp","eog","acsp"],
       "path":"admit environmental coordinates -> recover added niche axes -> reconstruct compatible/reachable worlds -> return bounded candidate patches",
       "world_role":"representation/world reconstruction corridor",
-      "reality_contact":"ACSP candidate patches; candidate patch != occupancy or exact site"
+      "reality_contact":"ACSP candidate patches; candidate patch != occupancy or exact site and does not guarantee detection"
     },
     "empirical_evolution": {
       "repositories":["hotarubukuro","fcp","chun","azami","EAzami","aza3","island","izu-core","shimahotarubukuro"],
@@ -107,7 +107,7 @@
     {"from":"sdmr","to":"odsp","type":"representation_deepening"},
     {"from":"odsp","to":"eog","type":"possible_world_expansion"},
     {"from":"eog","to":"acsp","type":"field_return"},
-    {"from":"acsp","to":"aza3/field","type":"candidate_patch","meaning":"where to look next; not guaranteed occupancy"},
+    {"from":"acsp","to":"aza3/field","type":"candidate_patch","meaning":"where to look next; not guaranteed occupancy or detection"},
     {"from":"eco-genetic-warning-extensions","to":"payoff","type":"proposed_context_interface","meaning":"future-relevant relational state may condition ecological context e and therefore architecture payoff quantities L(e), s(e), K(e), phi(e), eta(e); conceptual interface only"},
     {"from":"eco-genetic-warning-extensions","to":"egwee","type":"empirical_projection","meaning":"candidate future-relevant-state logic -> natural-data adequacy gates; not validation of finite simulator"},
     {"from":"island/izu-core","to":"eco-genetic-warning-extensions/egwee","type":"natural_regime_contact","meaning":"island systems are one contrasting route through the state-convergence test"},
@@ -117,7 +117,7 @@
     {"id":"architecture_to_relational_state","from":"sch/balance/bita/payoff","to":"eco-genetic-criticality/eco-genetic-warning-extensions","meaning":"reverse direction: architecture differentiation may generate interaction architecture and therefore alter relational eco-genetic state","closure_condition":"one common model or natural system must measure architecture state -> interaction/relational state -> future function on a matched scale; no current claim transfer"},
     {"id":"mrm_to_mrod","from":"mrm","to":"mrod","meaning":"idealized mechanism-discrimination burden -> practical sequential observation choice","closure_condition":"explicit adapter showing how MRM response signatures/costs map into MROD admissible regions/candidate observations"},
     {"id":"crest_to_natural_state","from":"crest/ced","to":"egwee/field systems","meaning":"required state and reportability -> empirical measurement contract","closure_condition":"natural system where candidate state, observation contract and held-out future endpoint are synchronized"},
-    {"id":"acsp_field_truth","from":"acsp","to":"field survey","meaning":"candidate patches -> new primary data","closure_condition":"prospective surveys with explicit detectability/effort denominator; success is enrichment, not guaranteed presence"},
+    {"id":"acsp_field_truth","from":"acsp","to":"field survey","meaning":"candidate patches -> new primary data","closure_condition":"prospective surveys with explicit detectability/effort denominator; success is enrichment, not guaranteed presence or detection"},
     {"id":"observation_same_system","from":"rec/tnoa/mrod","to":"pollipi/insepi","meaning":"one physical system closes missing support, semantic ambiguity and next-observation design","closure_condition":"prospective same-system exposure truth + frozen calibration + held-out scoring; REC H6 and InsePi V13 remain open"}
   ],
   "sealed_fragment": {
