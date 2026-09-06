@@ -113,13 +113,13 @@ jobs:
           grep -q 'data-view="tmop"' tmop.js
           grep -q '>TMOP<' tmop.js
           grep -q 'tmop-audit.json' tmop.js
-          grep -q 'data-core-bridge="flower-island"' core-bridges.js
-          grep -q 'data-core-bridge="island-ecogenetic"' core-bridges.js
-          grep -q 'data-core-bridge="observation-ecogenetic"' core-bridges.js
-          grep -q 'data-core-bridge="ecogenetic-theory"' core-bridges.js
-          grep -q 'data-core-bridge="interaction-method"' core-bridges.js
-          grep -q 'data-core-bridge="method-niche"' core-bridges.js
-          grep -q 'data-core-bridge="niche-azami"' core-bridges.js
+          grep -q 'id:"flower-island"' core-bridges.js
+          grep -q 'id:"island-ecogenetic"' core-bridges.js
+          grep -q 'id:"observation-ecogenetic"' core-bridges.js
+          grep -q 'id:"ecogenetic-theory"' core-bridges.js
+          grep -q 'id:"interaction-method"' core-bridges.js
+          grep -q 'id:"method-niche"' core-bridges.js
+          grep -q 'id:"niche-azami"' core-bridges.js
           grep -q 'data-portal="ecogenetic"' core-bridges.js
           test -f core-bridges.css
           test -f evidence-partition.css
