@@ -1,16 +1,44 @@
 .portal-ecogenetic{color:#cf9f72}
-.cross-core-layer{opacity:1;pointer-events:none}
-.core-bridge-group{pointer-events:stroke;cursor:help}
-.core-bridge-halo{fill:none;stroke:#020305;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;opacity:.96;pointer-events:none}
-.core-bridge{fill:none;stroke:#f0ead7;stroke-width:4.4;stroke-linecap:round;stroke-linejoin:round;opacity:.94;filter:drop-shadow(0 0 7px rgba(240,234,215,.48));transition:opacity .18s ease,stroke-width .18s ease,filter .18s ease}
-.core-bridge.shared{stroke-dasharray:5 7}
-.core-bridge.epistemic{stroke-dasharray:12 6}
-.core-bridge.abstraction{stroke-dasharray:5 5}
-.core-bridge.complement,.core-bridge.information{stroke-dasharray:none}
-.core-bridge-hit{fill:none;stroke:transparent;stroke-width:24;pointer-events:stroke}
-.core-bridge-group:hover .core-bridge{opacity:1;stroke-width:6;filter:drop-shadow(0 0 12px rgba(240,234,215,.8))}
-.core-bridge-group:hover .core-bridge-label-bg{stroke:#f0ead7;stroke-opacity:.55}
-.core-bridge-label-bg{fill:#08090c;fill-opacity:.94;stroke:#d9d0aa;stroke-opacity:.24;stroke-width:1;rx:7;ry:7;pointer-events:none}
-.core-bridge-label{fill:#f3eedf;stroke:#08090c;stroke-width:3;paint-order:stroke;stroke-linejoin:round;font:700 12px ui-monospace,SFMono-Regular,Consolas,monospace;text-anchor:middle;dominant-baseline:middle;letter-spacing:.02em;pointer-events:none}
-.core-junction{fill:#f0ead7;stroke:#08090c;stroke-width:2;opacity:1;filter:drop-shadow(0 0 6px rgba(240,234,215,.65))}
-@media (max-width:720px){.core-bridge-halo{stroke-width:12}.core-bridge{stroke-width:5.2}.core-bridge-label{font-size:13px}.core-bridge-label-bg{stroke-width:1.4}}
+
+/* Spiderweb scaffold: always visible, quiet, structural. */
+.spiderweb-layer{pointer-events:none;opacity:1}
+.web-frame,.web-ring,.web-spoke,.web-inner-boundary{fill:none;stroke:#d9d0aa;stroke-linecap:round;stroke-linejoin:round}
+.web-frame{stroke-width:2.2;opacity:.48;filter:drop-shadow(0 0 5px rgba(217,208,170,.18))}
+.web-ring{stroke-width:1.45;opacity:.30}
+.web-ring-1{opacity:.38}.web-ring-2{opacity:.30}.web-ring-3{opacity:.24}
+.web-spoke{stroke-width:1.25;opacity:.27;stroke-dasharray:2 6}
+.web-inner-boundary{stroke-width:1.1;opacity:.18;stroke-dasharray:2 5}
+
+/* Core names: readable without decoding glyphs. */
+.web-core-label{fill:#e8e3d4;stroke:#08090c;stroke-width:4;paint-order:stroke;stroke-linejoin:round;font:700 13px ui-monospace,SFMono-Regular,Consolas,monospace;text-anchor:middle;dominant-baseline:middle;letter-spacing:.04em;opacity:.92;pointer-events:none}
+.web-core-label-island,.web-core-label-interaction,.web-core-label-observation,.web-core-label-ecogenetic{ text-anchor:start }
+.web-core-label-theory,.web-core-label-niche,.web-core-label-azami{ text-anchor:end }
+
+/* Scientific cross-links: brighter than the web scaffold. */
+.web-link-group{pointer-events:stroke;cursor:help}
+.web-link-halo{fill:none;stroke:#020305;stroke-width:10;stroke-linecap:round;stroke-linejoin:round;opacity:.98;pointer-events:none}
+.web-link{fill:none;stroke:#f3eedf;stroke-width:4.6;stroke-linecap:round;stroke-linejoin:round;opacity:.96;filter:drop-shadow(0 0 7px rgba(243,238,223,.42));transition:stroke-width .16s ease,opacity .16s ease,filter .16s ease}
+.web-link-shared .web-link{stroke:#b9c977;stroke-dasharray:8 6}
+.web-link-epistemic .web-link{stroke:#e6b85c;stroke-dasharray:13 6}
+.web-link-abstraction .web-link{stroke:#d28dac;stroke-dasharray:5 5}
+.web-link-complement .web-link{stroke:#7cb7d6}
+.web-link-information .web-link{stroke:#e98191}
+.web-link-hit{fill:none;stroke:transparent;stroke-width:25;pointer-events:stroke}
+.web-link-group:hover .web-link,.web-link-group.is-related .web-link{stroke-width:6.4;opacity:1;filter:drop-shadow(0 0 13px rgba(243,238,223,.82))}
+
+.web-link-label-bg{fill:#08090c;fill-opacity:.95;stroke:#e6dfcb;stroke-opacity:.35;stroke-width:1.1;rx:8;ry:8;pointer-events:none}
+.web-link-label{fill:#f5f0e1;stroke:#08090c;stroke-width:3;paint-order:stroke;stroke-linejoin:round;font:700 11.5px ui-monospace,SFMono-Regular,Consolas,monospace;text-anchor:middle;dominant-baseline:middle;letter-spacing:.015em;pointer-events:none}
+
+/* Portals sit over the web vertices. */
+.spiderweb-layer + .portals .portal-node{stroke-width:1.5}
+.spiderweb-layer + .portals .portal-line{opacity:.35}
+
+@media (max-width:720px){
+  .web-frame{stroke-width:2.8;opacity:.58}
+  .web-ring{stroke-width:1.9}
+  .web-spoke{stroke-width:1.6;opacity:.34}
+  .web-link-halo{stroke-width:12}
+  .web-link{stroke-width:5.4}
+  .web-link-label{font-size:12.5px}
+  .web-core-label{font-size:14px}
+}
