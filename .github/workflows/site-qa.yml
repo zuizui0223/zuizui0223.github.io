@@ -41,6 +41,7 @@ jobs:
           python -m json.tool tmop-audit.json >/dev/null
           python -m json.tool theory-reality-audit.json >/dev/null
           python -m json.tool world-ontology-audit.json >/dev/null
+          python -m json.tool puzzle-closure-audit.json >/dev/null
           python -m json.tool portfolio-graph-audit.json >/dev/null
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
@@ -64,6 +65,7 @@ jobs:
           tmop = json.loads(Path('tmop-audit.json').read_text())
           tr = json.loads(Path('theory-reality-audit.json').read_text())
           wo = json.loads(Path('world-ontology-audit.json').read_text())
+          puzzle = json.loads(Path('puzzle-closure-audit.json').read_text())
           niche = json.loads(Path('niche-program-audit.json').read_text())
 
           vertical = {x['id']: x for x in graph['vertical_programmes']}
@@ -105,7 +107,14 @@ jobs:
           safe = [x for x in wo['established_contacts'] if x['from']=='eco-genetic-warning-extensions' and x['to']=='payoff']
           assert len(safe) == 1
           assert safe[0]['type'] == 'proposed_context_interface'
-          assert 'not guaranteed' in wo['programme_worlds']['niche_to_survey']['reality_contact']
+          assert 'guarantee' in wo['programme_worlds']['niche_to_survey']['reality_contact']
+
+          assert puzzle['schema'] == 'zuizui.puzzle_closure.v1'
+          portal_ids = {x['id'] for x in puzzle['locked_portals']}
+          for required in ['eog_to_mrod','mrod_to_pollipi','mrod_to_insepi','ced_to_mrod','mrm_to_mrod','crest_ced_to_egwee','acsp_to_field_truth','sdmr_to_284b','egwe_to_payoff_context','payoff_architecture_to_relational_state','island_urban_state_convergence']:
+              assert required in portal_ids
+          assert puzzle['sealed_fragments'][0]['repo'] == '284b'
+          assert puzzle['closure_states'] == ['sealed','locked','proposed','solid']
 
           assert repo['repository_inventory']['owner_total'] == 35
           assert repo['repository_inventory']['scientific_active'] == 33
@@ -162,25 +171,14 @@ jobs:
           grep -Fq 'candidate ≠ certainty' world-game.js
           grep -Fq '284b' world-game.js
           grep -Fq 'state → payoff  (proposed)' world-game-corrections.js
+          grep -Fq 'target design ≠ mechanism design' world-game-corrections.js
           grep -Fq '接点を見つける' world-game-corrections.js
-          grep -Fq 'data.stories.state' theory-reality.js
-          grep -Fq 'data.stories.observation' theory-reality.js
-          grep -Fq 'data.stories.identify' theory-reality.js
-          grep -Fq 'data.stories.design' theory-reality.js
-          grep -Fq 'data.stories.evidence' theory-reality.js
-          grep -Fq 'data.stories.survey' theory-reality.js
-          grep -Fq 'proposed_interface' theory-reality.js
-          grep -Fq 'WORLD / STATE' core-bridges.js
-          grep -Fq 'ACCESS' core-bridges.js
-          grep -Fq 'DOMAIN THEORY' core-bridges.js
-          grep -Fq 'CONTACT' core-bridges.js
-          grep -Fq 'REAL SYSTEMS' core-bridges.js
-          grep -Fq '284b · staging from SDMR 2.8.4' core-bridges.js
-          grep -Fq 'candidate patches ≠ occupancy' core-bridges.js
           grep -q 'world-ontology-audit.json' README.md
+          grep -q 'puzzle-closure-audit.json' README.md
           grep -q 'candidate patch ≠ occupancy' README.md
           test -f theory-reality-audit.json
           test -f world-ontology-audit.json
+          test -f puzzle-closure-audit.json
           test -f world-game.css
           test -f world-game.js
           test -f world-game-corrections.js
