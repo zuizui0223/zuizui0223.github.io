@@ -14,6 +14,8 @@ optional notebook. All research remains accessible without playing.
 - `tower-data.js`: 34 research doorways, five motifs, 17 typed contacts, source
   blob identities, and claim boundaries. **Visitor discovery never changes
   scientific status.**
+- `tower-ontology-audit.json`: current 34-programme world/floor ontology, including the corrected 284b relation-space role.
+- `tower-closure-audit.json`: current scientific closure ledger; open/proposed contacts remain open even after a visitor finds them.
 - `TOWER_AUDIT.md`: spatial semantics and the relationship re-audit.
 - `tower.js`: dependency-free XYZ geometry, camera projection, input handling
   and discovery state. It does not replace the scientific repositories.
@@ -49,7 +51,7 @@ not automatically nested physical universes.
 former description. Their assets are retained, including `world-ontology-audit.json`
 and `puzzle-closure-audit.json`.
 
-Those files are historical snapshots, **not the current classification of 284b**.
+Those files are historical snapshots, **not the current classification of 284b**. The current machine-readable classification is `tower-ontology-audit.json`; current non-closure conditions are in `tower-closure-audit.json`.
 The earlier “from 2.8.4 / empty staging” description is superseded by the actual
 relation-space design document cited in `TOWER_AUDIT.md`. Other legacy claim
 firewalls remain useful; they do not prove a cross-repository adapter exists.

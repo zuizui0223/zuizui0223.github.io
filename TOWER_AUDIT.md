@@ -1,6 +1,6 @@
 # 一つの塔：配置・接点・閉合の精査
 
-確認日：2026-09-06。対象はホームページの研究構造と、主要な接点を所有するリポジトリの定義文書。本記録は全論文の証明・全実験の再実行ではない。配置の台帳は `tower-data.js` に分離した。
+確認日：2026-09-06。対象はホームページの研究構造と、主要な接点を所有するリポジトリの定義文書。本記録は全論文の証明・全実験の再実行ではない。配置の台帳は `tower-data.js`、現行の世界配置は `tower-ontology-audit.json`、未閉合条件は `tower-closure-audit.json` に分離した。旧 `world-ontology-audit.json` / `puzzle-closure-audit.json` 等は `archive.html` 時代の監査スナップショットとして保持する。
 
 ## 1. 「外と内」を一つの物差しにしない
 
@@ -20,13 +20,13 @@
 
 **CEDは接点**。必要な区別と観測・証拠の契約を突き合わせ、何を報告できるかを扱う。MRM→MROD、CED↔MRODの接続には、同じ候補観測・応答分割・リスク・費用を用いる明示的な変換が必要である。似た情報量を扱うことだけで直結しない。
 
-参照：[CREST](https://github.com/zuizui0223/crest/blob/main/README.md)、[MROD](https://github.com/zuizui0223/mrod/blob/main/README.md)、既存の [world ontology](world-ontology-audit.json) と [closure ledger](puzzle-closure-audit.json)。後二者の284b記述だけは本記録で訂正する。
+参照：[CREST](https://github.com/zuizui0223/crest/blob/main/README.md)、[MROD](https://github.com/zuizui0223/mrod/blob/main/README.md)、現行の [`tower-ontology-audit.json`](tower-ontology-audit.json) と [`tower-closure-audit.json`](tower-closure-audit.json)。旧 `world-ontology-audit.json` / `puzzle-closure-audit.json` は `archive.html` 時代のスナップショットとして保持する。
 
 ## 3. 形の系列とEG系列
 
 SCHは共有座標上の葛藤、BALANCEは葛藤があっても分化費用を払わない条件、BITAは分化による回復、PAYOFFはそれを継承される構造の利得と集団動態へ運ぶ。機能を人格的なプレイヤーとみなす話ではない。[PAYOFF](https://github.com/zuizui0223/payoff/blob/main/README.md)
 
-現時点の横断提案は **EGWEの関係状態 → PAYOFFの生態学的文脈**。逆向きの構造→関係状態→未来機能には、同一系・揃えた尺度での測定または介入が要る。共通の変数名だけでは閉じない。塔の未閉合の橋を回転によって実証済みに変えてはならない。[既存の接続条件](puzzle-closure-audit.json)
+現時点の横断提案は **EGWEの関係状態 → PAYOFFの生態学的文脈**。逆向きの構造→関係状態→未来機能には、同一系・揃えた尺度での測定または介入が要る。共通の変数名だけでは閉じない。塔の未閉合の橋を回転によって実証済みに変えてはならない。[現行の接続条件](tower-closure-audit.json)
 
 島と都市は、異なる出発点・分断履歴が同じ未来関連状態で説明できるかを比較する接点となる。ただし、状態を測り、独立な未来の応答を予測した後で、起源・履歴に残余情報があるかを問う。EGWEEは自然データの測定・表現・残余文脈・識別可能性を吟味する独立した系列であり、EGWEの遺伝的警告統計量を実証したものではない。[EGWEE](https://github.com/zuizui0223/egwee/blob/main/README.md)
 
@@ -63,6 +63,8 @@ ACSPを下流の現地接点に置く判断は妥当。ただし返すものは 
 これは五つの接点を発見する最初のゲーム実装であって、言語推理・人物移動・多数のステージを備えた完成済みの長編ゲームではない。Chants of Sennaarの階層と言葉の発見、Monument Valleyの視点と見かけの接続を情報設計の参考にし、固有アートやキャラクターは使っていない。
 
 ## 7. 科学と探索の二つの台帳
+
+現行の機械可読台帳は `tower-ontology-audit.json` と `tower-closure-audit.json`。284bについては「独立した研究問いを持つ入口になった」ことを確定事項としつつ、「異なる生物学的役割をまたぐ relation-space の前向き検証」は open のまま分離した。
 
 `established` は確認した概念的関係、`bounded` は限定した接点、`proposed` は接続仮説、`open` は未閉合。実装済みAPIや自然系での検証を一律に意味しない。接点ごとに条件を読む必要がある。
 
