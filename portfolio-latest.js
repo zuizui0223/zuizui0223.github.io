@@ -9,4 +9,5 @@
   document.write('<script src="theory-reality.js?v=20260906b"><\/script>');
   document.write('<script src="core-bridges.js?v=20260906h"><\/script>');
   document.write('<script src="world-game.js?v=20260906a"><\/script>');
+  document.write('<script src="world-game-corrections.js?v=20260906a"><\/script>');
 })();
