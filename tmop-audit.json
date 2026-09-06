@@ -1,0 +1,27 @@
+{
+  "checked_at": "2026-09-06",
+  "schema": "zuizui.tmop.v1",
+  "inventory": {"owner_total": 35, "scientific_active": 33, "meta": 1, "staging": 1},
+  "categories": {
+    "T": {"label": "Theory", "count": 21},
+    "M": {"label": "Method", "count": 13},
+    "O": {"label": "Open data", "count": 16},
+    "P": {"label": "Primary data", "count": 7}
+  },
+  "intersections": [
+    {"key":"P","repos":["shimahotarubukuro","aza3"]},
+    {"key":"O","repos":["hotarubukuro","azami","island","fcp","EAzami","chun"]},
+    {"key":"T","repos":["eco-genetic-criticality","ccoc","eco-genetic-warning-extensions","mltr","mrm","crest","theouni","payoff"]},
+    {"key":"MP","repos":["pollipi"]},
+    {"key":"MO","repos":["acsp","egwee"]},
+    {"key":"TM","repos":["mrod","ced","tnoa","boundary","v3"]},
+    {"key":"TO","repos":["bita","izu-core"]},
+    {"key":"MOP","repos":["rec"]},
+    {"key":"TMP","repos":["insepi"]},
+    {"key":"TMO","repos":["eog","odsp","sdmr"]},
+    {"key":"TOP","repos":["sch","balance"]}
+  ],
+  "entries": {
+    "hotarubukuro":"O","azami":"O","bita":"TO","island":"O","mrod":"TM","pollipi":"MP","insepi":"TMP","acsp":"MO","eco-genetic-criticality":"T","ccoc":"T","izu-core":"TO","eco-genetic-warning-extensions":"T","mltr":"T","ced":"TM","mrm":"T","shimahotarubukuro":"P","fcp":"O","eog":"TMO","odsp":"TMO","EAzami":"O","chun":"O","sdmr":"TMO","crest":"T","theouni":"T","tnoa":"TM","aza3":"P","sch":"TOP","boundary":"TM","rec":"MOP","egwee":"MO","balance":"TOP","v3":"TM","payoff":"T"
+  }
+}
