@@ -108,8 +108,8 @@ jobs:
           grep -q 'portfolio-20260905.js?v=20260905a' portfolio-latest.js
           grep -q 'portfolio-20260906.js?v=20260906a' portfolio-latest.js
           grep -q 'tmop.js?v=20260906b' portfolio-latest.js
-          grep -q 'core-bridges.css?v=20260906c' portfolio-latest.js
-          grep -q 'core-bridges.js?v=20260906c' portfolio-latest.js
+          grep -q 'core-bridges.css?v=20260906d' portfolio-latest.js
+          grep -q 'core-bridges.js?v=20260906d' portfolio-latest.js
           grep -q 'data-view="tmop"' tmop.js
           grep -q '>TMOP<' tmop.js
           grep -q 'tmop-audit.json' tmop.js
@@ -120,6 +120,8 @@ jobs:
           grep -q 'id:"interaction-method"' core-bridges.js
           grep -q 'id:"method-niche"' core-bridges.js
           grep -q 'id:"niche-azami"' core-bridges.js
+          grep -q 'label:"WHAT ⇄ WHERE"' core-bridges.js
+          grep -q 'class="core-bridge-halo"' core-bridges.js
           grep -q 'data-portal="ecogenetic"' core-bridges.js
           test -f core-bridges.css
           test -f evidence-partition.css
