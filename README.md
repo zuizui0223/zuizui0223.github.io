@@ -1,39 +1,56 @@
 # Research Worldlines
 
-`zuizui0223` の **33 active scientific repositories** を一つの research system として表示する静的サイトです。現在の inventory は **35 total = 33 scientific + 1 meta + 1 staging (`284b`)**。
+`zuizui0223` の **33 active scientific repositories** を一つの research system として表示する静的サイトです。inventory は **35 total = 33 scientific + 1 meta + 1 staging (`284b`)**。
 
-## Main view — THEORY ⇄ REALITY
+## Main view — WORLD → FIELD
 
-最初の蜘蛛の巣は、リポを同じ階層へ並べず、**内側 = THEORY WORLDS / 外側 = REAL WORLDS / 太線 = CONTACT** として表示します。
+最初の蜘蛛の巣は、**半径 = 現実の測定までの距離**として5層で表示します。半径は重要度・真実性・成熟度ではありません。
 
-中心原理：
+```text
+WORLD / REQUIRED STATE
+CREST · CCOC · MLTR · MRM
+        ↓
+ACCESS
+REC · V3 · TNOA → Boundary → MROD
+CREST → CED ; Boundary ↔ CED
+        ↓
+DOMAIN THEORY
+EGC → EGWE
+SCH → BALANCE → BITA ; PAYOFF
+SDMR → ODSP → EOG
+        ↓
+CONTACT
+EGWEE · ACSP · PolliPi/InsePi
+        ↓
+REAL SYSTEMS
+island · flower · azami
+```
 
-> **理論世界と現実世界の接点を見つける。**
+中心原理：**理論世界と現実世界の接点を見つける。**
 
-現実の違和感・観測失敗・残差を抽象化し、理論の境界や設計則を再び生物・データ・観測機・field designへ戻す往復を示します。`theory-reality-audit.json` が source of truth です。
+### Important cross-links
+
+- `MRM → Boundary → MROD`: required mechanism distinctions → identifiability → next observation.
+- `CREST → CED` and `Boundary → CED`: required state / identified set → honest reportability.
+- `EGWE ⇢ PAYOFF`: relational future-relevant state may condition architecture payoff; **proposed interface, not validation**.
+- `EGWE → EGWEE ⇄ island/urban contexts`: natural-data state adequacy / residual context; **not genetic-warning validation**.
+- `SDMR → ODSP → EOG → ACSP`: coordinate admission → multidimensional state → compatible/reachable worlds → candidate survey patches.
+- `ACSP`: **candidate patch ≠ occupancy ≠ guaranteed detection**.
+- `284b`: current content is only `from 2.8.4`; shown only as an SDMR staging ghost, not a fifth niche chapter.
 
 ### Observation reframe
 
-```text
-Ω / possible worlds
-   ├─ REC   : missing support / record entry
-   ├─ V3    : retained-information refinement
-   └─ TNOA  : semantic preservation on retained support
-          ↓
-      Boundary : what is identifiable now?
-          ↓
-      MROD     : what should be observed next?
+`REC / V3 / TNOA` は sibling information operations。
 
-physical visitation applications:
-PolliPi = target-facing primary record
-InsePi  = nuisance / observability failure diagnosis
-```
+- **REC** — missing support / record entry.
+- **V3** — retained side-information refinement.
+- **TNOA** — semantic preservation on retained support.
+- **Boundary** — what is identifiable now?
+- **MROD** — what should be observed next?
 
-`REC / V3 / TNOA` は固定された直列工程ではなく sibling information operations。PolliPi / InsePi は開発史上の起点でも、現在の概念階層では訪花観察への physical application / testbed です。
+PolliPi / InsePi は訪花観察への physical application / testbed。
 
 ## TMOP
-
-`TMOP` view は独立した evidence-mode lens です。
 
 - **T** — Theory
 - **M** — Method
@@ -42,22 +59,14 @@ InsePi  = nuisance / observability failure diagnosis
 
 正確な membership は `tmop-audit.json`。
 
-## Current programme skeleton
-
-- `azami → EAzami → aza3`
-- `island → izu-core → shimahotarubukuro`
-- `SCH → BALANCE → BITA` ; `PAYOFF` = population-game abstraction
-- `EGC → EGWE` ; `EGWEE` = independent natural-data interface
-- `SDMR ⇢ ODSP ⇢ EOG ⇢ ACSP`
-- `CCOC / MLTR / MRM → CREST → CED` ; `theouni` = meta-layer
-- `REC / V3 / TNOA → Boundary → MROD` ; `PolliPi / InsePi` = physical applications
-
 ## Boundaries
 
 - `connection != ownership`
 - `developmental ancestry != conceptual hierarchy`
+- `required state != identified state != reportable target`
 - `empirical projection != validation`
 - `shared substrate != shared conclusion`
+- `candidate patch != occupancy`
 - `TMOP overlap != scientific dependency`
 
 ## Audit files
