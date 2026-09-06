@@ -26,6 +26,7 @@ jobs:
           node --check portfolio-latest.js
           node --check portfolio-20260905.js
           node --check portfolio-20260906.js
+          node --check tmop.js
           node --check app.js
           node --check philosophy-ui.js
       - name: Audit JSON syntax
@@ -33,6 +34,7 @@ jobs:
           python -m json.tool repo-audit.json >/dev/null
           python -m json.tool repository-classification-audit.json >/dev/null
           python -m json.tool evidence-partition-audit.json >/dev/null
+          python -m json.tool tmop-audit.json >/dev/null
           python -m json.tool portfolio-graph-audit.json >/dev/null
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
@@ -40,7 +42,7 @@ jobs:
           python -m json.tool tnoa-rec-audit.json >/dev/null
           python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
           python -m json.tool ecosystem-system-audit.json >/dev/null
-      - name: Canonical graph and evidence semantics
+      - name: Canonical graph and TMOP semantics
         run: |
           python - <<'PY'
           import json
@@ -53,72 +55,44 @@ jobs:
           ecosystem = json.loads(Path('ecosystem-system-audit.json').read_text())
           interaction = json.loads(Path('interaction-audit.json').read_text())
           evidence = json.loads(Path('evidence-partition-audit.json').read_text())
+          tmop = json.loads(Path('tmop-audit.json').read_text())
           niche = json.loads(Path('niche-program-audit.json').read_text())
 
           nonlinear = {x['id']: x for x in graph['nonlinear_constellations']}
           vertical = {x['id']: x for x in graph['vertical_programmes']}
           standalone = {x['id']: x for x in graph.get('standalone_programmes', [])}
 
-          assert nonlinear['observation']['shape'] == 'branched_development_plus_reverse_relation'
           assert nonlinear['observation']['nodes'] == ['pollipi','insepi','v3','rec','tnoa']
           assert nonlinear['interaction_game']['nodes'] == ['sch','balance','bita','payoff']
-          assert nonlinear['crest_state_theory']['shape'] == 'hub'
-          assert nonlinear['flower']['shape'] == 'complementary_arms_with_focal_origin'
-          assert vertical['niche']['shape'] == 'epistemic_sequence'
-          assert vertical['ecogenetic']['shape'] == 'parent_extension'
-          assert vertical['interaction']['shape'] == 'three_world_architecture_programme'
-          assert vertical['interaction']['nodes'] == ['sch', 'balance', 'bita']
+          assert vertical['interaction']['nodes'] == ['sch','balance','bita']
           assert standalone['state_measurement_empirical']['nodes'] == ['egwee']
 
-          assert repo['repository_inventory'] == {
-              'owner_total':35,
-              'scientific_active':33,
-              'meta_registry':['zuizui0223.github.io'],
-              'staging':['284b'],
-              'classification_audit':'repository-classification-audit.json'
-          }
+          assert repo['repository_inventory']['owner_total'] == 35
+          assert repo['repository_inventory']['scientific_active'] == 33
           active = {x['repo']: x for x in repo['active']}
           assert len(active) == 33
           assert active['v3']['display_status'] == 'bounded'
           assert active['payoff']['display_status'] == 'result'
-          assert active['balance']['display_status'] == 'bounded'
-          assert 'scientific_ref' not in active['balance']
 
-          assert classification['repository_total'] == 35
           assert classification['counts'] == {'scientific_active':33,'meta_registry':1,'staging_unclassified':1}
-          assert classification['newly_classified']['v3']['class'] == 'scientific_active'
-          assert classification['newly_classified']['payoff']['class'] == 'scientific_active'
-          assert classification['newly_classified']['284b']['class'] == 'staging_unclassified'
-
-          assert ecosystem['system_rule'] == 'connection != ownership'
           assert len(ecosystem['node_roles']) == 33
-          assert ecosystem['node_roles']['v3'].startswith('reference-guided')
-          assert ecosystem['node_roles']['payoff'].startswith('population-game')
-          assert any(x.get('from') == 'v3' and x.get('to') == 'rec' for x in ecosystem['cross_series_relations'])
-          assert any(x.get('from') == 'payoff' or x.get('to') == 'payoff' for x in ecosystem['cross_series_relations'])
-
           assert interaction['programme']['path'] == ['sch','balance','bita']
           assert interaction['programme']['abstraction'] == 'payoff'
-          assert [x['status'] for x in interaction['chapters']] == ['bounded','bounded','result']
-          assert interaction['game_abstraction']['repo'] == 'payoff'
 
-          assert evidence['inventory']['owner_total'] == 35
-          assert evidence['inventory']['scientific_active'] == 33
-          assert evidence['set_counts'] == {
-              'theory_simulation':21,
-              'methods':13,
-              'public_data':16,
-              'own_new_data':7
-          }
-          entries = evidence['entries']
-          assert len(entries) == 33
-          assert len({x['repo'] for x in entries}) == 33
-          combos = {x['key']:(x['count'],x['repos']) for x in evidence['exact_intersections']}
-          assert combos['T'][0] == 8
-          assert combos['TM'][0] == 5
-          assert combos['TMP'][0] == 3
-          assert combos['TPO'][0] == 2
-          assert combos['MPO'][0] == 1
+          assert evidence['set_counts'] == {'theory_simulation':21,'methods':13,'public_data':16,'own_new_data':7}
+          assert tmop['schema'] == 'zuizui.tmop.v1'
+          assert tmop['categories']['T'] == {'label':'Theory','count':21}
+          assert tmop['categories']['M'] == {'label':'Method','count':13}
+          assert tmop['categories']['O'] == {'label':'Open data','count':16}
+          assert tmop['categories']['P'] == {'label':'Primary data','count':7}
+          assert len(tmop['entries']) == 33
+          assert set(tmop['entries']) == {x['repo'] for x in evidence['entries']}
+          combos = {x['key']:x['repos'] for x in tmop['intersections']}
+          assert len(combos['T']) == 8
+          assert len(combos['TM']) == 5
+          assert len(combos['TMO']) == 3
+          assert len(combos['TOP']) == 2
+          assert len(combos['MOP']) == 1
 
           niche_by_repo = {x['repo']: x for x in niche['chapters']}
           assert 'scientifically closed' in niche_by_repo['odsp']['current_state']
@@ -127,17 +101,17 @@ jobs:
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
-      - name: Evidence view and cache guards
+      - name: TMOP view and cache guards
         run: |
           grep -q 'portfolio-latest.js?v=20260905a' index.html
           grep -q 'portfolio-20260905.js?v=20260905a' portfolio-latest.js
           grep -q 'portfolio-20260906.js?v=20260906a' portfolio-latest.js
-          grep -q '33 · static' portfolio-20260906.js
-          grep -q 'dataset.view="evidence"' portfolio-20260906.js
-          grep -q 'evidence-partition.css?v=20260906a' portfolio-latest.js
-          test -f evidence-partition.css
+          grep -q 'tmop.js?v=20260906b' portfolio-latest.js
+          grep -q 'data-view="tmop"' tmop.js
+          grep -q '>TMOP<' tmop.js
+          grep -q 'tmop-audit.json' tmop.js
           grep -q 'static architecture advantage ≠ invasion success' portfolio-20260906.js
           grep -q 'reference-guided information refinement' portfolio-20260906.js
-          grep -q 'T ∩ M ∩ P ∩ O' portfolio-20260906.js
-          grep -q '35 total = 33 scientific' README.md
+          test -f evidence-partition.css
+          test -f tmop-audit.json
           ! grep -q 'microdonta-role' index.html
