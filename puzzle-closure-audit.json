@@ -1,0 +1,105 @@
+{
+  "checked_at":"2026-09-06",
+  "schema":"zuizui.puzzle_closure.v1",
+  "rule":"Every visible locked portal must correspond to a scientific non-closure with an explicit unlock condition. Unlocking changes display status only after the owning repositories produce the required receipt; a visual connection cannot create a scientific result.",
+  "locked_portals":[
+    {
+      "id":"eog_to_mrod",
+      "lens":"WORLD",
+      "from":"eog",
+      "to":"mrod",
+      "question":"Can disagreement among domain-specific compatible biogeographic worlds be converted directly into a value-ranked next-observation problem?",
+      "unlock_condition":"Define an explicit adapter from EOG surviving world support/disagreement to an MROD admissible state/mechanism vocabulary and verified candidate-outcome partitions; validate that sequential observation contracts the intended EOG uncertainty without relabeling world identity as causal truth."
+    },
+    {
+      "id":"mrod_to_pollipi",
+      "lens":"OBSERVE",
+      "from":"mrod",
+      "to":"pollipi",
+      "question":"Does an information-selected next observation improve a real flower-visitation observation system?",
+      "unlock_condition":"Prospectively freeze an MROD-selected visitation measurement, implement it in PolliPi, collect independent exposure/biological truth, and show held-out contraction of the declared ambiguity relative to a frozen comparator."
+    },
+    {
+      "id":"mrod_to_insepi",
+      "lens":"OBSERVE",
+      "from":"mrod",
+      "to":"insepi",
+      "question":"Can MROD choose physical interventions that resolve observer-failure classes?",
+      "unlock_condition":"Map InsePi failure classes and interventions into an MROD candidate-observation contract before held-out truth access, then verify that selected interventions resolve the intended failure distinctions on new physical blocks/scenes."
+    },
+    {
+      "id":"ced_to_mrod",
+      "lens":"STATE",
+      "from":"ced",
+      "to":"mrod",
+      "question":"When can target-resolution experimental design and mechanism-resolution observation design share one decision object?",
+      "unlock_condition":"Construct a common contract in which CED target-safe unresolved classes and the MROD admissible mechanism/state region are linked to the same candidate observations, risks and costs; prove or validate the mapping rather than treating target information and mechanism information as interchangeable."
+    },
+    {
+      "id":"mrm_to_mrod",
+      "lens":"STATE",
+      "from":"mrm",
+      "to":"mrod",
+      "question":"Can MRM's exact response-signature discrimination burden become a practical MROD sequential-design problem?",
+      "unlock_condition":"Provide an explicit adapter from MRM response signatures/probe grammar/costs to MROD admissible regions and predictive outcome partitions and verify preservation of the declared mechanism distinctions."
+    },
+    {
+      "id":"crest_ced_to_egwee",
+      "lens":"STATE",
+      "from":"crest/ced",
+      "to":"egwee",
+      "question":"Can contract-required state and evidence licensing be tested in one natural system?",
+      "unlock_condition":"Synchronize candidate required-state variables, observation/evidence contract, and an independently held-out future endpoint in a natural system; test state adequacy before residual origin/history and keep finite-theory claims separate from empirical validation."
+    },
+    {
+      "id":"acsp_to_field_truth",
+      "lens":"FIELD",
+      "from":"acsp",
+      "to":"field survey / primary-data programme",
+      "question":"Do ACSP candidate patches deliver prospective field evidence under controlled effort and detectability?",
+      "unlock_condition":"Survey prospectively selected patches and matched comparators with explicit effort/detectability denominators. The closable claim is field enrichment/efficiency under the frozen contract, not guaranteed occupancy or detection."
+    },
+    {
+      "id":"sdmr_to_284b",
+      "lens":"FIELD",
+      "from":"sdmr",
+      "to":"284b",
+      "question":"Does the SDMR v2.8.4 seed own a new scientific question?",
+      "unlock_condition":"284b must declare an independent scientific question, inherited boundary, evidence contract, claim ceiling and terminal outcomes. Until then it remains sealed staging."
+    },
+    {
+      "id":"egwe_to_payoff_context",
+      "lens":"EVOLVE",
+      "from":"eco-genetic-warning-extensions",
+      "to":"payoff",
+      "question":"Does a measured future-relevant relational ecological state condition architecture payoff coordinates?",
+      "unlock_condition":"Declare a common model or natural system in which relational state is measured before architecture payoff quantities L(e), s(e), K(e), phi(e), eta(e); demonstrate the context mapping without using EGWE as validation of PAYOFF or vice versa."
+    },
+    {
+      "id":"payoff_architecture_to_relational_state",
+      "lens":"EVOLVE",
+      "from":"sch/balance/bita/payoff",
+      "to":"eco-genetic-criticality/eco-genetic-warning-extensions",
+      "question":"Does architecture differentiation generate a different relational eco-genetic state and future functional vulnerability?",
+      "unlock_condition":"In one matched model or natural system, measure/manipulate architecture state, quantify resulting interaction architecture and cross-layer genetic/trait alignment, and score subsequent future function. This reverse bridge is stronger than the current state-to-context proposal."
+    },
+    {
+      "id":"island_urban_state_convergence",
+      "lens":"EVOLVE",
+      "from":"island / urban systems",
+      "to":"eco-genetic-warning-extensions / egwee",
+      "question":"Do contrasting fragmentation routes become predictively equivalent after conditioning on a future-relevant joint state?",
+      "unlock_condition":"Across prospectively comparable island/urban populations or population-years, measure candidate state before outcome, predict held-out future functional loss, then test whether origin/history adds residual predictive information. This closes state convergence only, not genetic-warning validation."
+    }
+  ],
+  "sealed_fragments":[
+    {
+      "repo":"284b",
+      "current_content":"from 2.8.4",
+      "status":"sealed",
+      "reason":"provenance seed without independent inferential contract"
+    }
+  ],
+  "closure_states":["sealed","locked","proposed","solid"],
+  "promotion_rule":"sealed -> locked requires an independent question; locked -> proposed requires a declared mapping/contract; proposed -> solid requires the specified theorem, validation or empirical receipt. No state may be skipped for visual convenience."
+}
