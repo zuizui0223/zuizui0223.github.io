@@ -24,12 +24,15 @@ jobs:
           node --check mechanism-split.js
           node --check aza3-acsp-bridge.js
           node --check portfolio-latest.js
+          node --check portfolio-20260905.js
+          node --check portfolio-20260906.js
           node --check app.js
           node --check philosophy-ui.js
       - name: Audit JSON syntax
         run: |
           python -m json.tool repo-audit.json >/dev/null
           python -m json.tool repository-classification-audit.json >/dev/null
+          python -m json.tool evidence-partition-audit.json >/dev/null
           python -m json.tool portfolio-graph-audit.json >/dev/null
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
@@ -37,7 +40,7 @@ jobs:
           python -m json.tool tnoa-rec-audit.json >/dev/null
           python -m json.tool aza3-acsp-field-bridge-audit.json >/dev/null
           python -m json.tool ecosystem-system-audit.json >/dev/null
-      - name: Canonical graph semantics
+      - name: Canonical graph and evidence semantics
         run: |
           python - <<'PY'
           import json
@@ -49,12 +52,16 @@ jobs:
           classification = json.loads(Path('repository-classification-audit.json').read_text())
           ecosystem = json.loads(Path('ecosystem-system-audit.json').read_text())
           interaction = json.loads(Path('interaction-audit.json').read_text())
+          evidence = json.loads(Path('evidence-partition-audit.json').read_text())
           niche = json.loads(Path('niche-program-audit.json').read_text())
 
           nonlinear = {x['id']: x for x in graph['nonlinear_constellations']}
           vertical = {x['id']: x for x in graph['vertical_programmes']}
           standalone = {x['id']: x for x in graph.get('standalone_programmes', [])}
+
           assert nonlinear['observation']['shape'] == 'branched_development_plus_reverse_relation'
+          assert nonlinear['observation']['nodes'] == ['pollipi','insepi','v3','rec','tnoa']
+          assert nonlinear['interaction_game']['nodes'] == ['sch','balance','bita','payoff']
           assert nonlinear['crest_state_theory']['shape'] == 'hub'
           assert nonlinear['flower']['shape'] == 'complementary_arms_with_focal_origin'
           assert vertical['niche']['shape'] == 'epistemic_sequence'
@@ -62,44 +69,75 @@ jobs:
           assert vertical['interaction']['shape'] == 'three_world_architecture_programme'
           assert vertical['interaction']['nodes'] == ['sch', 'balance', 'bita']
           assert standalone['state_measurement_empirical']['nodes'] == ['egwee']
-          assert graph['ecosystem_system']['id'] == 'research-ecosystem-system-v1'
-          assert view['scientific_graph']['ecosystem_system']['audit'] == 'ecosystem-system-audit.json'
-          assert view['scientific_graph']['vertical_programmes'][2]['nodes'] == ['sch', 'balance', 'bita']
+
+          assert repo['repository_inventory'] == {
+              'owner_total':35,
+              'scientific_active':33,
+              'meta_registry':['zuizui0223.github.io'],
+              'staging':['284b'],
+              'classification_audit':'repository-classification-audit.json'
+          }
+          active = {x['repo']: x for x in repo['active']}
+          assert len(active) == 33
+          assert active['v3']['display_status'] == 'bounded'
+          assert active['payoff']['display_status'] == 'result'
+          assert active['balance']['display_status'] == 'bounded'
+          assert 'scientific_ref' not in active['balance']
+
+          assert classification['repository_total'] == 35
+          assert classification['counts'] == {'scientific_active':33,'meta_registry':1,'staging_unclassified':1}
+          assert classification['newly_classified']['v3']['class'] == 'scientific_active'
+          assert classification['newly_classified']['payoff']['class'] == 'scientific_active'
+          assert classification['newly_classified']['284b']['class'] == 'staging_unclassified'
+
           assert ecosystem['system_rule'] == 'connection != ownership'
-          assert len(ecosystem['node_roles']) == 31
-          assert ecosystem['node_roles']['balance'].startswith('middle-world')
-          assert any(x.get('from') == 'hotarubukuro' and x.get('to') == 'izu-core' and x.get('type') == 'shared_substrate' for x in ecosystem['cross_series_relations'])
-          assert any(x.get('from') == 'izu-core' and x.get('to') == 'egwee' and x.get('type') == 'shared_substrate' for x in ecosystem['cross_series_relations'])
-          assert any(x.get('from') == 'tnoa' and x.get('to') == 'egwee' for x in ecosystem['cross_series_relations'])
-          assert any(x.get('from') == 'egwee' and x.get('to') == 'ced' for x in ecosystem['cross_series_relations'])
-          assert any(x.get('from') == 'mrod' and x.get('to') == 'acsp' and x.get('type') == 'complement' for x in ecosystem['cross_series_relations'])
-          assert interaction['programme']['path'] == ['sch', 'balance', 'bita']
-          assert [x['status'] for x in interaction['chapters']] == ['bounded', 'bounded', 'result']
+          assert len(ecosystem['node_roles']) == 33
+          assert ecosystem['node_roles']['v3'].startswith('reference-guided')
+          assert ecosystem['node_roles']['payoff'].startswith('population-game')
+          assert any(x.get('from') == 'v3' and x.get('to') == 'rec' for x in ecosystem['cross_series_relations'])
+          assert any(x.get('from') == 'payoff' or x.get('to') == 'payoff' for x in ecosystem['cross_series_relations'])
+
+          assert interaction['programme']['path'] == ['sch','balance','bita']
+          assert interaction['programme']['abstraction'] == 'payoff'
+          assert [x['status'] for x in interaction['chapters']] == ['bounded','bounded','result']
+          assert interaction['game_abstraction']['repo'] == 'payoff'
+
+          assert evidence['inventory']['owner_total'] == 35
+          assert evidence['inventory']['scientific_active'] == 33
+          assert evidence['set_counts'] == {
+              'theory_simulation':21,
+              'methods':13,
+              'public_data':16,
+              'own_new_data':7
+          }
+          entries = evidence['entries']
+          assert len(entries) == 33
+          assert len({x['repo'] for x in entries}) == 33
+          combos = {x['key']:(x['count'],x['repos']) for x in evidence['exact_intersections']}
+          assert combos['T'][0] == 8
+          assert combos['TM'][0] == 5
+          assert combos['TMP'][0] == 3
+          assert combos['TPO'][0] == 2
+          assert combos['MPO'][0] == 1
+
           niche_by_repo = {x['repo']: x for x in niche['chapters']}
           assert 'scientifically closed' in niche_by_repo['odsp']['current_state']
-          active = {x['repo']: x for x in repo['active']}
-          assert repo['repository_inventory']['owner_total'] == 33
-          assert repo['repository_inventory']['scientific_active'] == 31
-          assert active['sch']['display_status'] == 'bounded'
-          assert 'scientific_ref' not in active['sch']
-          assert active['balance']['display_status'] == 'bounded'
-          assert active['balance']['scientific_ref'] == 'analysis/middle-world-v1'
-          assert active['bita']['chapter'] == 3
-          assert active['odsp']['display_status'] == 'result'
-          assert classification['counts']['scientific_active'] == 31
-          assert classification['newly_classified']['balance']['class'] == 'scientific_active'
-          assert classification['newly_classified']['egwee']['class'] == 'scientific_active'
+          assert view['repository_inventory']['scientific_active'] == 33
           assert view['phd_path']['scientific_dependency'] is False
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
-      - name: Asset cache guard
+      - name: Evidence view and cache guards
         run: |
-          grep -q 'aza3-acsp-bridge.js?v=20260904c' index.html
           grep -q 'portfolio-latest.js?v=20260905a' index.html
-          grep -q 'app.js?v=20260904a' index.html
-          grep -q 'fill="url(#voidFill)" filter="url(#softGlow)"' index.html
-          grep -q 'shared_substrate' app.js
-          grep -q '31 · static' index.html
-          grep -q 'SCH → BALANCE → BITA' portfolio-latest.js
+          grep -q 'portfolio-20260905.js?v=20260905a' portfolio-latest.js
+          grep -q 'portfolio-20260906.js?v=20260906a' portfolio-latest.js
+          grep -q '33 · static' portfolio-20260906.js
+          grep -q 'dataset.view="evidence"' portfolio-20260906.js
+          grep -q 'evidence-partition.css?v=20260906a' portfolio-latest.js
+          test -f evidence-partition.css
+          grep -q 'static architecture advantage ≠ invasion success' portfolio-20260906.js
+          grep -q 'reference-guided information refinement' portfolio-20260906.js
+          grep -q 'T ∩ M ∩ P ∩ O' portfolio-20260906.js
+          grep -q '35 total = 33 scientific' README.md
           ! grep -q 'microdonta-role' index.html
