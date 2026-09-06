@@ -102,22 +102,23 @@ jobs:
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
-      - name: TMOP and spiderweb cover guards
+      - name: TMOP and routed spiderweb cover guards
         run: |
           grep -q 'portfolio-latest.js?v=20260905a' index.html
           grep -q 'portfolio-20260905.js?v=20260905a' portfolio-latest.js
           grep -q 'portfolio-20260906.js?v=20260906a' portfolio-latest.js
           grep -q 'tmop.js?v=20260906b' portfolio-latest.js
-          grep -q 'core-bridges.css?v=20260906e' portfolio-latest.js
-          grep -q 'core-bridges.js?v=20260906e' portfolio-latest.js
+          grep -q 'core-bridges.css?v=20260906f' portfolio-latest.js
+          grep -q 'core-bridges.js?v=20260906f' portfolio-latest.js
           grep -q 'data-view="tmop"' tmop.js
           grep -q '>TMOP<' tmop.js
           grep -q 'tmop-audit.json' tmop.js
-          grep -q 'spiderweb-layer' core-bridges.js
-          grep -q 'ringScales=\[.76,.54,.32\]' core-bridges.js
-          grep -q 'class="web-spoke"' core-bridges.js
-          grep -q 'class="web-frame"' core-bridges.js
-          grep -q 'class="web-core-label' core-bridges.js
+          grep -Fq 'research-web-layer' core-bridges.js
+          grep -Fq 'const rings=[.38,.60,.82,1]' core-bridges.js
+          grep -Fq 'class="web-spoke"' core-bridges.js
+          grep -Fq 'class="web-core-label"' core-bridges.js
+          grep -Fq 'ring("ecogenetic",.60)' core-bridges.js
+          grep -Fq 'ring("interaction",.38)' core-bridges.js
           grep -q 'id:"flower-island"' core-bridges.js
           grep -q 'id:"island-ecogenetic"' core-bridges.js
           grep -q 'id:"observation-ecogenetic"' core-bridges.js
