@@ -4,7 +4,7 @@ Run: python tests/tower_browser_test.py [--chromium /usr/bin/chromium]
 No browser-policy changes, external requests or scientific status mutation.
 """
 from pathlib import Path
-import argparse, json, math
+import argparse, json, math, re
 from playwright.sync_api import sync_playwright
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,9 +14,9 @@ OUT.mkdir(exist_ok=True)
 def inline_site() -> str:
     html = (ROOT / 'index.html').read_text()
     html = html.replace('<link rel="stylesheet" href="tower.css?v=20260906t1">', '<style>' + (ROOT/'tower.css').read_text() + '</style>')
-    for name in ('tower-data.js', 'tower.js'):
-        html = html.replace(f'<script src="{name}?v=20260906t1" defer></script>', '')
-    return html.replace('</body>', ''.join('<script>'+ (ROOT/name).read_text() + '</script>' for name in ('tower-data.js', 'tower.js')) + '</body>')
+    for name in ('tower-data.js', 'tower.js', 'tower-perspective-clue.js'):
+        html = re.sub(rf'<script src="{re.escape(name)}\?v=[^"]+" defer></script>', '', html)
+    return html.replace('</body>', ''.join('<script>'+ (ROOT/name).read_text() + '</script>' for name in ('tower-data.js', 'tower.js', 'tower-perspective-clue.js')) + '</body>')
 
 def main():
     parser=argparse.ArgumentParser()
