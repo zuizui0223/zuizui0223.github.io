@@ -29,6 +29,8 @@ jobs:
           node --check tmop.js
           node --check theory-reality.js
           node --check core-bridges.js
+          node --check world-game.js
+          node --check world-game-corrections.js
           node --check app.js
           node --check philosophy-ui.js
       - name: Audit JSON syntax
@@ -38,6 +40,7 @@ jobs:
           python -m json.tool evidence-partition-audit.json >/dev/null
           python -m json.tool tmop-audit.json >/dev/null
           python -m json.tool theory-reality-audit.json >/dev/null
+          python -m json.tool world-ontology-audit.json >/dev/null
           python -m json.tool portfolio-graph-audit.json >/dev/null
           python -m json.tool viewpoint-audit.json >/dev/null
           python -m json.tool niche-program-audit.json >/dev/null
@@ -60,6 +63,7 @@ jobs:
           evidence = json.loads(Path('evidence-partition-audit.json').read_text())
           tmop = json.loads(Path('tmop-audit.json').read_text())
           tr = json.loads(Path('theory-reality-audit.json').read_text())
+          wo = json.loads(Path('world-ontology-audit.json').read_text())
           niche = json.loads(Path('niche-program-audit.json').read_text())
 
           vertical = {x['id']: x for x in graph['vertical_programmes']}
@@ -85,6 +89,23 @@ jobs:
           assert tr['domain_interfaces']['sdmr_staging']['status'] == 'staging ghost only'
           assert tr['domain_interfaces']['eco_genetic_to_interaction_payoff']['status'] == 'proposed conceptual interface'
           assert 'not warning' in tr['domain_interfaces']['eco_genetic_to_island_urban']['firewall'].lower()
+
+          assert wo['schema'] == 'zuizui.world_ontology.v2'
+          assert wo['orthogonal_theory_axes']['state_requirement']['repositories'] == ['ccoc','mltr','mrm','crest']
+          assert wo['orthogonal_theory_axes']['observation_identification']['repositories'] == ['rec','v3','tnoa','boundary','mrod']
+          assert wo['orthogonal_theory_axes']['evidence_licensing']['repositories'] == ['ced']
+          assert wo['programme_worlds']['niche_to_survey']['repositories'] == ['sdmr','odsp','eog','acsp']
+          assert wo['sealed_fragment']['repo'] == '284b'
+          assert wo['sealed_fragment']['current_content'] == 'from 2.8.4'
+          assert len(wo['perspective_lenses']) == 5
+          locked = {x['id']:x for x in wo['candidate_locked_contacts']}
+          assert 'architecture_to_relational_state' in locked
+          assert 'mrm_to_mrod' in locked
+          assert 'acsp_field_truth' in locked
+          safe = [x for x in wo['established_contacts'] if x['from']=='eco-genetic-warning-extensions' and x['to']=='payoff']
+          assert len(safe) == 1
+          assert safe[0]['type'] == 'proposed_context_interface'
+          assert 'not guaranteed' in wo['programme_worlds']['niche_to_survey']['reality_contact']
 
           assert repo['repository_inventory']['owner_total'] == 35
           assert repo['repository_inventory']['scientific_active'] == 33
@@ -118,16 +139,30 @@ jobs:
 
           niche_by_repo = {x['repo']: x for x in niche['chapters']}
           assert 'scientifically closed' in niche_by_repo['odsp']['current_state']
+          assert niche['staging']['repo'] == '284b'
+          assert 'guaranteed' in niche['chapters'][3]['claim_firewall']
           assert not Path('microdonta-role.js').exists()
           assert not Path('microdonta-role.css').exists()
           PY
-      - name: Homepage layered-interface guards
+      - name: Homepage perspective-puzzle guards
         run: |
           grep -q 'portfolio-latest.js?v=20260905a' index.html
           grep -q 'tmop.js?v=20260906b' portfolio-latest.js
           grep -q 'theory-reality.js?v=20260906b' portfolio-latest.js
           grep -q 'core-bridges.css?v=20260906h' portfolio-latest.js
           grep -q 'core-bridges.js?v=20260906h' portfolio-latest.js
+          grep -q 'world-game.css?v=20260906a' portfolio-latest.js
+          grep -q 'world-game.js?v=20260906a' portfolio-latest.js
+          grep -q 'world-game-corrections.js?v=20260906a' portfolio-latest.js
+          grep -Fq 'Ω WORLD' world-game.js
+          grep -Fq '◎ OBSERVE' world-game.js
+          grep -Fq '◇ STATE' world-game.js
+          grep -Fq '⌖ FIELD' world-game.js
+          grep -Fq '⋈ EVOLVE' world-game.js
+          grep -Fq 'candidate ≠ certainty' world-game.js
+          grep -Fq '284b' world-game.js
+          grep -Fq 'state → payoff  (proposed)' world-game-corrections.js
+          grep -Fq '接点を見つける' world-game-corrections.js
           grep -Fq 'data.stories.state' theory-reality.js
           grep -Fq 'data.stories.observation' theory-reality.js
           grep -Fq 'data.stories.identify' theory-reality.js
@@ -141,11 +176,14 @@ jobs:
           grep -Fq 'CONTACT' core-bridges.js
           grep -Fq 'REAL SYSTEMS' core-bridges.js
           grep -Fq '284b · staging from SDMR 2.8.4' core-bridges.js
-          grep -Fq 'state → payoff  (proposed)' core-bridges.js
           grep -Fq 'candidate patches ≠ occupancy' core-bridges.js
-          grep -q 'theory-reality-audit.json' README.md
+          grep -q 'world-ontology-audit.json' README.md
           grep -q 'candidate patch ≠ occupancy' README.md
           test -f theory-reality-audit.json
+          test -f world-ontology-audit.json
+          test -f world-game.css
+          test -f world-game.js
+          test -f world-game-corrections.js
           test -f core-bridges.css
           test -f tmop-audit.json
           ! grep -q 'microdonta-role' index.html
