@@ -4,13 +4,13 @@
   const portals=document.querySelector(".portals");
   if(!svg||!portals)return;
 
-  svg.querySelectorAll(".contours,.dust,.particles,.void,.rank-points,.cross-core-layer,.research-web-layer,.theory-reality-web").forEach(el=>el.remove());
+  svg.querySelectorAll(".contours,.dust,.particles,.void,.rank-points,.cross-core-layer,.research-web-layer,.theory-reality-web,.layered-research-web").forEach(el=>el.remove());
   portals.innerHTML="";
 
   const defs=svg.querySelector("defs");
   const arrows=[
-    ["contactArrowBlue","#63bfe0"],["contactArrowAmber","#d5aa78"],["contactArrowGreen","#b9c977"],
-    ["contactArrowPink","#e98191"],["contactArrowMagenta","#d28dac"],["contactArrowViolet","#a48af4"]
+    ["lrBlue","#63bfe0"],["lrViolet","#a48af4"],["lrAmber","#d5aa78"],
+    ["lrGreen","#b9c977"],["lrPink","#e98191"],["lrMagenta","#d28dac"],["lrCyan","#55c4ae"]
   ];
   if(defs)arrows.forEach(([id,color])=>{
     if(defs.querySelector(`#${id}`))return;
@@ -18,70 +18,115 @@
   });
 
   const C={x:500,y:355};
-  const outer=[
-    {id:"flower",label:"FLOWER",sub:"hotarubukuro · FCP · Chun",x:500,y:55,color:"#e6b85c",glyph:"◐"},
-    {id:"fieldobs",label:"FIELD OBS",sub:"PolliPi · InsePi",x:805,y:235,color:"#4fa8c9",glyph:"◎"},
-    {id:"azami",label:"AZAMI",sub:"azami · EAzami · aza3",x:690,y:610,color:"#e98191",glyph:"✣"},
-    {id:"naturalstate",label:"NATURAL STATE",sub:"EGWEE",x:310,y:610,color:"#d5aa78",glyph:"○"},
-    {id:"island",label:"ISLAND",sub:"island · izu-core · shima",x:195,y:235,color:"#55c4ae",glyph:"⌁"}
+  const nodes=[
+    // WORLD / REQUIRED STATE
+    {id:"state",layer:"state",label:"WORLD / STATE",sub:"CREST · CCOC · MLTR · MRM · theouni",x:500,y:355,color:"#a48af4",glyph:"Ω"},
+
+    // ACCESS: what survives observation, what is identifiable, what can be reported, what to measure next
+    {id:"observation",layer:"access",label:"OBS MAP",sub:"REC · V3 · TNOA",x:650,y:270,color:"#63bfe0",glyph:"◉"},
+    {id:"identify",layer:"access",label:"IDENTIFY",sub:"Boundary",x:655,y:405,color:"#6eb7d2",glyph:"∅"},
+    {id:"design",layer:"access",label:"DESIGN",sub:"MROD",x:520,y:505,color:"#78c8bd",glyph:"↻"},
+    {id:"evidence",layer:"access",label:"EVIDENCE",sub:"CED",x:345,y:405,color:"#b59ce8",glyph:"⊢"},
+
+    // DOMAIN THEORY: ecological objects closer to measurable processes
+    {id:"interaction",layer:"domain",label:"INTERACTION / PAYOFF",sub:"SCH → BALANCE → BITA · PAYOFF",x:500,y:155,color:"#d28dac",glyph:"⋈"},
+    {id:"ecogenetic",layer:"domain",label:"ECO-GENETIC",sub:"EGC → EGWE",x:270,y:465,color:"#cf9f72",glyph:"↯"},
+    {id:"niche",layer:"domain",label:"NICHE / WORLDS",sub:"SDMR → ODSP → EOG",x:735,y:465,color:"#b9c977",glyph:"◇"},
+
+    // CONTACT: methods that directly hand theory to natural/physical work
+    {id:"fieldobs",layer:"contact",label:"FIELD OBS",sub:"PolliPi · InsePi",x:805,y:235,color:"#4fa8c9",glyph:"◎"},
+    {id:"survey",layer:"contact",label:"SURVEY",sub:"ACSP · candidate patches ≠ occupancy",x:790,y:545,color:"#86b96f",glyph:"⌖"},
+    {id:"naturalstate",layer:"contact",label:"NATURAL GATE",sub:"EGWEE · island / urban contexts",x:215,y:545,color:"#d5aa78",glyph:"○"},
+
+    // REAL SYSTEMS
+    {id:"flower",layer:"real",label:"FLOWER",sub:"hotarubukuro · FCP · Chun",x:500,y:58,color:"#e6b85c",glyph:"◐"},
+    {id:"island",layer:"real",label:"ISLAND",sub:"island · izu-core · shimahotarubukuro",x:125,y:250,color:"#55c4ae",glyph:"⌁"},
+    {id:"azami",layer:"real",label:"AZAMI",sub:"azami · EAzami · aza3",x:850,y:635,color:"#e98191",glyph:"✣"}
   ];
-  const inner=[
-    {id:"interaction",label:"INTERACTION",sub:"SCH · BALANCE · BITA · PAYOFF",x:500,y:165,color:"#d28dac",glyph:"⋈"},
-    {id:"observation",label:"OBSERVABILITY",sub:"REC · V3 · TNOA · Boundary · MROD",x:665,y:300,color:"#63bfe0",glyph:"∅"},
-    {id:"niche",label:"NICHE / WORLD",sub:"SDMR · ODSP · EOG · ACSP",x:600,y:490,color:"#b9c977",glyph:"◇"},
-    {id:"ecogenetic",label:"ECO-GENETIC",sub:"EGC · EGWE",x:400,y:490,color:"#cf9f72",glyph:"↯"},
-    {id:"theory",label:"STATE / REPORT",sub:"CCOC · MLTR · MRM · CREST · CED",x:335,y:300,color:"#a48af4",glyph:"∞"}
+  const byId=Object.fromEntries(nodes.map(n=>[n.id,n]));
+
+  const rings=`
+    <ellipse class="lr-ring lr-ring-access" cx="${C.x}" cy="${C.y}" rx="185" ry="165"/>
+    <ellipse class="lr-ring lr-ring-domain" cx="${C.x}" cy="${C.y}" rx="275" ry="245"/>
+    <ellipse class="lr-ring lr-ring-contact" cx="${C.x}" cy="${C.y}" rx="355" ry="300"/>
+    <ellipse class="lr-ring lr-ring-real" cx="${C.x}" cy="${C.y}" rx="425" ry="335"/>
+  `;
+  const spokes=nodes.filter(n=>n.id!=="state").map(n=>`<line class="lr-spoke lr-spoke-${n.layer}" x1="${C.x}" y1="${C.y}" x2="${n.x}" y2="${n.y}"/>`).join("");
+  const layerLabels=`
+    <text class="lr-layer-label" x="690" y="210">ACCESS</text>
+    <text class="lr-layer-label" x="765" y="375">DOMAIN THEORY</text>
+    <text class="lr-layer-label" x="835" y="438">CONTACT</text>
+    <text class="lr-layer-label lr-layer-real-label" x="890" y="505">REAL SYSTEMS</text>
+  `;
+
+  const edges=[
+    // required distinctions vs evidence and observation
+    {id:"state-evidence",from:"state",to:"evidence",label:"required state",color:"#a48af4",marker:"lrViolet"},
+    {id:"state-identify",from:"state",to:"identify",label:"required ≠ identified",color:"#8e9fda",marker:"lrViolet",dash:"5 5"},
+    {id:"obs-identify",from:"observation",to:"identify",label:"surviving distinctions",color:"#63bfe0",marker:"lrBlue"},
+    {id:"identify-evidence",from:"identify",to:"evidence",label:"identified → reportable",color:"#a48af4",marker:"lrViolet"},
+    {id:"identify-design",from:"identify",to:"design",label:"unresolved set",color:"#55c4ae",marker:"lrCyan"},
+    {id:"design-observation",from:"design",to:"observation",label:"next observation",color:"#55c4ae",marker:"lrCyan",curve:-78,dash:"6 5"},
+
+    // MRM-like required mechanism distinctions meet empirical identifiability here
+    {id:"interaction-identify",from:"interaction",to:"identify",label:"specific ambiguity → boundary",color:"#d28dac",marker:"lrMagenta"},
+
+    // proposed domain interface: relational state can condition payoff parameters, not yet a validation bridge
+    {id:"eg-interaction",from:"ecogenetic",to:"interaction",label:"state → payoff  (proposed)",color:"#cf9f72",marker:"lrAmber",dash:"3 6",curve:72},
+
+    // theory to contact
+    {id:"obs-field",from:"observation",to:"fieldobs",label:"semantics → instrument",color:"#63bfe0",marker:"lrBlue"},
+    {id:"eg-natural",from:"ecogenetic",to:"naturalstate",label:"state idea → natural gate",color:"#d5aa78",marker:"lrAmber"},
+    {id:"natural-evidence",from:"naturalstate",to:"evidence",label:"adequacy → licensing",color:"#a48af4",marker:"lrViolet"},
+    {id:"niche-survey",from:"niche",to:"survey",label:"worlds → candidate patches",color:"#b9c977",marker:"lrGreen"},
+    {id:"design-survey",from:"design",to:"survey",label:"WHAT ↔ WHERE",color:"#55c4ae",marker:"lrCyan",both:true,curve:-30},
+
+    // contact to real systems
+    {id:"field-flower",from:"fieldobs",to:"flower",label:"visit observation",color:"#4fa8c9",marker:"lrBlue",both:true,curve:-55},
+    {id:"natural-island",from:"naturalstate",to:"island",label:"context → state adequacy",color:"#55c4ae",marker:"lrCyan",both:true},
+    {id:"survey-azami",from:"survey",to:"azami",label:"prioritize → field return",color:"#e98191",marker:"lrPink",both:true},
+
+    // empirical substrate, not warning validation
+    {id:"island-natural-note",from:"island",to:"naturalstate",label:"Honshu–Izu substrate",color:"#d5aa78",marker:"lrAmber",dash:"5 7",curve:30}
   ];
-  const all=[...outer,...inner];
-  const byId=Object.fromEntries(all.map(n=>[n.id,n]));
 
-  const path=nodelist=>nodelist.map((n,i)=>`${i===0?"M":"L"}${n.x} ${n.y}`).join(" ")+" Z";
-  const outerPath=path(outer),innerPath=path(inner);
-  const mid=outer.map((o,i)=>({x:(o.x+inner[i].x)/2,y:(o.y+inner[i].y)/2}));
-  const midPath=path(mid);
-  const spokes=outer.map((o,i)=>`<path class="tr-spoke" d="M${C.x} ${C.y} L${inner[i].x} ${inner[i].y} L${o.x} ${o.y}"/>`).join("");
-
-  const scaffold=`<g class="tr-scaffold"><path class="tr-ring tr-ring-outer" d="${outerPath}"/><path class="tr-ring tr-ring-mid" d="${midPath}"/><path class="tr-ring tr-ring-inner" d="${innerPath}"/>${spokes}</g>`;
-
-  const contacts=[
-    {id:"obs-field",from:"observation",to:"fieldobs",label:"theory → application",color:"#63bfe0",marker:"contactArrowBlue",both:true},
-    {id:"rec-field",from:"observation",to:"fieldobs",label:"H6 field gate",color:"#4fa8c9",marker:"contactArrowBlue",offset:18},
-    {id:"eg-natural",from:"ecogenetic",to:"naturalstate",label:"projection ≠ validation",color:"#d5aa78",marker:"contactArrowAmber",both:true},
-    {id:"state-natural",from:"theory",to:"naturalstate",label:"adequacy → report",color:"#a48af4",marker:"contactArrowViolet"},
-    {id:"niche-azami",from:"niche",to:"azami",label:"survey ↔ field",color:"#b9c977",marker:"contactArrowGreen",both:true},
-    {id:"interaction-observation",from:"interaction",to:"observation",label:"specific → general",color:"#d28dac",marker:"contactArrowMagenta"},
-    {id:"obs-niche",from:"observation",to:"niche",label:"WHAT ↔ WHERE",color:"#55c4ae",marker:"contactArrowGreen",both:true},
-    {id:"flower-island",from:"flower",to:"island",label:"shared system",color:"#e6b85c",marker:"contactArrowAmber",both:true,outer:true},
-    {id:"island-natural",from:"island",to:"naturalstate",label:"shared data",color:"#55c4ae",marker:"contactArrowGreen",both:true,outer:true}
-  ];
-
-  function contactMarkup(c){
-    const a=byId[c.from],b=byId[c.to];
-    let ax=a.x,ay=a.y,bx=b.x,by=b.y;
-    const dx=bx-ax,dy=by-ay,len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len,off=c.offset||0;
-    ax+=nx*off; ay+=ny*off; bx+=nx*off; by+=ny*off;
-    const mx=(ax+bx)/2,my=(ay+by)/2;
-    const width=Math.max(78,c.label.length*7.5+20);
-    const markers=c.both?` marker-start="url(#${c.marker})" marker-end="url(#${c.marker})"`:` marker-end="url(#${c.marker})"`;
-    return `<g class="tr-contact-group" data-contact="${c.id}" style="--contact:${c.color}"><title>${c.label}</title><path class="tr-contact-halo" d="M${ax.toFixed(1)} ${ay.toFixed(1)} L${bx.toFixed(1)} ${by.toFixed(1)}"/><path class="tr-contact" d="M${ax.toFixed(1)} ${ay.toFixed(1)} L${bx.toFixed(1)} ${by.toFixed(1)}"${markers}/><rect class="tr-contact-label-bg" x="${(mx-width/2).toFixed(1)}" y="${(my-11).toFixed(1)}" width="${width.toFixed(1)}" height="22"/><text class="tr-contact-label" x="${mx.toFixed(1)}" y="${my.toFixed(1)}">${c.label}</text></g>`;
+  function edgePath(e){
+    const a=byId[e.from],b=byId[e.to];
+    if(!e.curve)return`M${a.x} ${a.y} L${b.x} ${b.y}`;
+    const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1;
+    const nx=-dy/len,ny=dx/len;
+    return`M${a.x} ${a.y} Q${(mx+nx*e.curve).toFixed(1)} ${(my+ny*e.curve).toFixed(1)} ${b.x} ${b.y}`;
   }
-  const contactLayer=contacts.map(contactMarkup).join("");
+  function edgeMid(e){
+    const a=byId[e.from],b=byId[e.to];
+    if(!e.curve)return{x:(a.x+b.x)/2,y:(a.y+b.y)/2};
+    const mx=(a.x+b.x)/2,my=(a.y+b.y)/2,dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,nx=-dy/len,ny=dx/len;
+    const q={x:mx+nx*e.curve,y:my+ny*e.curve};
+    return{x:(a.x+2*q.x+b.x)/4,y:(a.y+2*q.y+b.y)/4};
+  }
+  const edgeMarkup=edges.map(e=>{
+    const d=edgePath(e),m=edgeMid(e),width=Math.max(76,e.label.length*6.8+18);
+    const markers=e.both?` marker-start="url(#${e.marker})" marker-end="url(#${e.marker})"`:` marker-end="url(#${e.marker})"`;
+    const dash=e.dash?`stroke-dasharray:${e.dash};`:"";
+    return `<g class="lr-edge-group" data-contact="${e.id}" style="--edge:${e.color};${dash}"><title>${e.label}</title><path class="lr-edge-halo" d="${d}"/><path class="lr-edge" d="${d}"${markers}/><rect class="lr-edge-label-bg" x="${(m.x-width/2).toFixed(1)}" y="${(m.y-10).toFixed(1)}" width="${width.toFixed(1)}" height="20"/><text class="lr-edge-label" x="${m.x.toFixed(1)}" y="${m.y.toFixed(1)}">${e.label}</text></g>`;
+  }).join("");
 
-  function nodeMarkup(n,kind){
+  function nodeMarkup(n){
+    const r=n.layer==="state"?35:n.layer==="real"?24:n.layer==="contact"?22:21;
     const dx=n.x-C.x,dy=n.y-C.y,mag=Math.hypot(dx,dy)||1;
-    const labelDistance=kind==="outer"?53:44;
-    const lx=n.x+dx/mag*labelDistance,ly=n.y+dy/mag*labelDistance;
-    const anchor=dx>70?"start":dx<-70?"end":"middle";
-    return `<g class="portal tr-node tr-node-${kind}" data-portal="${n.id}" tabindex="0" role="button" aria-label="${n.label}" style="--node:${n.color};color:${n.color}"><title>${n.label} · ${n.sub}</title><circle class="tr-node-halo" cx="${n.x}" cy="${n.y}" r="${kind==="outer"?31:27}"/><circle class="portal-node tr-node-core" cx="${n.x}" cy="${n.y}" r="${kind==="outer"?23:20}"/><text class="tr-node-glyph" x="${n.x}" y="${n.y+5}">${n.glyph}</text><text class="tr-node-label" x="${lx.toFixed(1)}" y="${(ly-2).toFixed(1)}" text-anchor="${anchor}">${n.label}</text><text class="tr-node-sub" x="${lx.toFixed(1)}" y="${(ly+12).toFixed(1)}" text-anchor="${anchor}">${n.sub}</text></g>`;
+    let lx=n.x+dx/mag*(r+20),ly=n.y+dy/mag*(r+20);
+    if(n.id==="state"){lx=n.x;ly=n.y+58;}
+    const anchor=n.id==="state"?"middle":dx>75?"start":dx<-75?"end":"middle";
+    return `<g class="portal lr-node lr-node-${n.layer}" data-portal="${n.id}" tabindex="0" role="button" aria-label="${n.label}" style="--node:${n.color};color:${n.color}"><title>${n.label} · ${n.sub}</title><circle class="lr-node-halo" cx="${n.x}" cy="${n.y}" r="${r+8}"/><circle class="portal-node lr-node-core" cx="${n.x}" cy="${n.y}" r="${r}"/><text class="lr-node-glyph" x="${n.x}" y="${n.y+5}">${n.glyph}</text><text class="lr-node-label" x="${lx.toFixed(1)}" y="${(ly-2).toFixed(1)}" text-anchor="${anchor}">${n.label}</text><text class="lr-node-sub" x="${lx.toFixed(1)}" y="${(ly+11).toFixed(1)}" text-anchor="${anchor}">${n.sub}</text></g>`;
   }
 
-  const centre=`<g class="tr-centre"><circle class="tr-centre-halo" cx="${C.x}" cy="${C.y}" r="66"/><circle class="tr-centre-core" cx="${C.x}" cy="${C.y}" r="52"/><text class="tr-centre-title" x="${C.x}" y="${C.y-8}">CONTACT</text><text class="tr-centre-sub" x="${C.x}" y="${C.y+11}">THEORY ⇄ REALITY</text><text class="tr-centre-mini" x="${C.x}" y="${C.y+27}">33 repos</text></g>`;
-  const labels=`<text class="tr-layer-label tr-layer-theory" x="500" y="132">THEORY WORLDS</text><text class="tr-layer-label tr-layer-reality" x="500" y="700">REAL WORLDS</text>`;
-  const legend=`<g class="tr-legend"><line class="tr-spoke" x1="365" y1="715" x2="402" y2="715"/><text x="410" y="719">web = portfolio structure</text><line class="tr-contact tr-legend-contact" x1="570" y1="715" x2="607" y2="715"/><text x="615" y="719">thick = theory-real contact</text></g>`;
+  const ghost=`<g class="lr-ghost" aria-label="284b staging"><line x1="735" y1="465" x2="825" y2="410"/><circle cx="835" cy="404" r="10"/><text x="852" y="407">284b · staging from SDMR 2.8.4</text></g>`;
+  const centreNote=`<text class="lr-centre-note" x="500" y="315">WORLD → STATE → ACCESS → DOMAIN → CONTACT → FIELD</text>`;
+  const legend=`<g class="lr-legend"><text x="245" y="704">radius = distance to measurement, not importance</text><text x="610" y="704">dashed = proposed / bounded interface</text></g>`;
 
-  portals.insertAdjacentHTML("beforebegin",`<g class="theory-reality-web" aria-label="theory reality research web">${scaffold}${centre}${contactLayer}${labels}${legend}</g>`);
-  portals.insertAdjacentHTML("beforeend",outer.map(n=>nodeMarkup(n,"outer")).join("")+inner.map(n=>nodeMarkup(n,"inner")).join(""));
+  portals.insertAdjacentHTML("beforebegin",`<g class="layered-research-web" aria-label="layered theory to reality spiderweb">${rings}<g class="lr-scaffold">${spokes}</g>${layerLabels}${centreNote}${edgeMarkup}${ghost}${legend}</g>`);
+  portals.insertAdjacentHTML("beforeend",nodes.map(nodeMarkup).join(""));
 
   const desc=document.getElementById("brain-desc");
-  if(desc)desc.textContent="外側にreal biological/data/physical worlds、内側にtheory worldsを置き、太い糸だけを理論と現実のscientific contactとして示す蜘蛛の巣。観測理論はREC/V3/TNOAからBoundary/MRODへ、PolliPi/InsePiは訪花観察への物理実装として外側に置く。";
+  if(desc)desc.textContent="中心にCRESTのworld/state theory、次に観測・同定・証拠・次観測、さらにeco-genetic / interaction-payoff / niche-world domain theory、外側にEGWEE・ACSP・PolliPi/InsePiというcontact layer、最外周に島・花・アザミのreal systemsを置く蜘蛛の巣。半径は理論の重要度ではなく現実の測定までの距離を示す。";
 })();
