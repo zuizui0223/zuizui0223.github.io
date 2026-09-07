@@ -38,28 +38,9 @@
   function bezier(a,b,c,d,n=25){return Array.from({length:n+1},(_,i)=>{
     const t=i/n,s=1-t;return a.map((v,j)=>s*s*s*v+3*s*s*t*b[j]+3*s*t*t*c[j]+t*t*t*d[j]);
   });}
-  function leaf(start,tip,width,twist=0){
-    const axis=norm(sub(tip,start)),[u,v]=basis(axis);
-    const lateral=add(mul(u,Math.cos(twist)),mul(v,Math.sin(twist)));
-    let last;
-    for(let i=0;i<=16;i++){
-      const t=i/16,bulge=Math.sin(Math.PI*t),center=mix(start,tip,t);
-      center[1]+=5*bulge;
-      const widthAt=width*Math.pow(bulge,.78)*(1+.045*Math.sin(17*Math.PI*t));
-      const row=[add(center,mul(lateral,-widthAt)),add(center,[0,1.5*bulge,0]),add(center,mul(lateral,widthAt))];
-      if(last){face([last[0],last[1],row[1],row[0]],[79,108,78],'leaf');face([last[1],last[2],row[2],row[1]],[105,128,90],'leaf');}
-      last=row;
-    }
-    tube(bezier(start,mix(start,tip,.3),add(mix(start,tip,.6),[0,5,0]),tip,12),.17,[153,156,105],'vein');
-  }
   const stem=bezier([-9,5,1],[-17,57,2],[5,102,-5],[5,133,0]);
   tube(stem,.95,[101,131,81]);
   tube(bezier([5,133,0],[5,157,0],[22,156,5],origin,20),.72,[129,148,92]);
-  leaf([-9,7,1],[-35,22,15],10,.2);
-  leaf([-9,9,1],[26,18,-18],10.2,.5);
-  leaf([-11,40,1],[-37,68,1],8,1.32);
-  leaf([-8,66,0],[28,86,6],7.1,1.2);
-  leaf([1,112,0],[-17,127,-4],4.8,1.15);
   tube(bezier([-3,94,0],[-17,96,-8],[-22,115,-9],[-26,113,-9],18),.48,[112,137,83]);
   // A closed bud belongs to the same stem; there is only one open flower.
   for(let j=0;j<14;j++){
@@ -86,11 +67,8 @@
     const t=.48+.49*((k*.61803398875)%1),a=k*2.3999632297,p=bell(t,a);
     marks.push({point:p,normal:norm(add(mul(side,Math.cos(a)),mul(other,Math.sin(a)))),size:.27+(k%3)*.11});
   }
-  // Five narrow green sepals clasp the neck, instead of a rose's radial petals.
-  for(let k=0;k<5;k++){
-    const a=k*TAU/5,p=bell(.1,a),q=add(bell(.28,a),add(mul(side,2*Math.cos(a)),mul(other,2*Math.sin(a))));
-    face([add(p,mul(other,1.8)),q,add(p,mul(other,-1.8)),add(origin,mul(down,-2))],[101,131,80],'sepal');
-  }
+  const botany=window.ZUIZUI_ORIGIN_BOTANY.build({origin,down,side,other});
+  surfaces.push(...botany.surfaces);
   surfaces.forEach(f=>{f.points.forEach(Object.freeze);Object.freeze(f.points);Object.freeze(f.normal);Object.freeze(f.color);Object.freeze(f);});
   Object.freeze(surfaces);
   function project(p){
@@ -169,8 +147,21 @@
     pedestal();glass(false);
     const projected=surfaces.map(f=>({f,points:f.points.map(project)}));
     projected.forEach(v=>v.depth=v.points.reduce((sum,p)=>sum+p.d,0)/v.points.length);
+    // Depth-sorted botanical strokes, not veins drawn through the far side of a leaf.
+    for(const d of botany.details){
+      if(d.normal&&normalDepth(d.normal)<.04)continue;
+      if(d.role==='hair'&&scale<1.15)continue;
+      for(let i=1;i<d.points.length;i++){
+        const pts=[project(d.points[i-1]),project(d.points[i])];
+        projected.push({detail:d,points:pts,depth:(pts[0].d+pts[1].d)/2+.015});
+      }
+    }
     projected.sort((a,b)=>a.depth-b.depth);
-    for(const {f,points}of projected){
+    for(const {f,detail,points}of projected){
+      if(detail){
+        ctx.beginPath();ctx.moveTo(points[0].x,points[0].y);ctx.lineTo(points[1].x,points[1].y);
+        ctx.strokeStyle=detail.color;ctx.lineWidth=Math.max(.16,detail.width*scale);ctx.lineCap='round';ctx.stroke();continue;
+      }
       const light=clamp(.85+.16*f.normal[1]-.17*f.normal[0]+.1*f.normal[2],.61,1.09);
       polygon(points,`rgb(${f.color.map(v=>Math.round(clamp(v*light,0,255))).join(',')})`);
     }
@@ -189,6 +180,6 @@
   if(typeof ResizeObserver==='function')new ResizeObserver(request).observe(canvas);
   // Remove the remaining decorative name in the once-created foldout, not source URLs.
   const atlas=document.querySelector('#roomMap .r-eyebrow');if(atlas)atlas.textContent='atlas';
-  window.ZUIZUI_ORIGIN=Object.freeze({version:'2026-09-07-cloche-1',snapshot:()=>({repository:'hotarubukuro',openFlowers:1,corollaLobes:5,yaw,frames,geometryFrozen:Object.isFrozen(surfaces),faces:surfaces.length})});
+  window.ZUIZUI_ORIGIN=Object.freeze({version:'2026-09-07-cloche-botany-2',snapshot:()=>({repository:'hotarubukuro',openFlowers:1,corollaLobes:5,yaw,frames,geometryFrozen:Object.isFrozen(surfaces),faces:surfaces.length,botany:botany.anatomy,botanyFrozen:Object.isFrozen(botany)})});
   request();
 })();
