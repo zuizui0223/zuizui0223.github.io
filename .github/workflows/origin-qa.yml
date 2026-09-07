@@ -1,0 +1,31 @@
+name: origin cloche and minimal identity qa
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  origin:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Origin syntax
+        run: node --check origin.js
+      - name: Install browser
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Actual HTTP page, origin navigation, minimal labels and mobile layouts
+        run: python tests/origin_browser_test.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: origin-qa
+          path: test-results/origin

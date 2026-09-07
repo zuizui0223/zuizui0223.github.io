@@ -4,17 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#101c20">
-<meta name="description" content="脳洞 — zuizui の研究宇宙。ひとつの塔を登り、視点を変え、世界の接点を見つける。">
-<meta property="og:title" content="zuizui — 脳洞">
-<meta property="og:description" content="一つの塔。五つの言葉。まだ見えない接点。">
+<meta name="description" content="PhD in zuizui — ガラスの中のホタルブクロから、一つの研究の塔へ。">
+<meta property="og:title" content="PhD in zuizui">
+<meta property="og:description" content="一株の花から、五つの世界へ。">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://zuizui0223.github.io/">
-<meta property="og:image" content="https://zuizui0223.github.io/og.png">
-<title>zuizui — 脳洞</title>
+<title>PhD in zuizui</title>
 <link rel="icon" href="mark.svg" type="image/svg+xml">
 <link rel="stylesheet" href="tower.css?v=20260906t1">
 <link rel="stylesheet" href="rooms.css?v=20260906r1">
 <link rel="stylesheet" href="architecture.css?v=20260907a1">
+<link rel="stylesheet" href="origin.css?v=20260907o1">
 <script src="tower-data.js?v=20260906t1" defer></script>
 <script src="tower-architecture.js?v=20260907a1" defer></script>
 <script src="tower.js?v=20260907a1" defer></script>
@@ -22,11 +22,12 @@
 <script src="tower-perspective-clue.js?v=20260907a1" defer></script>
 <script src="tower-echo-clue.js?v=20260907a1" defer></script>
 <script src="rooms.js?v=20260907a1" defer></script>
+<script src="origin.js?v=20260907o1" defer></script>
 </head>
 <body>
 <a class="skip" href="#notebook" id="skipNotebook">研究一覧へ</a>
 <header class="masthead">
-  <a href="#" class="wordmark" id="homeLink" aria-label="塔の全景へ">zuizui<span aria-hidden="true">·</span></a>
+  <a href="#" class="wordmark" id="homeLink" aria-label="塔の全景へ"><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M5 25h14M8 25V12h8v13M6 12l6-9 6 9M10 19h4M10 15h4M12 3V1"/></svg></a>
   <nav aria-label="補助ナビゲーション">
     <button id="helpButton" class="icon-button" aria-label="操作方法" title="操作方法">⌘</button>
     <button id="bookButton" class="icon-button" aria-label="手帳と研究一覧を開く" title="手帳">▱<i id="bookDot" hidden></i></button>
@@ -35,7 +36,10 @@
 </header>
 <main id="ascent">
  <div class="scene" id="scene">
-   <div class="signature"><span>脳 洞</span><h1>zuizui</h1><p>ZHANG Ruiqi</p><button id="philosophyButton">PhD in zuizui</button></div>
+   <div class="signature origin-shrine">
+     <button id="originButton" type="button" data-room="hotarubukuro" aria-label="原点のホタルブクロへ。ガラスの鐘に包まれた一株の花。"><canvas id="originFlower" aria-hidden="true"></canvas></button>
+     <h1><button id="philosophyButton" type="button">PhD in zuizui</button></h1>
+   </div>
    <canvas id="tower" role="img" aria-label="五層の立体的な研究の塔。左右のドラッグで回転、縦スクロールで上昇。手帳から全研究を直接読めます。"></canvas>
    <div id="doorways" aria-label="この層の研究"></div>
    <button id="seal" class="seal" aria-label="重なった印を確かめる"><span aria-hidden="true">◌</span></button>
@@ -49,9 +53,9 @@
 </main>
 <div class="live sr-only" id="live" aria-live="polite"></div>
 <dialog id="notebook" aria-labelledby="bookTitle">
- <div class="book-head"><span class="book-kicker">zuizui / field notes</span><button id="closeBook" aria-label="手帳を閉じる">×</button></div>
+ <div class="book-head"><span class="book-kicker">field notes</span><button id="closeBook" aria-label="手帳を閉じる">×</button></div>
  <div id="bookContent"></div>
 </dialog>
-<noscript><section class="no-script"><h2>zuizui / 研究一覧</h2><p>塔の探索にはJavaScriptが必要です。研究資料は直接開けます。</p><a href="https://github.com/zuizui0223">GitHub</a> · <a href="archive.html#atlas">従来の地図</a></section></noscript>
+<noscript><section class="no-script"><h2>研究一覧</h2><p>塔の探索にはJavaScriptが必要です。研究資料は直接開けます。</p><a href="https://github.com/zuizui0223">GitHub</a> · <a href="archive.html#atlas">従来の地図</a></section></noscript>
 </body>
 </html>
