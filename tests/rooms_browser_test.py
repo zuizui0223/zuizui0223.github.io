@@ -49,7 +49,7 @@ def main():
         snap = lambda: page.evaluate('ZUIZUI_ROOMS.snapshot()')
         data = page.evaluate('ZUIZUI_TOWER')
         science = snap()['science']
-        check('34 source-backed rooms and four TMOP glyphs', len(data['repos']) == 34 and len(snap()['membership']) == 34)
+        check('36 source-backed rooms and four TMOP glyphs', len(data['repos']) == 36 and len(snap()['membership']) == 36)
         check('284b classification is explicitly unaudited, not guessed', snap()['membership']['284b'] == '?')
         page.locator('.doorway[aria-hidden="false"]').first.click()
         check('tower doorway enters a room instead of a note', bool(snap()['room']) and not page.locator('#notebook').evaluate('(e)=>e.open'))
@@ -58,7 +58,7 @@ def main():
         check('Escape returns to the same tower', snap()['room'] is None and not page.locator('#ascent').evaluate('(e)=>e.inert'))
         # The flat map is a full, non-puzzle-dependent navigation alternative.
         page.locator('#mapButton').click()
-        check('flat map contains all 34 rooms', page.locator('[data-map-room]').count() == 34)
+        check('flat map contains all 36 rooms', page.locator('[data-map-room]').count() == 36)
         check('map is an in-document dialog', snap()['mapOpen'] and page.url.startswith('about:blank'))
         page.locator('[data-filter="P"]').click()
         check('P filter highlights audited primary-data rooms only', page.locator('.plan-node:not(.dim)').count() == 7)

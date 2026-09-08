@@ -2,14 +2,15 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict');
 const context={window:{}};
 vm.runInNewContext(fs.readFileSync('tower-data.js','utf8'),context);
+vm.runInNewContext(fs.readFileSync('portfolio-20260908.js','utf8'),context);
 vm.runInNewContext(fs.readFileSync('tower-echo-data.js','utf8'),context);
 const d=JSON.parse(JSON.stringify(context.window.ZUIZUI_TOWER));
 const echoes=JSON.parse(JSON.stringify(context.window.ZUIZUI_TOWER_ECHOES));
 const ontology=JSON.parse(fs.readFileSync('tower-ontology-audit.json','utf8'));
 const closure=JSON.parse(fs.readFileSync('tower-closure-audit.json','utf8'));
 assert.equal(ontology.schema,'zuizui.tower_ontology.v1');
-assert.equal(ontology.inventory.owner_total,35);
-assert.equal(ontology.inventory.research_programmes,34);
+assert.equal(ontology.inventory.owner_total,37);
+assert.equal(ontology.inventory.research_programmes,36);
 assert.deepEqual(ontology.inventory.staging_unclassified,[]);
 assert.equal(ontology.floors.length,5);
 assert(ontology.orthogonal_worlds.cross_estimand_relation_space.repositories.includes('284b'));
@@ -19,10 +20,10 @@ assert(closure.contacts.some(c=>c.id==='relation_space_to_cross_role_validation'
 assert(closure.bounded_receipts.some(c=>c.id==='284b_layer1_feasibility'&&c.status==='bounded'));
 const ids=new Set(d.repos.map(r=>r[0]));
 assert.equal(ids.size,d.repos.length);
-assert.equal(d.repos.length,34);
+assert.equal(d.repos.length,36);
 assert.equal(d.floors.length,5);
 assert.equal(d.motifs.length,5);
-assert.equal(d.contacts.length,17);
+assert.equal(d.contacts.length,20);
 const contacts=new Map(d.contacts.map(c=>[c.id,c]));
 assert.equal(contacts.size,d.contacts.length);
 for(const r of d.repos)assert(r[1]>=0&&r[1]<5);
@@ -50,7 +51,11 @@ for(const e of echoes){
   assert(c.to.includes(e.to),`${e.id} target must already exist in typed contact`);
 }
 assert(d.repos.find(r=>r[0]==='284b')[4].includes('relation-check'));
+assert.equal(d.repos.find(r=>r[0]==='TTF')[1],1);
+assert.equal(d.repos.find(r=>r[0]==='adaptive-gain')[1],2);
+assert.equal(d.syntheses.length,2);
+assert(d.syntheses.every(s=>s.scientific_edge===false));
 assert.equal(contacts.get('state-payoff').status,'proposed');
 assert.equal(contacts.get('field-return').status,'open');
 assert(!fs.readFileSync('index.html','utf8').includes('src="world-game'));
-console.log('Tower contract: 34 entrances, 5 motifs, 17 typed contacts, 5 cross-floor rune recurrences; no invented edges.');
+console.log('Tower contract: 36 entrances, 5 motifs, 20 typed contacts, 5 cross-floor runes + non-edge synthesis recurrence; no invented scientific edges.');

@@ -10,22 +10,24 @@ const repos=new Map(D.repos.map(r=>[r[0],r]));
 const short=id=>({'hotarubukuro':'HOTARU','shimahotarubukuro':'SHIMA-HO','eco-genetic-criticality':'EGC','eco-genetic-warning-extensions':'EGWE'}[id]||id.toUpperCase());
 const source=(id,path='')=>`https://github.com/zuizui0223/${encodeURIComponent(id)}${path?'/blob/main/'+path:''}`;
 // Frozen display snapshot, not an assertion that membership cannot later change.
-const membership=Object.freeze({hotarubukuro:'O',azami:'O',bita:'TO',island:'O',mrod:'TM',pollipi:'MP',insepi:'TMP',acsp:'MO','eco-genetic-criticality':'T',ccoc:'T','izu-core':'TO','eco-genetic-warning-extensions':'T',mltr:'T',ced:'TM',mrm:'T',shimahotarubukuro:'P',fcp:'O',eog:'TMO',odsp:'TMO',EAzami:'O',chun:'O',sdmr:'TMO',crest:'T',theouni:'T',tnoa:'TM',aza3:'P',sch:'TOP',boundary:'TM',rec:'MOP',egwee:'MO',balance:'TOP',v3:'TM',payoff:'T','284b':'?'});
+const membership=Object.freeze({hotarubukuro:'O',azami:'O',bita:'TO',island:'O',mrod:'TM',pollipi:'MP',insepi:'TMP',acsp:'MO','eco-genetic-criticality':'T',ccoc:'T','izu-core':'TO','eco-genetic-warning-extensions':'T',mltr:'T',ced:'TM',mrm:'T',shimahotarubukuro:'P',fcp:'O',eog:'TMO',odsp:'TMO',EAzami:'O',chun:'O',sdmr:'TMO',crest:'T',theouni:'T',tnoa:'TM',aza3:'P',sch:'TOP',boundary:'TM',rec:'MOP',egwee:'MO',balance:'TOP',v3:'TM',payoff:'T','284b':'?','TTF':'M','adaptive-gain':'T'});
 const alphabet=Object.freeze({T:{name:'理論',en:'Theory',path:'M6 25L16 5L26 25ZM11 21L16 11L21 21'},M:{name:'方法',en:'Method',path:'M4 13L13 4L22 13L13 22ZM10 19L19 10L28 19L19 28Z'},O:{name:'公開データ',en:'Open data',path:'M5 5H27V27H5ZM10 11H12M20 11H22M10 21H12M20 21H22'},P:{name:'一次データ',en:'Primary data',path:'M16 28V12M16 20C4 20 5 7 5 7C17 7 16 20 16 20M16 14C27 14 27 3 27 3C17 3 16 14 16 14'}});
 function glyph(t,cls=''){return alphabet[t]?`<svg class="r-glyph ${cls}" viewBox="0 0 32 32" aria-hidden="true"><path d="${alphabet[t].path}"/></svg>`:'<span class="r-unknown" aria-hidden="true">?</span>';}
 function glyphs(id){return [...(membership[id]||'?')].map(t=>glyph(t)).join('');}
 // Art direction is a visual metaphor, not a new scientific result.
 const art={
  hotarubukuro:['garden','離れた花、同じ色。'],fcp:['tiles','色の下に、空間。'],chun:['rings','今の色に、長い時間。'],azami:['thistle','いま見える形。'],EAzami:['branch','似た形、違う来歴。'],aza3:['specimens','三つの証拠を、同じ場所で。'],island:['islands','海は隔てる。何を？'],'izu-core':['islands','島の間に、関係。'],shimahotarubukuro:['garden','ここで採る、ひとつの花。'],
+ TTF:['slices','同じ方法でも、標本配置が変われば？'],
+ 'adaptive-gain':['branch','次を、結果を見てから選ぶ。'],
  pollipi:['camera','花から、記録へ。'],insepi:['camera','花ではなく、見る側を疑う。'],rec:['missing','空白も、世界の一部。'],v3:['prism','もう一つの参照。'],tnoa:['tablets','まとめる前に、残す。'],boundary:['twins','同じ影は、同じ物ではない。'],mrod:['prism','次は、どちらから見る？'],sdmr:['axes','どの軸を、持ち込む？'],odsp:['slices','一枚では、見えない。'],eog:['portals','届くことと、生きられること。'],'284b':['relation','違う答えを、同じ機会へ。'],acsp:['survey','ここを探す。いるとは限らない。'],
  ccoc:['branch','つないだ先で、違いが出る。'],mltr:['rings','道のりを、忘れていい？'],mrm:['twins','触れ方が、機構を分ける。'],crest:['crystal','残すべき、最小の区別。'],ced:['balance','言葉の重さを、証拠で支える。'],theouni:['tablets','違う理論に、通じる文法。'],sch:['balance','ひとつの形を、分け合う。'],balance:['balance','分かれない、という形。'],bita:['branch','分かれて、取り戻す。'],payoff:['game','その形は、残れるか。'],'eco-genetic-criticality':['network','数ではなく、つながり。'],'eco-genetic-warning-extensions':['network','未来へ残る、関係。'],egwee:['relation','自然が、答えを問い返す。']};
 const shortConditions={
  'observation-map':'残した区別 → 識別できる区別','next-observation':'両立集合 → 次の測定','state-obligation':'未来・履歴・機構 → 必要状態','evidence-license':'必要状態 × 観測 → 報告',
  'niche-worlds':'座標 → 多次元状態 → 両立世界','relation-space':'別々の答え → 共通の生物学的機会','field-return':'候補地 × 対照地 × 検出努力','architecture-game':'葛藤・回復・費用 → 構造の利得','warning-projection':'自然での状態照合 ≠ 警告の検証',
- 'state-payoff':'関係状態 → 利得座標：同一系で照合','architecture-state':'構造 → 関係 → 未来：同一系で測る','island-urban':'状態を揃えた後、起源は残る？','mrm-mrod':'応答署名 × 候補測定 × 費用','ced-mrod':'対象と機構を、同じ観測契約へ','eog-mrod':'世界の不一致 → 観測の分割','same-system':'同一装置 × 独立真値 × 未見採点','natural-state':'必要状態 × 観測 × 未見の未来'};
+ 'state-payoff':'関係状態 → 利得座標：同一系で照合','architecture-state':'構造 → 関係 → 未来：同一系で測る','island-urban':'状態を揃えた後、起源は残る？','mrm-mrod':'応答署名 × 候補測定 × 費用','ced-mrod':'対象と機構を、同じ観測契約へ','eog-mrod':'世界の不一致 → 観測の分割','same-system':'同一装置 × 独立真値 × 未見採点','natural-state':'必要状態 × 観測 × 未見の未来','transfer-geometry':'標本配置 × held-out transfer','geometry-boundary':'idealized calibration ≠ actual geometry','adaptive-routing':'途中結果 → 次の測定；固定bundleとの費用差'};
 const statusGlyph={established:'—',bounded:'≈',proposed:'⋯',open:'⋯',navigation:'⌁'};
 const statusText={established:'概念接点',bounded:'限定した接点',proposed:'接続仮説',open:'未閉合',navigation:'館内の回廊'};
-const galleries=[['hotarubukuro','fcp','chun'],['azami','EAzami','aza3'],['island','izu-core','shimahotarubukuro'],['crest','theouni']];
+const galleries=[['hotarubukuro','fcp','chun'],['azami','EAzami','aza3'],['island','izu-core','shimahotarubukuro'],['crest','theouni'],['fcp','TTF'],['mrod','adaptive-gain']];
 const state={room:null,yaw:.64,target:.64,pitch:.49,frame:0,drag:null,suppress:0,scroll:0,focus:null,mapFocus:null,filter:null,bookOrigin:null};
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
 let visited=new Set(),decoded=new Set(),gateSeen=new Set(),positions=[],faces=[],doors=[],camera={w:1,h:1,scale:1,x:0,y:0},yawByRoom=new Map();
@@ -48,7 +50,7 @@ shell.innerHTML=`<canvas id="roomCanvas" aria-label="立体の研究室。左右
 document.body.appendChild(shell);
 const cv=$('roomCanvas'),ctx=cv.getContext('2d');if(!ctx){shell.remove();return;}
 const plan=document.createElement('dialog');plan.id='roomMap';plan.setAttribute('aria-labelledby','planTitle');
-plan.innerHTML=`<div class="plan-head"><div><span class="r-eyebrow">zuizui / atlas</span><h2 id="planTitle">⌗</h2></div><div id="planFilters"></div><button id="planClose" aria-label="地図を畳む">×</button></div><div id="planPaper"></div><div class="plan-tail"><span id="planLocation">⌁</span><button id="planKey" aria-label="記号の意味を調べる">△ ◇ ▦ ♧</button></div>`;
+plan.innerHTML=`<div class="plan-head"><div><span class="r-eyebrow">atlas</span><h2 id="planTitle">⌗</h2></div><div id="planFilters"></div><button id="planClose" aria-label="地図を畳む">×</button></div><div id="planPaper"></div><div class="plan-tail"><span id="planLocation">⌁</span><button id="planKey" aria-label="記号の意味を調べる">△ ◇ ▦ ♧</button></div>`;
 document.body.appendChild(plan);
 const mapButton=document.createElement('button');mapButton.id='mapButton';mapButton.className='icon-button';mapButton.innerHTML='⌗';mapButton.setAttribute('aria-label','同じ塔の平面地図を開く');$('bookButton').before(mapButton);
 // Obvious but small arch silhouettes replace the old invisible 40px hit targets.
@@ -258,7 +260,7 @@ function useExit(d){if(!d.target){navigate(null);return;}if(d.status==='establis
 function exitList(){if(!state.room){openPlan();return;}note(`<h2 id="bookTitle">${short(state.room)} / 出口</h2><div class="r-exit-list">${doors.map(d=>`<button data-select-exit="${d.key}"><span>${statusGlyph[d.status]}</span><strong>${d.target?short(d.target):'塔'}</strong><small>${d.reverse?'←':d.status==='navigation'?'⌁':'→'}</small></button>`).join('')}</div>`);}
 function drawMap(){
  const focus=state.mapFocus||state.room,filter=state.filter;const points=new Map();
- let svg=`<svg viewBox="0 0 1060 590" role="img" aria-labelledby="atlasGraphicTitle"><title id="atlasGraphicTitle">同じ塔の34の部屋。TMOP記号で比較する平面地図</title><defs><filter id="planGlow"><feGaussianBlur stdDeviation="4"/></filter></defs>`;
+ let svg=`<svg viewBox="0 0 1060 590" role="img" aria-labelledby="atlasGraphicTitle"><title id="atlasGraphicTitle">同じ塔の${D.repos.length}の部屋。TMOP記号で比較する平面地図</title><defs><filter id="planGlow"><feGaussianBlur stdDeviation="4"/></filter></defs>`;
  D.floors.forEach((f,j)=>{const rows=D.repos.filter(r=>r[1]===j),x=22+j*209;svg+=`<rect class="plan-floor" x="${x}" y="38" width="181" height="532" rx="72"/><text class="plan-roman" x="${x+90}" y="69">${f.roman}</text>`;rows.forEach((r,i)=>points.set(r[0],{x:x+90,y:105+i*(rows.length>8?51:59)}));});
  // Only the focused room's scientific contacts are drawn, preserving the original direction.
  if(focus)for(const c of D.contacts){if(!c.from.includes(focus)&&!c.to.includes(focus))continue;for(const a of c.from)for(const b of c.to){if(a!==focus&&b!==focus)continue;const p=points.get(a),q=points.get(b);if(!p||!q)continue;const dash=c.status==='open'||c.status==='proposed'?'7 8':c.status==='bounded'?'2 5':'';svg+=`<path class="plan-edge" data-contact="${c.id}" d="M${p.x} ${p.y} Q${(p.x+q.x)/2} ${Math.min(p.y,q.y)-35} ${q.x} ${q.y}"${dash?` stroke-dasharray="${dash}"`:''}/><circle cx="${q.x}" cy="${q.y}" r="3" class="plan-edge-end"/>`;}}
@@ -309,6 +311,6 @@ cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
 document.addEventListener('keydown',e=>{if(!state.room||plan.open||$('notebook').open||e.altKey||e.ctrlKey||e.metaKey)return;if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End','Escape'].includes(e.key)){e.preventDefault();e.stopImmediatePropagation();if(e.key==='Escape'||e.key==='Home')navigate(null);else if(e.key==='ArrowLeft')turn(-.2);else if(e.key==='ArrowRight')turn(.2);else if(e.key==='ArrowUp'||e.key==='ArrowDown'){state.pitch=clamp(state.pitch+(e.key==='ArrowUp'?.06:-.06),.32,.75);requestDraw();}}},true);
 addEventListener('resize',resize,{passive:true});document.addEventListener('visibilitychange',requestDraw);reduced.addEventListener('change',requestDraw);
 // Inspection is read-only. No setter can unlock or promote a scientific claim.
-window.ZUIZUI_ROOMS=Object.freeze({snapshot:()=>({room:state.room,yaw:state.yaw,targetYaw:state.target,pitch:state.pitch,visited:[...visited],decoded:[...decoded],positions:positions.map(p=>({...p,point:[...p.point]})),membership:{...membership},chamber:state.room?window.ZUIZUI_ARCHITECTURE.stages[repos.get(state.room)[1]].id:null,mapOpen:plan.open,science:JSON.stringify(D.contacts)}),version:'2026-09-06-rooms-1'});
+window.ZUIZUI_ROOMS=Object.freeze({snapshot:()=>({room:state.room,yaw:state.yaw,targetYaw:state.target,pitch:state.pitch,visited:[...visited],decoded:[...decoded],positions:positions.map(p=>({...p,point:[...p.point]})),membership:{...membership},chamber:state.room?window.ZUIZUI_ARCHITECTURE.stages[repos.get(state.room)[1]].id:null,mapOpen:plan.open,science:JSON.stringify(D.contacts)}),version:'2026-09-08-rooms-2'});
 if(location.hash.startsWith('#room='))route();
 })();

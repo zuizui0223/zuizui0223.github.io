@@ -45,7 +45,7 @@ def main():
             stages=sn()['stages']
             check('five different architectural programmes',len({s['form'] for s in stages})==5)
             check('independent geometry spans for every floor',len({s['count'] for s in stages})==5)
-            check('all 34 scientific entrances retained',sn()['repoCount']==34)
+            check('all 36 scientific entrances retained',sn()['repoCount']==36)
             page.screenshot(path=str(OUT/'front.png'))
             views=[]
             for i in range(4):

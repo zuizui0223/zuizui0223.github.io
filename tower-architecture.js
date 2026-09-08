@@ -149,7 +149,7 @@
     for(let i=0;i<6;i++)box(-66+i*24,167,-86,8,60,13,palette.clay);
     box(-7,192,-86,122,6,13,palette.clayLight);
     box(-124,151,27,25,8,94,palette.chalk);tree(-126,160,5,38,7);
-    register(1,[[-133,151,-50,-Math.PI/2,19,36,palette.clayLight,'slot'],[-33,151,-101,Math.PI,20,36,palette.clayLight,'slot'],[52,151,-101,Math.PI,20,36,palette.clayLight,'slot'],[94,151,-34,Math.PI/2,22,39,palette.chalk,'slot'],[25,151,66,0,24,39,palette.chalk,'slot']]);
+    register(1,[[-133,151,-50,-Math.PI/2,19,36,palette.clayLight,'slot'],[-33,151,-101,Math.PI,20,36,palette.clayLight,'slot'],[52,151,-101,Math.PI,20,36,palette.clayLight,'slot'],[94,151,-34,Math.PI/2,22,39,palette.chalk,'slot'],[25,151,66,0,24,39,palette.chalk,'slot'],[-96,151,73,0,20,34,palette.chalk,'slot']]);
     endStage(start);
     stairs([-122,153,-82],[-122,298,58],22,palette.chalk,27);
     box(-108,288,58,53,11,25,palette.chalk);
@@ -167,7 +167,7 @@
       const x=34+125*Math.cos(a),z=-7+125*Math.sin(a);box(x,304,z,2,14,2,palette.brass);
     }
     lineArc(34,318,-7,125,.18,2.88,palette.brass,1.1);
-    register(2,[[135,296,-25,Math.PI/2,20,28,palette.chalk,'slot'],[122,296,61,.90,20,28,palette.chalk,'slot'],[59,296,108,.10,20,28,palette.clayLight,'slot'],[-9,296,101,-.5,21,29,palette.chalk,'slot'],[-88,300,16,-Math.PI/2,20,34,palette.chalk,'slot'],[-67,296,-27,-Math.PI/2,20,28,palette.jade,'slot'],[15,296,-116,Math.PI,21,29,palette.chalk,'slot']]);
+    register(2,[[135,296,-25,Math.PI/2,20,28,palette.chalk,'slot'],[122,296,61,.90,20,28,palette.chalk,'slot'],[59,296,108,.10,20,28,palette.clayLight,'slot'],[-9,296,101,-.5,21,29,palette.chalk,'slot'],[-88,300,16,-Math.PI/2,20,34,palette.chalk,'slot'],[-67,296,-27,-Math.PI/2,20,28,palette.jade,'slot'],[15,296,-116,Math.PI,21,29,palette.chalk,'slot'],[76,296,-103,Math.PI,20,29,palette.clayLight,'slot']]);
     endStage(start);
     // A winding stair on the far side is invisible from one face, revealed from another.
     for(let i=0;i<29;i++){
@@ -224,5 +224,5 @@
     repoPoints.forEach(p=>{Object.freeze(p.point);Object.freeze(p.normal);});
     return {faces,repoPoints,sightPairs,decor,stages,spans:deepFreeze(spans),palette};
   }
-  window.ZUIZUI_ARCHITECTURE=Object.freeze({build,stages,palette,version:'2026-09-07-asymmetric-1'});
+  window.ZUIZUI_ARCHITECTURE=Object.freeze({build,stages,palette,version:'2026-09-08-asymmetric-2'});
 })();

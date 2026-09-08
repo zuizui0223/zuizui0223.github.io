@@ -75,3 +75,12 @@ ACSPを下流の現地接点に置く判断は妥当。ただし返すものは 
 ローカルChromiumで43項目の操作・契約テストが通過。全五層で印合わせ、発見、現地への帰還、34リポ検索、科学データと世界座標の不変性、320/390/768/1440px幅での横溢れ、モバイルの実タッチイベントによる回転、手帳を閉じた後のフォーカス復帰を検査した。JavaScript実行時エラーは0件。
 
 これはローカルブラウザの検証であり、全実機・全ブラウザ・ライブ配信環境の保証ではない。今回、各研究リポの数理・実験の結果は変更していない。ソースのblob一覧は `tower-data.js` の `sources`、再現テストは `tests/`。
+
+
+## 2026-09-08 inventory and synthesis overlay
+
+The current owner inventory is 37 repositories: 36 research rooms plus this site as meta-registry. `TTF` enters floor II (record/observation contract) and `adaptive-gain` enters floor III (possible-world measurement design). The earlier 34-room counts above are historical snapshots and are superseded for the current live tower by `tower-ontology-audit.json` and `portfolio-synthesis-2026-09-08.json`.
+
+Three current typed interfaces are added: FCP -> TTF is bounded held-out-transfer/geometry qualification; TTF -> Boundary is a bounded applicability boundary; MROD/PAYOFF/BALANCE -> adaptive-gain is an established abstraction of finite decision routing, not claim inheritance.
+
+The repeated resolution-fracture rune is a portfolio synthesis only. Its ledger sets `scientific_edge=false`: seeing the same design warning at EGWE, CHUN, ACSP, SDMR, TTF, CREST, Boundary and MROD does not assert a shared mechanism.

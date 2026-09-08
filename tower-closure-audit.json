@@ -1,25 +1,205 @@
 {
-  "checked_at": "2026-09-06",
+  "checked_at": "2026-09-08",
   "schema": "zuizui.tower_closure.v1",
   "rule": "A visual discovery never promotes a scientific contact. established/bounded/proposed/open describe the scientific ledger; visitor discovery is a separate UI state.",
-  "states": ["established","bounded","proposed","open"],
+  "states": [
+    "established",
+    "bounded",
+    "proposed",
+    "open"
+  ],
   "contacts": [
-    {"id":"mrm_to_mrod","from":["mrm"],"to":["mrod"],"status":"open","question":"Can exact response-signature discrimination become a practical sequential observation problem?","closure_condition":"Map MRM response signatures, probe grammar and costs into MROD admissible regions and candidate-outcome partitions, then verify preservation of the declared mechanism distinctions."},
-    {"id":"ced_to_mrod","from":["ced"],"to":["mrod"],"status":"open","question":"Can target-resolution design and mechanism-resolution design share one decision object?","closure_condition":"Use one contract linking CED-safe unresolved target classes and MROD mechanism/state regions to the same candidate observations, risks and costs."},
-    {"id":"eog_to_mrod","from":["eog"],"to":["mrod"],"status":"open","question":"Can disagreement among compatible biogeographic worlds be converted to a value-ranked next-observation problem?","closure_condition":"Define an adapter from surviving EOG world support/disagreement to MROD outcome partitions and show sequential contraction without relabeling world identity as causal truth."},
-    {"id":"same_system_observation","from":["rec","tnoa","mrod"],"to":["pollipi","insepi"],"status":"open","question":"Does information-selected observation resolve real physical observer ambiguity?","closure_condition":"Freeze candidate measurements/interventions prospectively, obtain independent exposure or biological truth, and score held-out contraction against a frozen comparator in the same physical system."},
-    {"id":"crest_ced_to_egwee","from":["crest","ced"],"to":["egwee"],"status":"open","question":"Can required state and evidence licensing be tested together in one natural system?","closure_condition":"Synchronize candidate state variables, observation/evidence contract and an independently held-out future endpoint; test state adequacy before residual origin/history."},
-    {"id":"egwe_to_payoff","from":["eco-genetic-warning-extensions"],"to":["payoff"],"status":"proposed","question":"Does measured future-relevant relational state condition architecture payoff coordinates?","closure_condition":"In one matched model or natural system, measure relational state before payoff quantities and demonstrate the context mapping without treating either programme as validation of the other."},
-    {"id":"architecture_to_relational_state","from":["sch","balance","bita","payoff"],"to":["eco-genetic-criticality","eco-genetic-warning-extensions"],"status":"open","question":"Does architecture differentiation generate a different relational eco-genetic state and future functional vulnerability?","closure_condition":"Measure or manipulate architecture state, quantify the resulting interaction/relational state, then score subsequent future function on the same scale/system."},
-    {"id":"island_urban_state_convergence","from":["island","izu-core","urban systems"],"to":["egwee"],"status":"proposed","question":"Do contrasting fragmentation histories become predictively equivalent after conditioning on a future-relevant joint state?","closure_condition":"Measure candidate state before outcome, predict an independent future endpoint, then test whether origin/history adds residual predictive information. This closes state convergence only, not warning validation."},
-    {"id":"acsp_to_field_truth","from":["acsp"],"to":["aza3","island","field survey"],"status":"open","question":"Do bounded candidate patches improve prospective field evidence collection?","closure_condition":"Survey frozen candidate patches and matched comparators with explicit effort and detectability denominators; score enrichment/efficiency rather than guaranteed presence or detection."},
-    {"id":"relation_space_to_cross_role_validation","from":["284b"],"to":["cross-role natural systems"],"status":"open","question":"Do independently fitted role-specific ecological answers satisfy a prospectively frozen external biological relation?","closure_condition":"Predeclare role-specific estimands and accessible areas, freeze a common relation-space adapter and external biological relation, then test on independent cross-role opportunities. Same-target cross-source feasibility alone is insufficient."}
+    {
+      "id": "mrm_to_mrod",
+      "from": [
+        "mrm"
+      ],
+      "to": [
+        "mrod"
+      ],
+      "status": "open",
+      "question": "Can exact response-signature discrimination become a practical sequential observation problem?",
+      "closure_condition": "Map MRM response signatures, probe grammar and costs into MROD admissible regions and candidate-outcome partitions, then verify preservation of the declared mechanism distinctions."
+    },
+    {
+      "id": "ced_to_mrod",
+      "from": [
+        "ced"
+      ],
+      "to": [
+        "mrod"
+      ],
+      "status": "open",
+      "question": "Can target-resolution design and mechanism-resolution design share one decision object?",
+      "closure_condition": "Use one contract linking CED-safe unresolved target classes and MROD mechanism/state regions to the same candidate observations, risks and costs."
+    },
+    {
+      "id": "eog_to_mrod",
+      "from": [
+        "eog"
+      ],
+      "to": [
+        "mrod"
+      ],
+      "status": "open",
+      "question": "Can disagreement among compatible biogeographic worlds be converted to a value-ranked next-observation problem?",
+      "closure_condition": "Define an adapter from surviving EOG world support/disagreement to MROD outcome partitions and show sequential contraction without relabeling world identity as causal truth."
+    },
+    {
+      "id": "same_system_observation",
+      "from": [
+        "rec",
+        "tnoa",
+        "mrod"
+      ],
+      "to": [
+        "pollipi",
+        "insepi"
+      ],
+      "status": "open",
+      "question": "Does information-selected observation resolve real physical observer ambiguity?",
+      "closure_condition": "Freeze candidate measurements/interventions prospectively, obtain independent exposure or biological truth, and score held-out contraction against a frozen comparator in the same physical system."
+    },
+    {
+      "id": "crest_ced_to_egwee",
+      "from": [
+        "crest",
+        "ced"
+      ],
+      "to": [
+        "egwee"
+      ],
+      "status": "open",
+      "question": "Can required state and evidence licensing be tested together in one natural system?",
+      "closure_condition": "Synchronize candidate state variables, observation/evidence contract and an independently held-out future endpoint; test state adequacy before residual origin/history."
+    },
+    {
+      "id": "egwe_to_payoff",
+      "from": [
+        "eco-genetic-warning-extensions"
+      ],
+      "to": [
+        "payoff"
+      ],
+      "status": "proposed",
+      "question": "Does measured future-relevant relational state condition architecture payoff coordinates?",
+      "closure_condition": "In one matched model or natural system, measure relational state before payoff quantities and demonstrate the context mapping without treating either programme as validation of the other."
+    },
+    {
+      "id": "architecture_to_relational_state",
+      "from": [
+        "sch",
+        "balance",
+        "bita",
+        "payoff"
+      ],
+      "to": [
+        "eco-genetic-criticality",
+        "eco-genetic-warning-extensions"
+      ],
+      "status": "open",
+      "question": "Does architecture differentiation generate a different relational eco-genetic state and future functional vulnerability?",
+      "closure_condition": "Measure or manipulate architecture state, quantify the resulting interaction/relational state, then score subsequent future function on the same scale/system."
+    },
+    {
+      "id": "island_urban_state_convergence",
+      "from": [
+        "island",
+        "izu-core",
+        "urban systems"
+      ],
+      "to": [
+        "egwee"
+      ],
+      "status": "proposed",
+      "question": "Do contrasting fragmentation histories become predictively equivalent after conditioning on a future-relevant joint state?",
+      "closure_condition": "Measure candidate state before outcome, predict an independent future endpoint, then test whether origin/history adds residual predictive information. This closes state convergence only, not warning validation."
+    },
+    {
+      "id": "acsp_to_field_truth",
+      "from": [
+        "acsp"
+      ],
+      "to": [
+        "aza3",
+        "island",
+        "field survey"
+      ],
+      "status": "open",
+      "question": "Do bounded candidate patches improve prospective field evidence collection?",
+      "closure_condition": "Survey frozen candidate patches and matched comparators with explicit effort and detectability denominators; score enrichment/efficiency rather than guaranteed presence or detection."
+    },
+    {
+      "id": "relation_space_to_cross_role_validation",
+      "from": [
+        "284b"
+      ],
+      "to": [
+        "cross-role natural systems"
+      ],
+      "status": "open",
+      "question": "Do independently fitted role-specific ecological answers satisfy a prospectively frozen external biological relation?",
+      "closure_condition": "Predeclare role-specific estimands and accessible areas, freeze a common relation-space adapter and external biological relation, then test on independent cross-role opportunities. Same-target cross-source feasibility alone is insufficient."
+    },
+    {
+      "id": "ttf_to_fresh_geometry",
+      "from": [
+        "TTF"
+      ],
+      "to": [
+        "fresh external sampling geometry"
+      ],
+      "status": "open",
+      "question": "Can a prospective applicability rule retain calibration and power under a fresh empirical geometry?",
+      "closure_condition": "Version the minimum held-out-species/applicability rule before outcomes, freeze a genuinely fresh external geometry, and pass both type-I and power bounds without retuning on failed Gate-I-A."
+    }
   ],
   "bounded_receipts": [
-    {"id":"284b_independent_question","status":"established","receipt":"284b explicitly defines cross-estimand biological validity in a frozen common relation space and documents implementation/results/tests; it is no longer an empty staging seed."},
-    {"id":"284b_layer1_feasibility","status":"bounded","receipt":"The frozen 36-taxon panel yielded 36 current-taxonomy-resolved -> 12 snapshot-identity-resolved -> 12 source-mode-sampling-passed; this permits model construction for 12 taxa but cannot create the predeclared >=30-taxon calibration ceiling and does not establish ecological-answer coherence."},
-    {"id":"acsp_candidate_patch","status":"bounded","receipt":"Validated claim remains candidate-patch enrichment under its frozen screening contract, not occupancy or guaranteed detection."},
-    {"id":"egwee_state_adequacy","status":"bounded","receipt":"Natural-data measurement/representation adequacy can be assessed independently of finite EGWE warning-statistic validation."}
+    {
+      "id": "284b_independent_question",
+      "status": "established",
+      "receipt": "284b explicitly defines cross-estimand biological validity in a frozen common relation space and documents implementation/results/tests; it is no longer an empty staging seed."
+    },
+    {
+      "id": "284b_layer1_feasibility",
+      "status": "bounded",
+      "receipt": "The frozen 36-taxon panel yielded 36 current-taxonomy-resolved -> 12 snapshot-identity-resolved -> 12 source-mode-sampling-passed; this permits model construction for 12 taxa but cannot create the predeclared >=30-taxon calibration ceiling and does not establish ecological-answer coherence."
+    },
+    {
+      "id": "acsp_candidate_patch",
+      "status": "bounded",
+      "receipt": "Validated claim remains candidate-patch enrichment under its frozen screening contract, not occupancy or guaranteed detection."
+    },
+    {
+      "id": "egwee_state_adequacy",
+      "status": "bounded",
+      "receipt": "Natural-data measurement/representation adequacy can be assessed independently of finite EGWE warning-statistic validation."
+    },
+    {
+      "id": "adaptive_gain_finite_theory",
+      "status": "established",
+      "receipt": "Finite deterministic theory proves C_A<=C_F, characterizes strict adaptive gain and sharp unit-cost extrema; it explicitly does not claim field empirical validation."
+    },
+    {
+      "id": "ttf_gate_i_a_geometry",
+      "status": "bounded",
+      "receipt": "TTF v0.2 passed idealized high-precision gates, but frozen Gate-I-A actual animal geometry failed at shared=0 A=3 (rejection 0.110; Wilson upper 0.1405) and full-shared A=2 (power 0.392; Wilson lower 0.3502). Gate I therefore remains failed."
+    },
+    {
+      "id": "egwe_last_refuge_holdout",
+      "status": "bounded",
+      "receipt": "Prospectively frozen 12,000-trajectory finite-model holdout confirmed continuous last-refuge reserve as an early discriminator (mean AUC 0.92734) and added ranking beyond co-timed max-q; no natural-universal warning claim."
+    },
+    {
+      "id": "chun_linoideae_state_resolution",
+      "status": "bounded",
+      "receipt": "One Linoideae radiation showed 54/54 conditional hue tests p=0.0001 while binary WHITE/NONWHITE organization was not robust; this supports finer state-space organization, not a shared pigment or pollinator mechanism."
+    },
+    {
+      "id": "acsp_channel_complementarity",
+      "status": "bounded",
+      "receipt": "Development-only 96-pair comparison did not nominate environment over nearest-known, while overlap diagnostics retained environment-only and nearest-only novel clusters. No fitted blend or unbudgeted union is authorized."
+    }
   ],
   "visitor_state": {
     "storage_key": "zuizui.tower.discoveries.v1",

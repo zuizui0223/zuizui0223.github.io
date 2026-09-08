@@ -78,7 +78,7 @@ def main():
             page.keyboard.press('Escape')
             page.locator('#mapButton').click()
             check('foldout header is also name-free',page.locator('#roomMap .r-eyebrow').inner_text().lower()=='atlas')
-            check('all 34 room entries remain accessible',page.locator('[data-map-room]').count()==34)
+            check('all 36 room entries remain accessible',page.locator('[data-map-room]').count()==36)
             page.keyboard.press('Escape')
             page.locator('#floorRail [data-floor="2"]').click()
             page.wait_for_function('ZUIZUI_TOWER_STATE.snapshot().currentFloor===2')
