@@ -133,7 +133,7 @@ def main():
             check(f'{width}: no room horizontal overflow', device.evaluate('document.documentElement.scrollWidth <= innerWidth'))
             check(f'{width}: reachable visible exit', device.locator('.room-door:not([hidden])').count() > 0)
             device.locator('#roomPlan').click()
-            check(f'{width}: planar map scroll is internal', device.evaluate('document.documentElement.scrollWidth<=innerWidth') and device.locator('[data-map-room]').count()==34)
+            check(f'{width}: planar map scroll is internal', device.evaluate('document.documentElement.scrollWidth<=innerWidth') and device.locator('[data-map-room]').count()==36)
             device.keyboard.press('Escape')
             if width==390:
                 session=device.context.new_cdp_session(device)
