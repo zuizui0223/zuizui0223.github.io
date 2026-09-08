@@ -1,0 +1,44 @@
+{
+  "schema": "zuizui.syndrome_assembly_synthesis.v1",
+  "checked_at": "2026-09-09",
+  "scientific_edge": false,
+  "reading_path": [
+    "sch:functional-conflict",
+    "balance/bita:architecture-alternatives",
+    "payoff:phase-boundaries-and-payoff-switch",
+    "bifurcation:individual-systems|spatial-projection",
+    "individual:campanula-and-other-focal-systems",
+    "spatial:TTF-transferable-turnover",
+    "reconvergence:syndrome-assembly/disassembly",
+    "endpoints:pollination-syndrome|selfing-syndrome|island-syndrome"
+  ],
+  "individual_branch": {
+    "representative_repositories": ["hotarubukuro", "shimahotarubukuro", "izu-core", "island"],
+    "role": "measure realized phenotype, ecology and lineage-specific response in concrete systems",
+    "ceiling": "These systems do not by themselves validate PAYOFF architecture switching or identify syndrome causation."
+  },
+  "spatial_branch": {
+    "repository": "TTF",
+    "expanded_name": "Transferable Turnover Fields",
+    "role": "test whether within-species trait-transition structure learned in training species predicts strong within-species turnover in entirely unseen species",
+    "ceiling": "TTF transferability is not the same estimand as PAYOFF spatial spectral invasion and is not a formal PAYOFF projection without an explicit adapter."
+  },
+  "reconvergence": {
+    "node": "syndrome-assembly/disassembly",
+    "repository": null,
+    "status": "portfolio synthesis / research question",
+    "meaning": "compare how architecture-level alternatives are realized within focal systems and how turnover structure generalizes across species or space, then ask when suites of floral/reproductive traits cohere or decouple",
+    "terminal_hypotheses": ["pollination syndrome", "selfing syndrome", "island syndrome"],
+    "ceiling": "The three syndrome labels are research endpoints, not conclusions currently licensed by this site."
+  },
+  "source_receipts": [
+    {"repository":"TTF","path":"README.md","blob":"0ef751105d1a36000808be8e217f76fb81e6523e"},
+    {"repository":"shimahotarubukuro","path":"README.md","blob":"24135526e16b459b223ad9315254d8879bf8cb07"},
+    {"repository":"payoff","path":"README.md","commit":"f1143dada87a63a16f3be8562a788ba26da736ec"}
+  ],
+  "display_contract": {
+    "surface_labels": false,
+    "visual_form": "PAYOFF bifurcates into an individual-system exterior route and a spatial-transfer route, then reconverges near the ground into a three-gate syndrome court",
+    "scientific_effect_of_discovery": "none"
+  }
+}
