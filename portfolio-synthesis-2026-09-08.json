@@ -1,0 +1,80 @@
+{
+  "schema": "zuizui.portfolio_synthesis.v1",
+  "checked_at": "2026-09-08",
+  "inventory": {
+    "owner_repositories": 37,
+    "research_rooms": 36,
+    "meta_registry": "zuizui0223.github.io",
+    "new_repositories": ["adaptive-gain", "TTF"]
+  },
+  "placements": [
+    {
+      "repository": "TTF",
+      "floor": 2,
+      "floor_id": "record",
+      "role": "held-out-species transfer inference with sampling geometry as part of the observation/applicability contract",
+      "status": "method programme; idealized qualification passed but Gate-I-A actual geometry failed",
+      "source": {"type":"readme","blob":"0ef751105d1a36000808be8e217f76fb81e6523e"},
+      "current_gate_source": {"type":"pull_request","number":4,"head":"4288b94bf132dfc397d1cbd47ada1861d1820d17"}
+    },
+    {
+      "repository": "adaptive-gain",
+      "floor": 3,
+      "floor_id": "possibility",
+      "role": "finite theory of outcome-contingent measurement routing versus fixed resolving bundles",
+      "status": "structural theory; no field empirical validation claimed",
+      "source": {"type":"readme","blob":"3a3d7deb2f041124bc0edc135e1c3cdef27f296c"}
+    }
+  ],
+  "typed_interfaces": [
+    {
+      "id":"transfer-geometry",
+      "from":["fcp"],
+      "to":["TTF"],
+      "status":"bounded",
+      "meaning":"FCP can provide a frozen intended sampling geometry for qualification, without transferring its empirical flower-colour conclusion into TTF."
+    },
+    {
+      "id":"geometry-boundary",
+      "from":["TTF"],
+      "to":["boundary"],
+      "status":"bounded",
+      "meaning":"Idealized method qualification and applicability under actual sampling geometry are distinct claims."
+    },
+    {
+      "id":"adaptive-routing",
+      "from":["mrod","payoff","balance"],
+      "to":["adaptive-gain"],
+      "status":"established",
+      "meaning":"Cross-repository finite decision structure was abstracted without inheriting the biological models or licensing field claims."
+    }
+  ],
+  "syntheses": [
+    {
+      "id":"state-resolution",
+      "scientific_edge":false,
+      "visible_rune":"resolution-fracture",
+      "principle":"useful ecological state != convenient coarse summary",
+      "repositories":["eco-genetic-warning-extensions","chun","acsp","sdmr","TTF","crest","boundary","mrod"],
+      "evidence_examples":[
+        {"repository":"eco-genetic-warning-extensions","source":"PR 163 merged","anchor":"61ccd29821cb623f751528651789c246b31446b4","summary":"continuous last-refuge reserve prospectively out-ranked co-timed max-q and coarse marginal summaries within the declared finite closure"},
+        {"repository":"chun","source":"PR 196 merged","anchor":"388039dfd016993494c5d85c12fe54956e76b1da","summary":"Linoideae hue organization remained strong conditional on WHITE/NONWHITE while the corresponding binary organization did not"},
+        {"repository":"acsp","source":"PR 184 development","anchor":"00e141e8714b9adac44e5d518be30870c820141a","summary":"environment and nearest-known were partly nonredundant evidence channels; neither became a universal local selector"},
+        {"repository":"TTF","source":"PR 4 open","anchor":"4288b94bf132dfc397d1cbd47ada1861d1820d17","summary":"idealized held-out-species qualification did not survive Gate-I-A actual sampling geometry"}
+      ],
+      "claim_ceiling":"This is a portfolio-level design synthesis, not evidence that the listed repositories share one causal mechanism or one estimand."
+    },
+    {
+      "id":"context-branching",
+      "scientific_edge":false,
+      "visible_rune":null,
+      "principle":"response and information value depend on state, context and measurement path",
+      "repositories":["balance","izu-core","eco-genetic-warning-extensions","eog","adaptive-gain","mrod"],
+      "evidence_examples":[
+        {"repository":"eog","source":"PR 396 merged","anchor":"16b0a56838d80b170daba15331645dc7ddc724d4","summary":"structural augmentation was adverse at the Tampa predictive endpoint, fixing predictive complementarity as context-dependent"},
+        {"repository":"adaptive-gain","source":"README","anchor":"3a3d7deb2f041124bc0edc135e1c3cdef27f296c","summary":"outcome-contingent acquisition can strictly beat fixed acquisition, but the result is a finite decision theorem rather than a universal biological policy"}
+      ],
+      "claim_ceiling":"No universal ecological driver or universal intervention rule is inferred from this recurrence."
+    }
+  ]
+}

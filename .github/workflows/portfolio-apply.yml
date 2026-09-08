@@ -1,0 +1,49 @@
+name: apply 2026-09-08 portfolio inventory
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'portfolio-20260908.js'
+      - 'portfolio-thread.js'
+      - 'portfolio-synthesis-2026-09-08.json'
+      - 'scripts/apply_portfolio_20260908.py'
+      - '.github/workflows/portfolio-apply.yml'
+permissions:
+  contents: write
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Apply current inventory to tower, rooms, audits and regressions
+        run: python scripts/apply_portfolio_20260908.py
+      - name: Fail closed on syntax or typed-contact contract
+        run: |
+          node --check portfolio-20260908.js
+          node --check portfolio-thread.js
+          node --check tower-architecture.js
+          node --check rooms.js
+          node tests/tower_contract.cjs
+          python -m json.tool tower-ontology-audit.json >/dev/null
+          python -m json.tool tower-closure-audit.json >/dev/null
+          python -m json.tool portfolio-synthesis-2026-09-08.json >/dev/null
+      - name: Commit only the generated current-state patch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html rooms.js tower-architecture.js tower-ontology-audit.json tower-closure-audit.json TOWER_AUDIT.md tests/tower_contract.cjs tests/tower_browser_test.py tests/rooms_browser_test.py tests/architecture_browser_test.py tests/origin_browser_test.py .github/workflows/site-qa.yml
+          git diff --cached --check
+          if git diff --cached --quiet; then
+            echo 'Portfolio patch already applied.'
+          else
+            git commit -m 'Apply 36-room portfolio state for 2026-09-08'
+            git push origin HEAD:main
+          fi
