@@ -1,13 +1,6 @@
 name: apply 2026-09-08 portfolio inventory
 on:
-  push:
-    branches: [main]
-    paths:
-      - 'portfolio-20260908.js'
-      - 'portfolio-thread.js'
-      - 'portfolio-synthesis-2026-09-08.json'
-      - 'scripts/apply_portfolio_20260908.py'
-      - '.github/workflows/portfolio-apply.yml'
+  workflow_dispatch:
 permissions:
   contents: write
 jobs:
