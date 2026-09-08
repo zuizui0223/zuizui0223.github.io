@@ -1,0 +1,7 @@
+Current live portfolio marker
+checked_at=2026-09-08
+owner_repositories=37
+research_rooms=36
+new_rooms=TTF,adaptive-gain
+non_edge_synthesis=state-resolution,context-branching
+base_apply_commit=a9dbb6d82e1608cb62d64b6b98bcba7c747571f8
