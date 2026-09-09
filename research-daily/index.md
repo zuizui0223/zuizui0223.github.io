@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-09 — 37 repos / 24 updated / 13 unchanged](2026-09-09.html)**  
-  主題: island syndrome の分解、Izu の richness→regime / composition×state→branch、EAzami の within-region orientation signal、flower-colour state granularity。
-  - [Markdown source](2026-09-09.md)
+- **[2026-09-10 — 37 repos / 10 updated / 27 unchanged](2026-09-10.html)**  
+  主題: EOG の fresh predictive refutation、island Chapter 1 の正式 freeze、CREST の least cut-state quotient / temporal transport、Izu の same-block empirical bridge。
+  - [Markdown source](2026-09-10.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-10](2026-09-10.html) | 37 repos; 10 updated | state validity と predictive utility を分離し、必要な ecological chain を prospective に固定 |
 | [2026-09-09](2026-09-09.html) | 37 repos; 24 updated | coarse summary と branch-preserving state の分離が複数研究で具体化 |
 
 ---
