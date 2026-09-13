@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-13 — 38 repos / 20 research-side updated / 18 unchanged](2026-09-13.html)**  
-  主題: AZAMI の taxonomy robustness、EGWEE の2-system C–F pilot、CHUN の intermediate pathway resolution、TTF の training-leverage mechanism falsification。
-  - [Markdown source](2026-09-13.md)
+- **[2026-09-14 — 38 repos / 15 research-side updated / 23 unchanged](2026-09-14.html)**  
+  主題: CHUN の prospective Iris falsification、island N1 pollination-channel gate FAIL、EGWEE の influential-cluster boundary、PAYOFF / TTF の fail-closed non-promotion。
+  - [Markdown source](2026-09-14.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-14](2026-09-14.html) | 38 repos; 15 research-side updated | prospective validation が一般則を削り、どの claim がどの条件下だけ成立するかを明示 |
 | [2026-09-13](2026-09-13.html) | 38 repos; 20 research-side updated | シグナルの有無から一段進み、taxonomy・pathway resolution・effect unit・training representation のどこで結果が保存／崩壊するかを直接監査 |
 | [2026-09-12](2026-09-12.html) | 38 repos; 24 research-side updated | single-system multilayer effect → cross-system recurrence → mechanism allocation の証拠階層が定量的に分離 |
 | [2026-09-11](2026-09-11.html) | 38 repos; 13 changed* | lower-layer success を upper-layer claim へ自動昇格させず、各 claim gate を独立に閉じる構造が具体化 |
@@ -22,4 +23,4 @@
 
 ---
 
-このアーカイブでは、計画・コード追加・原稿上の主張を empirical conclusion と混同しません。draft PR、post-result sensitivity、synthetic control、sealed/final endpoint、pre-response STOP、conditional positive-case pooling は、それぞれの claim boundary を保持して記載します。
+このアーカイブでは、計画・コード追加・原稿上の主張を empirical conclusion と混同しません。draft PR、post-result sensitivity、synthetic control、sealed/final endpoint、pre-response STOP、conditional positive-case pooling、NOT_EVALUABLE、UNRESOLVED は、それぞれの claim boundary を保持して記載します。
