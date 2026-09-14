@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-14 — 38 repos / 15 research-side updated / 23 unchanged](2026-09-14.html)**  
-  主題: CHUN の prospective Iris falsification、island N1 pollination-channel gate FAIL、EGWEE の influential-cluster boundary、PAYOFF / TTF の fail-closed non-promotion。
-  - [Markdown source](2026-09-14.md)
+- **[2026-09-15 — 38 repos / 10 research-side updated / 28 unchanged](2026-09-15.html)**  
+  主題: EGWEE の4th direct fragmentation cluster、CHUN の biochemical fine-state signal、island H3 genus attenuation、ODSP の transfer-ceiling operating characteristics。
+  - [Markdown source](2026-09-15.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-15](2026-09-15.html) | 38 repos; 10 research-side updated | prospective falsification の後に残る正の構造を、applicability domain と failure mode 付きで定量化 |
 | [2026-09-14](2026-09-14.html) | 38 repos; 15 research-side updated | prospective validation が一般則を削り、どの claim がどの条件下だけ成立するかを明示 |
 | [2026-09-13](2026-09-13.html) | 38 repos; 20 research-side updated | シグナルの有無から一段進み、taxonomy・pathway resolution・effect unit・training representation のどこで結果が保存／崩壊するかを直接監査 |
 | [2026-09-12](2026-09-12.html) | 38 repos; 24 research-side updated | single-system multilayer effect → cross-system recurrence → mechanism allocation の証拠階層が定量的に分離 |
