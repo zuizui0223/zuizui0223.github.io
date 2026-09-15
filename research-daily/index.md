@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-15 — 38 repos / 10 research-side updated / 28 unchanged](2026-09-15.html)**  
-  主題: EGWEE の4th direct fragmentation cluster、CHUN の biochemical fine-state signal、island H3 genus attenuation、ODSP の transfer-ceiling operating characteristics。
-  - [Markdown source](2026-09-15.md)
+- **[2026-09-16 — 38 repos / 20 research-side updated / 18 unchanged](2026-09-16.html)**  
+  主題: island の P1–P3 native-assembly defense と all-observed/native boundary、azami の RV estimator-validity、EGWEE の5th cluster / Serapias-dependence、ODSP の directional power gain。
+  - [Markdown source](2026-09-16.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-16](2026-09-16.html) | 38 repos; 20 research-side updated | contemporary observed composition と native assembly、raw estimator result と estimator-robust claim、full-corpus signal と system-independent generalityを分離 |
 | [2026-09-15](2026-09-15.html) | 38 repos; 10 research-side updated | prospective falsification の後に残る正の構造を、applicability domain と failure mode 付きで定量化 |
 | [2026-09-14](2026-09-14.html) | 38 repos; 15 research-side updated | prospective validation が一般則を削り、どの claim がどの条件下だけ成立するかを明示 |
 | [2026-09-13](2026-09-13.html) | 38 repos; 20 research-side updated | シグナルの有無から一段進み、taxonomy・pathway resolution・effect unit・training representation のどこで結果が保存／崩壊するかを直接監査 |
