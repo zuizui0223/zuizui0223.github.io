@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-16 — 38 repos / 20 research-side updated / 18 unchanged](2026-09-16.html)**  
-  主題: island の P1–P3 native-assembly defense と all-observed/native boundary、azami の RV estimator-validity、EGWEE の5th cluster / Serapias-dependence、ODSP の directional power gain。
-  - [Markdown source](2026-09-16.md)
+- **[2026-09-17 — 40 repos / 9 research-side updated / 31 unchanged](2026-09-17.html)**  
+  主題: island の global GloPL pollen-limitation gradient と H5 mediation ceiling、新規 IWE の first Tier-A timing–fitness extraction、CHUN の second biochemical structural HOLD。
+  - [Markdown source](2026-09-17.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-17](2026-09-17.html) | 40 repos; 9 research-side updated | global isolation–pollen-limitation associationを支持しつつ、Chapter 1 branching mediationを分離。IWEがfirst real Tier-A effectを回収 |
 | [2026-09-16](2026-09-16.html) | 38 repos; 20 research-side updated | contemporary observed composition と native assembly、raw estimator result と estimator-robust claim、full-corpus signal と system-independent generalityを分離 |
 | [2026-09-15](2026-09-15.html) | 38 repos; 10 research-side updated | prospective falsification の後に残る正の構造を、applicability domain と failure mode 付きで定量化 |
 | [2026-09-14](2026-09-14.html) | 38 repos; 15 research-side updated | prospective validation が一般則を削り、どの claim がどの条件下だけ成立するかを明示 |
@@ -25,4 +26,4 @@
 
 ---
 
-このアーカイブでは、計画・コード追加・原稿上の主張を empirical conclusion と混同しません。draft PR、post-result sensitivity、synthetic control、sealed/final endpoint、pre-response STOP、conditional positive-case pooling、NOT_EVALUABLE、UNRESOLVED は、それぞれの claim boundary を保持して記載します。
+このアーカイブでは、計画・コード追加・原稿上の主張を empirical conclusion と混同しません。draft PR、post-result sensitivity、synthetic control、sealed/final endpoint、pre-response STOP、conditional positive-case pooling、NOT_EVALUABLE、UNRESOLVED、structural HOLD は、それぞれの claim boundary を保持して記載します。
