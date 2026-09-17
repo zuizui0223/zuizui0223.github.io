@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-17 — 40 repos / 9 research-side updated / 31 unchanged](2026-09-17.html)**  
-  主題: island の global GloPL pollen-limitation gradient と H5 mediation ceiling、新規 IWE の first Tier-A timing–fitness extraction、CHUN の second biochemical structural HOLD。
-  - [Markdown source](2026-09-17.md)
+- **[2026-09-18 — 40 repos / 13 research-side updated / 27 unchanged](2026-09-18.html)**  
+  主題: island の raw-colour / display module、BITA の conditional partial identification、SCH の 4/2/0/0 no-pooling compatibility matrix。
+  - [Markdown source](2026-09-18.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-18](2026-09-18.html) | 40 repos; 13 research-side updated | phenotype display・aggregate interaction・cross-study poolingを分解し、どこまで同定／統合できるかを数値で限定 |
 | [2026-09-17](2026-09-17.html) | 40 repos; 9 research-side updated | global isolation–pollen-limitation associationを支持しつつ、Chapter 1 branching mediationを分離。IWEがfirst real Tier-A effectを回収 |
 | [2026-09-16](2026-09-16.html) | 38 repos; 20 research-side updated | contemporary observed composition と native assembly、raw estimator result と estimator-robust claim、full-corpus signal と system-independent generalityを分離 |
 | [2026-09-15](2026-09-15.html) | 38 repos; 10 research-side updated | prospective falsification の後に残る正の構造を、applicability domain と failure mode 付きで定量化 |
