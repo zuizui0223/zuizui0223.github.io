@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-18 — 40 repos / 13 research-side updated / 27 unchanged](2026-09-18.html)**  
-  主題: island の raw-colour / display module、BITA の conditional partial identification、SCH の 4/2/0/0 no-pooling compatibility matrix。
-  - [Markdown source](2026-09-18.md)
+- **[2026-09-19 — 40 repos / 15 research-side updated / 25 unchanged](2026-09-19.html)**  
+  主題: TTF の within-species positive / cross-species transfer negative、PAYOFF-B の phase-error feedback、island H4 の post-hoc buffering bridge。
+  - [Markdown source](2026-09-19.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-19](2026-09-19.html) | 40 repos; 15 research-side updated | within-system structure・cross-system transfer・universal lawを別endpointとして閉じ、lineage conditioning / phase feedback / functional buffering候補を分離 |
 | [2026-09-18](2026-09-18.html) | 40 repos; 13 research-side updated | phenotype display・aggregate interaction・cross-study poolingを分解し、どこまで同定／統合できるかを数値で限定 |
 | [2026-09-17](2026-09-17.html) | 40 repos; 9 research-side updated | global isolation–pollen-limitation associationを支持しつつ、Chapter 1 branching mediationを分離。IWEがfirst real Tier-A effectを回収 |
 | [2026-09-16](2026-09-16.html) | 38 repos; 20 research-side updated | contemporary observed composition と native assembly、raw estimator result と estimator-robust claim、full-corpus signal と system-independent generalityを分離 |
