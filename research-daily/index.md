@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-19 — 40 repos / 15 research-side updated / 25 unchanged](2026-09-19.html)**  
-  主題: TTF の within-species positive / cross-species transfer negative、PAYOFF-B の phase-error feedback、island H4 の post-hoc buffering bridge。
-  - [Markdown source](2026-09-19.md)
+- **[2026-09-20 — 40 repos / 9 research-side updated / 31 unchanged](2026-09-20.html)**  
+  主題: BITA の access-routing support、CHUN の memory strength / opportunity / realization 分解、TTF の geometry-confounded conditional-transfer STOP、FCP の observation-process boundary。
+  - [Markdown source](2026-09-20.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-20](2026-09-20.html) | 40 repos; 9 research-side updated | state label だけでなく access / opportunity / observation geometry が latent distinctions を realized outcomeへ変える境界を複数研究で分離 |
 | [2026-09-19](2026-09-19.html) | 40 repos; 15 research-side updated | within-system structure・cross-system transfer・universal lawを別endpointとして閉じ、lineage conditioning / phase feedback / functional buffering候補を分離 |
 | [2026-09-18](2026-09-18.html) | 40 repos; 13 research-side updated | phenotype display・aggregate interaction・cross-study poolingを分解し、どこまで同定／統合できるかを数値で限定 |
 | [2026-09-17](2026-09-17.html) | 40 repos; 9 research-side updated | global isolation–pollen-limitation associationを支持しつつ、Chapter 1 branching mediationを分離。IWEがfirst real Tier-A effectを回収 |
