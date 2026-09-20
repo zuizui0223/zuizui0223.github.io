@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-20 — 40 repos / 9 research-side updated / 31 unchanged](2026-09-20.html)**  
-  主題: BITA の access-routing support、CHUN の memory strength / opportunity / realization 分解、TTF の geometry-confounded conditional-transfer STOP、FCP の observation-process boundary。
-  - [Markdown source](2026-09-20.md)
+- **[2026-09-21 — 40 repos / 10 research-side updated / 30 unchanged](2026-09-21.html)**  
+  主題: BITA の cross-network access routing、PAYOFF-B の three-taxon phase retention、TTF の trait-gradient refutation、CHUN の hierarchical hidden memory。
+  - [Markdown source](2026-09-21.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-21](2026-09-21.html) | 40 repos; 10 research-side updated | raw trait / universal parameter より、条件づけられた process coordinate / relational architecture の方が系を越えて再現しやすい境界を複数研究で具体化 |
 | [2026-09-20](2026-09-20.html) | 40 repos; 9 research-side updated | state label だけでなく access / opportunity / observation geometry が latent distinctions を realized outcomeへ変える境界を複数研究で分離 |
 | [2026-09-19](2026-09-19.html) | 40 repos; 15 research-side updated | within-system structure・cross-system transfer・universal lawを別endpointとして閉じ、lineage conditioning / phase feedback / functional buffering候補を分離 |
 | [2026-09-18](2026-09-18.html) | 40 repos; 13 research-side updated | phenotype display・aggregate interaction・cross-study poolingを分解し、どこまで同定／統合できるかを数値で限定 |
