@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-22 — 41 repos / 8 research-side updated / 33 unchanged](2026-09-22.html)**  
-  主題: IWE の strict timing–fitness 3-class corpus、TTF host-resource transfer の one-shot refutation、SCH の breadth-vs-estimand split、新規 Structural の operator-matched connectivity。
-  - [Markdown source](2026-09-22.md)
+- **[2026-09-23 — 41 repos / 8 research-side updated / 33 unchanged](2026-09-23.html)**  
+  主題: ODSP のpopulation-mean transfer、FCP H2のvalidity audit、Structuralのtwo-system non-estimabilityから、measurement validity → endpoint estimability → operator/estimand matching → replication のclaim gateを具体化。
+  - [Markdown source](2026-09-23.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-23](2026-09-23.html) | 41 repos; 8 research-side updated | measurement validity と endpoint estimability を、operator/estimand matching・independent replication より上流の必須gateとして明示 |
 | [2026-09-22](2026-09-22.html) | 41 repos; 8 research-side updated | relational variable だけでは足りず、endpoint-matched biological operator・commensurate estimand・independent replication が generalization の条件だと複数研究で具体化 |
 | [2026-09-21](2026-09-21.html) | 40 repos; 10 research-side updated | raw trait / universal parameter より、条件づけられた process coordinate / relational architecture の方が系を越えて再現しやすい境界を複数研究で具体化 |
 | [2026-09-20](2026-09-20.html) | 40 repos; 9 research-side updated | state label だけでなく access / opportunity / observation geometry が latent distinctions を realized outcomeへ変える境界を複数研究で分離 |
