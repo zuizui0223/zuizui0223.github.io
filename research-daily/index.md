@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-23 — 41 repos / 8 research-side updated / 33 unchanged](2026-09-23.html)**  
-  主題: ODSP のpopulation-mean transfer、FCP H2のvalidity audit、Structuralのtwo-system non-estimabilityから、measurement validity → endpoint estimability → operator/estimand matching → replication のclaim gateを具体化。
-  - [Markdown source](2026-09-23.md)
+- **[2026-09-24 — 41 repos / 7 research-side updated / 34 unchanged](2026-09-24.html)**  
+  主題: Izu Chapter 2 のcollision-free RNG correction、FCP direct-highlight validity、Structural のR3 reference-gap探索から、implementation/provenance integrityをmeasurement validityより上流のclaim gateとして明示。
+  - [Markdown source](2026-09-24.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-24](2026-09-24.html) | 41 repos; 7 research-side updated | implementation/provenance correctionに耐える抽象度のclaimを残し、RNG correction・measurement control・exploratory mechanismを別階層として整理 |
 | [2026-09-23](2026-09-23.html) | 41 repos; 8 research-side updated | measurement validity と endpoint estimability を、operator/estimand matching・independent replication より上流の必須gateとして明示 |
 | [2026-09-22](2026-09-22.html) | 41 repos; 8 research-side updated | relational variable だけでは足りず、endpoint-matched biological operator・commensurate estimand・independent replication が generalization の条件だと複数研究で具体化 |
 | [2026-09-21](2026-09-21.html) | 40 repos; 10 research-side updated | raw trait / universal parameter より、条件づけられた process coordinate / relational architecture の方が系を越えて再現しやすい境界を複数研究で具体化 |
