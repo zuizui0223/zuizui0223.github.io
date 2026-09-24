@@ -127,12 +127,9 @@
     let syndromeAssembly=null;
     if(payoffPoint&&ttfPoint&&campPoints.length===2){
       const sid='syndrome-assembly',campHub=average(campPoints),topHub=[132,635,25],court=[78,48,150];
-      const individualRoute=[payoffPoint,topHub,[42,585,139],[-93,510,181],[-188,398,145],[-226,274,82],[-215,148,-8],campHub];
-      const spatialRoute=[payoffPoint,topHub,[195,570,86],[236,457,22],[224,343,-78],[164,248,-126],[ttfPoint[0]+38,ttfPoint[1]+48,ttfPoint[2]+28],ttfPoint];
-      const individualReturn=[campHub,[-112,72,118],[-20,58,164],court];
-      const spatialReturn=[ttfPoint,[18,137,145],[58,82,176],court];
-      route(individualRoute,4.2,4.2,P.jade,4,sid);route(spatialRoute,4.2,4.2,P.brass,4,sid);
-      route(individualReturn,3.7,3.7,P.jade,0,sid);route(spatialReturn,3.7,3.7,P.brass,0,sid);
+      // Exterior connecting lines removed at the author's request (2026-09-24).
+      // Research routes survive in the optional horizontal reading ledger only.
+      const individualRoute=[],spatialRoute=[],individualReturn=[],spatialReturn=[];
       const ringPts=Array.from({length:9},(_,i)=>[court[0]+29*Math.cos(i*Math.PI/4),court[1],court[2]+29*Math.sin(i*Math.PI/4)]);
       for(let i=1;i<ringPts.length;i++)beamBetween(ringPts[i-1],ringPts[i],3.2,3.2,P.chalk,0,sid);
       function gate(o,ang,w,h,col,kind){
@@ -145,7 +142,7 @@
         gate([47,34,181],-1.05,22,29,P.chalk,'selfing-syndrome'),
         gate([45,34,121],-2.05,30,26,P.clayLight,'island-syndrome')
       ];
-      syndromeAssembly=deepFreeze({id:sid,scientific_edge:false,mode:'bifurcate-reconverge',source:'payoff',individual:{representative:campPoints,route:individualRoute,return:individualReturn},spatial:{repository:'TTF',point:ttfPoint,route:spatialRoute,return:spatialReturn},court,endpoints});
+      syndromeAssembly=deepFreeze({id:sid,scientific_edge:false,mode:'bifurcate-reconverge',renderedRoutes:false,source:'payoff',individual:{representative:campPoints,route:individualRoute,return:individualReturn},spatial:{repository:'TTF',point:ttfPoint,route:spatialRoute,return:spatialReturn},court,endpoints});
     }
 
     return Object.freeze({...model,faces:Object.freeze([...model.faces,...extraFaces]),decor:Object.freeze([...model.decor,...extraDecor]),resolutionFracture,syndromeAssembly});

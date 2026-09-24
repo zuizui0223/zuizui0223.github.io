@@ -49,7 +49,7 @@ def main():
         snap = lambda: page.evaluate('ZUIZUI_ROOMS.snapshot()')
         data = page.evaluate('ZUIZUI_TOWER')
         science = snap()['science']
-        check('36 source-backed rooms and four TMOP glyphs', len(data['repos']) == 36 and len(snap()['membership']) == 36)
+        check('40 source-backed rooms and four TMOP glyphs', len(data['repos']) == 40 and len(snap()['membership']) == 40)
         check('284b classification is explicitly unaudited, not guessed', snap()['membership']['284b'] == '?')
         page.locator('.doorway[aria-hidden="false"]').first.click()
         check('tower doorway enters a room instead of a note', bool(snap()['room']) and not page.locator('#notebook').evaluate('(e)=>e.open'))
@@ -58,7 +58,7 @@ def main():
         check('Escape returns to the same tower', snap()['room'] is None and not page.locator('#ascent').evaluate('(e)=>e.inert'))
         # The flat map is a full, non-puzzle-dependent navigation alternative.
         page.locator('#mapButton').click()
-        check('flat map contains all 36 rooms', page.locator('[data-map-room]').count() == 36)
+        check('flat map contains all 40 rooms', page.locator('[data-map-room]').count() == 40)
         check('map is an in-document dialog', snap()['mapOpen'] and page.url.startswith('about:blank'))
         page.locator('[data-filter="P"]').click()
         check('P filter highlights audited primary-data rooms only', page.locator('.plan-node:not(.dim)').count() == 7)
@@ -133,7 +133,7 @@ def main():
             check(f'{width}: no room horizontal overflow', device.evaluate('document.documentElement.scrollWidth <= innerWidth'))
             check(f'{width}: reachable visible exit', device.locator('.room-door:not([hidden])').count() > 0)
             device.locator('#roomPlan').click()
-            check(f'{width}: planar map scroll is internal', device.evaluate('document.documentElement.scrollWidth<=innerWidth') and device.locator('[data-map-room]').count()==36)
+            check(f'{width}: planar map scroll is internal', device.evaluate('document.documentElement.scrollWidth<=innerWidth') and device.locator('[data-map-room]').count()==40)
             device.keyboard.press('Escape')
             if width==390:
                 session=device.context.new_cdp_session(device)

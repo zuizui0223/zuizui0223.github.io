@@ -100,7 +100,9 @@
     const register=(f,anchors)=>{
       const rows=D.repos.filter(r=>r[1]===f);
       rows.forEach((row,j)=>{
-        const v=anchors[j],p=portal(...v);
+        const v=D.entrances?.[row[0]]||anchors[j];
+        if(!v)throw new Error('Missing entrance for '+row[0]);
+        const p=portal(...v);
         repoPoints.push({row,point:p.point,normal:p.normal,layer:f,button:null,screen:null});
       });
     };
