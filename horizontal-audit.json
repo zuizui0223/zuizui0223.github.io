@@ -1,0 +1,1259 @@
+{
+  "schema": "zuizui.horizontal.v1",
+  "checkedAt": "2026-09-24",
+  "inventory": {
+    "owner": "zuizui0223",
+    "owner_total": 41,
+    "research_programmes": 40,
+    "new": [
+      "slk",
+      "esdm",
+      "iwe",
+      "Structural"
+    ],
+    "renamed": {
+      "eco-genetic-criticality": "egc",
+      "eco-genetic-warning-extensions": "egwe"
+    },
+    "scope": "All 40 research repositories: README/positioning-document role audit. Not a full code/proof/branch-outcome audit."
+  },
+  "separateFromScientificContacts": true,
+  "kinds": {
+    "handoff": "受け渡す",
+    "comparison": "対照する",
+    "provenance": "系譜を辿る",
+    "design": "観測を組む",
+    "proposal": "これから結ぶ"
+  },
+  "sources": {
+    "hotarubukuro": {
+      "repo": "hotarubukuro",
+      "path": "README.md",
+      "blob": "f55c25df99efcb5cf5d44a76bdbafd914e4d3971",
+      "ref": "main",
+      "read_lines": [
+        1,
+        60
+      ],
+      "url": "https://github.com/zuizui0223/hotarubukuro/blob/main/README.md"
+    },
+    "azami": {
+      "repo": "azami",
+      "path": "README.md",
+      "blob": "c03c25f17fbf2e578c1906a3e70c0211bfc9cf06",
+      "ref": "main",
+      "read_lines": [
+        1,
+        55
+      ],
+      "url": "https://github.com/zuizui0223/azami/blob/main/README.md"
+    },
+    "bita": {
+      "repo": "bita",
+      "path": "README.md",
+      "blob": "b9eb00a4c17e454f22a0c93e15492dca682087a9",
+      "ref": "main",
+      "read_lines": [
+        1,
+        75
+      ],
+      "url": "https://github.com/zuizui0223/bita/blob/main/README.md"
+    },
+    "island": {
+      "repo": "island",
+      "path": "README.md",
+      "blob": "66d4f81f72e641d36fc310f824ce8c15617bc307",
+      "ref": "main",
+      "read_lines": [
+        1,
+        55
+      ],
+      "url": "https://github.com/zuizui0223/island/blob/main/README.md"
+    },
+    "mrod": {
+      "repo": "mrod",
+      "path": "README.md",
+      "blob": "665e07f8b7a92aca2ea40b915ff8a2aac52a5a89",
+      "ref": "main",
+      "read_lines": [
+        1,
+        44
+      ],
+      "url": "https://github.com/zuizui0223/mrod/blob/main/README.md"
+    },
+    "pollipi": {
+      "repo": "pollipi",
+      "path": "README.md",
+      "blob": "7375a7850ad0c48d1a56bb962a3130cd01e0d50e",
+      "ref": "main",
+      "read_lines": [
+        1,
+        28
+      ],
+      "url": "https://github.com/zuizui0223/pollipi/blob/main/README.md"
+    },
+    "insepi": {
+      "repo": "insepi",
+      "path": "README.md",
+      "blob": "a0b29c487807d212be00743d80d3bd423a18cfb7",
+      "ref": "main",
+      "read_lines": [
+        1,
+        32
+      ],
+      "url": "https://github.com/zuizui0223/insepi/blob/main/README.md"
+    },
+    "acsp": {
+      "repo": "acsp",
+      "path": "README.md",
+      "blob": "7787c6bc03b145e686dde2f03abd84343594c50e",
+      "ref": "main",
+      "read_lines": [
+        1,
+        50
+      ],
+      "url": "https://github.com/zuizui0223/acsp/blob/main/README.md"
+    },
+    "egc": {
+      "repo": "egc",
+      "path": "README.md",
+      "blob": "6b496b859e933c6a821d13ce1e04891cb9ea93d9",
+      "ref": "main",
+      "read_lines": [
+        1,
+        50
+      ],
+      "url": "https://github.com/zuizui0223/egc/blob/main/README.md"
+    },
+    "ccoc": {
+      "repo": "ccoc",
+      "path": "README.md",
+      "blob": "cca70df254fce8c597ae376a34a1fa2fbd8e9f56",
+      "ref": "main",
+      "read_lines": [
+        1,
+        33
+      ],
+      "url": "https://github.com/zuizui0223/ccoc/blob/main/README.md"
+    },
+    "izu-core": {
+      "repo": "izu-core",
+      "path": "README.md",
+      "blob": "71a2cf698df59e9e83687d2427792f6b579cb0b4",
+      "ref": "main",
+      "read_lines": [
+        1,
+        60
+      ],
+      "url": "https://github.com/zuizui0223/izu-core/blob/main/README.md"
+    },
+    "egwe": {
+      "repo": "egwe",
+      "path": "README.md",
+      "blob": "ac1f876e1c62248a499818f6237827c4396c3ade",
+      "ref": "main",
+      "read_lines": [
+        1,
+        65
+      ],
+      "url": "https://github.com/zuizui0223/egwe/blob/main/README.md"
+    },
+    "mltr": {
+      "repo": "mltr",
+      "path": "README.md",
+      "blob": "ecd0e289d80f6d95409b92802b3c5a62f2578913",
+      "ref": "main",
+      "read_lines": [
+        1,
+        38
+      ],
+      "url": "https://github.com/zuizui0223/mltr/blob/main/README.md"
+    },
+    "ced": {
+      "repo": "ced",
+      "path": "README.md",
+      "blob": "8a506a7b5a8619edea12cb98bbbfd275111bb4dc",
+      "ref": "main",
+      "read_lines": [
+        1,
+        38
+      ],
+      "url": "https://github.com/zuizui0223/ced/blob/main/README.md"
+    },
+    "mrm": {
+      "repo": "mrm",
+      "path": "README.md",
+      "blob": "d3f0167c5d7dc4b756b017a3e04e563ee85c10fc",
+      "ref": "main",
+      "read_lines": [
+        1,
+        32
+      ],
+      "url": "https://github.com/zuizui0223/mrm/blob/main/README.md"
+    },
+    "shimahotarubukuro": {
+      "repo": "shimahotarubukuro",
+      "path": "README.md",
+      "blob": "24135526e16b459b223ad9315254d8879bf8cb07",
+      "ref": "main",
+      "read_lines": [
+        1,
+        34
+      ],
+      "url": "https://github.com/zuizui0223/shimahotarubukuro/blob/main/README.md"
+    },
+    "fcp": {
+      "repo": "fcp",
+      "path": "README.md",
+      "blob": "462e73ddc59026412ef36e640fa29a52392ceedb",
+      "ref": "main",
+      "read_lines": [
+        1,
+        65
+      ],
+      "url": "https://github.com/zuizui0223/fcp/blob/main/README.md"
+    },
+    "eog": {
+      "repo": "eog",
+      "path": "README.md",
+      "blob": "285397bf60080c8356507a3c0eb38e9fc95d2d64",
+      "ref": "main",
+      "read_lines": [
+        1,
+        55
+      ],
+      "url": "https://github.com/zuizui0223/eog/blob/main/README.md"
+    },
+    "odsp": {
+      "repo": "odsp",
+      "path": "README.md",
+      "blob": "bf8dcf97bbe6036b1cd94572b71f654def4384e9",
+      "ref": "main",
+      "read_lines": [
+        1,
+        52
+      ],
+      "url": "https://github.com/zuizui0223/odsp/blob/main/README.md"
+    },
+    "EAzami": {
+      "repo": "EAzami",
+      "path": "README.md",
+      "blob": "19f39e75ce0abfae00d2b5ca9e6bb8f685f9d69d",
+      "ref": "main",
+      "read_lines": [
+        1,
+        60
+      ],
+      "url": "https://github.com/zuizui0223/EAzami/blob/main/README.md"
+    },
+    "chun": {
+      "repo": "chun",
+      "path": "README.md",
+      "blob": "2dc710cbac8a223c9fc44aa09fef3c97ad6631a5",
+      "ref": "main",
+      "read_lines": [
+        1,
+        65
+      ],
+      "url": "https://github.com/zuizui0223/chun/blob/main/README.md"
+    },
+    "sdmr": {
+      "repo": "sdmr",
+      "path": "README.md",
+      "blob": "df323c224a4060dae6e0454db2022e0e986431f9",
+      "ref": "main",
+      "read_lines": [
+        1,
+        48
+      ],
+      "url": "https://github.com/zuizui0223/sdmr/blob/main/README.md"
+    },
+    "crest": {
+      "repo": "crest",
+      "path": "README.md",
+      "blob": "b86eb4ca345fce2e971c70c03f647ffce97d0abf",
+      "ref": "main",
+      "read_lines": [
+        1,
+        42
+      ],
+      "url": "https://github.com/zuizui0223/crest/blob/main/README.md"
+    },
+    "theouni": {
+      "repo": "theouni",
+      "path": "README.md",
+      "blob": "9f094d02d78f14524da6e9aba785b46470e2f175",
+      "ref": "main",
+      "read_lines": [
+        1,
+        30
+      ],
+      "url": "https://github.com/zuizui0223/theouni/blob/main/README.md"
+    },
+    "tnoa": {
+      "repo": "tnoa",
+      "path": "README.md",
+      "blob": "0049e3795701ceb2afa4ad7ce1ab7247a6e0558e",
+      "ref": "main",
+      "read_lines": [
+        1,
+        35
+      ],
+      "url": "https://github.com/zuizui0223/tnoa/blob/main/README.md"
+    },
+    "aza3": {
+      "repo": "aza3",
+      "path": "README.md",
+      "blob": "7398e2ff93511bd9099407437feb80db3c95e8ba",
+      "ref": "main",
+      "read_lines": [
+        1,
+        50
+      ],
+      "url": "https://github.com/zuizui0223/aza3/blob/main/README.md"
+    },
+    "sch": {
+      "repo": "sch",
+      "path": "README.md",
+      "blob": "b47ebdb17308cb7ae4e374401112f4955f7c913d",
+      "ref": "main",
+      "read_lines": [
+        1,
+        65
+      ],
+      "url": "https://github.com/zuizui0223/sch/blob/main/README.md"
+    },
+    "boundary": {
+      "repo": "boundary",
+      "path": "README.md",
+      "blob": "c0729112e4df1629c24d4cedd98a5fb7e23c3738",
+      "ref": "main",
+      "read_lines": [
+        1,
+        40
+      ],
+      "url": "https://github.com/zuizui0223/boundary/blob/main/README.md"
+    },
+    "rec": {
+      "repo": "rec",
+      "path": "README.md",
+      "blob": "319afc7899abc3ab1d2356563317fc4e73940bce",
+      "ref": "main",
+      "read_lines": [
+        1,
+        32
+      ],
+      "url": "https://github.com/zuizui0223/rec/blob/main/README.md"
+    },
+    "284b": {
+      "repo": "284b",
+      "path": "docs/product_b_eog_sdmr_relation_space_alignment.md",
+      "blob": "a5ca53b09aed0adaaebeff24602a58d833f7ac94",
+      "ref": "main",
+      "read_lines": [
+        1,
+        70
+      ],
+      "url": "https://github.com/zuizui0223/284b/blob/main/docs/product_b_eog_sdmr_relation_space_alignment.md"
+    },
+    "egwee": {
+      "repo": "egwee",
+      "path": "README.md",
+      "blob": "bd6801aea6c14303d09a14ad338f1a660e88b77c",
+      "ref": "main",
+      "read_lines": [
+        1,
+        50
+      ],
+      "url": "https://github.com/zuizui0223/egwee/blob/main/README.md"
+    },
+    "balance": {
+      "repo": "balance",
+      "path": "README.md",
+      "blob": "be6b5ad1b0b5edb7abd05c077a2f1e840fcf10be",
+      "ref": "main",
+      "read_lines": [
+        1,
+        55
+      ],
+      "url": "https://github.com/zuizui0223/balance/blob/main/README.md"
+    },
+    "v3": {
+      "repo": "v3",
+      "path": "README.md",
+      "blob": "17f861103c36aa791a31c8ca8ffc0ecc3e77bed0",
+      "ref": "main",
+      "read_lines": [
+        1,
+        30
+      ],
+      "url": "https://github.com/zuizui0223/v3/blob/main/README.md"
+    },
+    "payoff": {
+      "repo": "payoff",
+      "path": "README.md",
+      "blob": "1b361d52062f539903a06070aa2faa629eae55a9",
+      "ref": "main",
+      "read_lines": [
+        1,
+        48
+      ],
+      "url": "https://github.com/zuizui0223/payoff/blob/main/README.md"
+    },
+    "adaptive-gain": {
+      "repo": "adaptive-gain",
+      "path": "README.md",
+      "blob": "5411365095ec606cbfe1f032c51bbe59b438d296",
+      "ref": "main",
+      "read_lines": [
+        1,
+        40
+      ],
+      "url": "https://github.com/zuizui0223/adaptive-gain/blob/main/README.md"
+    },
+    "TTF": {
+      "repo": "TTF",
+      "path": "README.md",
+      "blob": "41048213e098a6e3cdc700b84299736e7300f265",
+      "ref": "main",
+      "read_lines": [
+        1,
+        65
+      ],
+      "url": "https://github.com/zuizui0223/TTF/blob/main/README.md"
+    },
+    "slk": {
+      "repo": "slk",
+      "path": "README.md",
+      "blob": "192814b747f1b36b27478e48ace05f052bcce3a0",
+      "ref": "main",
+      "read_lines": [
+        1,
+        180
+      ],
+      "url": "https://github.com/zuizui0223/slk/blob/main/README.md"
+    },
+    "esdm": {
+      "repo": "esdm",
+      "path": "README.md",
+      "blob": "1051ebc8526fd7820faa063134ee397d2b3ceb57",
+      "ref": "e9d25912b7662d397c15b10f1851e1cc0108d8ea",
+      "read_lines": [
+        1,
+        150
+      ],
+      "url": "https://github.com/zuizui0223/esdm/blob/e9d25912b7662d397c15b10f1851e1cc0108d8ea/README.md"
+    },
+    "iwe": {
+      "repo": "iwe",
+      "path": "README.md",
+      "blob": "e239a76d424394ef6e8d46e06e33268d06f8b390",
+      "ref": "main",
+      "read_lines": [
+        1,
+        145
+      ],
+      "url": "https://github.com/zuizui0223/iwe/blob/main/README.md"
+    },
+    "Structural": {
+      "repo": "Structural",
+      "path": "docs/STRUCTURAL_EGWE_TTF_HANDOFF_V0_34.md",
+      "blob": "d284df5fa6ec628aaa36734c58b234a058b7c02c",
+      "ref": "main",
+      "read_lines": [
+        1,
+        105
+      ],
+      "url": "https://github.com/zuizui0223/Structural/blob/main/docs/STRUCTURAL_EGWE_TTF_HANDOFF_V0_34.md"
+    },
+    "Structural-origin": {
+      "repo": "Structural",
+      "path": "README.md",
+      "blob": "865890c0aa017cae715b5c81d5dd93848f783e43",
+      "ref": "main",
+      "read_lines": [
+        1,
+        53
+      ],
+      "url": "https://github.com/zuizui0223/Structural/blob/main/README.md"
+    }
+  },
+  "roles": {
+    "hotarubukuro": "ホタルブクロの地理的な花色変異。原点となる個体系。",
+    "fcp": "種内の花色分布と、その地理的な組織化。空間の側。",
+    "chun": "Camelliaの花色と色素経路の反復。進化時間の側。",
+    "azami": "現在のアザミ頭花を、連続的な形質と環境から読む。",
+    "EAzami": "アザミ頭花の進化的反復と、歴史的原因の識別限界。",
+    "aza3": "EAzamiで残る歴史を、同一個体に紐づく将来の一次データで分ける。",
+    "island": "島嶼で反復する繁殖保証と花の機能的組み合わせを問う。",
+    "izu-core": "出発状態と実現した送粉者群集による、条件付きの応答分岐。",
+    "shimahotarubukuro": "伊豆のシマホタルブクロに実現した形態差を測る。",
+    "pollipi": "花の訪問者を記録する装置。候補判定と一次画像を分ける。",
+    "insepi": "観測側の故障を介入で識別する。物理系での検証は別の段階。",
+    "rec": "露出が記録へ入る前の脱落。記録後の分類では戻せない情報。",
+    "v3": "保持した参照情報が、両立する解釈をどう絞るか。",
+    "tnoa": "対象・外乱・観測可能性・保留を、意味付けで潰さず残す。",
+    "boundary": "いまの観測写像では、どの機構の区別が不可能か。",
+    "mrod": "未解決の機構を分けるために、次は何を測るか。",
+    "sdmr": "環境座標とモデルを、未見の出現記録で選ぶ。",
+    "odsp": "平面地図が落とす深さ・時間などの状態分布を問う。",
+    "eog": "観測と両立し、到達可能な分布世界を集合として残す。",
+    "284b": "異なる生物学的役割の答えを、共通の関係空間で照合する。",
+    "acsp": "次に調べる候補パッチを返す。存在・検出の保証ではない。",
+    "ccoc": "許される未来を広げたとき、圧縮が残すべき区別。",
+    "mltr": "系を置き換えたとき、状態の意味と履歴をどう運ぶか。",
+    "mrm": "同じ現在から違う未来を返す機構を、状態と実験で区別する。",
+    "crest": "未来・履歴・隠れた現在を踏まえ、必要な状態を定める。",
+    "ced": "必要な区別を、実際の証拠は報告できるほど識別したか。",
+    "theouni": "世界・契約・必要状態・証拠と、研究プログラムの関係を整理する。",
+    "sch": "多機能性ではなく、共有形質の機能的対立を識別する。",
+    "balance": "対立はあっても分化が割に合わない、妥協領域の持続。",
+    "bita": "アクセス制約による利用経路の変更と、機構識別。SLKとは別軸。",
+    "payoff": "構造利得を集団・空間・時間へ運ぶ数学。SLKへの出典と独立拡張。",
+    "egc": "断片化で、生物学的な各状態が同じようには劣化しない条件。",
+    "egwe": "未来を分ける状態・作用過程・残存余力。有限モデルで問う。",
+    "egwee": "自然の断片化で、相互作用・繁殖・遺伝の応答を比較する。",
+    "TTF": "種内の転換構造が、未見の別種にも移るかを独立に検証する。",
+    "adaptive-gain": "途中の結果に合わせた測定選択は、固定測定よりどれだけ得か。",
+    "slk": "R−Kの構造価値を、到達可能性・侵入・固定・占有へつなぐ。",
+    "esdm": "生態過程→潜在状態→観測を、一つの生成モデルにする開発系。",
+    "iwe": "季節的な同調の繁殖効果を、相利・拮抗・混合系で比較する独立メタ解析。",
+    "Structural": "十分な参照を与えたあと、景観構造に予測上の情報が残るか。"
+  },
+  "links": [
+    {
+      "id": "sch--balance",
+      "from": "sch",
+      "to": "balance",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "balance",
+      "note": "共有軸の対立Lと、分化が割に合わない領域を接続する。",
+      "ceiling": "Lの識別が先。多機能性だけでは対立を認定しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "sch--slk",
+      "from": "sch",
+      "to": "slk",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "slk",
+      "note": "識別した対立負荷を、回復量R・費用Kの比較へ渡す。",
+      "ceiling": "R=sLは登録された二次モデル内の橋。普遍恒等式ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "balance--slk",
+      "from": "balance",
+      "to": "slk",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "balance",
+      "note": "L>0かつPhi<0の妥協領域を、構造価値の境界と照合する。",
+      "ceiling": "Phi>0でも局所到達・侵入・固定は別の条件。",
+      "scientific_edge": false
+    },
+    {
+      "id": "payoff--slk",
+      "from": "payoff",
+      "to": "slk",
+      "kind": "provenance",
+      "status": "documented",
+      "source": "slk",
+      "note": "PAYOFFの数学的結果をSLKの進化的実現段階へ引き継ぐ。",
+      "ceiling": "独立な空間・季節拡張はPAYOFFに残る。リポの統合ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "bita--slk",
+      "from": "bita",
+      "to": "slk",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "slk",
+      "note": "機構の識別と、構造が割に合う条件を横に置いて比較する。",
+      "ceiling": "BITAは現在R/K/Phi境界の所有者ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "bita--sch",
+      "from": "bita",
+      "to": "sch",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "slk",
+      "note": "trait interactionとfunctional conflictを別の識別問題として扱う。",
+      "ceiling": "形質相互作用だけでは機構も共有軸の対立も同定されない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "bita--boundary",
+      "from": "bita",
+      "to": "boundary",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "bita",
+      "note": "利用経路の観測から、何の機構まで言えるかを照合する候補。",
+      "ceiling": "現在は問いの接続。共同の機構同定器を実装した意味ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "iwe--sch",
+      "from": "iwe",
+      "to": "sch",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "iwe",
+      "note": "同調の繁殖効果を、対立・構造・時間応答の外部経験的文脈として読む。",
+      "ceiling": "IWEは独立のメタ解析。L/R/K/Phiや機構配分を推定・検証しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "iwe--balance",
+      "from": "iwe",
+      "to": "balance",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "iwe",
+      "note": "同調の繁殖効果を、対立・構造・時間応答の外部経験的文脈として読む。",
+      "ceiling": "IWEは独立のメタ解析。L/R/K/Phiや機構配分を推定・検証しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "iwe--slk",
+      "from": "iwe",
+      "to": "slk",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "iwe",
+      "note": "同調の繁殖効果を、対立・構造・時間応答の外部経験的文脈として読む。",
+      "ceiling": "IWEは独立のメタ解析。L/R/K/Phiや機構配分を推定・検証しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "iwe--bita",
+      "from": "iwe",
+      "to": "bita",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "iwe",
+      "note": "同調の繁殖効果を、対立・構造・時間応答の外部経験的文脈として読む。",
+      "ceiling": "IWEは独立のメタ解析。L/R/K/Phiや機構配分を推定・検証しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "iwe--payoff",
+      "from": "iwe",
+      "to": "payoff",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "iwe",
+      "note": "同調の繁殖効果を、対立・構造・時間応答の外部経験的文脈として読む。",
+      "ceiling": "IWEは独立のメタ解析。L/R/K/Phiや機構配分を推定・検証しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "Structural--eog",
+      "from": "Structural",
+      "to": "eog",
+      "kind": "provenance",
+      "status": "documented",
+      "source": "Structural-origin",
+      "note": "EOGから分離した参照十分性の研究。両立世界の予測とは仕事を分ける。",
+      "ceiling": "EOG-WFと経験的分母を混ぜない。共有用語は再現の本数ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "Structural--egwe",
+      "from": "Structural",
+      "to": "egwe",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "Structural",
+      "note": "明示した参照・現在状態のあとに残る、端点関連の情報を問う。",
+      "ceiling": "within-system adequacyと未来状態十分性は同じ検定ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "Structural--TTF",
+      "from": "Structural",
+      "to": "TTF",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "Structural",
+      "note": "系内十分性→作用過程間の可搬性→未見種への転移を別段階で渡す。",
+      "ceiling": "後段の計画。Structuralの確認的資格認定を通るまで発動しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "egwe--TTF",
+      "from": "egwe",
+      "to": "TTF",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "Structural",
+      "note": "未来関連状態の十分性と、種をまたぐ転移可能性を対照する。",
+      "ceiling": "一方の支持・不支持は他方の検証結果に継承されない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "sdmr--odsp",
+      "from": "sdmr",
+      "to": "odsp",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "odsp",
+      "note": "環境座標の選択と、その座標が表す多次元状態の厚み。",
+      "ceiling": "四章の読解順序。全系列の直結APIや一括実証は意味しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "odsp--eog",
+      "from": "odsp",
+      "to": "eog",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "odsp",
+      "note": "多次元支持状態から、可能・到達世界を問う側へ。",
+      "ceiling": "状態分布と歴史的真実を同一視しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "eog--acsp",
+      "from": "eog",
+      "to": "acsp",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "odsp",
+      "note": "許容された支持と、次に調査する候補地の関係。",
+      "ceiling": "候補パッチは占有確率・発見保証ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "sdmr--284b",
+      "from": "sdmr",
+      "to": "284b",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "284b",
+      "note": "役割に応じた推定器の答えを、共通の生物学的機会へ写す。",
+      "ceiling": "同じ推定器・背景域・尺度を全生物へ強制しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "eog--284b",
+      "from": "eog",
+      "to": "284b",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "284b",
+      "note": "到達性など異なる答えを、外部の生物学的関係で照合する。",
+      "ceiling": "異なる推定対象の照合であり、もう一つのSDMではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "esdm--sdmr",
+      "from": "esdm",
+      "to": "sdmr",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "esdm",
+      "note": "出現予測の環境選択と、生態状態を生む過程モデルを比較する。",
+      "ceiling": "ESDMは開発ブランチ。優越性や結果の継承は未確認。",
+      "scientific_edge": false
+    },
+    {
+      "id": "esdm--odsp",
+      "from": "esdm",
+      "to": "odsp",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "esdm",
+      "note": "潜在生態状態と、多次元の状態分布・投影損失を接続する候補。",
+      "ceiling": "単位・時間・状態区分を揃えるアダプターは別途必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "esdm--rec",
+      "from": "esdm",
+      "to": "rec",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "esdm",
+      "note": "生成モデルの観測過程と、記録入口の選択を照合する候補。",
+      "ceiling": "宣言した情報経路は識別の証明ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "esdm--acsp",
+      "from": "esdm",
+      "to": "acsp",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "esdm",
+      "note": "状態推定から調査候補への出口を設計する候補。",
+      "ceiling": "実装済みの統合製品ではなく、野外発見も保証しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "esdm--Structural",
+      "from": "esdm",
+      "to": "Structural",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "esdm",
+      "note": "生成した状態を、強い参照に対する独立な増分検証へ置く候補。",
+      "ceiling": "共通の端点・支持域・未見単位を先に凍結する必要がある。",
+      "scientific_edge": false
+    },
+    {
+      "id": "ccoc--crest",
+      "from": "ccoc",
+      "to": "crest",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "ced",
+      "note": "開かれた未来の下で失うと困る区別を、必要状態へ渡す。",
+      "ceiling": "表現の下限は、データが既にその区別を見たことを意味しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "mltr--crest",
+      "from": "mltr",
+      "to": "crest",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "ced",
+      "note": "構造の置換と履歴に依存する意味を、必要状態として残す。",
+      "ceiling": "宣言された置換関係での定理であり、歴史のデータ推定ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "mrm--crest",
+      "from": "mrm",
+      "to": "crest",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "mrm",
+      "note": "見える現在が同じでも、未来応答の違う機構を潰さない。",
+      "ceiling": "機構候補の記憶と、機構候補の実測同定は別。",
+      "scientific_edge": false
+    },
+    {
+      "id": "crest--ced",
+      "from": "crest",
+      "to": "ced",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "ced",
+      "note": "保持すべき区別と、いま報告を許す証拠を照合する。",
+      "ceiling": "必要な精細化は、それを獲得済みだという証拠ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "boundary--ced",
+      "from": "boundary",
+      "to": "ced",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "ced",
+      "note": "観測で分けられる集合と、対象の報告可能性を対照する。",
+      "ceiling": "対象の解像度と機構分解能を混同しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "boundary--mrod",
+      "from": "boundary",
+      "to": "mrod",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "mrod",
+      "note": "現在の機構曖昧さを、次の観測で分ける問題へ。",
+      "ceiling": "最良適合モデルを選ぶこととは別。測定候補の妥当性が必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "mrm--mrod",
+      "from": "mrm",
+      "to": "mrod",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "mrm",
+      "note": "応答型を分けるプローブと、候補観測の価値を同じ契約へ。",
+      "ceiling": "署名・費用・結果分割の明示的アダプターが必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "ced--mrod",
+      "from": "ced",
+      "to": "mrod",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "ced",
+      "note": "対象の報告リスクと、機構を解く測定設計を照合する。",
+      "ceiling": "同じ目的関数だとは仮定しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "crest--egwe",
+      "from": "crest",
+      "to": "egwe",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "egwe",
+      "note": "粗い現在の要約が、未来関連の差異を落としていないか問う。",
+      "ceiling": "有限Markov閉合を自然系の状態十分性へ格上げしない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "crest--theouni",
+      "from": "crest",
+      "to": "theouni",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "theouni",
+      "note": "必要状態・証拠・契約を、より広い研究の役割へ整理する。",
+      "ceiling": "研究プログラム自体を生態状態と同一視しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "ccoc--adaptive-gain",
+      "from": "ccoc",
+      "to": "adaptive-gain",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "ccoc",
+      "note": "未来の応答インターフェースと、その区別を測る費用を対照する。",
+      "ceiling": "表現下限と測定費用は異なる量。一般同値は主張しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "mrod--adaptive-gain",
+      "from": "mrod",
+      "to": "adaptive-gain",
+      "kind": "provenance",
+      "status": "documented",
+      "source": "adaptive-gain",
+      "note": "結果に応じて次の測定を変える有限決定構造を独立化した系譜。",
+      "ceiling": "元の生態モデルや科学的結論は元リポに残る。",
+      "scientific_edge": false
+    },
+    {
+      "id": "payoff--adaptive-gain",
+      "from": "payoff",
+      "to": "adaptive-gain",
+      "kind": "provenance",
+      "status": "documented",
+      "source": "adaptive-gain",
+      "note": "結果に応じて次の測定を変える有限決定構造を独立化した系譜。",
+      "ceiling": "元の生態モデルや科学的結論は元リポに残る。",
+      "scientific_edge": false
+    },
+    {
+      "id": "balance--adaptive-gain",
+      "from": "balance",
+      "to": "adaptive-gain",
+      "kind": "provenance",
+      "status": "documented",
+      "source": "adaptive-gain",
+      "note": "結果に応じて次の測定を変える有限決定構造を独立化した系譜。",
+      "ceiling": "元の生態モデルや科学的結論は元リポに残る。",
+      "scientific_edge": false
+    },
+    {
+      "id": "v3--rec",
+      "from": "v3",
+      "to": "rec",
+      "kind": "design",
+      "status": "documented",
+      "source": "v3",
+      "note": "参照による精細化・入口での選択・意味付け・次観測を別操作として接続する。",
+      "ceiling": "同じ装置・未見場面での経験的閉合は各段階で別に必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "v3--tnoa",
+      "from": "v3",
+      "to": "tnoa",
+      "kind": "design",
+      "status": "documented",
+      "source": "v3",
+      "note": "参照による精細化・入口での選択・意味付け・次観測を別操作として接続する。",
+      "ceiling": "同じ装置・未見場面での経験的閉合は各段階で別に必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "v3--boundary",
+      "from": "v3",
+      "to": "boundary",
+      "kind": "design",
+      "status": "documented",
+      "source": "v3",
+      "note": "参照による精細化・入口での選択・意味付け・次観測を別操作として接続する。",
+      "ceiling": "同じ装置・未見場面での経験的閉合は各段階で別に必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "v3--mrod",
+      "from": "v3",
+      "to": "mrod",
+      "kind": "design",
+      "status": "documented",
+      "source": "v3",
+      "note": "参照による精細化・入口での選択・意味付け・次観測を別操作として接続する。",
+      "ceiling": "同じ装置・未見場面での経験的閉合は各段階で別に必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "v3--pollipi",
+      "from": "v3",
+      "to": "pollipi",
+      "kind": "design",
+      "status": "documented",
+      "source": "v3",
+      "note": "参照による精細化・入口での選択・意味付け・次観測を別操作として接続する。",
+      "ceiling": "同じ装置・未見場面での経験的閉合は各段階で別に必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "v3--insepi",
+      "from": "v3",
+      "to": "insepi",
+      "kind": "design",
+      "status": "documented",
+      "source": "v3",
+      "note": "参照による精細化・入口での選択・意味付け・次観測を別操作として接続する。",
+      "ceiling": "同じ装置・未見場面での経験的閉合は各段階で別に必要。",
+      "scientific_edge": false
+    },
+    {
+      "id": "rec--tnoa",
+      "from": "rec",
+      "to": "tnoa",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "rec",
+      "note": "記録に入る前の脱落と、入った後の意味の保存を分ける。",
+      "ceiling": "REC→TNOAの前向き同一系検証は未閉合。",
+      "scientific_edge": false
+    },
+    {
+      "id": "pollipi--insepi",
+      "from": "pollipi",
+      "to": "insepi",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "v3",
+      "note": "実際の観測記録と、観測系の故障を介入で調べる装置を並べる。",
+      "ceiling": "メッシュ判定は確認された訪花ではない。V13の物理結果は別。",
+      "scientific_edge": false
+    },
+    {
+      "id": "pollipi--shimahotarubukuro",
+      "from": "pollipi",
+      "to": "shimahotarubukuro",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "pollipi",
+      "note": "直接の花形態と、訪問画像を同じ個体・観測ブロックで結ぶ候補。",
+      "ceiling": "画像から送粉効果や成熟種子まで自動的にはつながらない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "acsp--aza3",
+      "from": "acsp",
+      "to": "aza3",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "aza3",
+      "note": "必要な系統・形質対比を、候補調査地の選定へ渡す候補。",
+      "ceiling": "候補地の提案は採集・野外実施の認可ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "hotarubukuro--fcp",
+      "from": "hotarubukuro",
+      "to": "fcp",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "fcp",
+      "note": "一つの種の花色地理と、種を反復単位にした花色分布を比較する。",
+      "ceiling": "同じ花色というだけで解析分母や効果を共有しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "fcp--chun",
+      "from": "fcp",
+      "to": "chun",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "chun",
+      "note": "空間の組織化と、進化時間での生成・反復を並べる。",
+      "ceiling": "現在のCHUNはCamellia。過去の別科解析を現行結果へ混ぜない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "fcp--TTF",
+      "from": "fcp",
+      "to": "TTF",
+      "kind": "provenance",
+      "status": "documented",
+      "source": "TTF",
+      "note": "花色の経験的研究から、種をまたぐ転換構造の方法を分離した。",
+      "ceiling": "種内の空間構造があることは、共有地図の存在ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "azami--EAzami",
+      "from": "azami",
+      "to": "EAzami",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "EAzami",
+      "note": "現在の頭花形質と、進化時間の分化を独立に照合する。",
+      "ceiling": "現在の環境関連で歴史的な原因の不支持を救わない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "EAzami--aza3",
+      "from": "EAzami",
+      "to": "aza3",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "aza3",
+      "note": "公開データで残る歴史の曖昧さを、将来の同一個体データへ渡す。",
+      "ceiling": "一次データは未導入。将来の結果でChapter2を遡及確認しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "chun--EAzami",
+      "from": "chun",
+      "to": "EAzami",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "chun",
+      "note": "花色と頭花の、異なる系統・形質における進化時間の問い。",
+      "ceiling": "同一の歴史過程を実証した関係ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "island--izu-core",
+      "from": "island",
+      "to": "izu-core",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "shimahotarubukuro",
+      "note": "広域の反復パターンと、定着後の条件付き応答を照合する。",
+      "ceiling": "種の到着・進化・相互作用応答は異なる過程。",
+      "scientific_edge": false
+    },
+    {
+      "id": "izu-core--shimahotarubukuro",
+      "from": "izu-core",
+      "to": "shimahotarubukuro",
+      "kind": "handoff",
+      "status": "documented",
+      "source": "shimahotarubukuro",
+      "note": "連続性のある伊豆系で、実現した表現型を独立に測る。",
+      "ceiling": "Chapter3はChapter2の欠けた確認パネルではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "island--shimahotarubukuro",
+      "from": "island",
+      "to": "shimahotarubukuro",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "shimahotarubukuro",
+      "note": "世界の島嶼パターンと、局所の直接形態を異なる解像度で読む。",
+      "ceiling": "形態分化から歴史的な送粉者消失を原因同定しない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "egc--egwe",
+      "from": "egc",
+      "to": "egwe",
+      "kind": "provenance",
+      "status": "documented",
+      "source": "egc",
+      "note": "状態分離の有限モデルから、未来を分ける組織化・余力へ。",
+      "ceiling": "共有論文でもコードと証拠台帳は独立に保持する。",
+      "scientific_edge": false
+    },
+    {
+      "id": "egwe--egwee",
+      "from": "egwe",
+      "to": "egwee",
+      "kind": "comparison",
+      "status": "documented",
+      "source": "egwee",
+      "note": "有限系の状態分離と、自然系の多層応答を照合する。",
+      "ceiling": "自然系の分離・一致の両方を残す。有限演算子の検証ではない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "island--Structural",
+      "from": "island",
+      "to": "Structural",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "Structural-origin",
+      "note": "海で隔てられた系と、景観内で分断された系を対照する候補。",
+      "ceiling": "起源が同じだとは仮定しない。データと端点を揃える必要がある。",
+      "scientific_edge": false
+    },
+    {
+      "id": "island--egwee",
+      "from": "island",
+      "to": "egwee",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "egwee",
+      "note": "島嶼の形質応答と、断片化した植物の多層応答を対照する候補。",
+      "ceiling": "島と断片化を一つの原因・一つのシンドロームにしない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "bita--island",
+      "from": "bita",
+      "to": "island",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "bita",
+      "note": "花へのアクセスと、迂回利用を含む実現相互作用をつなぐ候補。",
+      "ceiling": "花の単純化が特定の送粉機構を意味するとは限らない。",
+      "scientific_edge": false
+    },
+    {
+      "id": "iwe--izu-core",
+      "from": "iwe",
+      "to": "izu-core",
+      "kind": "proposal",
+      "status": "proposed",
+      "source": "iwe",
+      "note": "季節的な出会いと、実現する相手群集の違いを比較する候補。",
+      "ceiling": "時間的同調と群集置換は同じ説明変数ではない。",
+      "scientific_edge": false
+    }
+  ],
+  "conflicts": [
+    {
+      "id": "architecture-ownership",
+      "sources": [
+        "payoff",
+        "slk",
+        "balance",
+        "bita"
+      ],
+      "resolution": "PAYOFF README retains earlier BITA recovery ownership. Current SLK/BALANCE/BITA positioning takes precedence for current navigation; earlier source remains historical."
+    },
+    {
+      "id": "esdm-main-placeholder",
+      "sources": [
+        "esdm"
+      ],
+      "resolution": "main README contains only title; current programme role taken from the explicitly pinned development branch, not represented as merged or empirically validated."
+    }
+  ]
+}

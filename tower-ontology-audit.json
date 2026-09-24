@@ -1,14 +1,14 @@
 {
-  "checked_at": "2026-09-08",
+  "checked_at": "2026-09-24",
   "schema": "zuizui.tower_ontology.v1",
   "inventory": {
-    "owner_total": 37,
-    "research_programmes": 36,
+    "owner_total": 41,
+    "research_programmes": 40,
     "meta_registry": [
       "zuizui0223.github.io"
     ],
     "staging_unclassified": [],
-    "note": "36 research programmes plus the homepage meta-registry. TTF and adaptive-gain were added 2026-09-07/08; active or placed does not mean empirically validated."
+    "note": "40 research repositories plus the site; role audit 2026-09-24. Renames preserve identity. esdm programme is a pinned development branch, not merged main."
   },
   "principle": "The portfolio is one navigable tower but not one ontological nesting. Floors are an itinerary. Scientific relations are typed maps, obligations and empirical contacts; camera angle changes visibility only.",
   "world_semantics": {
@@ -36,7 +36,8 @@
         "aza3",
         "island",
         "izu-core",
-        "shimahotarubukuro"
+        "shimahotarubukuro",
+        "iwe"
       ]
     },
     {
@@ -66,7 +67,9 @@
         "eog",
         "284b",
         "acsp",
-        "adaptive-gain"
+        "adaptive-gain",
+        "esdm",
+        "Structural"
       ]
     },
     {
@@ -93,9 +96,10 @@
         "balance",
         "bita",
         "payoff",
-        "eco-genetic-criticality",
-        "eco-genetic-warning-extensions",
-        "egwee"
+        "egc",
+        "egwe",
+        "egwee",
+        "slk"
       ]
     }
   ],
@@ -155,8 +159,8 @@
     },
     "eco_genetic_future_state": {
       "repositories": [
-        "eco-genetic-criticality",
-        "eco-genetic-warning-extensions",
+        "egc",
+        "egwe",
         "egwee"
       ],
       "topology": "finite state theory -> future-relevant relational state/warning validity -> independent natural-data state-adequacy gates",
@@ -255,7 +259,7 @@
     },
     {
       "from": [
-        "eco-genetic-warning-extensions"
+        "egwe"
       ],
       "to": [
         "payoff"
@@ -265,7 +269,7 @@
     },
     {
       "from": [
-        "eco-genetic-warning-extensions"
+        "egwe"
       ],
       "to": [
         "egwee"
@@ -336,7 +340,7 @@
       "id": "state_resolution",
       "scientific_edge": false,
       "repositories": [
-        "eco-genetic-warning-extensions",
+        "egwe",
         "chun",
         "acsp",
         "sdmr",
@@ -353,12 +357,17 @@
       "repositories": [
         "balance",
         "izu-core",
-        "eco-genetic-warning-extensions",
+        "egwe",
         "eog",
         "adaptive-gain",
         "mrod"
       ],
       "principle": "response and information value depend on state, context and measurement path"
     }
-  ]
+  ],
+  "horizontal_registry": "horizontal-audit.json",
+  "display_contract": {
+    "exterior_syndrome_routes": false,
+    "horizontal_links": "optional, typed, bidirectionally navigable reading relations; not scientific evidence edges"
+  }
 }

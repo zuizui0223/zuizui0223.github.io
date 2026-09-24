@@ -15,7 +15,7 @@ def inline_site():
     html=re.sub(r'<link\s+rel="stylesheet"\s+href="[^"]+"\s*/?>','',html)
     html=re.sub(r'<script\s+src="[^"]+"[^>]*>\s*</script>','',html)
     html=html.replace('</head>',''.join('<style>'+(ROOT/n).read_text()+'</style>' for n in ('tower.css','architecture.css'))+'</head>')
-    scripts=('tower-data.js','portfolio-20260908.js','tower-architecture.js','tower.js','tower-echo-data.js','tower-perspective-clue.js','tower-echo-clue.js','portfolio-thread.js')
+    scripts=('tower-data.js','portfolio-20260908.js','horizontal-data.js','portfolio-current.js','tower-architecture.js','tower.js','tower-echo-data.js','tower-perspective-clue.js','tower-echo-clue.js','portfolio-thread.js')
     return html.replace('</body>',''.join('<script>'+(ROOT/n).read_text()+'</script>' for n in scripts)+'</body>')
 
 def main():
@@ -30,7 +30,7 @@ def main():
         page.on('pageerror',lambda err:errors.append(str(err)))
         page.set_content(inline_site());page.wait_for_timeout(150)
         data=page.evaluate('ZUIZUI_TOWER');snap=lambda:page.evaluate('ZUIZUI_TOWER_STATE.snapshot()');before=snap()
-        check('36 unique repository doorways',len(data['repos'])==36==len({r[0] for r in data['repos']}))
+        check('40 unique repository doorways',len(data['repos'])==40==len({r[0] for r in data['repos']}))
         check('five motifs; all have sources and closure receipts',len(data['motifs'])==5 and all(m['sourceBlob'] and m['receipt'] for m in data['motifs']))
         check('all typed contacts covered by motifs',{c['id'] for c in data['contacts']}=={c for m in data['motifs'] for c in m['contacts']})
         check('five cross-floor recurrences are immutable clue data',page.evaluate('Object.isFrozen(ZUIZUI_TOWER_ECHOES)&&ZUIZUI_TOWER_ECHOES.length===5'))
@@ -65,7 +65,7 @@ def main():
         page.locator('#returnButton').click();page.wait_for_timeout(100)
         check('ending returns to the field instead of claiming all proofs',snap()['returned'] and snap()['currentFloor']==0)
         page.locator('#bookButton').click();page.locator('[data-book="repos"]').first.click()
-        check('all 36 research entries accessible without puzzles',page.locator('#repoResults button').count()==36)
+        check('all 40 research entries accessible without puzzles',page.locator('#repoResults button').count()==40)
         page.locator('#repoSearch').fill('284b')
         check('repository search filters correctly',page.locator('#repoResults button').count()==1)
         page.locator('#repoResults button').click()
@@ -76,7 +76,7 @@ def main():
             device.on('pageerror',lambda err:errors.append(str(err)))
             device.set_content(inline_site());device.wait_for_timeout(80)
             check(f'{width}x{height}: no horizontal overflow',device.evaluate('document.documentElement.scrollWidth<=innerWidth'))
-            check(f'{width}x{height}: repository count stable',device.evaluate('ZUIZUI_TOWER_STATE.snapshot().repoCount')==36)
+            check(f'{width}x{height}: repository count stable',device.evaluate('ZUIZUI_TOWER_STATE.snapshot().repoCount')==40)
             if width==390:
                 session=device.context.new_cdp_session(device);original=device.evaluate('ZUIZUI_TOWER_STATE.snapshot().targetYaw')
                 session.send('Input.dispatchTouchEvent',{'type':'touchStart','touchPoints':[{'x':170,'y':430}]})
