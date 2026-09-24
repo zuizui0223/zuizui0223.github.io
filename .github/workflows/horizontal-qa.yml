@@ -1,0 +1,36 @@
+name: horizontal crossings qa
+on:
+  push:
+    branches: [main, feature/horizontal-crossings-20260924]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  crossings:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Inventory, source receipts, revisions and no exterior routes
+        run: |
+          node --check horizontal.js
+          node --check horizontal-data.js
+          node --check portfolio-current.js
+          node --test tests/horizontal_contract.cjs
+          node tests/tower_contract.cjs
+      - name: Install browser
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Actual HTTP page and horizontal traversal
+        run: python tests/horizontal_browser_test.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: horizontal-crossings
+          path: test-results/horizontal

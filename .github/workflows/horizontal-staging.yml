@@ -1,0 +1,71 @@
+name: one-shot horizontal branch preparation
+on:
+  push:
+    branches: [staging/horizontal-crossings-20260924]
+    paths: ['maintenance/horizontal/**', '.github/workflows/horizontal-staging.yml']
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Prepare exactly the locally reviewed patch on staging only
+        run: |
+          test "${GITHUB_REF}" = refs/heads/staging/horizontal-crossings-20260924
+          git merge-base --is-ancestor 1e91392ee73b1c4c40f962a9388b7e89a502829f HEAD
+          python maintenance/horizontal/build.py
+          python maintenance/horizontal/apply.py
+          python - <<'PY'
+          import json, hashlib, pathlib, subprocess
+          expected=json.loads(pathlib.Path('maintenance/horizontal/expected.json').read_text())
+          for path, digest in expected.items():
+              actual=hashlib.sha256(pathlib.Path(path).read_bytes()).hexdigest()
+              assert actual==digest,(path,actual,digest)
+          for path in ['origin.js','origin-botany.js','origin.css','tower-data.js','archive.html']:
+              assert pathlib.Path(path).read_bytes()==subprocess.check_output(['git','show','1e91392ee73b1c4c40f962a9388b7e89a502829f:'+path]),path
+          print('All 19 file hashes match the locally reviewed patch; protected sources unchanged.')
+          PY
+          node --test tests/horizontal_contract.cjs
+          node tests/tower_contract.cjs
+          python scripts/check_legacy_archive.py
+      - name: Install browser
+        run: |
+          python -m pip install playwright==1.57.0
+          python -m playwright install --with-deps chromium
+      - name: Full current page, source contracts, all rooms and origin
+        run: |
+          python tests/horizontal_browser_test.py
+          python tests/rooms_browser_test.py
+          python tests/architecture_browser_test.py
+          python tests/tower_browser_test.py
+          python tests/origin_browser_test.py
+          python tests/origin_botany_test.py
+      - name: Commit tested branch without retaining the installer
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          python - <<'PY'
+          import json,subprocess,pathlib
+          names=list(json.loads(pathlib.Path('maintenance/horizontal/expected.json').read_text()))
+          subprocess.run(['git','add','--',*names],check=True)
+          PY
+          git rm -r maintenance/horizontal .github/workflows/horizontal-staging.yml
+          git diff --cached --check
+          git commit -m 'Add 40-room horizontal crossings and remove exterior syndrome routes'
+          git push origin HEAD:refs/heads/staging/horizontal-crossings-20260924
+          git rev-parse HEAD > test-results/prepared-commit.txt
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: horizontal-preparation
+          path: test-results
