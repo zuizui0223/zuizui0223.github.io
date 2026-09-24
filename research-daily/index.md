@@ -4,14 +4,15 @@
 
 ## Latest
 
-- **[2026-09-24 — 41 repos / 7 research-side updated / 34 unchanged](2026-09-24.html)**  
-  主題: Izu Chapter 2 のcollision-free RNG correction、FCP direct-highlight validity、Structural のR3 reference-gap探索から、implementation/provenance integrityをmeasurement validityより上流のclaim gateとして明示。
-  - [Markdown source](2026-09-24.md)
+- **[2026-09-25 — 41 repos / 21 changed / 20 unchanged](2026-09-25.html)**  
+  主題: Schistanthe prospective hidden-memory PASS、ODSP pooled-baseline sign reversal、IWE mutualist 2-cluster replicationから、generalizationを「correct conditioning × commensurate estimand × independent unit」で定義。
+  - [Markdown source](2026-09-25.md)
 
 ## Archive
 
 | Date | Snapshot | Main advance |
 |---|---|---|
+| [2026-09-25](2026-09-25.html) | 41 repos; 21 changed; 20 unchanged | correct conditioning と independent replication unit が hidden information と spurious transfer を分離 |
 | [2026-09-24](2026-09-24.html) | 41 repos; 7 research-side updated | implementation/provenance correctionに耐える抽象度のclaimを残し、RNG correction・measurement control・exploratory mechanismを別階層として整理 |
 | [2026-09-23](2026-09-23.html) | 41 repos; 8 research-side updated | measurement validity と endpoint estimability を、operator/estimand matching・independent replication より上流の必須gateとして明示 |
 | [2026-09-22](2026-09-22.html) | 41 repos; 8 research-side updated | relational variable だけでは足りず、endpoint-matched biological operator・commensurate estimand・independent replication が generalization の条件だと複数研究で具体化 |
