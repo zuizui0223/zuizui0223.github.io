@@ -1,9 +1,9 @@
 # Research Daily
 
 ## Latest
-**[2026-10-01 — 50 repos / 19 updated / 31 unchanged](2026-10-01.html)** — effectをfactorizeしcomponent別のreplication/failureを分離。[Markdown](2026-10-01.md)
+**[2026-10-02 — 50 repos / 19 changed / 31 unchanged](2026-10-02.html)** — state-expression gates / constraints / opportunities. [Markdown](2026-10-02.md)
 
 ## Archive
-[09-28](2026-09-28.html) · [09-27](2026-09-27.html) · [09-25](2026-09-25.html) · [09-24](2026-09-24.html) · [09-23](2026-09-23.html) · [09-22](2026-09-22.html) · [09-21](2026-09-21.html) · [09-20](2026-09-20.html) · [09-19](2026-09-19.html) · [09-18](2026-09-18.html) · [09-17](2026-09-17.html) · [09-16](2026-09-16.html) · [09-15](2026-09-15.html) · [09-14](2026-09-14.html) · [09-13](2026-09-13.html) · [09-12](2026-09-12.html) · [09-11](2026-09-11.html) · [09-10](2026-09-10.html) · [09-09](2026-09-09.html)
+[10-01](2026-10-01.html) · [09-28](2026-09-28.html) · [09-27](2026-09-27.html) · [09-25](2026-09-25.html) · [09-24](2026-09-24.html) · [09-23](2026-09-23.html) · [09-22](2026-09-22.html) · [09-21](2026-09-21.html)
 
-9/29・9/30はwrite failureのためchat reviewのみ。
+9/29・9/30はchat reviewのみ。
