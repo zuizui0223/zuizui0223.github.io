@@ -1,0 +1,130 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub 全リポ日次研究レビュー — 2026-10-27</title><style>body{max-width:1050px;margin:auto;padding:30px 22px;background:#0e171a;color:#e9f0ed;font:16px system-ui,-apple-system,sans-serif;line-height:1.75}h1,h2,h3{line-height:1.35;color:#f5fff9}h2{border-bottom:1px solid #39504b;padding:20px 0 8px}h3{margin-top:30px}a{color:#abd9c9}a:hover{color:#e5fced}table{border-collapse:collapse;display:block;overflow-x:auto;width:100%;font-size:.88rem}td{border:1px solid #334d49;padding:9px 12px;vertical-align:top}tr:first-child{background:#1c3030;font-weight:bold}tr:nth-child(even){background:#132320}strong{color:#f2ffb3}nav{margin-bottom:22px}code{color:#d8e8ef;overflow-wrap:anywhere}</style></head><body><nav><a href="../">← Home</a> / <a href="index.html">Research Daily</a> / <a href="2026-10-27.md">Markdown原本</a></nav><main><h1>GitHub 全リポ日次研究レビュー — 2026年10月27日</h1>
+<p><strong>監査開始日時：2026-10-27 06:15:57 JST（Asia/Tokyo）。対象：2026-10-26 06:07 JST以降。</strong></p>
+<p><strong>所有リポジトリ56／新規3（RSDS・boids・SDEA）／更新あり19／更新検出なし37。</strong> 対象期間に更新されたPRは66件（17リポ）、Issueは2件、default branchコミットは367件（12リポ、公開サイト1コミットを含む）。コミットとPRは同一変更を重複して表す。開いたままのPR、既存PRの本文更新、main反映済みの変更を区別した。件数はGitHubで新規列挙した56リポの各mainコミット検索、PR/Issue更新検索から計算した。</p>
+<h2>1. 実際に何が変わったか — リポジトリ別</h2>
+<table><tbody>
+<tr><td>リポ／根拠</td><td>実際の更新、重要なファイル・結果</td><td>科学的判定</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/RSDS/pulls" rel="noopener noreferrer">RSDS #1–7</a></td><td><strong>新規リポ</strong>。ODSP太陽・季節生態学の390ファイルを出典SHA付きで移管。新たな6元Movebank調査を事前選択し、8調査・12調査×分類群の実GPS時間／太陽方位表を計算。研究単位均等重みの感度分析をmainへ統合。原結果 <a href="https://github.com/zuizui0223/RSDS/blob/main/research/RSDS_8_STUDY_TIME_SOLAR_HEADING_MACRO_ATLAS_V1_20261026.json" rel="noopener noreferrer">8調査JSON</a>・<a href="https://github.com/zuizui0223/RSDS/blob/main/research/RSDS_EIGHT_STUDY_SOURCE_EQUAL_MACRO_SENSITIVITY_FIRST_RESULT_20261026.json" rel="noopener noreferrer">均等重みJSON</a>。</td><td><strong>新規に支持された記述的異質性</strong>。全球共通則は未支持。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/frogcs/pull/141" rel="noopener noreferrer">frogcs #141–142</a></td><td>28種の分布モデル、4,248鳴き声地点、植生・前年水面・4,040固定比較を計算し、894結果ファイルを固定。#141はmain反映、#142の年周期モデルはDraft。<a href="https://github.com/zuizui0223/frogcs/blob/main/research/FROGCS_MACRO_ANALYSIS_FINAL_REPORT_2026-10-26.md" rel="noopener noreferrer">結果報告</a>。</td><td><strong>新規探索的実測関連＋別途数理</strong>。捕食・競争の因果証明ではない。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/adaptive-gain/pull/72" rel="noopener noreferrer">adaptive-gain #72–74</a></td><td>2017–2023年PoMS実10分訪花16,510調査で風×訪花量とマルハナバチ／その他ハエの組成を解析。記録時刻・観測者・花被度を追加調整。<a href="https://github.com/zuizui0223/adaptive-gain/pull/74" rel="noopener noreferrer">形態交互作用 #74</a>は非支持。</td><td><strong>新規探索的支持＋交互作用非支持</strong>、いずれも未merge Draft系統。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/iwe/pull/110" rel="noopener noreferrer">iwe #107–110、#62</a></td><td>2021/2022 Osmiaの開花×蜂密度と種子・F1帰結を元Zenodoから再分析。別種Desfontainia40株の吸蜜盗食・花蜜損失・成熟種子を母株対応で検証。#107–110 main反映、#62は研究方向のDraft。</td><td><strong>新規実測二次解析</strong>、時間窓の独立優位は未確定。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/aza3/pull/94" rel="noopener noreferrer">aza3 #94–95</a></td><td>公刊Cirsium vulgareの茎・頭花・散布後食害と種子数の原Tableを別実装で再計算。頭花ごとの最終種子追跡に必要な同定条件を明文化しmainへ統合。</td><td><strong>新規に再確認された実測資料</strong>。総苞形質の適応度利益は未測定。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/mina/pull/199" rel="noopener noreferrer">mina #199、Issue #200</a></td><td>南極SCAR・BAS原地形、122,139座標付きペンギン営巣点、100m局所帰無、CopDEM、歴史的鳥類記録を追加。GitHub PRはDraft、共通画像観測範囲の不足をIssue化。</td><td><strong>新規原観測による局所営巣集合構造</strong>。島間共存機構はHOLD。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/chocho/pull/73" rel="noopener noreferrer">chocho #71–73</a></td><td>寄主の気候的潜在機会と蝶の国単位記録を比較し、さらにGBIF蝶467点・植物3,595点の5km／3年以内の近接を独立検索。すべてDraft。</td><td><strong>新規記述的近接</strong>。ニッチ進出は未証明、国単位仮説は情報量ゲートFAIL。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/anto/pull/28" rel="noopener noreferrer">anto #23–32ほか</a></td><td>Iochromaの24花RNA個体で色別発現と共発現感度を監査。22 IochrominaeのDFR注釈を機能喪失と誤認しないsource gateと、植物個体／technical replicate階層の数理をmainに統合。</td><td><strong>新規探索的発現パターン＋数理設計</strong>。祖先的花色再進化の実証0。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/boids" rel="noopener noreferrer">boids main</a></td><td><strong>新規リポ</strong>。3D Boids理論、Tadarida実測v4、別アーカイブの28コウモリ対v6予測失敗を移管。197ハト対フライトの時計・位置適格性確認と、個体ID完全除外v8の<strong>事前予測契約・コード</strong>を追加。</td><td><strong>既存実測結果の統合＋独立陰性＋予測準備</strong>。v8の予測スコアは未公開。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/SDEA/pull/1" rel="noopener noreferrer">SDEA #1</a></td><td><strong>新規リポ</strong>。自殖・遺伝型配置・生存・機能的toolkitの一致しない粗視化に対する厳密な合成反例。PRはDraft、mainは初期README。</td><td><strong>新規synthetic理論</strong>、自然系の実証ではない。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/azami/pull/157" rel="noopener noreferrer">azami #155–157</a></td><td>GEB原稿の三部構成、図表配置、BIO18–頭花画像角度の既存Holm結果と80比較全件のSIを確定。凍結した元解析値を変更せずmainに反映。</td><td><strong>既存結論の報告強化</strong>。進化的因果は未証明。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/keiba/pull/29" rel="noopener noreferrer">keiba #26–29</a></td><td>実馬のRQ GPSを馬IDで反復検証し、NumPy/SciPy REML一致、過去自馬と他馬履歴の比較をDraft研究ブランチへ追加。馬ABM・投票者ABMとの実測同一ID接続は未達。</td><td><strong>新規回顧的実測支持＋旧ソース再現HOLD</strong>。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/mois/pull/189" rel="noopener noreferrer">mois #184、#186–189</a></td><td>93,209,351元画像IDの分割走査を準備。P2未測色4,096分類群・4,096写真と、別の131,072新規画像IDをSHA固定・ROI worker起動。</td><td><strong>取得・測定基盤</strong>。選択IDは色測定成功数でも花色生態結果でもない。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/odsp/pull/278" rel="noopener noreferrer">odsp #273–278</a></td><td>日射生態学をRSDSへ移管してmainに案内。BOP_RODENTの独立個体・Dryad互換性と固定モデル予測のプロトコルをDraftで整備。</td><td><strong>方法論</strong>。旧48調査外部再現失敗・12 JSON HOLDは不変。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/izu-core/pull/641" rel="noopener noreferrer">izu-core #639–645</a></td><td>独立創始者R2の精度・アリル初期配置に関する識別問題、A/M/Iの論文原稿・README整備。生物学の独立R2人口モデルは<strong>未実行</strong>。</td><td><strong>既存synthetic結論と設計の強化</strong>、R2 overall INCONCLUSIVE。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/neon/pull/23" rel="noopener noreferrer">neon #23</a></td><td>既存属別トラップ配置の再現性を原稿に保持し、全6夜の公式トラップ稼働を要求する新観測ゲートはSTOP。</td><td><strong>既存結果維持・新ゲートSTOP</strong>。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/eog/pull/663" rel="noopener noreferrer">eog #663</a></td><td>16地点NEON小哺乳類の既存封印済み原稿・査読資料をmainへ統合。EOGの独立のfuture endpointは変更なし。</td><td><strong>原稿・source整合</strong>、新しい生態結果ではない。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/acsp/pull/281" rel="noopener noreferrer">acsp #281</a></td><td>GBIF入力がDOI付きdownloadでなくOccurrence Search APIだったことを原稿で訂正。元480fold・96 taxon-region結果は非変更。</td><td><strong>出典訂正</strong>、新規肯定結果なし。</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/zuizui0223.github.io" rel="noopener noreferrer">zuizui0223.github.io</a></td><td>前回10月26日の研究日誌をmainへ公開（監査前のcommit c93b1c44）。</td><td>公開サイトのみ。</td></tr>
+</tbody></table>
+<p>対象期間にコミット・PR・Issue更新を検出しなかった残り<strong>37リポ</strong>は個別に展開しない。研究リポのPR本文追記だけでも更新ありに含むが、科学的な結果数にはしない。</p>
+<h2>2. 根拠付きの肯定的結果とその生態学的意味</h2>
+<h3>2.1 RSDS：昼夜の移動配分と太陽相対方向は、同じ一般則にまとまらない</h3>
+<p><strong>判定：新規に支持された探索的実測結果（原GPSの新しい5資料を実解析、1資料はHOLD）。</strong></p>
+<p><a href="https://github.com/zuizui0223/RSDS/pull/6" rel="noopener noreferrer">PR #6</a>・<a href="https://github.com/zuizui0223/RSDS/pull/7" rel="noopener noreferrer">PR #7</a>・<a href="https://github.com/zuizui0223/RSDS/blob/main/research/RSDS_EIGHT_STUDY_SOURCE_EQUAL_MACRO_SENSITIVITY_FIRST_RESULT_20261026.json" rel="noopener noreferrer">解析出力</a>。</p>
+<ul>
+<li>元の<strong>8原調査DOI、12調査×分類群行、10学名</strong>。日−夜の観測GPS移動速度差qは11行で推定可能、<strong>負7・正4</strong>。日長対qの個体年内傾きは<strong>正5・負1・0を含む5</strong>で、残り1原資料はサイズ上限のHOLD。</li>
+<li>事前に新規に開いた独立原資料では、シチメンチョウのq対日長傾き <strong>−0.02630［−0.03719,−0.01533］</strong>、ボブキャットは <strong>+0.01282［+0.00155,+0.02320］</strong>。従来のミュールジカUtah/Wyomingは+0.00562/+0.00554。</li>
+<li>11調査×分類群を等重みにした平均q <strong>+0.0047968</strong> に対し、7評価可能<strong>原研究</strong>を等重みにすると <strong>+0.0346404</strong>。5000回の研究再標本化区間 <strong>［−0.03414,+0.10346］</strong> は0を含む。原研究ごとの符号は4正・3負、残り1研究HOLD。</li>
+<li>太陽相対方向の生cosは10行で2正・2負・6区間が0を含む。古い6群のjoint circular covarianceはタグ単位CIを欠きPOINT_ONLY。従来の48原ソース短波放射の独立負方向再現は<strong>NOT REPLICATED</strong>のまま。</li>
+</ul>
+<p><strong>問い：</strong> 生物の時間ニッチと太陽相対移動ニッチは、種・場所を越えて同じように変わるか。<strong>解釈：</strong> 原GPSの観測配分には明瞭な分類群・調査差がある一方、調査と分類群を混同すると集約値が変わる。<strong>論文化上限：</strong> 複数原調査における観測GPS時間／方向の異質性と標本単位感度。qは真の活動時間ではなく、太陽コンパス・光回避の因果証明ではない。</p>
+<h3>2.2 FROGCS：トンボ・有尾類ニッチとカエル鳴き声の関連は、植生・水文・過去利用により条件づけられる</h3>
+<p><strong>判定：新規に支持された探索的実測相関。</strong> <a href="https://github.com/zuizui0223/frogcs/blob/main/research/FROGCS_MACRO_ANALYSIS_FINAL_REPORT_2026-10-26.md" rel="noopener noreferrer">main研究報告</a>・<a href="https://github.com/zuizui0223/frogcs/pull/141" rel="noopener noreferrer">PR #141</a>。</p>
+<ul>
+<li>36,627出現記録から<strong>28種</strong>（Anura15/Caudata7/Odonata6）の潜在適合度を構築。<strong>4,248地点</strong>でトンボ適合度対鳴き声の全域相関はρ <strong>−0.095</strong>（均一背景）、<strong>−0.086</strong>（target-group背景）。</li>
+<li>池繁殖有尾類適合度が低／高ではρ <strong>+0.101／−0.284</strong>（均一背景）、<strong>−0.004／−0.183</strong>（target-group背景）。差 <strong>−0.385［−0.509,−0.240］</strong> と <strong>−0.179［−0.328,−0.029］</strong>。</li>
+<li>植生を含む三者項は均一背景で <strong>+0.037［+0.008,+0.068］</strong>、ただしルート内や背景の感度に依存。<strong>4,040固定地点対</strong>では前年以前の強鳴き声履歴差が <strong>+27.68ポイント［+25.07,+30.17］</strong>。水面を持つ<strong>3,907地点対</strong>の前年3km水検出頻度差は <strong>−1.481ポイント［−2.601,−0.294］</strong>。</li>
+<li>894ファイル凍結、数値再計算と原水面レイヤーSHA検証を実装したが、全外部ソース取得の最新head再実行と同義ではない。</li>
+</ul>
+<p><strong>問い：</strong> 相互作用候補ギルドと景観履歴がカエルの鳴き声集中にどう対応するか。<strong>解釈：</strong> 三者の潜在分布、周辺植生、前年水文、過去の利用が別の説明軸。<strong>論文化上限：</strong> 多尺度の観測相関。真の池でのトンボ捕食密度・有尾類捕食・競争・幼生生存・帰巣・直接フィットネスは未測定。#142の864合成シナリオは実測効果に数えない。</p>
+<h3>2.3 ADAPTIVE-GAIN：強風下では総訪花が減り、訪花者の相対構成が変化</h3>
+<p><strong>判定：新規探索的支持（Draftブランチ・事後選択）。</strong> <a href="https://github.com/zuizui0223/adaptive-gain/pull/72" rel="noopener noreferrer">PR #72</a>・<a href="https://github.com/zuizui0223/adaptive-gain/pull/73" rel="noopener noreferrer">時計補正 #73</a>・<a href="https://github.com/zuizui0223/adaptive-gain/pull/74" rel="noopener noreferrer">形態非支持 #74</a>。</p>
+<ul>
+<li>UK PoMS元<strong>16,510件の10分間FIT調査</strong>（昆虫0件の1,045調査も保存）。強風対静穏の総訪花率比IRRは、構造化1km調査 <strong>0.764［0.624,0.935］</strong>（n=3037）、公開調査 <strong>0.837［0.750,0.933］</strong>（n=13257）。</li>
+<li>同じ対象花10分調査で、マルハナバチ対その他ハエの相対count odds比は強風時 <strong>1.973［1.401,2.779］</strong>。記録時刻・記録者・花被度調整後も構造化調査 <strong>1.956［1.361,2.812］</strong>、公開調査 <strong>1.540［1.222,1.942］</strong>。</li>
+<li>ただし花型open/closedによる風相互作用は構造化 <strong>p=0.69995</strong>、公開 <strong>p=0.97017</strong>で非支持。closed強風の組合せには構造化31調査・重複サイト11しかない。</li>
+</ul>
+<p><strong>問い：</strong> 風が送粉ギルドの相対的訪花ニッチと対応するか。<strong>解釈：</strong> 総訪花減少とギルド組成変化が併存し得る。<strong>論文化上限：</strong> 花別固定10分カウントの記述的風関連。絶対的な蜂増加、ギルド間競争、風向への回避、花型による効果修飾、適応度への因果効果は示さない。公開／構造化は同じPoMS研究プログラムで独立試験2件とは数えない。</p>
+<h3>2.4 IWE：花蜜喪失と成熟種子損失は同じではない</h3>
+<p><strong>判定：新規の原著実験データ二次解析。</strong> <a href="https://github.com/zuizui0223/iwe/pull/110" rel="noopener noreferrer">Desfontainia #110</a>・<a href="https://github.com/zuizui0223/iwe/pull/108" rel="noopener noreferrer">Osmia年相互移送 #108</a>。</p>
+<ul>
+<li>Desfontainia<strong>40母株</strong>における吸蜜盗食の穿孔花と非穿孔花の花蜜差は <strong>−3.9678µL［−5.3798,−2.5534］</strong>、約<strong>89.2%減少</strong>。同じ40株でも種子を数えた花は花蜜採集花と<strong>別個体花</strong>。</li>
+<li>盗食許容対防御の成熟種子差は <strong>+5.225粒／選択花［−12.175,+22.400］</strong>で不確定。送粉者アクセス対袋掛けは <strong>+20.95粒［+9.575,+32.575］</strong>、種子陽性率差は+75ポイント。</li>
+<li>2021→2022のOsmia arena外予測では開花×蜂窓単独RMSE <strong>0.171790</strong>、平均蜂密度 <strong>0.170410</strong>で単独窓は優越しない。2022→2021では同じ窓 <strong>0.131179</strong>、平均蜂密度 <strong>0.146995</strong>。同一研究プログラムの異年コホートであり独立な多分類群メタ追試ではない。</li>
+</ul>
+<p><strong>問い：</strong> 相互作用資源の大量消費や同期の違いは、種子成功へ必ず比例するか。<strong>解釈：</strong> 花蜜量・訪花・成熟種子は異なる段階の出力。<strong>論文化上限：</strong> 元処理・標本花における段階間の非一意性。盗食による種子コストがゼロだという同等性試験、補償機構、通世代適応度の証明ではない。</p>
+<h3>2.5 AZA3：アザミの繁殖制限は茎・頭花・散布後で入れ替わる</h3>
+<p><strong>判定：新規に照合・再計算した既発表原著表。</strong> <a href="https://github.com/zuizui0223/aza3/pull/94" rel="noopener noreferrer">#94</a>・<a href="https://github.com/zuizui0223/aza3/pull/95" rel="noopener noreferrer">#95</a>・<a href="https://github.com/zuizui0223/aza3/blob/main/data/evidence/cirsium_vulgare_1988_original_multistage_source_tables_v1.json" rel="noopener noreferrer">原表検証</a>。</p>
+<ul>
+<li>Cirsium vulgareの1982／1984年で茎に食害痕のあった開花株は <strong>98%（n=117）／24%（n=67）</strong>、頭花内種子食害痕は <strong>67/268=25.0%／49/97=50.5%</strong>。平均良好種子は全開花株で <strong>50／1,470</strong>。年度・植物・頭花の分母が異なり、同一個体の変遷ではない。</li>
+<li>別の散布後囲い実験の<strong>5日×2植生=10原著集計セル</strong>で種子損失率は鳥＋げっ歯類制限0.6cm網 <strong>6.2%</strong>、鳥のみ制限2cm網 <strong>65.4%</strong>、開放 <strong>63.5%</strong>。開放−小網 <strong>+57.3ポイント</strong>、10/10集計セルが正方向。表の再計算に新しい独立反復p値を付与していない。</li>
+<li>同一の頭花形質から来た成熟種子と散布後種子を直接追跡していないため、<strong>頭花の総苞形態に固有の利益・適応進化・種子食害による選択反転を推定していない</strong>。</li>
+</ul>
+<p><strong>問い：</strong> 防御形態に潜在的な利点があっても、どの繁殖段階で最終的な利益が失われるか。<strong>解釈：</strong> 外敵と接触経路、年度、散布前後のボトルネックが異なる。<strong>論文化上限：</strong> 異なる繁殖段階を同じ「食害」指標に統合できないという原著実測の再検証。頭花形態と散布後捕食を因果的に接続するには同一seed_batchが必要。</p>
+<h3>2.6 MINA：南極ペンギンの営巣は局所的に同種パッチへ集中するが、島間機構は未証明</h3>
+<p><strong>判定：新規原生態観測を用いた探索的空間結果。</strong> <a href="https://github.com/zuizui0223/mina/pull/199" rel="noopener noreferrer">原データと限界 #199</a>・<a href="https://github.com/zuizui0223/mina/issues/200" rel="noopener noreferrer">未解決の観測範囲 #200</a>。</p>
+<ul>
+<li>BAS原資料は<strong>122,170営巣行、うち122,139座標あり</strong>、4観測ローカリティ・暫定3実島。10m内の異なる最近隣を持つ<strong>118,769巣</strong>で、直近が異種巣となる比率はサイト別 <strong>0–0.167%</strong>、全ローカリティ単純ラベル入替帰無は44–50%。ただし100mグリッド内でラベルを入れ替えると期待異種最近隣率は<strong>5.15–15.97%</strong>となり、粗い同種コロニーパッチ分類が大きい。</li>
+<li>CopDEMを使う島単位外挿では地形（標高＋傾斜）予測が<strong>1/3の実島群</strong>でしか基準を改善せず、等島平均Brier改善は <strong>−0.04055</strong>。共通画像調査mask・年度が整合していない。</li>
+</ul>
+<p><strong>問い：</strong> 大陸内・離島内の繁殖地は局所的にどのように分割され、島を越えて再現するか。<strong>解釈：</strong> 局所同種コロニーパッチ集中は強いが、地形/種間排除/競争を結論できない。<strong>論文化上限：</strong> このBAS原撮影地点の空間集積と地理スケール感度まで。営巣巣数を独立島数に数えたり、気候・海氷・競争機構へ昇格させない。</p>
+<h3>2.7 ANTO：色群間の発現相関と色群内相関は一致しない</h3>
+<p><strong>判定：新規探索的な原RNA再解析（既発表の1交配群）。</strong> <a href="https://github.com/zuizui0223/anto/pull/23" rel="noopener noreferrer">#23</a>・<a href="https://github.com/zuizui0223/anto/pull/28" rel="noopener noreferrer">#28</a>・<a href="https://github.com/zuizui0223/anto/blob/main/results/iochroma_2025_color_conditioned_sensitivity_v3_20261026.json" rel="noopener noreferrer">原結果JSON</a>。</p>
+<p>Iochromaの<strong>24花RNA個体（青12・赤12）</strong>、19,184転写産物。著者候補MYB12-likeに対して原選抜15転写産物はプール相関15/15正だったが、色群内中心化すると<strong>9/15負</strong>。負9のうち個体1個ずつ除外24通りで符号を維持したのは<strong>4/9</strong>、log1p処理でも負が残ったのは<strong>6/9</strong>。色群間の共通コントラストを除くと見かけの調節相関が弱くなる／反転する場合がある。<strong>問い：</strong> 色の一致が同じ分子制御・保持された能力を意味するか。<strong>論文化上限：</strong> 一群内の色条件付き発現共変動の異質性。原因遺伝子、遺伝的保持、花色再進化、適応度の推定ではない。Ho–Smith22分類群の機能アッセイは<strong>0/22</strong>であり、CDS注釈を機能と呼ばない。</p>
+<h3>2.8 CHOCHO：導入寄主の潜在分布は蝶の局所利用の証明ではない</h3>
+<p><strong>判定：新規記述的な野外データベース近接検証（Draft）。</strong> <a href="https://github.com/zuizui0223/chocho/pull/72" rel="noopener noreferrer">#72</a>・<a href="https://github.com/zuizui0223/chocho/pull/73" rel="noopener noreferrer">#73</a>。</p>
+<p>固定26蝶×国候補について<strong>467蝶観測点・3,595植物観測点</strong>を元GBIFに照会。候補植物記録が<strong>5km以内かつ観測年差3年以内</strong>にある蝶観測点は<strong>75/467＝16.1%</strong>（1kmでは14/467、25kmでは160/467）。2例が一次近接の<strong>60/75</strong>を占め、それらを除くと<strong>15/212＝7.1%</strong>。幼虫の候補植物利用を証明する直接注記は0件（非存在の証明ではない）。国単位のnovel vs analogous機会の情報量ゲートも、<strong>20有効層対必要50</strong>でFAIL。<strong>問い：</strong> 地図上の潜在寄主資源が実際の蝶の生息ニッチ進出につながっているか。<strong>論文化上限：</strong> 局所出現記録の空間・時間的近接を部分的に確認しただけ。摂食・繁殖・定着・競争・進化的ニッチ拡大は未検証。</p>
+<h3>2.9 KEIBA：馬IDの相対的GPS走行には反復性があるが、絶対走行時間へ単純移植できない</h3>
+<p><strong>判定：新規回顧的実測解析、別バージョンの原資料への依存あり。</strong> <a href="https://github.com/zuizui0223/keiba/pull/29" rel="noopener noreferrer">Draft #29</a>。</p>
+<p>Racing Queenslandの12開催日・<strong>503GPS行、74競走、262馬ID、134反復ID</strong>の現在取得版で競走固定REMLの馬ID ICCは <strong>0.43481115</strong>。別実装と約<strong>3.12×10⁻⁹</strong>一致、1開催日削除では<strong>0.391841–0.505077</strong>。同距離・マーカーの35頭44未来観測に限る相対タイムの予測は自己過去RMSE <strong>0.255673秒</strong>、他馬過去 <strong>0.301984秒</strong>（15.34%改善）。一方で絶対初区間秒数の予測は自馬情報を足すと <strong>0.914925秒</strong> vs 他馬のみ <strong>0.902404秒</strong>と悪化。元10月14日保存の完全ソース名簿は<strong>9/12日で変化</strong>し再現HOLD。<strong>問い：</strong> 反復可能な個体差はどの運動変数で予測可能か。<strong>論文化上限：</strong> 選択された実測版の相対走行ID成分。JRA市場の実投票・将来勝率・馬ABMの速度パラメータ・臨界オッズの実証ではない。</p>
+<h3>2.10 AZAMI・NEON・既存FCP：支持された構造の有効範囲を保持</h3>
+<p><strong>判定：既存結論の強化／維持。</strong> <a href="https://github.com/zuizui0223/azami/pull/157" rel="noopener noreferrer">AZAMI #157</a>では元の168,907画像角度適格観測のうち、分類群間頭花画像角度対BIO18は <strong>β=+0.045446843［+0.022348959,+0.068544727］、80比較Holm p=0.009206351</strong>。しかし種内傾きは生p=0.039865でも<strong>Holm p=1.0</strong>。画像角度は重力基準の頭花下垂ではなく、新しい選択実験でもない。<a href="https://github.com/zuizui0223/neon/pull/23" rel="noopener noreferrer">NEON #23</a>の既存属別トラップ空間再現は維持されるが、公式の完全トラップ稼働を要求する検出確率ゲートはSTOP。非更新の<a href="https://github.com/zuizui0223/fcp/blob/main/docs/POLYMORPHISM_MANUSCRIPT_NEW_PHYTOLOGIST.md" rel="noopener noreferrer">FCP既存原稿</a>の種内写真花色空間構造は依然として独立した主張であり、本日新規支持されたと数えない。</p>
+<h2>3. 数理・測定上の前進（野外実証結果と混同しない）</h2>
+<ul>
+<li><strong>SDEA #1（Draft）</strong>：同じ単独・対の色素toolkit頻度でも三モジュール同時保持は0対0.25に変えられる。粗視化された同じ状態から一世代帰結が0.329562対0.027842となる合成反例。v2の8世代では最初の発現確率0.818665に対し3回継続発現0.117417。これは合成分布の厳密な計算であり自然アザミの回復率ではない。<a href="https://github.com/zuizui0223/SDEA/pull/1" rel="noopener noreferrer">SDEA #1</a>。</li>
+<li><strong>BOIDS main</strong>：別の原アーカイブの実コウモリ<strong>28対</strong>で、次の3D方向変化について実相手vs他飛行ghostのMSE改善 <strong>+0.0005548［−0.0000919,+0.0012760］</strong>、16/28対が正で、<strong>予定主要検証は非支持</strong>。v8のハト<strong>197同期フライト・320,723 GPS対応点・17site×dyad</strong>は構造的適格性を確認した段階。現在mainにv8予測結果JSONはなく、予測改善はまだ宣言しない。<a href="https://github.com/zuizui0223/boids/blob/main/docs/OBSERVED_BAT_PAIR_RESULT_V6.md" rel="noopener noreferrer">v6実結果</a>・<a href="https://github.com/zuizui0223/boids/blob/main/docs/PIGEON_SOCIAL_FORECAST_CONTRACT_V8.md" rel="noopener noreferrer">v8登録契約</a>。</li>
+<li><strong>IZU-CORE</strong>：25,600既存Model 3進化履歴のA/M/Iの結論を現行一本化原稿へ反映。独立R2はdesign-onlyで実行禁止、旧<strong>overall INCONCLUSIVE</strong>は保持。<a href="https://github.com/zuizui0223/izu-core/issues/638" rel="noopener noreferrer">Issue #638</a>。</li>
+<li><strong>ODSP</strong>：旧BOP_RODENT endpointの別個体転移とDryadの不一致を検査し、完全な外部妥当性がない状態で予測positiveを増やさない。<a href="https://github.com/zuizui0223/odsp/pull/278" rel="noopener noreferrer">#278</a>。</li>
+<li><strong>MOIS</strong>：既存実ROI試行<strong>1,043,930</strong>と4色分類<strong>459,235</strong>は前回までの生態学的計測集合。新規<strong>4,096 P2元写真ID</strong>、さらに<strong>131,072元写真ID（うち32,768条件付きランダム、98,304不足層優先）</strong>は<strong>まだ完了した色測定ではない</strong>。<a href="https://github.com/zuizui0223/mois/pull/188" rel="noopener noreferrer">#188</a>・<a href="https://github.com/zuizui0223/mois/pull/189" rel="noopener noreferrer">#189</a>。</li>
+</ul>
+<h2>4. 反証・FAIL・HOLD・未確定</h2>
+<ul>
+<li><strong>RSDS／ODSP</strong>：従来48原調査の短波放射×太陽方向の独立再現は<strong>NOT REPLICATED</strong>。12旧ERA5生JSONのSHA照合HOLD、ダイサギ1原GPSは200MB原資料上限HOLD。GPS相対速度を真の活動時間に読み替えない。</li>
+<li><strong>adaptive-gain</strong>：花のopen/closed×風×ギルド構成の事前名称付き交互作用は<strong>p=0.700／0.970</strong>。花構造の修飾機構は未支持。風効果自体も観測関連であって風の無作為操作ではない。</li>
+<li><strong>MINA</strong>：局所巣パッチの印象的な分離と、島間で通用する地形効果は別。独立島holdout <strong>1/3</strong>のみ改善。観測画像maskや野外不在標本がなく、競争／島嶼隔離説はHOLD。歴史OBIS元資料はlifeStageと調査精度が欠損。</li>
+<li><strong>IWE</strong>：Osmiaの単純な時期マッチングが平均成虫数を超えるという一般的予測は片方向の年交差と同年arena検証で非支持。Desfontainiaの盗食許容−抑止種子差の区間もゼロを含む。</li>
+<li><strong>CHOCHO</strong>：国単位の蝶ニッチ進出テストは情報量不足。近接記録を幼虫利用・定着と呼べない。</li>
+<li><strong>BOIDS</strong>：独立コウモリ対で実相手のghost以上の予測利益は確認できない。ハトv8のソース適格性を新しい生物学的predictive successへ昇格しない。</li>
+<li><strong>ANTO・SDEA・IZU-CORE</strong>：合成反例・発現相関は機能的な花色再進化ではない。22分類群の生化学的toolkit機能測定は0、独立R2人口進化は未実行。</li>
+<li><strong>NEON元登録判定FAIL、SDMR real-v5 FAIL、TTF 259種COI NOT_EVALUABLE、ACSP未開封final/監視endpoint</strong>を変更なし。sealed/final pipeline progressは実証結果として公開しない。</li>
+</ul>
+<h2>5. 全リポ横断：昨日から何が一段進んだか</h2>
+<p><strong>今日もっとも明確に進んだのは、同じ「時間／空間利用の異質性」を、調査・種・個体・繁殖段階という異なる独立単位に分解し、その分解によって平均の主張自体が変わると実データで示したこと。</strong></p>
+<p>RSDSでは11調査×分類群行を7元研究へまとめるとq平均が<strong>+0.00480→+0.03464</strong>へ動いた。FROGCSではトンボとの関連が有尾類の潜在適合度・植生・以前の鳴き声利用に条件づけられた。PoMSでは総訪花量とギルド相対組成が異なる方向の変化を示すが、花型×風の効果は確認できなかった。Cirsium・Desfontainiaでは環境・相互作用による資源・頭花・散布後の損失は最終種子と1対1にならない。MINAでは122,139巣の非常に強い同種集積の一部を局所コロニーパッチで説明できても、別島の地形予測へ輸送できなかった。</p>
+<p><strong>相補的な共通問い：</strong> 環境・歴史・他種との相互作用は、個体が実際に利用できる時間・方向・資源・繁殖経路をどう制限するのか。さらに、その制限が現在の観測パターンから将来の存続／再進化へつながる条件は何か。</p>
+<p><strong>現時点の論文化上限：</strong> 対応する一次資料ごとに「条件付きの実測相関」「処理段階の再分析」「合成機構」「source欠測」を分けて報告すること。種や大陸を越えた共通因果機構・適応進化・自然系の再獲得法則が実証されたと主張しない。</p>
+<h2>今日の最重要3点</h2>
+<ul>
+<li><strong>RSDSの8原調査マクロ解析＋調査単位の修正。</strong> 昼夜移動・日長傾き・太陽相対方向の異質性が新原GPSでも具体化し、taxonの重複重みによる疑似反復を排除した。globalな太陽方位・光量の共通則はまだ支持されない。</li>
+<li><strong>FROGCS＋adaptive-gain：相互作用を環境・時間・第三者の条件で検証。</strong> カエル鳴き声と三群ニッチ、風による総訪花とギルド相対変化という別の原資料結果が増えた。一方、花型×風という具体的な修飾仮説は非支持。</li>
+<li><strong>AZA3＋IWE＋MINA：下流機能と観測単位の重要性。</strong> Cirsium散布後捕食の小網・開放差57.3ポイント、Desfontainiaの花蜜89.2%喪失と不確定な種子損失、南極営巣の局所同種集積と島間地形転移FAILを、分母・処理・独立性を区別して確かめた。</li>
+</ul>
+<h2>次に回収すべき解析／検証</h2>
+<ul>
+<li><strong>RSDS</strong>：まずstudy DOIを独立単位に固定し、元個体bootstrapのない太陽共分散に偽CIを作らず、昼夜GPS速度proxyと方向を同一タグ・複数調査で事前指定検証する。既存48元調査の外部非再現を必ず主結果と並記。</li>
+<li><strong>FROGCS／adaptive-gain</strong>：鳴き声地点の実水位・ヤゴ/有尾類実密度・池の物理植生構造、PoMSの現地風速/風向・個別訪花ギルド・同時開花種可用性を独立地点で収集。交互作用の非支持を保持して閉花の強風反復数を増やす。</li>
+<li><strong>AZA3／IWE</strong>：同一標識頭花／母株について総苞片・送粉・食害・花蜜・成熟充実種子を測り、種子ロットを分割して散布後捕食アクセスを無作為化。異なる研究年・植物種の結果を同一種子の履歴と誤接続しない。</li>
+<li><strong>MINA</strong>：独立した同一画像・全種の観測mask、真正の繁殖不在、野外地形・海氷の年変化と複数島の追跡営巣数を取得。現在の巣データは大規模でも独立島の反復は3群だけ。</li>
+<li><strong>ANTO／SDEA／IZU-CORE</strong>：色素経路の実機能を生物個体で測定し、technical replicateを独立株に数えず、遺伝子型・花RNA・色素化学・送粉・成熟種子・子世代を追跡。R2は合意済み設計ゲート完了前に走らせない。</li>
+<li><strong>MOIS／CHOCHO／BOIDS</strong>：P2 4,096と131,072の完走・原SHA・技術UNKNOWNを確認。蝶は地域単位の幼虫寄主利用・継続繁殖を回収。Boidsは凍結v8の独立bird-ID heldoutと10秒ghostを実行した<strong>後</strong>にのみ予測判定。</li>
+</ul>
+<h2>6. 公開と再現性の取り扱い</h2>
+<p>レビューは出典リンク付きの原監査結果をそのまま公開し、Draft PRはmain反映と区別した。siteは従来の静的HTML＋Markdown併設（.nojekyll）のResearch Daily領域を使用。既存手書きホーム、科学コード、解析結果、contracts、frozen thresholdsを変更しない。公開コミット・デプロイの成否は反映後に別途検証する。</p></main></body></html>
