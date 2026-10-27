@@ -2,16 +2,18 @@
 
 ## 最新レビュー
 
-**[2026-10-27 — 56 repos / 19 updated / 37 unchanged](2026-10-27.html)** — 新3リポRSDS・boids・SDEA。RSDS8原GPS研究の集約単位、FROGCS三群・水文、PoMS風と訪花、Cirsium散布後捕食と南極営巣の厳格ゲート。
+**[2026-10-28 — 56 repos / 32 updated / 24 unchanged](2026-10-28.html)** — MINA17種海鳥の優占地点再編と二期計数帰無、CHOCHOの国土気候機会による見かけの新規性、ハチ行動の幾何補正、MOIS・RSDSの観測過程監査。
+
+[2026-10-28 完全版Markdown](2026-10-28.md)
+
+**[2026-10-27 — 56 repos / 19 updated / 37 unchanged](2026-10-27.html)** — RSDS8原研究、FROGCS三群、PoMS風と訪花、アザミ・南極営巣。
 
 [2026-10-27 完全版Markdown](2026-10-27.md)
 
-**[2026-10-26 — 53 repos / 13 updated / 40 unchanged](2026-10-26.html)** — MOIS104万実測写真と環境選択、ODSP太陽位角×風の実GPS異質性、LOUISの昼夜生息地転換、MINA南極裸岩階層と生物学的HOLD。
-
-[完全版Markdown](2026-10-26.md)
-
 ## 公開アーカイブ
 
+
+- [2026-10-28](2026-10-28.html)
 - [2026-10-27](2026-10-27.html)
 - [2026-10-26](2026-10-26.html)
 - [2026-10-25](2026-10-25.html)
