@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-06 — 56 repos / 8 updated / 48 unchanged](2026-11-06.html)** — MINA食性×海氷9年とTDR×GPS復旧、BOIDS実潮相による次方向と地形subsetの限定、CHOCHO島全体保留と港非支持、FROGCS P1数理因子分解、SDEA訪花→種子、MOIS元送粉記録監査。
+
+[2026-11-06 完全版Markdown](2026-11-06.md)
+
 **[2026-11-05 — 56 repos / 2 updated / 54 unchanged](2026-11-05.html)** — MINA原胃試料の同日採取0/37、Signy両種の同時刻GPS 1,121枠・年ごとの相対位置変化、GPS×TDR source gate FAIL。
 
 [2026-11-05 完全版Markdown](2026-11-05.md)
@@ -45,6 +49,8 @@
 [2026-10-27 完全版Markdown](2026-10-27.md)
 
 ## 公開アーカイブ
+
+- [2026-11-06](2026-11-06.html)
 
 - [2026-11-05](2026-11-05.html)
 
