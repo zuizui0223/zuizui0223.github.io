@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-07 — 56 repos / 10 updated / 46 unchanged](2026-11-07.html)** — CHOCHO真正AIS＋寄主の条件付き島外予測、Structural標高×地表/枝葉、ISLAND島内形質集中と島間非支持、BOIDS潮相個体外予測、EOG実データ＋BAM識別、FROGCS P1数値分解。
+
+[2026-11-07 完全版Markdown](2026-11-07.md)
+
 **[2026-11-06 — 56 repos / 8 updated / 48 unchanged](2026-11-06.html)** — MINA食性×海氷9年とTDR×GPS復旧、BOIDS実潮相による次方向と地形subsetの限定、CHOCHO島全体保留と港非支持、FROGCS P1数理因子分解、SDEA訪花→種子、MOIS元送粉記録監査。
 
 [2026-11-06 完全版Markdown](2026-11-06.md)
@@ -49,6 +53,8 @@
 [2026-10-27 完全版Markdown](2026-10-27.md)
 
 ## 公開アーカイブ
+
+- [2026-11-07](2026-11-07.html)
 
 - [2026-11-06](2026-11-06.html)
 
