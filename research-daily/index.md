@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-08 — 58 repos / 15 updated / 43 unchanged](2026-11-08.html)** — 新規GESUI実TP・全植物とTETSU花期観測、BOIDS真の逆潮相次方向、CHOCHO AIS地理帰無、FROGCS野外二背景FAIL、EOG測定誤り数理。
+
+[2026-11-08 完全版Markdown](2026-11-08.md)
+
 **[2026-11-07 — 56 repos / 10 updated / 46 unchanged](2026-11-07.html)** — CHOCHO真正AIS＋寄主の条件付き島外予測、Structural標高×地表/枝葉、ISLAND島内形質集中と島間非支持、BOIDS潮相個体外予測、EOG実データ＋BAM識別、FROGCS P1数値分解。
 
 [2026-11-07 完全版Markdown](2026-11-07.md)
@@ -54,6 +58,7 @@
 
 ## 公開アーカイブ
 
+- [2026-11-08](2026-11-08.html)
 - [2026-11-07](2026-11-07.html)
 
 - [2026-11-06](2026-11-06.html)
