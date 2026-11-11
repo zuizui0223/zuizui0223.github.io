@@ -1,0 +1,83 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub 全リポ日次研究レビュー — 2026-11-12</title><style>body{max-width:1080px;margin:auto;padding:30px 22px;background:#0e171a;color:#e9f0ed;font:16px system-ui,-apple-system,sans-serif;line-height:1.75}h1,h2,h3{line-height:1.36;color:#f5fff9}h2{border-bottom:1px solid #39504b;padding:20px 0 8px}h3{margin-top:30px}a{color:#abd9c9}a:hover{color:#e5fced}table{border-collapse:collapse;display:block;overflow-x:auto;width:100%;font-size:.87rem;margin:20px 0}th,td{border:1px solid #334d49;padding:9px 12px;vertical-align:top;text-align:left}th{background:#1c3030}tr:nth-child(even){background:#132320}strong{color:#f2ffb3}p{overflow-wrap:anywhere}nav{margin-bottom:22px}li{margin:7px 0}blockquote{border-left:3px solid #618177;padding-left:15px;color:#b6cfc6}</style></head><body><nav><a href="../">← Home</a> / <a href="index.html">Research Daily</a> / <a href="2026-11-12.md">Markdown原本</a></nav><main><h1>GitHub 全リポ日次研究レビュー — 2026年11月12日</h1>
+<p><strong>実行日時：2026/11/12 06:12:26 JST（Asia/Tokyo）。比較基準：2026年11月11日06:08 JSTから2026年11月12日06:00 JST。</strong> 接続済みGitHubでowner zuizui0223の全リポを再列挙し、各default branchの期間指定コミット、ownerの更新PR・独立Issue、重要PRの原結果・コード・原稿・設定、公開サイトの既存構造を確認した。</p>
+<p><strong>総リポ60、新規0、更新あり18、更新なし42。更新PR47、独立Issue0、default branchの期間内コミット38（研究37・公開サイトの前日レビュー1）。</strong> 研究mainのコミット内訳は izu-core 31、eog 3、island 1、hotarubukuro 1、alan 1。izu-coreの31にはPRマージや編集の履歴を含み、31独立発見ではない。PR47にも同一解析の積み上げ・草稿更新がある。研究mainに未統合のDraftの数値を確定済みmainの結果と混同しない。</p>
+<p><strong>本日の全体像：</strong> FD/ISLANDでは花形態から訪花文献構成への予測が原資料のarchiveラベルに大きく依存することが、同じ77科の対応再解析で確認された。GESUIでは欧州底生EQRと米国河川EPTの独立観測から、小さな栄養源・栄養状態の予測情報を再構成したが、河川から陸上送粉への連鎖は未実証。MINAでは海氷・水温と塩分が異なる時間的同調軸を示し、ペンギン繁殖数の共通応答は再現しなかった。ALANの旧花粉制限positiveは記録更新・外れ値除外に弱い。</p>
+<h2>1. 実際に何が変わったか</h2>
+<table><thead><tr><th>リポジトリと追跡先</th><th>期間内の変更・原資料</th><th>判定</th></tr></thead><tbody>
+<tr><td><a href="https://github.com/zuizui0223/gesui/pulls">GESUI #50–59</a></td><td>2016年欧州EQR×地域点源N/P、同一米国NRSA訪問のTN/TP×EPT、植生構造、NHD下水源接続、植物/蝶のサポートゲート</td><td>新規探索的実測＋多数の機構制限</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/fd/pull/14">FD #14</a></td><td>Direct花色・形・対称性の島別相互情報量、GloBI5送粉チャネルの科保留・archive削除・島嶼機会検証</td><td>既存形態結果強化＋原資料依存の新規反証</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/island/pull/323">ISLAND #322–323</a></td><td>GloBI v0.9真正sourceArchiveURI/引用を回収、paired 77科 source削除; Ch1図・文献更新、mainに1コミット</td><td>FDの独立資料監査＋編集</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/alan/pull/41">ALAN #40–42</a></td><td>花粉制限×夜間光の64種を元写真で再現しv0.11蛾記録・外れ値で検証; 13年のヤモリ/蛾/光、main README更新</td><td>旧名目positive再現、頑健性非支持</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/mina/pull/214">MINA #214–215</a></td><td>588繁殖地・18地域・28年の真正海氷/水温/塩分、年同調の二軸分解; コロニー同年巣数と独立海氷画素の比較</td><td>新規物理記述、共通繁殖応答は未支持</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/eog/pull/692">EOG #689–693</a></td><td>87地点22日の真正シカ検出; beta潜在検出混合の地点外5fold予測と極端地点依存性; mainに3コミット</td><td>新規保留予測＋影響度監査</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/boids/pull/135">BOIDS #134–135</a></td><td>Roggenplaat RWSの真正20m干出指数と地形、2016/2021地図CRS不整合・ずらし帰無</td><td>原地理の相関と独立性反証</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/tetsu/pull/1">TETSU #1</a></td><td>6か国の鉄道×外来樹木のβ多様性をturnover/nestednessへ分解しrare­factionと元GBIFイベントで再解析</td><td>記録定義依存、散布機構非支持</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/adaptive-gain/pull/97">ADAPTIVE-GAIN #94–97</a></td><td>行動前の環境認識誤差を入れた情報要求の閾値を厳密導出、synthetic検査</td><td>数学のみ・新実動物0</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/izu-core/pull/654">IZU-CORE #647–654</a></td><td>生殖保証と後続花形質の関係をNEE原稿へ統合、実文献とのcrosswalk、mainに31コミット</td><td>原稿・証拠照合。新原実測なし</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/hotarubukuro/commit/b5f0e473ed">HOTARUBUKURO main</a></td><td>Figure 3の公開原入力を固定し、画像重複をワークブック先頭行優先に復元</td><td>既存再現性強化、推論追加なし</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/Structural/pull/469">Structural #469</a></td><td>森林イベント・採集法の原資料監査と全球コホート整理、Brisbane森林端の既存試験・NEON権限ゲート更新</td><td>データ・方法整理、独立全球効果未成立</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/fcp/pull/273">FCP #273</a></td><td>花色の分布域スケール・近隣写真スケールを統合した原稿、図表文献修正</td><td>既存写真記述の整理</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/mois/pull/200">MOIS #200</a></td><td>451,643 strict9 ROIの種優先9色仮ラベル・観察UUID重複防止・計測停止とGBIF名寄せ準備</td><td>パイプライン。固定花色は未実証</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/chocho/pull/157">CHOCHO #157</a></td><td>島の寄主資源・港・海洋地理のGEB原稿編集</td><td>既存結果のみ</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/frogcs/pull/188">FROGCS #188–189</a></td><td>30報以上の先行研究監査、EL原稿・再現アーカイブ準備</td><td>編集のみ、新しい野外機構なし</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/azami/pull/173">AZAMI #173</a></td><td>V5年平均気候・彩度を一本化した約2900語の論文Draft</td><td>既存探索結果のみ</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/zuizui0223.github.io/commit/9d0c465838cf599081892c15aef4d7f73a15f5b6">公開サイト</a></td><td>前日レビューをresearch-dailyに追加</td><td>科学的変更なし</td></tr>
+</tbody></table>
+<p><strong>変更が検出されない42リポは個別には展開しない。</strong> mainに追加されないDraft PRも最新解析内容として監査したが、各解析の明示的なclaim ceilingを保持する。</p>
+<h2>2. 根拠付き肯定的結論と生態学的意味</h2>
+<h3>2-1. FD / ISLAND：花形態と文献上の訪花チャネル構成は対応するが、原資料依存が強い</h3>
+<p><strong>判定：既存の探索的予測が再検証・限定された。新規の対応source削除結果。</strong> Directな色×形×対称性が揃う2,234種と、30種以上を持つ928島を解析。909/928島では色と花の構造の相互情報量が島内周辺度固定色ラベルシャッフルより大きい。ただし同じ属が重複するため進化的収斂の検定ではない。</p>
+<p>GloBI v0.9真正原本の24,577,183関係行を再取得し、同じ344属・77植物科で文献sourceアーカイブラベルを削除して科外保留予測。開放花形態の5チャネル文献構成MSE改善は<strong>+0.001769→+0.000687</strong>、対応差 <strong>−0.001082（科bootstrap95%［−0.002177,−0.000107］）</strong>。ハナバチ（Bombus以外）・チョウ/ガ合算の改善も減衰。鳥の文献比率のみ削除後も <strong>+0.002621［+0.000879,+0.004586］</strong> だが、鳥に関する前後差は不確定。最大sourceArchiveURI-firstラベルは観測文献単位の95.9584%を占めるが、このラベルは複数独立研究を束ねたaggregatorかもしれない。</p>
+<p>928島のうちBombusを十分な記録努力の下で未検出と判断できる22島に、鳥21島、非Bombusハチ22島、チョウ/ガ22島、ハエ22島の動物記録がある。同じ21島は鳥だけでなく他の3群も記録され、<strong>ハチから鳥への専属的送粉者交代は未証明</strong>。</p>
+<p><strong>問い：</strong> 花形質の組合せは実際の送粉者相を予測するか。<strong>解釈：</strong> 形態的組織化は群集構成や文献観測機会と結び付くが、機能的送粉や島独立の進化ではない。<strong>論文主張：</strong> 形態と世界の記録訪花構成の弱い関連、および資料源と分類系統への依存性。 <a href="https://github.com/zuizui0223/fd/blob/analysis/floral-diversity-syndrome-20261111/results/20261112_pollinator_shift/POLLINATOR_SHIFT_EVIDENCE_AUDIT.md">FD真正paired報告</a>・<a href="https://github.com/zuizui0223/island/pull/323">ISLAND原source検査 #323</a>。</p>
+<h3>2-2. GESUI：栄養源・河川栄養状態は底生群集の追加予測情報を持つ</h3>
+<p><strong>判定：新規に支持された探索的な観測予測。欧州と米国は独立アウトカムであり、一つの媒介効果ではない。</strong></p>
+<p>2016年のEEA真正河川底生EQRは <strong>2,435地点・12か国・73 NUTS2</strong>。2014–2018年平均のJRC GREEN <strong>地域モデル化</strong> 点源N/Pを追加すると、NUTS2保留のMSEがNで <strong>2.287%</strong>、Pで <strong>1.402%</strong>改善した。地域均等のbootstrap区間はN［−0.258%,+7.047%］、P［−1.053%,+6.907%］で0を含む。地域平均EQRと点源N/PのSpearmanは−0.390/−0.457、国別中心化後のN/Pも−0.341/−0.356で負方向。N/P相関ρ=+0.913で独自寄与を分離できない。対照の付着藻類EQR（n=2,161）はN/P追加で<strong>−1.317%/−1.268%</strong>悪化した。2016年のモデル源は2018/2022年の実WWTP報告負荷とは違う。</p>
+<p>独立した米国EPA NRSA 2018–2019年の河川実測 <strong>1,220訪問</strong>では、真の河川TN/TPと底生のEPT（カゲロウ・カワゲラ・トビケラ）個体比率の調整関連が負。TPのHUC8クラスタ係数 <strong>−0.04775［−0.08222,−0.01327］</strong>、TN <strong>−0.05032［−0.09160,−0.00905］</strong>。TN+TPのHUC8保留予測改善 <strong>+2.354%</strong>。独立NumPy実装で係数を再現。うち <strong>1,184訪問・1,091地点・48州・722 HUC8</strong> で同じ訪問の現地河畔植生構造を追加すると栄養調整後の改善は<strong>+1.284%［−0.453%,+2.919%］</strong>で不確定。TP×草本被覆交互作用の予測改善も+0.315%［−0.504%,+1.165%］と不確定。実GBIF植物50記録＋シジミチョウ20記録の厳格基準は360地点中9しか満たさなかった。</p>
+<p><strong>問い：</strong> 水域の栄養環境は底生群集の機能組成に結び付き、その影響は陸上へ届くか。<strong>解釈：</strong> 水域の環境フィルタリングには整合するが、排水を原因とするとも、羽化した水生昆虫が蝶・鳥・植物を支えたとも言えない。<strong>論文主張：</strong> 河川栄養・モデル点源と底生応答の限定的な追加予測力、陸域連鎖ゲートの不成立。<a href="https://github.com/zuizui0223/gesui/pull/56">2016年原検証 #56</a>・<a href="https://github.com/zuizui0223/gesui/pull/58">NRSA栄養×EPT #58</a>・<a href="https://github.com/zuizui0223/gesui/pull/59">同河川植生感度 #59</a>。</p>
+<h3>2-3. MINA：南極の海氷・水温と塩分は、独立した年次同調軸を持つ</h3>
+<p><strong>判定：新規の真正物理環境記述。ペンギンの共通応答は未支持。</strong> 588真正繁殖地、18南極地域、378固有海洋セル、1993–2020年の28年・16,464地点年をソース固定して解析。海氷−水温のPC1はプールした3変数分散の <strong>60.365%</strong>、塩分主体PC2は <strong>33.377%</strong>。18地域の年次標準化後の共通暦年寄与はPC1 <strong>19.71%</strong>、塩分PC2 <strong>52.14%</strong>。地域間年偏差相関中央値は+0.151と+0.485、地域線形トレンド除去後でも共通年寄与は19.84%と50.61%。13地域限定・セル均等でも大小関係が維持された。</p>
+<p>一方、同じ繁殖地・繁殖年で2種の巣数がある <strong>351組</strong>について、塩分PC2とGentoo/Chinstrap巣数比のsite+year係数は−0.176だが、中央西南極半島を除くと+0.072へ反転、残差R²はわずか0.48%。局所巣数傾きとSICも原100km緩衝内の海氷画素を共有し、独立画素にすると93/93適格コロニーペアで海氷差が大きくなる（差の中央値3.491→7.834ポイント）。これは測定空間支持の問題であり、採餌場の実曝露ではない。</p>
+<p><strong>問い：</strong> 温暖化に関連する海洋環境変化は一つの時計として動き、生物が追随するか。<strong>解釈：</strong> 海氷・熱と塩分の時空間同調は異なるが、生物の共通応答は弱く地理依存。<strong>論文主張：</strong> 二海洋軸の実測の非同期と巣数応答の地域転移限界。<a href="https://github.com/zuizui0223/mina/pull/214">18地域原再解析 #214</a>・<a href="https://github.com/zuizui0223/mina/pull/215">独立画素検証 #215</a>。</p>
+<h3>2-4. EOG：シカの検出確率の地点間異質性を入れると保留予測は改善するが利益は集中する</h3>
+<p><strong>判定：新規実記録の地点外予測＋既存出力の影響度診断。</strong> eMammal由来の <strong>87カメラ地点×22日</strong>の検出履歴に対し、全22日を地点ごと保留する5fold比較で、Beta潜在検出混合のlog scoreは<strong>−801.5948</strong>、一定検出率は<strong>−897.1652</strong>、差<strong>+95.5705</strong>。正方向44地点・負43地点で、地点差中央値は <strong>+0.00760</strong>。有利上位10地点を除外すると残余差<strong>+29.3144</strong>、元改善の69.33%を上位10地点が担う。全5foldの合計差は正。</p>
+<p><strong>問い：</strong> 観測された存在・不在は地点ごとの検出過程を同じと扱えるか。<strong>解釈：</strong> 不均等検出・観測努力・出現変動の混合と整合するが、真の動物生息地選好やA/B/M幾何機構を同定しない。<strong>論文主張：</strong> 同一データにおける地点外予測と予測改善の集中。独立地域での再現は未実施。<a href="https://github.com/zuizui0223/eog/blob/main/docs/deer_site_heldout_prediction_v1.md">EOG検出保留結果</a>・<a href="https://github.com/zuizui0223/eog/pull/693">影響度結果 #693</a>。</p>
+<h3>2-5. BOIDS：地形とモデル干出指標の高相関は新しい採餌機構の証拠ではない</h3>
+<p><strong>判定：真正地理sourceの記述的関連、機構証拠は未支持。</strong> Roggenplaatの<strong>36個の20m元セル</strong>で、2019→2020地形差と2016→2021モデル干出指標差のSpearman <strong>+0.960424</strong>。しかし誤った地図シフト35例のうち1例でも<strong>+0.963007</strong>となり元の関連を超えた。2016年GeoTIFFのstereと2021年stereaには中央値3.82mの座標差もある。RWS干出モデル自体が地形と潮位を使用するので、独立の因果検証ではない。</p>
+<p><strong>問い：</strong> 干潟地形が鳥の潮汐方向選択へ作用するか。<strong>解釈：</strong> 現状はモデル入力とモデル出力の構造的共変動、鳥GPSとの真の同期曝露なし。<strong>論文主張：</strong> 地図投影・セル独立性を明記した測定監査のみ。<a href="https://github.com/zuizui0223/boids/pull/134">BOIDS #134</a>・<a href="https://github.com/zuizui0223/boids/pull/135">#135</a>。</p>
+<h3>2-6. ALAN：旧「花粉制限×光」名目positiveは再現したが頑健ではない</h3>
+<p><strong>判定：既存値再現、確認的支持には昇格せず。</strong> 元64植物種・10,698地点年・78地域の花粉制限×島/本土夜間光傾き差は<strong>β=−0.01938［−0.03823,−0.00053］、名目p=.044</strong>で再現。しかし2仮説Holm補正p=.088。GloBI v0.11で実蛾訪花記録が陽性の30種に限定すると <strong>β=−0.00916、p=.480</strong>、旧64種から外れ値5種を除くと <strong>β=+0.00643、p=.662</strong>。独立に花粉運搬を確認した17種でも区間が0を含む。</p>
+<p>同年写真の8,581植物種では蛾・蝶両方に訪花文献のある698種、蛾のみ文献141種、蝶のみ1,068種。さらに13年の写真ヤモリ×光×蛾の209島年・50島条件付き交互作用はβ <strong>−1.386［−5.457,+2.685］、p=.497</strong>で非支持。文献での訪花と有効送粉・写真地点の花粉制限・真の捕食者在不在は異なる。</p>
+<p><strong>問い：</strong> 島の夜間光は、夜間送粉依存性や捕食者相の違いを通じて植物記録に影響するか。<strong>解釈：</strong> 既存正方向発見は記録源と稀な外れ値に依存し、機構は未同定。<strong>論文主張：</strong> 光×文献チャネル×測定適格性の再評価に限定。<a href="https://github.com/zuizui0223/alan/pull/41">ALAN #41</a>・<a href="https://github.com/zuizui0223/alan/pull/42">#42</a>。</p>
+<h3>2-7. その他の既存positive・理論とその限界</h3>
+<p><strong>TETSU：</strong> 外来木本の鉄道対道路のRAW Jaccardβ多様性関連は最大GBIFデータセット除去後に国単位4/4で期待方向（rho中央値+0.141）だが、同じ物理地点の20記録均衡では2/4（+0.0249）。turnoverでは3/4、nestednessでは1/4。鉄道の種子散布や草刈り選択の実証ではない。<a href="https://github.com/zuizui0223/tetsu/pull/1">#1</a>。</p>
+<p><strong>ADAPTIVE-GAIN：</strong> 指定された二分岐・情報費用0.25の理論モデルで根環境認識精度sが<strong>11/16（68.75%）を超えるときのみ</strong>条件付き情報要求利得が正。より広いq∈[0,0.25]では閾値(0.75−q)/(1−q)。数学・ソフト検証のみで、ハチの実行動や普遍的な感覚閾値は0件。<a href="https://github.com/zuizui0223/adaptive-gain/pull/97">#97</a>。</p>
+<p><strong>HOTARUBUKURO：</strong> 中央本州の875写真・583セルでBombus diversus潜在適地と色素花の既存調整OR <strong>1.29［1.04,1.59］</strong>を保持。今次変更はZenodo時点の重複画像規則・5面SDMを再現可能にしたもの。花粉送達選択の新結果なし。<a href="https://github.com/zuizui0223/hotarubukuro/blob/main/docs/bombus-inference-current.md">再現文書</a>。</p>
+<p><strong>IZU-CORE・FCP・Structural・CHOCHO・FROGCS・AZAMI・MOIS：</strong> 原稿、図、文献、データ取得法、凍結資産再現の変更は確認したが、その進捗を独立した新empirical endpointとして数えない。FCPの既存4,475種の写真スケール色変異やCHOCHOの寄主資源機会全球+54.9%（島+118.9%・本土+40.9%）は維持するが、真の繁殖・適応・分散を確認したわけではない。</p>
+<h2>3. 反証・FAIL・未確定の分離</h2>
+<table><thead><tr><th>対象</th><th>判定と数値・理由</th></tr></thead><tbody>
+<tr><td>FD/ISLAND</td><td>文献5チャネルMSE利得の対応source削除差−0.001082。鳥のみ削除後の残存positiveがあるが、実効送粉や島内のハチ→鳥交代0件の直接証拠。</td></tr>
+<tr><td>ALAN</td><td>元64種のHolm p=.088、GloBI新30種p=.480、外れ値除外で符号反転。ヤモリ×光×蛾p=.497。旧名目positiveを確認的結論として掲示しない。</td></tr>
+<tr><td>GESUI</td><td>河川EQRのN/P保留予測はクラスタbootstrap区間0を含む。付着藻類EQRでは改善せず。米国の植生追加+1.284%区間は0を含む。植物/蝶連鎖は9/360地点だけ適格。</td></tr>
+<tr><td>MINA</td><td>351の2種同時巣数比で海洋PCの独立効果・地域間再現は弱い。離島巣数差を潮流・塩分・融氷で因果説明しない。</td></tr>
+<tr><td>EOG</td><td>予測差は44対43地点、上位10に69.3%集中。A/B/M・真の状態占有と検出の区別は未同定。</td></tr>
+<tr><td>BOIDS</td><td>36モデルセルは独立の36地域ではない。誤った地図移動でもrhoが上回り、元鳥の真の干出地形対応は以前から厳格source gate FAIL。</td></tr>
+<tr><td>TETSU</td><td>同じ地理でRAWと希薄化の国別支持が4/4→2/4。草刈り・風適応・鉄道による繁殖輸送は未検証。</td></tr>
+<tr><td>MOIS・FCP・284b・SDMR・IZU-CORE</td><td>sealed/final endpoint途中の処理、画像取得増、合成単体テスト、編集を新たな自然生態実証として公開しない。以前のHOLD/FAIL/INCONCLUSIVE判定を勝手に解除しない。</td></tr>
+</tbody></table>
+<h2>4. 全リポ横断：昨日より一段進んだこと</h2>
+<p><strong>昨日：</strong> GESUIで全球港の植物記録positiveが観測努力に依存し得ること、FDで属構成が花形質を強く予測すること、MINAで海氷前線と巣数配置の時期がずれることを整理した。</p>
+<p><strong>今日：</strong> FDで原文献アーカイブを実際に削除した対応77科比較が完成し、見かけの形態–訪花ギルド効果を約61%減衰させた。GESUIでは単なる港やモデル点源の近さではなく、欧州の真の底生EQRと米国の同一訪問河川TN/TP–EPT組成という別観測の小さな予測成分を回収した。MINAでは海氷/水温と塩分の時系列同調という異なる物理過程を分離した。EOGとBOIDSは予測差と空間相関の背後にある極端地点・セル不整合を露出させた。</p>
+<p>横断できる主張は、<strong>生態学的な機会、観測される相関、独立に運ばれる予測情報、実際の利用・適応・繁殖という四層を分けること</strong>。同じ資料源に依存するFD・ISLAND、同じ地点に依存するEOG、同じモデル定義に依存するBOIDSは、独立再現と数えてはいけない。複数のpositiveは残るが、共通の因果法則が証明されたわけではない。</p>
+<h2>今日の最重要3点</h2>
+<ol>
+<li><strong>FD/ISLAND：</strong> 344属・77科の真正GloBI source削除で、花形態→文献訪花構成予測の総利得が+0.001769→+0.000687へ減衰。21のBombus未検出/鳥記録島にも他3ギルドがあり、鳥への専属交代は示されない。</li>
+<li><strong>GESUI：</strong> 2016年欧州2,435地点のEQRと2018–19年米国1,220河川訪問のEPTで、栄養の小さな追加予測情報を確認。ただし排水処理由来と陸上送粉への連鎖は未検証。</li>
+<li><strong>MINA＋ALAN：</strong> 28年・18地域の塩分年次同調52.14%対海氷−熱19.71%という物理結果が得られた一方、ペンギンの共通生物応答と夜間光×花粉制限の頑健性には支持が不足した。</li>
+</ol>
+<h2>次に回収すべき解析／検証</h2>
+<p><strong>第一優先：</strong> FDではGloBIのarchiveラベルを原論文・provider単位へ分解し、植物系統・島ごとの実際の訪花者および花粉送達を同一系統の本土/島で検証する。鳥だけではなくハチ・ガ・蝶・ハエ・爬虫類を別チャネルで扱う。</p>
+<p><strong>第二優先：</strong> GESUIでは上流実排水の同年N/P報告、流路方向と受水点、農業/都市負荷を同一河川へ結び、独立河川地域でEPT結果を予測検証。その後に水生昆虫羽化・河畔植物・幼虫寄主利用・蝶個体数へ進む。9/360の観測ゲート未成立をまず改善する。</p>
+<p><strong>第三優先：</strong> MINAは年次の同一方法巣数と真の採餌圏海洋条件で、塩分と海氷を同時投入した地域外予測を確認。ALANは元64種の独立source/外れ値ロバスト検証、EOGは真の別地域観測、BOIDSは座標・日付が揃った実干出面積、TETSUは鉄道種子運搬・草刈り・風への直接証拠を得る。MOIS等sealed監視は完成した固定endpointだけを昇格する。</p>
+<hr>
+<p><strong>公開・追跡：</strong> このレビューは既存の静的GitHub Pages構造のresearch-daily/2026-11-12.mdと対応HTML、日付別indexのみに追加する。研究リポの科学コード、原結果、contracts、frozen thresholdsは編集しない。</p></main></body></html>
