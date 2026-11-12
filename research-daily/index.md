@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-13 — 60 repos / 17 updated / 43 unchanged](2026-11-13.html)** — GESUI同一流域の実報告N×底生EQRと陸域不支持、BOIDS独立ベルギー静的湿地、TETSU標準道路実植生、AZAMI局所不支持、ESDM哺乳類群集置換。
+
+[2026-11-13 完全版Markdown](2026-11-13.md)
+
 **[2026-11-12 — 60 repos / 18 updated / 42 unchanged](2026-11-12.html)** — FD/ISLAND真正GloBIの77科source削除、GESUI欧州EQR×米国EPT、MINA海洋2軸の28年同調、ALAN64種の頑健性非支持、EOG地点外予測。
 
 [2026-11-12 完全版Markdown](2026-11-12.md)
