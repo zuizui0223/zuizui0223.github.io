@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-23 — 62 repos / 28 updated / 34 unchanged](2026-11-23.html)** — GESUI第4EPA期河床EPTの既知/新規流域予測差と独立4か国、ANTOヒマワリ51圃場で訪花→種子、BALANCE花粉段階、TETSU温度指標と鉄道盛土、MOIS白色・PAYOFF緑化日の非支持。
+
+[2026-11-23 完全版Markdown](2026-11-23.md)
+
 **[2026-11-22 — 61 repos / 17 updated / 44 unchanged](2026-11-22.html)** — BALANCE真正ハチの花粉配分交互作用、TETSU外国頻度の遡及記録予測と鉄道固有性非支持、FD形質証拠品質の属内差、EOG実起点の楽観バイアス、GESUI許可排水口位置の照合、BATTER資源予測FAIL。
 
 [2026-11-22 完全版Markdown](2026-11-22.md)
