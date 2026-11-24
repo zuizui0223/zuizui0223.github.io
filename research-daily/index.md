@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-25 — 62 repos / 26 updated / 36 no update detected](2026-11-25.html)** — KNK独立草地4年の種名・順位履歴、ANTO第三原著訪花予測、BOIDS12群、Tampa付着藻、BALANCE繁殖段階、GESUI別寄主DBと時間非支持。
+
+[2026-11-25 完全版Markdown](2026-11-25.md)
+
 **[2026-11-24 — 62 repos / 17 updated / 45 no update detected](2026-11-24.html)** — KNK形成順序の種名・順位保持と相互作用形成、BALANCE同一6訪花花粉移送、GESUI時間予測非支持、TETSU C4感度、BATTER真正3D技術検証。
 
 [2026-11-24 完全版Markdown](2026-11-24.md)
@@ -125,6 +129,7 @@
 
 ## 公開アーカイブ
 
+- [2026-11-25](2026-11-25.html)
 - [2026-11-24](2026-11-24.html)
 - [2026-11-23](2026-11-23.html)
 
