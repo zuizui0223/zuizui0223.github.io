@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-26 — 63 repos / 18 updated / 45 no update detected](2026-11-26.html)** — KNK応答量・符号履歴、GESUI自己地点時間予測、MINA全方向繁殖空間、ISLAND深筒相称性、BOIDS明暗、AECO独立非再現。
+
+[2026-11-26 完全版Markdown](2026-11-26.md)
+
 **[2026-11-25 — 62 repos / 26 updated / 36 no update detected](2026-11-25.html)** — KNK独立草地4年の種名・順位履歴、ANTO第三原著訪花予測、BOIDS12群、Tampa付着藻、BALANCE繁殖段階、GESUI別寄主DBと時間非支持。
 
 [2026-11-25 完全版Markdown](2026-11-25.md)
