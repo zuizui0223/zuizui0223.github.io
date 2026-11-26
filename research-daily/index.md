@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-27 — 63 repos / 21 updated / 42 no update detected](2026-11-27.html)** — KNK独立動物プランクトン・ドナー情報、GESUI NutNet機能群、AECO泡巣視覚、ONISHIBARI条件付き繁殖境界、ANTO週外FAIL、TURNOVER設計定理、FD/CHOCHO統合。
+
+[2026-11-27 完全版Markdown](2026-11-27.md)
+
 **[2026-11-26 — 63 repos / 18 updated / 45 no update detected](2026-11-26.html)** — KNK応答量・符号履歴、GESUI自己地点時間予測、MINA全方向繁殖空間、ISLAND深筒相称性、BOIDS明暗、AECO独立非再現。
 
 [2026-11-26 完全版Markdown](2026-11-26.md)
@@ -132,6 +136,9 @@
 [2026-10-27 完全版Markdown](2026-10-27.md)
 
 ## 公開アーカイブ
+
+- [2026-11-27](2026-11-27.html)
+- [2026-11-26](2026-11-26.html)
 
 - [2026-11-25](2026-11-25.html)
 - [2026-11-24](2026-11-24.html)
