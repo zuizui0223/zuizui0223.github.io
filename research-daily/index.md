@@ -2,6 +2,10 @@
 
 ## 最新レビュー
 
+**[2026-11-28 — 63 repos / 11 updated / 52 no update detected](2026-11-28.html)** — FCP気候ランドスケープ、FD島の形態不一致分解、ADAPTIVE-GAIN同一82種蜜/花粉、KNK背景と集約、BOIDS時間支持・空間FAIL、ONISHIBARI遺伝理論。
+
+[2026-11-28 完全版Markdown](2026-11-28.md)
+
 **[2026-11-27 — 63 repos / 21 updated / 42 no update detected](2026-11-27.html)** — KNK独立動物プランクトン・ドナー情報、GESUI NutNet機能群、AECO泡巣視覚、ONISHIBARI条件付き繁殖境界、ANTO週外FAIL、TURNOVER設計定理、FD/CHOCHO統合。
 
 [2026-11-27 完全版Markdown](2026-11-27.md)
@@ -137,6 +141,7 @@
 
 ## 公開アーカイブ
 
+- [2026-11-28](2026-11-28.html)
 - [2026-11-27](2026-11-27.html)
 - [2026-11-26](2026-11-26.html)
 

@@ -1,0 +1,95 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Research Daily — 2026-11-28</title><style>body{max-width:1050px;margin:auto;padding:30px 22px;background:#0e171a;color:#e9f0ed;font:16px system-ui,-apple-system,sans-serif;line-height:1.75}h1,h2,h3{line-height:1.35;color:#f5fff9}h2{border-bottom:1px solid #39504b;padding:20px 0 8px}h3{margin-top:28px}a{color:#abd9c9}a:hover{color:#e5fced}table{border-collapse:collapse;display:block;overflow-x:auto;width:100%;font-size:.85rem}th,td{border:1px solid #334d49;padding:9px 12px;vertical-align:top;text-align:left;min-width:100px}th{background:#1c3030}tr:nth-child(even){background:#132320}strong{color:#f2ffb3}nav{margin-bottom:22px}main{overflow-wrap:anywhere}p{margin:12px 0}li{margin:6px 0}code{color:#dae7ee;overflow-wrap:anywhere}</style></head><body><nav><a href="../">← Home</a> / <a href="index.html">Research Daily</a> / <a href="2026-11-28.md">Markdown原本</a></nav><main><h1>GitHub 全リポ日次研究レビュー — 2026年11月28日</h1>
+<p>実行開始：2026-11-28 05:55 JST（Asia/Tokyo）。比較起点：2026-11-27 05:56 JST（UTC 11-26 20:56）。総63リポ、新規0。更新検出11（研究10＋前日公開1）、更新未検出52。更新PR検索36件、独立Issue検索0件。全63リポのmainコミットを個別に取得し、期間内42件（FD41、Pages1）。他61リポのmainは0。検索範囲はdefault branchと更新PR/Issueであり、PRなしの非default branch push、全PRの全差分、全結果の独立再実行は未監査。主要PRの変更ファイル・固定head上の結果文書を直接参照した。下記の再現・artifact照合はリポ内の記録に基づくもので、本レビューで原解析やZIP全件の再検証を行った意味ではない。</p>
+<p><strong>総括：</strong> FCPでは花色の総多様度より環境の空間配置との関連が見えた。FDでは熱帯島の候補供給源との花形態不一致を独立標本化の基準・系統・セル・地域異質性に分解。ADAPTIVE-GAINでは同じ82種に揃えて蜜と花粉の形態情報量の非対称を確認。KNKでは相互作用の背景依存性と集約による見かけの予測改善を分離。BOIDSでは暗条件の群れ生成予測に支持がある一方、実空間の占有範囲を再現できない重大な反証が得られた。</p>
+<h2>1. 実際に変わったリポ</h2>
+<table><tr><th>リポ・根拠</th><th>変更内容</th><th>判定</th></tr>
+<tr><td><a href="https://github.com/zuizui0223/fd/pull/81">FD #80–82</a>・<a href="https://github.com/zuizui0223/fd/commit/6c682098b52937f6cbfbfcdb4aa55e64640dae94">main 6c682098</a></td><td>main41コミット、保護されたrepertoire集計・帰無・セル分解、外部NHM/Wang/AusTraits/GIFT原資料、長さ保留、reward source設計、workflow・JSON・コード・文書</td><td>新規条件付き支持＋外部FAIL</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/island/pull/360">ISLAND #354,360</a></td><td>FD所有の保護された島source解析3 workflowとコード・集計。既存H1/H2更新</td><td>FDと同じ成果を重複計上しない</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/fcp/pull/276">FCP #275–276</a></td><td>447,500写真地点の気候ランドスケープ、色成分、生活史workflow、結果JSON。局所observer別解析は補足</td><td>新規探索的支持</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/adaptive-gain/pull/201">ADAPTIVE-GAIN #199–201</a></td><td>同一種の蜜・花粉比較、WCVP在来種の地域内系統外予測、風/Bombus・source帰無、追加報酬資料</td><td>新規支持・地理機構暫定</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/knk/pull/27">KNK #23–27</a></td><td>微生物背景効果、原生生物基準感度、植物配置、集約誤差の恒等式、registry v0.7/0.8、結果JSONとCI</td><td>新規記述支持＋方法論</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/boids/pull/262">BOIDS #261–263</a></td><td>v60/v61実魚の分布・時間rollout結果、v62占有制約凍結</td><td>条件付き予測支持＋重大な物理FAIL</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/onishibari/pull/4">ONISHIBARI #4</a></td><td>v68–73核遺伝・生存・CMS/restorer理論、性比マクロsource・予測、結果MD/JSON</td><td>理論進展・実測予測非支持</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/turnover/pull/81">TURNOVER #80–81</a></td><td>DivResourceからJenaへの種非共有予測、2,000回設計整合training参照、7 endpoint結果</td><td>反証・方法診断</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/eog/pull/766">EOG #766</a></td><td>Elwha復元のメタデータ・水路地理・ordinal scaffold、source gate</td><td>生物応答STOP</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/keiba/pull/118">KEIBA #111–124</a></td><td>親情報・個体履歴の固定対象診断、人工集団の情報フィードバックモデル、コード・結果</td><td>非生態データの予測診断と数理、実市場因果なし</td></tr>
+<tr><td><a href="https://github.com/zuizui0223/zuizui0223.github.io/commit/527fc390a15e8b5c1fce00ccb9b0368c3de2e4a1">公開サイト</a></td><td>11/27版の公開1コミット</td><td>研究成果とは別</td></tr>
+</table>
+<p>PR内訳：FD3、ISLAND2、FCP2、ADAPTIVE-GAIN3、KNK5、BOIDS3、ONISHIBARI1、TURNOVER2、EOG1、KEIBA14＝36。累積PRや旧成果の再掲を独立発見にしない。更新未検出52リポについては新しい結論を推測しない。</p>
+<h2>2. 根拠付きの肯定的結論</h2>
+<h3>FCP：花色の地理的配置は気候ニッチ幅より温度環境の空間配置と対応する</h3>
+<p>新規に支持された探索的マクロ解析（Draft）。全4,475分類群、447,500原写真地点、227,107色分類可能写真。総色多様度4,333分類群、50/250 km共通1,258分類群、654属。全写真地点から気候を測り、観測者foldに限定せず解析。属bootstrap 1,999回。</p>
+<table><tr><th>指標</th><th>50 km</th><th>250 km</th></tr>
+<tr><td>共通1,258種、温度空間分割の色地理分割係数</td><td>+.009453 [.002106,.017258]</td><td>+.009540 [.004892,.014212]</td></tr>
+<tr><td>共通1,258種、湿潤環境分割</td><td>−.010602 [−.019183,−.003067]</td><td>−.004537 [−.009857,.000498]</td></tr>
+<tr><td>全対象の連続Hellinger色分割×温度分割</td><td>+.004568 [−.000219,.009205] (n=1315)</td><td>+.003326 [.000961,.005664] (n=2110)</td></tr>
+</table>
+<p>一方、全域色多様度に対する温度幅+.004277 [−.004025,.012570]、水分幅+.000650 [−.009331,.010351]、温度季節性−.006464 [−.017847,.005251]、降水季節性+.005908 [−.005774,.016734]はいずれも不確定。追加R²=.001088。空間モデルの追加R²は共通1,258種で.00572/.01253と小さい。250 kmの白/その他成分+.002115 [.000207,.003955]と有色成分+.001886 [.000268,.003492]はいずれも正だが、差+.000229 [−.002506,.002894]は非支持（連続共通1,255種、白特異性の全比較も非支持）。50 km成分は不確定。</p>
+<p>問い：種内の色が地理的に分かれるのは、単に広い環境範囲を持つためか、それとも環境が空間的に配置されるためか。環境フィルタリング、地理的選別、種内適応は候補だが識別されない。論文は「色の総多様度と空間配分を分けると温度ランドスケープとの小さい関連が見える」。遺伝性、多型頻度、選択、色素コスト、因果的IBEは未測定。生活史（既知trait数：生活環3832、木本性4148、自家受精1024）は設計段階。局所対照#275の229分類群では検出群と非検出群の地理・温度差とも属bootstrapでゼロを含む。</p>
+<p>根拠：<a href="https://github.com/zuizui0223/fcp/blob/4d8a9ce5bc500db34b94102c2c7a7b7647d6238b/results/fcp4475_climate_landscape_verified_20261127.json">気候結果JSON</a>、<a href="https://github.com/zuizui0223/fcp/blob/4d8a9ce5bc500db34b94102c2c7a7b7647d6238b/docs/FCP_CLIMATE_LANDSCAPE_COLOUR_COMPONENTS_AND_LIFEHISTORY_20261127.md">色成分・生活史文書</a>、<a href="https://github.com/zuizui0223/fcp/actions/runs/45971197518">原計算run 45971197518</a>。</p>
+<h3>FD/ISLAND：熱帯島の花形態は候補供給源とより異なるが、単純なレパートリー喪失とは違う</h3>
+<p>新規探索的支持・main集計統合。独立同数k=5抽出の期待プロフィール占有から、共通・片側専有を評価。熱帯−北温帯のbalanced mismatchは24比較全て正、支持基準を満たす20比較全て点ごとの区間が正（重複パネル）。主比較の色×形+.134580 [.099908,.169181]、相称性×深度+.129073 [.106249,.150335]。一方、符号付きレパートリー欠損はそれぞれ−.001914、−.014204で区間ゼロを含み、主属grade帰無4件ともFAIL。balanced mismatchは確率・歴史的置換ではない。</p>
+<p>独立標本化による同一roster内の不一致と、占有確率ベクトルの系統的距離を分けた事後2 endpoint解析。相称性×深度の1579北温帯島（102ブロック、98供給源群）、670熱帯島（91、76）で、熱帯−北温帯の系統的距離+.038840 [.021211,.058194]。属grade帰無期待+.025879、残差+.012962 [.007163,.018836]、p=.014、Holm=.028。供給源均等でも残差+.010536 [.004859,.016865]、p=.014。全ブロック/供給源除外で正。ただしHIGH-only・気候整合・k10・nativeでは支持せず、色×形の残差もp=.414。</p>
+<table><tr><th>相称性×深度の地域差の算術分解</th><th>寄与</th></tr>
+<tr><td>balanced mismatch差</td><td>+.129073</td></tr>
+<tr><td>同一roster内の標本化基準</td><td>+.077736</td></tr>
+<tr><td>系統的な占有確率距離</td><td>+.038840</td></tr>
+<tr><td>絶対欠損縮小</td><td>+.012498</td></tr>
+</table>
+<p>さらに系統的距離+.038840は平均方向+.016069（41.4%）と島間異質性+.022771（58.6%）に分解。供給源均等では13.3%/86.7%。属帰無残差+.012962のうち放射相称4深度セル計+.012104（93.4%）、深筒単独+.004373。セル別の推測検定は行っていない。平均方向の深筒寄与は地理均等74.2%、供給源均等44.4%で重みに敏感。</p>
+<p>問い：島の機能形態の違いは単純な喪失か、候補供給源との組成の不一致か。群集の種プール・供給源・記録構造が候補機構。論文は「熱帯の記録植物相のsource-relative morphology mismatchと、標本化・方向・異質性の分解」。一般的な在来植物の収斂、個体進化、送粉チャネル代替は未証明。</p>
+<p>外部公開資料による部分的方向一致：NHM/Wang/GIFTの探索179島対（北108、熱帯68、南3）で平均log2花筒長の地域差+.378682 [.200944,.590385]、供給源重み+.398822。新288対象のうち適格161対では+.634259 [.264872,1.035341]、供給源重み+.596982。しかし熱帯47対/6ブロック/8供給源しかなく凍結50対/30ブロック/20供給源に未達。属×相称性帰無p=.376/.324。独立検証FAIL。厳格nativeも不足。新対象は旧地理ブロック27/27、供給源31/34を共有。探索と同方向でも独立再現に昇格しない。</p>
+<p>根拠：<a href="https://github.com/zuizui0223/fd/blob/6c682098b52937f6cbfbfcdb4aa55e64640dae94/shared_db_research/FD_EVIDENCE_SPINE.md">FD evidence spine</a>、<a href="https://github.com/zuizui0223/fd/blob/6c682098b52937f6cbfbfcdb4aa55e64640dae94/docs/EXTERNAL_FLORAL_REPLICATION_INTAKE_20261126.md">外部資料結果</a>、<a href="https://github.com/zuizui0223/island/actions/runs/45957671153">protected run</a>。</p>
+<h3>ADAPTIVE-GAIN：同じ植物種でも花筒長は蜜を予測するが花粉は予測しない</h3>
+<p>新規に支持された条件付き原資料再解析。前回の蜜・花粉別種集合の問題を解消し、同じ82種（68属、28科）で同一基準・foldを使用。</p>
+<table><tr><th>保留単位</th><th>蜜の相対MSE skill</th><th>花粉</th><th>対応差・95%範囲</th></tr>
+<tr><td>属</td><td>+26.2701%</td><td>−2.5174%</td><td>+28.7875 pp [9.1707,48.7653]</td></tr>
+<tr><td>科</td><td>+22.7934%</td><td>−2.4653%</td><td>+25.2587 pp [2.3936,48.1167]</td></tr>
+</table>
+<p>蜜のsource label＋属非共有保留5/6改善（1失敗を保持）。457種のゼロ包含感度skill .539292→.540360、ゼロの生物学的意味は未確定。WCVP在来種リスト内の対応82種では属保留19地域/6ブロック、蜜の種間差skill中央値+.158816、花粉−.015888、対応差+.157986、18/19正。ただし地域マクロ基準30地域/10ブロックFAIL。別種集合の蜜は49地域/12ブロック、中央値+.192006（41/49正）、科保留+.222716。花粉は45地域で−.003976。地域内実際の蜜量・共開花ではなく文献種形質の地理的重複。</p>
+<p>問い：花形態は訪花者にとってどの報酬の手がかりになり得るか。花筒形状と蜜貯留の構造的結合が候補。論文は「形態による報酬情報の非対称性が未知系統へ転移」。既刊の報酬非対称との関係を明記。訪花者が実際に情報を選ぶか、適応的なcue取得、選択・適応度は未証明。</p>
+<p>風の関係はブロック調整−.338160→−.067538、報酬分散調整−.016380。Bombusの蜜skill係数は無ブロック−.488275、調整+.235362、10/10ブロック除外で正（+.143890～+.475349）。探索的37地域/10ブロック、同じ種の反復・記録努力proxy・交絡に注意。種の分布を固定する条件付き帰無と拡張資料は未確認。</p>
+<p>根拠：<a href="https://github.com/zuizui0223/adaptive-gain/blob/7838721262d883450f6b85817cbdcaacde9bc849/docs/FLORAL_STAGE121_REGIONAL_REWARD_TRANSFER_20261127.md">Stage120/121</a>、<a href="https://github.com/zuizui0223/adaptive-gain/blob/fd672fd8922c1ac8a1b7491c17ef7ca119df0f2c/docs/FLORAL_STAGE122_REWARD_ENVIRONMENT_SPECIES_NULL_20261127.md">Stage122</a>。</p>
+<h3>KNK：種間相互作用の応答は背景群集・測定対象によって変わる</h3>
+<p>新規記述支持：Castledine微生物原著の著者処理済み75 endpoint、20方向付きpair-alone・140背景対比。39/140で符号逆転、12/20ペアで一度以上。閾値.05では31/113、9/20ペア。背景種数増加につれ符号一致78.33/70/60%。ただし相手ID予測MAE .224223はno-change .272555より良いが匿名平均 .215536に負ける。実処理済みCFU相対密度の有限応答であり、raw replicate・per-capita係数・分子機構ではない。問いはペア効果が別の背景に移植できるか。論文は条件付きnet responseの非移植性。Shen原生生物24培養では生の4/8符号逆転がday3差分で0/8になり、捕食者による因果逆転は支持しない。Venturelli絶対量STOP、Reynaert全192pot同じ12種で種追加効果STOP。</p>
+<p>独立Gibbs植物配置原著：315区画中300配置区画、430完全対応、30焦点種×相手ペア群。clustered−mixedのlog(1+推定種子)差群均等+.245638、26正/3負/1ゼロ。原著が既に平均配置効果を報告しており、新規貢献は保留予測の限界。単一labelでは既知/未知相手モデルすべてno-change MAE .510652に負ける。10 train/5 heldを平均した場合、no-change .314856→相手identity .263404（16.34%）、匿名平均 .276519より4.74%良い。ただし構成種は学習に存在し、SA単位不明、同一実験、density標準化は因果調整ではない。</p>
+<p>方法論的強化：固定training・同一held supportでGibbs 30群の5反復からh=1～5の全部分集合を評価（6,325適格依存fold-group）。no-change MSE .593153→.179292、identity .531964→.118103。絶対改善は全hで.0611891194、匿名との差.00550872703も一定。共通の有限標本分散項は (k−h)/(h(k−1))×V。相対改善の上昇は分母縮小でも生じ、地理的スケールで生態学的情報が創発した証拠ではない。Shenの後期days9–17乗算予測はh1/h2とも改善（絶対MSE +.071320/+.069961）。七既存時系列の固定trainingで量TV/符号付きTV誤差は全てh2で小さくなるが、方向情報の増分は一様でない。</p>
+<p>問い：群集効果の持ち越しは背景依存か、また集約による測定精度と区別できるか。論文は「context-dependent response portability」と測定対象・損失関数の分離。空間grainの独立試験・因果interaction・メタ効果は未成立。DB v0.7/0.8はfinite response laneを追加（v0.7 75観測+5定義基準、160有限対比、55予測；v0.8 1 factorial source、5 lane、32依存marginal、24 forecast）、SQL/FK整合。メタ適格0を保持。</p>
+<p>根拠：<a href="https://github.com/zuizui0223/knk/pull/23">Castledine #23</a>、<a href="https://github.com/zuizui0223/knk/blob/9b0aa8e43e98e2686e594c9ab257d670e66c13ee/docs/AHIF_GIBBS2026_SPATIAL_TRANSFER_RESULTS_20261127.md">Gibbs個別予測</a>、<a href="https://github.com/zuizui0223/knk/blob/c45911232c6f080e694e08f67553e595a6fc8566/docs/AHIF_FIXED_TARGET_SCALE_RESULTS_20261127.md">集約恒等式</a>、<a href="https://github.com/zuizui0223/knk/blob/50b89f96e9d7eab1dfe22bebc2bb4eced821526f/docs/AHIF_CONTEXT_BASELINE_PLANT_RESULTS_20261127.md">Shen基準感度</a>。</p>
+<h3>BOIDS：暗条件の集団運動の分布・時間変動は条件依存モデルで予測できるが、位置制約は再現できない</h3>
+<p>既存結論が強化された同一原著の閉ループ検証。明9/暗10の3尾群、58原ファイル、10秒1,207開始点。v60固定主endpoint（暗・1秒block residual）でM0分布損失.176936→M3 .095054、46.28%減少、9/10群、差.081882 [.049948,.114035]。明blockは区間ゼロを含む。明では近傍距離、暗では偏極度の誤差寄与が大きいという記述的分解。</p>
+<p>v61時間変動では暗M3のgroup noise→block noise差+.0007242（2.78%改善、8/10、区間[.0001269,.0013438]）、明では61.76%悪化、0/9。30秒398開始点でも暗M3はM0より時間損失が小さいが、暗group→block差は7/10で凍結整合基準FAIL。M3の30秒training矩形逸脱は18.47～23.43%（実測.0181～.0188%）。位置較正した水槽壁ではないが大きな支持範囲の不整合。v62は占有制約の設計・未採点。</p>
+<p>問い：局所運動ルールと時間的残差依存性が集団動態をどこまで生成できるか。感覚条件の差が候補だが因果的に識別できない。論文は「条件依存運動ルールの分布再現と時間・空間endpointの非同時成立」。Boids力や視覚機構の確証ではない。同一19群の反復。</p>
+<p>根拠：<a href="https://github.com/zuizui0223/boids/blob/7a1736e8eda9fb5f2f001c5ec28d69ca3ff2185f/docs/collective_state_synthesis_20261124/V60_RESIDUAL_DEPENDENCE_DISTRIBUTION_RESULT.md">v60結果</a>、<a href="https://github.com/zuizui0223/boids/blob/ee86018082ba3155bb8e94103846e371b907d21c/docs/collective_state_synthesis_20261124/V61_TEMPORAL_FIDELITY_RESULT.md">v61結果</a>。</p>
+<h3>ONISHIBARI：低機能雌しべの消失は性比だけでは決まらない</h3>
+<p>理論上の新規進展、実測検証は非支持。v72核遺伝2座位で生存率・成熟加入を区別し、405 parameter gridで平衡/固有値/100世代再帰、45等生存ケースで旧式と一致。雌/Hの有効成体加入比A、死亡率d_F,d_Hなら、雌の侵入条件 A d_H &gt; 2 d_F。反復繁殖性だけで平衡性比や雌しべ消失の侵入閾値は変わらない。生存・受精・資源再投資・父性の違いが必要。v73 CMS/restorerモデル448セル中数値的定常内点151、境界/過渡133、変動/過渡164。性比と母性加入比が近くても異なる遺伝構造により残存器官消失閾値が違う理論を検証する構成。推定選択係数ではない。</p>
+<p>原資料v70の種子品質段階差+0.277 [−.189,.846]、11対応study-species、7/11正。v71雌性両全性異株の62種、493有効行、234種×座標、量17種/17属、品質14種/11属、両方6。雌頻度の属外MAE基準.12052→量.12359（悪化）；品質パネル気候.15043→気候＋品質.15953（悪化）。Cirsium地点一致は未確認。ナニワズ・アザミの性決定や性比平衡の実証ではない。</p>
+<p>根拠：<a href="https://github.com/zuizui0223/onishibari/blob/849743d7a39281ed0ba86b2dfb2ae0f5aa53d82f/results/2026-11-27_sex_transition_lifehistory_v72.md">生存v72</a>、<a href="https://github.com/zuizui0223/onishibari/blob/849743d7a39281ed0ba86b2dfb2ae0f5aa53d82f/results/2026-11-27_sex_transition_cms_v73.md">CMS v73/マクロv71結果</a>。</p>
+<h3>KEIBA（非生態）：固定対象に対する親情報の増分は個体履歴の入力に依存する</h3>
+<p>同一後期イベント・相手・親スコア・結果で個体のown scoreだけ以前の値に戻す診断。2020年1819頭で親特異性差+.000531868 [.000269021,.000801284]、2021年1939頭で+.000612835 [.000374543,.000870808]（条件付き97.5%区間）。3つの別々の再標本化軸で正。ただし全体Brierは悪化する。情報の置換による予測上の寄与であり遺伝・経験・市場因果効果ではない。#119–124人工世界の理論は実市場の較正ではない。既存sealed endpointには触れない。<a href="https://github.com/zuizui0223/keiba/blob/034e695b483bbad92809bedd41171424b1ce8529/docs/research/JAPAN_FIXED_TARGET_OWN_SCORE_ROLLBACK_RESULTS_20261127.md">原結果</a>。</p>
+<h2>3. 反証 / FAIL / 未確定</h2>
+<table><tr><th>対象</th><th>最新判定</th></tr>
+<tr><td>FCP</td><td>ニッチ幅・季節性による総多様度増加、白特異的空間効果は不確定。生活史は未確認</td></tr>
+<tr><td>FD/ISLAND</td><td>外部新対象の地理ゲートFAIL、属grade残差はHIGH/native/気候整合で非支持、報酬source #82は未採点</td></tr>
+<tr><td>ADAPTIVE-GAIN</td><td>対応82種の地域マクロは6ブロックで不足。風の調整依存、Bombusの種保存帰無は未確認</td></tr>
+<tr><td>KNK</td><td>Shenの符号逆転はday3差分で消失、Gibbs単一label予測FAIL、集約による誤差縮小は地理的創発ではない。正式メタ解析0</td></tr>
+<tr><td>BOIDS</td><td>実測と生成位置の占有不一致。v62未採点。暗10秒支持を30秒・明条件・物理動態へ一般化しない</td></tr>
+<tr><td>ONISHIBARI</td><td>既刊の繁殖量/質から雌頻度を予測するマクロ結果FAIL、Cirsium地点照合未成立</td></tr>
+<tr><td>TURNOVER</td><td>Jena84混植区、24単植の種非共有保留でB −2.534%、NDE −6.088%、CE −2.109%、SE −2.519%、TDCE −.996%、DE −1.881%、E −.541%。2,000回の同数・設計一致training参照に7/7（個別21/21）全て入る。種共有自体の因果効果やtraining数単独の因果は識別不能。<a href="https://github.com/zuizui0223/turnover/blob/7e5e9dd5bca7f688f4374df9ec1ef6e05a8c03a0/docs/JENA_TBE2012_MATCHED_PURGE_REFERENCE_RESULTS_20261127.md">結果</a></td></tr>
+<tr><td>EOG</td><td>Elwha22共通reachのsource候補、既刊集計一部既知。生物応答原データ未採点、frozen 3/31/3およびMcKee STOPを保持</td></tr>
+<tr><td>MOIS・284b等</td><td>更新未検出のため最終判定を再採点しない。途中進捗を新empirical claimとしない</td></tr>
+</table>
+<h2>4. 全リポ横断統合</h2>
+<p>昨日の供給源・機能群への量配分というテーマに対し、今日は「総量・方向と、配置の構造を分離する」という一歩が得られた。FCPでは色多様度と色の地理的配置、FDではレパートリー欠損と候補供給源からの不一致、KNKでは平均応答と背景依存および予測対象の集約、BOIDSでは状態分布と時間変動・実空間の支持を区別した。これらは相補的だが同じ因果機構ではない。花の機能ではADAPTIVE-GAINの蜜/花粉情報の非対称がFDの報酬軸の検証を動機づけ、ONISHIBARIの理論は情報・機能と適応度の転換を区別する。形態・色から実送粉者を推定したり、背景群集応答を直接の相互作用係数としたりしない。既存GESUI/MINAの総量対再配分と接続できるが今日はそのリポに新結果なし。</p>
+<h2>今日の最重要3点</h2>
+<p>1. FCP・FD：花形質の空間配置に関するマクロ解析が進展。FCP温度空間分割は共通1,258種で正、FD相称性×深度残差+.012962、Holm=.028。ただし色・送粉機構や外部在来検証は未成立。</p>
+<p>2. ADAPTIVE-GAIN：同じ82種で蜜+26.27%と花粉−2.52%の属外予測非対称。科外でも維持。花形態を単なるギルド代理ではなく、実測報酬の情報として扱える範囲が明瞭になった。</p>
+<p>3. KNK・BOIDS：相互作用の背景依存と、対象集約・時間・空間の違いが予測の成立を変える。単一指標の改善だけで生物学的機構を主張しない。</p>
+<h2>次に回収すべき解析/検証</h2>
+<p>- FCP：生活史の原データ結果、独立プラットフォーム・標本/校正花色、気候ランドスケープと地理的色構造の別地域保留。白色特異性を救済する探索は避ける。</p>
+<p>- FD/ISLAND：重複しない地理ブロック・供給源の外部在来資料、真の花筒形態・報酬・訪花機能。既存gateを固定し同一結果の重複論文化をしない。</p>
+<p>- ADAPTIVE-GAIN：同一植物で蜜/花粉報酬、種分布保存帰無、独立地域の実測風・Bombus訪花と選好。形態情報が実利用されるか実験で検証。</p>
+<p>- KNK：固定サンプル数で連続・分散配置の空間grainを比較し、絶対密度と背景種追加の直接効果を測る。集約による損失縮小と切り離す。</p>
+<p>- BOIDS：物理座標校正または既知水槽境界のある独立群、同じ凍結M0/M3で占有と時間変動を同時評価。</p>
+<p>- ONISHIBARI：性別の成体加入・遺伝様式・genet生存・雌しべ建設費・父性への再配分を直接計測。TURNOVERは独立単植反復と非直交種プール、EOGは原水路・応答の時期と識別を照合してから採点。sealed閾値は変更しない。</p>
+</main></body></html>
